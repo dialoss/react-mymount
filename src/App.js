@@ -1,23 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import React, {useState} from "react";
+import './styles/App.css'
+import Navbar from "./components/Navigation/Navbar";
+import Modal from "./components/Modal/Modal";
 
 function App() {
+    const [modalOpened, toggleModal] = useState(false);
+    function openModal() {
+        toggleModal(true);
+    }
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        <Navbar navDatas={[
+            {'url':'/main/', 'navText':'главная'},
+            {'url':'/models/', 'navText':'модели'},
+            {'url':'/parts/', 'navText':'детали'}
+        ]}></Navbar>
+        <button onClick={openModal}>open</button>
+        <Modal props={{modalOpened, toggleModal}}></Modal>
     </div>
   );
 }
