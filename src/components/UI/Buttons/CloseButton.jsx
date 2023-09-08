@@ -1,8 +1,12 @@
 import React from 'react';
+import 'styles/ui/CloseButton.css';
+import cross from 'assets/svg/cross.svg';
 
-const CloseButton = () => {
+const CloseButton = ({close}) => {
     return (
-        <button className="close-btn"><img src="" alt=""/></button>
+        <button className="close-btn" onClick={close}>
+            <img src={cross} alt={""}/>
+        </button>
     );
 };
 

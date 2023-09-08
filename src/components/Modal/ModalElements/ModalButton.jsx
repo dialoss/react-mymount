@@ -1,8 +1,9 @@
 import React from 'react';
+import 'styles/modal/modal-elements/ModalButton.css';
 
-const ModalButton = ({text}) => {
+const ModalButton = ({children, ...props}) => {
     return (
-        <button type="submit" className="modal-button">{text}</button>
+        <button {...props} className="modal-button">{children}</button>
     );
 };
 

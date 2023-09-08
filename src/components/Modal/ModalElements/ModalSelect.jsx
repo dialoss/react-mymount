@@ -1,12 +1,12 @@
 import React from 'react';
 import ModalOption from "./ModalOption";
 
-const ModalSelect = ({options}) => {
+const ModalSelect = ({value}) => {
     return (
         <select className="modal-select" autoComplete="off">
             {
-                options.map((option, index) => {
-                    return <ModalOption value={option[0]} text={option[1]} key={index}></ModalOption>
+                value.map((option, index) => {
+                    return <ModalOption value={option.value} text={option} key={index}></ModalOption>
                 })
             }
         </select>

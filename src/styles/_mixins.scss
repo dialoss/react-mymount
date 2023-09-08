@@ -1,0 +1,77 @@
+@mixin entry-modified {
+    .entry__sizer, .entry__wrapper {
+        width: 100%;
+    }
+
+    .entry {
+        background-color: white;
+        box-shadow: none;
+        border-radius: 0;
+        height: auto;
+
+        &__item-wrapper {
+            padding: 5px;
+        }
+
+        &__items {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            width: 100%;
+        }
+        
+        &:hover {
+            opacity: 1;
+            background-color: white;
+            cursor: default;
+        }
+
+        &__wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+        }
+    }    
+ }
+
+ $color-scrollbar-thumb: rgb(145 167 205);
+ $color-scrollbar-track: rgba(147, 156, 163, 0.33);
+ $color-footer-background: rgb(54, 59, 75);
+
+ @mixin custom-scrollbar {
+    &::-webkit-scrollbar {
+        width: 20px;
+        // display: block;
+    }
+    
+    &::-webkit-scrollbar-thumb {
+        border: 4px solid rgba(0, 0, 0, 0);
+        background-clip: padding-box;
+        border-radius: 10px;
+        background-color: $color-scrollbar-thumb;
+    }
+    
+    &::-webkit-scrollbar-track {
+        background-color: $color-scrollbar-track;
+    }
+
+    &::-webkit-scrollbar-track-piece:start {
+        background-color: transparent;
+        // margin-top: -10px; 
+    }
+
+    &::-webkit-scrollbar-corner {
+        background: $color-footer-background;
+        // margin-bottom: 0;
+        // height: 100px; 
+    }
+}
+
+$constant-zindex-base: 0;
+$constant-zindex-item: 3;
+$constant-zindex-transform: 4;
+$constant-zindex-files: 5;
+$constant-zindex-background: 6;
+$constant-zindex-modal: 7;
+$constant-zindex-utility: 8;
