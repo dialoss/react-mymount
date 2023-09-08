@@ -1,75 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9b37537a-6286-4d32-9202-d8554b8ac243" name="Changes" comment="Initial">
-      <change afterPath="$PROJECT_DIR$/src/assets/client_secrets.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/gifs/loading.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/img/img-self.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/img/logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/img/plus.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/key.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/svg/burger.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/svg/cross.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/svg/right.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/svg/textfield/font-decrease.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/svg/textfield/font-increase.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/svg/textfield/text-center.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/svg/textfield/text-left.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/svg/textfield/weight.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Entry/Entry.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Entry/EntryList.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Entry/Item/Item.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Entry/Item/ItemData/ItemFile.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Entry/Item/ItemData/ItemImage.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Entry/Item/ItemData/ItemTable.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Entry/Item/ItemData/ItemTextfield.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Entry/Item/ItemData/ItemVideo.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Modal/ModalContents/Actions/ModalActions.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Modal/ModalContents/Carousel/CarouselNav.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Modal/ModalContents/Carousel/CarouselNavArrow.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Modal/ModalContents/Carousel/CarouselNavbar.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Modal/ModalContents/Carousel/ModalCarousel.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/styles/App.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/styles/_mixins.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/styles/modal/Modal.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/styles/modal/Modal.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/styles/modal/Modal.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/styles/modal/ModalForm.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/styles/modal/ModalForm.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/styles/modal/ModalForm.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/styles/modal/modal-elements/ModalButton.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/styles/modal/modal-elements/ModalButton.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/styles/modal/modal-elements/ModalButton.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/styles/modal/modal-elements/ModalInput.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/styles/modal/modal-elements/ModalInput.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/styles/modal/modal-elements/ModalInput.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/styles/modal/modal-elements/ModalOption.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/styles/modal/modal-elements/ModalOption.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/styles/modal/modal-elements/ModalOption.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/styles/modal/modal-elements/ModalSelect.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/styles/modal/modal-elements/ModalSelect.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/styles/modal/modal-elements/ModalSelect.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/styles/modal/modal-elements/ModalTextarea.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/styles/modal/modal-elements/ModalTextarea.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/styles/modal/modal-elements/ModalTextarea.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/styles/modal/modal-elements/ModalUpload.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/styles/modal/modal-elements/ModalUpload.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/styles/modal/modal-elements/ModalUpload.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/styles/ui/CloseButton.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/styles/ui/CloseButton.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/styles/ui/CloseButton.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Modal/Modal.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Modal/Modal.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Modal/ModalElements/ModalButton.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Modal/ModalElements/ModalButton.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Modal/ModalElements/ModalInput.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Modal/ModalElements/ModalInput.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Modal/ModalElements/ModalOption.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Modal/ModalElements/ModalOption.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Modal/ModalElements/ModalSelect.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Modal/ModalElements/ModalSelect.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Modal/ModalElements/ModalTextarea.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Modal/ModalElements/ModalTextarea.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Modal/ModalElements/ModalUpload.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Modal/ModalElements/ModalUpload.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Modal/ModalForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Modal/ModalForm.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/UI/Buttons/CloseButton.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UI/Buttons/CloseButton.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/App.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/App.css.map" afterDir="false" />
-    </list>
+    <list default="true" id="9b37537a-6286-4d32-9202-d8554b8ac243" name="Changes" comment="Initial" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -138,7 +70,7 @@
       <updated>1693773179102</updated>
       <workItem from="1693773180427" duration="16519000" />
       <workItem from="1694019795821" duration="8457000" />
-      <workItem from="1694179701699" duration="10826000" />
+      <workItem from="1694179701699" duration="11009000" />
     </task>
     <task id="LOCAL-00001" summary="Initial">
       <created>1693824071090</created>
@@ -147,7 +79,21 @@
       <option name="project" value="LOCAL" />
       <updated>1693824071090</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Initial">
+      <created>1694201955892</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1694201955892</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Initial">
+      <created>1694202009667</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1694202009667</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
