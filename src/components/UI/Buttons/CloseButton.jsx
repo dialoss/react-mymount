@@ -1,5 +1,5 @@
 import React from 'react';
-import 'styles/ui/CloseButton.css';
+import 'styles/ui/CloseButton.scss';
 import cross from 'assets/svg/cross.svg';
 
 const CloseButton = ({close}) => {

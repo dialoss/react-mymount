@@ -1,14 +1,16 @@
 import React from 'react';
-import 'styles/modal/modal-elements/ModalInput.css';
+import 'styles/modal/modal-elements/ModalInput.scss';
 
-
-const ModalInput = ({processInput, field}) => {
+const ModalInput = ({callback, data}) => {
+    // attrs = Object.values(attrs).map(attr => {
+    //     return {[attr]: attr};
+    // });
+    // console.log({...attrs})
     return (
-        <div className="modal-input__wrapper">
-            <input name={field.name} value={field.value} onChange={(event) => {
-                    processInput(event, field);
-                }}/>
-        </div>
+        <input name={data.name}
+               value={data.value}
+               onChange={callback}
+               className="modal-input"/>
     );
 };
 

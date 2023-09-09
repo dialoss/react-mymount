@@ -1,5 +1,5 @@
 import React from 'react';
-import 'styles/modal/modal-elements/ModalButton.css';
+import 'styles/modal/modal-elements/ModalButton.scss';
 
 const ModalButton = ({children, ...props}) => {
     return (

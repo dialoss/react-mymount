@@ -1,10 +1,11 @@
 import React from 'react';
-import 'styles/navigation/NavButton.css';
+import 'styles/navigation/NavButton.scss';
+import {Link} from "react-router-dom";
 
-const NavButton = ({navData}) => {
+const NavButton = ({navData, active}) => {
     return (
-        <div className={"nav-button"}>
-            <a href={`${navData.url}`}>{navData.navText}</a>
+        <div className={"nav-button " + (active ? "nav-button--current" : "")}>
+            <Link to={`${navData.path}`}>{navData.text}</Link>
         </div>
     );
 };

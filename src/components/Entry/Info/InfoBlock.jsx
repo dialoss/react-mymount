@@ -11,12 +11,12 @@ const InfoBlock = ({title="", description="", date="", filename=""}) => {
     return (
         <div className="info__block">
             <div className="info__block-inner">
-                <InfoParagraph type={'title'}>{title}</InfoParagraph>
+                {title && <InfoParagraph type={'title'}>{title}</InfoParagraph>}
                 <div className="info__block-section">
-                    {date.length && <InfoParagraph type={'date'}>{formattedDate}</InfoParagraph>}
-                    <InfoParagraph type={'description'}>{description}</InfoParagraph>
+                    {date && <InfoParagraph type={'date'}>{formattedDate}</InfoParagraph>}
+                    {description && <InfoParagraph type={'description'}>{description}</InfoParagraph>}
                 </div>
-                <InfoParagraph style={{display:"none"}} type={'filename'}>{filename}</InfoParagraph>
+                {filename && <InfoParagraph style={{display:"none"}} type={'filename'}>{filename}</InfoParagraph>}
             </div>
         </div>
     );

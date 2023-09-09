@@ -1,14 +1,16 @@
 import React from 'react';
 import ModalButton from "./ModalButton";
-import 'styles/modal/modal-elements/ModalUpload.css';
+import 'styles/modal/modal-elements/ModalUpload.scss';
 
-
-const ModalUpload = ({processInput, field}) => {
+const ModalUpload = ({callback, data}) => {
     return (
         <div className={"modal-upload"}>
-            <input type="hidden" name={field.name} multiple hidden="hidden" value={field.value}/>
-            <ModalButton text={field.text}></ModalButton>
-            <span className="modal__file-text">{`No ${field.name} chosen...`}</span>
+            <input onChange={callback}
+                   name={data.name}
+                   value={data.value}
+                   type="hidden" multiple hidden/>
+            <ModalButton text={data.text}></ModalButton>
+            <span className="modal__file-text">{`No ${data.name} chosen...`}</span>
         </div>
     );
 };

@@ -1,12 +1,15 @@
 import React from 'react';
 import NavButton from "components/Navigation/NavButton";
-import 'styles/navigation/Navbar.css';
+import 'styles/navigation/Navbar.scss';
+import {routes} from "router/index";
+import {useMyLocation} from "hooks/useMyLocation";
 
-const Navbar = ({navDatas}) => {
+const Navbar = () => {
+    let myLocation = useMyLocation();
     return (
         <div className={"navbar"}>
-            {navDatas.map((navData, index) => {
-                return <NavButton navData={navData} key={index}/>
+            {routes.map((navData, index) => {
+                return <NavButton active={myLocation.relativeURL === navData.path} navData={navData} key={index}/>
             })}
         </div>
     );

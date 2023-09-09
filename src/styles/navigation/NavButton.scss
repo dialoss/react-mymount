@@ -9,7 +9,6 @@ $color-current-background: blue;
 $color-current-text: white;
 
 .nav-button {
-    padding: 15px 25px;
     margin-bottom: 10px;
 
     border: 2px $color-border solid;
@@ -23,8 +22,10 @@ $color-current-text: white;
     transition: all 0.2s linear;
 
     a {
+        display: block;
         text-transform: uppercase;
         text-decoration: none;
+        padding: 15px 25px;
     }
 
     .content__nav-tabs & {

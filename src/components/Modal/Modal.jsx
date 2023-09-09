@@ -1,19 +1,17 @@
 import React from 'react';
 import CloseButton from "../UI/Buttons/CloseButton";
-import ModalForm from "./ModalForm";
-import 'styles/modal/Modal.css';
+import 'styles/modal/Modal.scss';
 
-const Modal = ({opened, toggleModal}) => {
-    function closeModal(event) {
-        event.stopPropagation();
-        toggleModal(false);
-    }
+const Modal = ({opened, closeModal, children}) => {
     return (
         <div className="modal">
             <div className={"modal__wrapper " + (opened ? "opened" : "")}>
-                <div className="modal__background" onClick={closeModal}></div>
+                <div className="modal__background" onClick={(event) => {
+                    event.stopPropagation();
+                    closeModal();
+                }}></div>
                 <div className="modal__window">
-
+                    {children}
                 </div>
             </div>
         </div>

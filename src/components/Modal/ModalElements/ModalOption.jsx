@@ -1,5 +1,5 @@
 import React from 'react';
-import 'styles/modal/modal-elements/ModalOption.css';
+import 'styles/modal/modal-elements/ModalOption.scss';
 
 
 const ModalOption = ({value, text}) => {

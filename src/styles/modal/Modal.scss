@@ -1,4 +1,4 @@
-@import '../mixins';
+@import '../constants';
 
 .modal {
     &__wrapper {
@@ -10,7 +10,7 @@
         opacity: 0;
         visibility: hidden;
         transition: all 0.3s linear;
-        z-index: $constant-zindex-modal;
+        z-index: $zindex-modal;
 
         &.opened {
             visibility: visible;

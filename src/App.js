@@ -1,45 +1,26 @@
-import React, {useEffect, useState} from "react";
-import './styles/App.css'
+import React from "react";
+import './styles/App.scss';
 import Navbar from "./components/Navigation/Navbar";
-import Modal from "./components/Modal/Modal";
-import EntryList from "./components/Entry/EntryList";
+import {BrowserRouter} from "react-router-dom";
+import ModalManager, {openModal} from "./components/Modal/ModalManager";
+import AppRouter from "./components/Navigation/AppRouter";
+import MyForm from "./components/MyForm/MyForm";
+import Footer from "./components/Footer/Footer";
 
 function App() {
-    const [modalOpened, toggleModal] = useState(false);
-    const [loading, setLoading] = useState(true);
-    const [entrys, setEntrys] = useState([]);
-    function openModal() {
-        toggleModal(true);
-    }
-
-    async function fetchEntrys() {
-        setLoading(true);
-        const response = await fetch('http://127.0.0.1:8000/ajax/', {
-            method: "POST",
-            headers: {
-                "Content-Type" : 'application/json;charset=utf-8',
-            },
-            body: JSON.stringify({}),
-        }).then(res => res.json()).then(data => {
-            setLoading(false);
-            setEntrys(data.entrys_data);
-        });
-    }
-
-    useEffect(() => {
-        fetchEntrys();
-    }, [])
+    const modalManager = (function() {
+        return <ModalManager content={<MyForm/>}/>
+    })();
 
     return (
         <div className="App">
-            <Navbar navDatas={[
-                {'url':'/main/', 'navText':'главная'},
-                {'url':'/models/', 'navText':'модели'},
-                {'url':'/parts/', 'navText':'детали'}
-            ]}></Navbar>
+            <BrowserRouter>
+                <Navbar></Navbar>
+                <AppRouter></AppRouter>
+            </BrowserRouter>
             <button onClick={openModal}>open</button>
-            <Modal toggleModal={toggleModal} opened={modalOpened}></Modal>
-            <EntryList entrys={entrys}></EntryList>
+            <Footer totalViews={0} curViews={0}/>
+            {modalManager}
         </div>
     );
 }
