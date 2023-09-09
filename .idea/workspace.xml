@@ -1,83 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9b37537a-6286-4d32-9202-d8554b8ac243" name="Changes" comment="Initial">
-      <change afterPath="$PROJECT_DIR$/src/components/Entry/Item/ItemData/ItemData.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Footer/Footer.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Modal/ModalElements/ModalComponent.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Modal/ModalManager.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/MyForm/FormData.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/MyForm/MyForm.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Navigation/AppRouter.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Pages/Intro.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Pages/ListView.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/hooks/useMyLocation.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/router/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/scripts/network/requests.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/store/reducers/changeform.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/store/reducers/modal.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/store/store.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/styles/entry/entry.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/styles/item/item.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/styles/pages/intro.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Entry/Entry.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Entry/Entry.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Entry/Info/InfoBlock.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Entry/Info/InfoBlock.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Entry/Item/Item.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Entry/Item/Item.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Entry/Item/ItemData/ItemFile.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Entry/Item/ItemData/ItemFile.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Entry/Item/ItemData/ItemImage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Entry/Item/ItemData/ItemImage.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Entry/Item/ItemData/ItemTable.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Entry/Item/ItemData/ItemTable.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Entry/Item/ItemData/ItemTextfield.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Entry/Item/ItemData/ItemTextfield.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Entry/Item/ItemData/ItemVideo.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Entry/Item/ItemData/ItemVideo.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Modal/Modal.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Modal/Modal.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Modal/ModalContents/Actions/ModalActions.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Modal/ModalContents/Carousel/CarouselNav.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Carousel/CarouselNav.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Modal/ModalContents/Carousel/CarouselNavArrow.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Carousel/CarouselNavArrow.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Modal/ModalContents/Carousel/CarouselNavbar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Carousel/CarouselNavbar.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Modal/ModalContents/Carousel/ModalCarousel.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Carousel/ModalCarousel.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Modal/ModalElements/ModalButton.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Modal/ModalElements/ModalButton.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Modal/ModalElements/ModalInput.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Modal/ModalElements/ModalInput.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Modal/ModalElements/ModalOption.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Modal/ModalElements/ModalOption.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Modal/ModalElements/ModalUpload.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Modal/ModalElements/ModalUpload.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Modal/ModalForm.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Navigation/NavButton.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navigation/NavButton.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Navigation/Navbar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navigation/Navbar.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/UI/Buttons/CloseButton.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UI/Buttons/CloseButton.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/App.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/App.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/App.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/App.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/_mixins.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/mixins.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/modal/Modal.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/modal/Modal.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/modal/ModalForm.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/modal/ModalForm.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/modal/ModalForm.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/form/MyForm.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/modal/modal-elements/ModalButton.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/modal/modal-elements/ModalButton.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/modal/modal-elements/ModalButton.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/modal/modal-elements/ModalButton.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/modal/modal-elements/ModalInput.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/modal/modal-elements/ModalInput.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/modal/modal-elements/ModalInput.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/modal/modal-elements/ModalInput.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/modal/modal-elements/ModalOption.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/modal/modal-elements/ModalOption.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/modal/modal-elements/ModalSelect.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/modal/modal-elements/ModalSelect.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/modal/modal-elements/ModalTextarea.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/modal/modal-elements/ModalTextarea.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/modal/modal-elements/ModalUpload.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/modal/modal-elements/ModalUpload.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/navigation/NavButton.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/navigation/NavButton.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/navigation/NavButton.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/navigation/NavButton.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/navigation/Navbar.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/navigation/Navbar.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/ui/CloseButton.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/ui/CloseButton.css.map" beforeDir="false" />
-    </list>
+    <list default="true" id="9b37537a-6286-4d32-9202-d8554b8ac243" name="Changes" comment="Initial" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -149,7 +73,7 @@
       <workItem from="1693773180427" duration="16519000" />
       <workItem from="1694019795821" duration="8457000" />
       <workItem from="1694179701699" duration="21895000" />
-      <workItem from="1694263933841" duration="28824000" />
+      <workItem from="1694263933841" duration="29134000" />
     </task>
     <task id="LOCAL-00001" summary="Initial">
       <created>1693824071090</created>
@@ -179,7 +103,14 @@
       <option name="project" value="LOCAL" />
       <updated>1694202114749</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Initial">
+      <created>1694295878613</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1694295878613</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
