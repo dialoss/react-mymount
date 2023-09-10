@@ -7,10 +7,14 @@ import {useMyLocation} from "hooks/useMyLocation";
 import {useDispatch, useSelector} from "react-redux";
 import {actions} from "store/reducers/entrys";
 
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+
 const ListView = () => {
     const dispatch = useDispatch();
     const entrys = useSelector((state) => state.entrys.entrys);
-    const entrysAll = useSelector((state) => state.entrys.entrysAll);
+    const entrysAmount = useSelector((state) => state.entrys.entrysAmount);
 
     let myLocation = useMyLocation();
     let curPage = {
@@ -24,15 +28,16 @@ const ListView = () => {
         }
     };
 
-    const [fetchEntrys, loading] = useFetching(async () => {
-        await sendRequest(sendData).then(res => res.json()).then(data => {
+    const [fetchEntrys, loading, setLoading] = useFetching(async () => {
+        await sendRequest(sendData.url, sendData.data).then(res => res.json()).then(data => {
             dispatch(actions.addEntrys(data.entrys_data));
+            window.entrysAmount = data.entrys_amount;
             dispatch(actions.setAmount(data.entrys_amount));
         });
     });
 
-    async function fetchEntrysAll() {
-        let step = 10;
+    const fetchEntrysAll = async () => {
+        let step = 5;
         let cur = 0;
         while (true) {
             sendData.data = {
@@ -42,8 +47,9 @@ const ListView = () => {
             }
             await fetchEntrys();
             cur += 1;
-            if (cur >= entrysAll / step) break;
+            if (cur >= window.entrysAmount / step) break;
         }
+        setLoading(false);
     }
 
     useEffect(() => {

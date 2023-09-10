@@ -1,7 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9b37537a-6286-4d32-9202-d8554b8ac243" name="Changes" comment="Initial" />
+    <list default="true" id="9b37537a-6286-4d32-9202-d8554b8ac243" name="Changes" comment="Initial">
+      <change afterPath="$PROJECT_DIR$/src/hooks/useLayout.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Entry/Entry.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Entry/Entry.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Entry/EntryList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Entry/EntryList.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Entry/Info/InfoBlock.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Entry/Info/InfoBlock.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Entry/Item/Item.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Entry/Item/Item.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Entry/Item/ItemData/ItemImage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Entry/Item/ItemData/ItemImage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Pages/ListView.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Pages/ListView.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Pages/PageLoading.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Pages/PageLoading.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/UI/Buttons/CloseButton.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UI/Buttons/CloseButton.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hooks/useFetching.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/hooks/useFetching.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scripts/network/requests.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/scripts/network/requests.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/reducers/entrys.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/reducers/entrys.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/App.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/App.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/entry/entry.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/entry/entry.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/item/item.module.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/pages/footer.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/pages/footer.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/ui/PageLoading.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/ui/PageLoading.scss" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -73,7 +95,7 @@
       <workItem from="1693773180427" duration="16519000" />
       <workItem from="1694019795821" duration="8457000" />
       <workItem from="1694179701699" duration="21895000" />
-      <workItem from="1694263933841" duration="29134000" />
+      <workItem from="1694263933841" duration="46314000" />
     </task>
     <task id="LOCAL-00001" summary="Initial">
       <created>1693824071090</created>
@@ -110,7 +132,14 @@
       <option name="project" value="LOCAL" />
       <updated>1694295878613</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Initial">
+      <created>1694295952030</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1694295952030</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

@@ -4,11 +4,11 @@ export const listEntrys = createSlice({
     name: "entrys",
     initialState: {
         entrys: [],
-        entrysAll: 0,
+        entrysAmount: 0,
     },
     reducers: {
         setAmount: (state, {payload: amount}) => {
-            state.entrysAll = amount;
+            state.entrysAmount = amount;
         },
         addEntrys: (state, {payload: newEntrys}) => {
             state.entrys = [...state.entrys, ...newEntrys];

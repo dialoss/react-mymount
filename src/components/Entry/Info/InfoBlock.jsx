@@ -1,8 +1,9 @@
 import React from 'react';
 import InfoParagraph from "./InfoParagraph";
+import 'styles/entry/info.scss';
 
-const InfoBlock = ({title="", description="", date="", filename=""}) => {
-    const dateFormat = new Date(date);
+const InfoBlock = ({data}) => {
+    const dateFormat = new Date(data.date);
     const formattedDate = dateFormat.toLocaleDateString('en-GB', {
         year: 'numeric',
         month: '2-digit',
@@ -11,12 +12,12 @@ const InfoBlock = ({title="", description="", date="", filename=""}) => {
     return (
         <div className="info__block">
             <div className="info__block-inner">
-                {title && <InfoParagraph type={'title'}>{title}</InfoParagraph>}
+                {data.title && <InfoParagraph type={'title'}>{data.title}</InfoParagraph>}
                 <div className="info__block-section">
-                    {date && <InfoParagraph type={'date'}>{formattedDate}</InfoParagraph>}
-                    {description && <InfoParagraph type={'description'}>{description}</InfoParagraph>}
+                    {data.date && data.show_date && <InfoParagraph type={'date'}>{formattedDate}</InfoParagraph>}
+                    {data.description && <InfoParagraph type={'description'}>{data.description}</InfoParagraph>}
                 </div>
-                {filename && <InfoParagraph style={{display:"none"}} type={'filename'}>{filename}</InfoParagraph>}
+                {data.filename && <InfoParagraph style={{display:"none"}} type={'filename'}>{data.filename}</InfoParagraph>}
             </div>
         </div>
     );

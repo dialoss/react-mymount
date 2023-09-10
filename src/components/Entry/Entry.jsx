@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import EntryItem from "./Item/Item";
 import InfoBlock from "./Info/InfoBlock";
 import styles from 'styles/entry/entry.module.scss';
@@ -10,12 +10,12 @@ const Entry = ({entry}) => {
                 <div className={styles.data}>
                     <div className={styles.items}>
                         {
-                            entry.items.map((item) => {
-                                return <EntryItem item={item} key={item.id}></EntryItem>
-                            })
+                            entry.items.map((item) =>
+                                <EntryItem item={item} key={item.id}></EntryItem>
+                            )
                         }
                     </div>
-                    <InfoBlock title={entry.title} description={entry.description} date={entry.date}></InfoBlock>
+                    <InfoBlock data={entry}></InfoBlock>
                 </div>
             </div>
         </div>

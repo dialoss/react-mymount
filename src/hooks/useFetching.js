@@ -9,9 +9,7 @@ export const useFetching = function(callback) {
             await callback();
         } catch (e) {
             console.log(e);
-        } finally {
-            setLoading(false);
         }
     }
-    return [fetching, loading];
+    return [fetching, loading, setLoading];
 }
