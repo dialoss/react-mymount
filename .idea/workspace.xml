@@ -1,28 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9b37537a-6286-4d32-9202-d8554b8ac243" name="Changes" comment="Initial">
-      <change afterPath="$PROJECT_DIR$/src/hooks/useLayout.js" afterDir="false" />
+    <list default="true" id="9b37537a-6286-4d32-9202-d8554b8ac243" name="Changes" comment="Added masonry">
+      <change afterPath="$PROJECT_DIR$/src/components/Navigation/Sidebar/SidebarItem.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Navigation/Sidebar/SidebarList.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/UI/Buttons/BurgerButton.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Utils/GooglePicker.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/store/reducers/location.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/svg/burger.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/svg/burger.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/svg/cross.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/svg/cross.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/svg/textfield/font-decrease.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/svg/textfield/font-increase.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/svg/textfield/text-center.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/svg/textfield/text-left.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/svg/textfield/weight.svg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Entry/Entry.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Entry/Entry.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Entry/EntryList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Entry/EntryList.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Entry/Info/InfoBlock.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Entry/Info/InfoBlock.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Entry/Item/Item.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Entry/Item/Item.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Entry/Item/ItemData/ItemImage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Entry/Item/ItemData/ItemImage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Navigation/AppRouter.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navigation/AppRouter.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Navigation/Navbar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navigation/Navbar.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Navigation/Sidebar.jsx" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Pages/ListView.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Pages/ListView.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Pages/PageLoading.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Pages/PageLoading.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/UI/Buttons/CloseButton.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UI/Buttons/CloseButton.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hooks/useFetching.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/hooks/useFetching.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hooks/useMyLocation.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/router/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/scripts/network/requests.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/scripts/network/requests.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/store/reducers/entrys.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/reducers/entrys.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/App.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/App.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/entry/entry.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/entry/entry.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/item/item.module.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/pages/footer.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/pages/footer.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/ui/PageLoading.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/ui/PageLoading.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/store.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/mixins.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/mixins.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/navigation/Navbar.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/navigation/Navbar.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,24 +59,31 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.standard": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.standard": "",
-    "nodejs_interpreter_path": "node",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "watcher.settings",
-    "ts.external.directory.path": "C:\\Program Files\\JetBrains\\WebStorm 2022.2\\plugins\\JavaScriptLanguage\\jsLanguageServicesImpl\\external",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Programming/react-mymount/src/store/reducers&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
+    &quot;nodejs_interpreter_path&quot;: &quot;node&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;watcher.settings&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Program Files\\JetBrains\\WebStorm 2022.2\\plugins\\JavaScriptLanguage\\jsLanguageServicesImpl\\external&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Programming\react-mymount\src\store\reducers" />
+      <recent name="D:\Programming\react-mymount\src\components\UI\Buttons" />
+    </key>
+  </component>
   <component name="RunManager" selected="npm.npm start">
     <configuration name="Debug Application" type="JavascriptDebugType" uri="http://localhost:3000">
       <method v="2" />
@@ -95,7 +110,10 @@
       <workItem from="1693773180427" duration="16519000" />
       <workItem from="1694019795821" duration="8457000" />
       <workItem from="1694179701699" duration="21895000" />
-      <workItem from="1694263933841" duration="46314000" />
+      <workItem from="1694263933841" duration="46505000" />
+      <workItem from="1694368130763" duration="675000" />
+      <workItem from="1694423482680" duration="5599000" />
+      <workItem from="1694429444635" duration="9083000" />
     </task>
     <task id="LOCAL-00001" summary="Initial">
       <created>1693824071090</created>
@@ -139,7 +157,14 @@
       <option name="project" value="LOCAL" />
       <updated>1694295952030</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Added masonry">
+      <created>1694351382107</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1694351382107</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -158,6 +183,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial" />
-    <option name="LAST_COMMIT_MESSAGE" value="Initial" />
+    <MESSAGE value="Added masonry" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added masonry" />
   </component>
 </project>

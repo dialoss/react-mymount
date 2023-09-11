@@ -58,12 +58,9 @@
 
     &::-webkit-scrollbar-track-piece:start {
         background-color: transparent;
-        // margin-top: -10px; 
     }
 
     &::-webkit-scrollbar-corner {
         background: $color-footer-background;
-        // margin-bottom: 0;
-        // height: 100px; 
     }
 }

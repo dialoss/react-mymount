@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import EntryItem from "./Item/Item";
 import InfoBlock from "./Info/InfoBlock";
 import styles from 'styles/entry/entry.module.scss';

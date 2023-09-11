@@ -12,7 +12,7 @@ const EntryList = ({entrys}) => {
                     <XMasonry maxColumns={3} responsive={true}>
                         {
                             entrys.map((entry) =>
-                                <XBlock>
+                                <XBlock key={entry.id}>
                                     <Entry entry={entry}></Entry>
                                 </XBlock>
                             )

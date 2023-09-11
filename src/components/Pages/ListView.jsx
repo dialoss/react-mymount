@@ -1,11 +1,11 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useMemo} from 'react';
 import EntryList from "components/Entry/EntryList";
 import sendRequest from "scripts/network/requests";
 import {useFetching} from "hooks/useFetching";
 import PageLoading from "./PageLoading";
-import {useMyLocation} from "hooks/useMyLocation";
 import {useDispatch, useSelector} from "react-redux";
 import {actions} from "store/reducers/entrys";
+import {baseURL} from "store/reducers/location";
 
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
@@ -15,25 +15,26 @@ const ListView = () => {
     const dispatch = useDispatch();
     const entrys = useSelector((state) => state.entrys.entrys);
     const entrysAmount = useSelector((state) => state.entrys.entrysAmount);
+    const location = useSelector((state) => state.location);
 
-    let myLocation = useMyLocation();
+
+
     let curPage = {
-        page_url: myLocation.relativeURL,
-        page_slug: myLocation.pageSlug,
+        page_url: location.relativeURL,
+        page_slug: location.pageSlug,
     }
     let sendData = {
-        url: 'http://127.0.0.1:8000/ajax/',
+        url: baseURL + '/ajax/',
         data: {
             ...curPage
         }
     };
 
     const [fetchEntrys, loading, setLoading] = useFetching(async () => {
-        await sendRequest(sendData.url, sendData.data).then(res => res.json()).then(data => {
-            dispatch(actions.addEntrys(data.entrys_data));
-            window.entrysAmount = data.entrys_amount;
-            dispatch(actions.setAmount(data.entrys_amount));
-        });
+        const response = await sendRequest(sendData.url, sendData.data)
+        dispatch(actions.addEntrys(response.entrys_data));
+        window.entrysAmount = response.entrys_amount;
+        dispatch(actions.setAmount(response.entrys_amount));
     });
 
     const fetchEntrysAll = async () => {
@@ -53,8 +54,9 @@ const ListView = () => {
     }
 
     useEffect(() => {
+        dispatch(actions.clearEntrys());
         fetchEntrysAll();
-    }, []);
+    }, [location]);
 
     return (
         <div>

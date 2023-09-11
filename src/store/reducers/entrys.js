@@ -12,7 +12,10 @@ export const listEntrys = createSlice({
         },
         addEntrys: (state, {payload: newEntrys}) => {
             state.entrys = [...state.entrys, ...newEntrys];
-        }
+        },
+        clearEntrys: (state) => {
+            state.entrys = []
+        },
     }
 });
 

@@ -1,8 +1,16 @@
-import React from 'react';
-import {Navigate, Route, Routes} from "react-router-dom";
+import React, {useEffect, useLayoutEffect} from 'react';
+import {Navigate, Route, Routes, useNavigate} from "react-router-dom";
 import {routes} from "router/index";
+import {useDispatch} from "react-redux";
+import {actions} from "store/reducers/location";
 
 const AppRouter = () => {
+    const location = useNavigate();
+    const dispatch = useDispatch();
+    useLayoutEffect(() => {
+        dispatch(actions.setLocation());
+    }, [location]);
+
     return (
         <div>
             <Routes>
