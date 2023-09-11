@@ -1,0 +1,56 @@
+.item {
+  position: relative;
+  transition: opacity 0.2s linear;
+  border-radius: 8px;
+  box-shadow: 0 0 5px gray;
+  overflow: hidden;
+
+  &-wrapper {
+    &:hover.edit {
+      outline: 2px dashed red;
+    }
+  }
+
+  &:hover {
+    opacity: 0.8;
+    cursor: pointer;
+  }
+
+  &-img:hover {
+    opacity: 0.8;
+    cursor: pointer;
+  }
+
+  &-files {
+    overflow: visible;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  &-tables {
+    width: 100%;
+  }
+
+  &-files, &-tables {
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  &-textfields {
+    box-shadow: none;
+    background: none;
+    background-color: white;
+    padding: 5px;
+
+    &:hover {
+      opacity: 1;
+    }
+
+    .item__transform {
+      max-width: 40px;
+      max-height: 40px;
+    }
+  }
+}

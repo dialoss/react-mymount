@@ -1,0 +1,28 @@
+.context {
+    &__window {
+        box-shadow: 0 0 5px gray;
+        max-width: 60vw;
+
+        margin: 10px;
+        column-gap: 10px;
+        row-gap: 10px;
+    }
+
+    &__button {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        border: 0;
+        background-color: $color-main;
+        border-radius: 8px;
+        width: 100%;
+        min-height: 20px;
+        text-align: center;
+        padding: 5px 15px;
+        font-size: 20px;
+        transition: all 0.1s linear;
+
+        &:hover {
+            background-color: rgb(174, 184, 192);
+            cursor: pointer;
+        }
+    }
+}

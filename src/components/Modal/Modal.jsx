@@ -1,5 +1,4 @@
 import React from 'react';
-import CloseButton from "../UI/Buttons/CloseButton";
 import 'styles/modal/Modal.scss';
 
 const Modal = ({opened, closeModal, children}) => {

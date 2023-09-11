@@ -1,36 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9b37537a-6286-4d32-9202-d8554b8ac243" name="Changes" comment="Added masonry">
-      <change afterPath="$PROJECT_DIR$/src/components/Navigation/Sidebar/SidebarItem.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Navigation/Sidebar/SidebarList.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/UI/Buttons/BurgerButton.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Utils/GooglePicker.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/store/reducers/location.js" afterDir="false" />
+    <list default="true" id="9b37537a-6286-4d32-9202-d8554b8ac243" name="Changes" comment="Base UI">
+      <change afterPath="$PROJECT_DIR$/src/components/Modal/Context/Context.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Modal/Context/ContextActions.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Modal/Context/ContextItem.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Navigation/Sidebar/Sidebar.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/UI/Buttons/ButtonComponent.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/styles/entry/info.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/styles/item/item.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/styles/modal/context/Context.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/styles/navigation/sidebar/Sidebar.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/styles/navigation/sidebar/SidebarItem.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/styles/navigation/sidebar/SidebarList.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/svg/burger.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/svg/burger.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/svg/cross.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/svg/cross.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/svg/textfield/font-decrease.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/svg/textfield/font-increase.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/svg/textfield/text-center.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/svg/textfield/text-left.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/svg/textfield/weight.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Entry/Entry.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Entry/Entry.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Entry/EntryList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Entry/EntryList.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Navigation/AppRouter.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navigation/AppRouter.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Navigation/Navbar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navigation/Navbar.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Navigation/Sidebar.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Pages/ListView.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Pages/ListView.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/UI/Buttons/CloseButton.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UI/Buttons/CloseButton.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hooks/useMyLocation.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/router/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scripts/network/requests.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/scripts/network/requests.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/reducers/entrys.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/reducers/entrys.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/store.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/mixins.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/mixins.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/navigation/Navbar.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/navigation/Navbar.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Modal/Modal.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Modal/Modal.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/UI/Buttons/BurgerButton.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/UI/Buttons/CloseButton.jsx" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -113,7 +99,7 @@
       <workItem from="1694263933841" duration="46505000" />
       <workItem from="1694368130763" duration="675000" />
       <workItem from="1694423482680" duration="5599000" />
-      <workItem from="1694429444635" duration="9083000" />
+      <workItem from="1694429444635" duration="10194000" />
     </task>
     <task id="LOCAL-00001" summary="Initial">
       <created>1693824071090</created>
@@ -164,7 +150,14 @@
       <option name="project" value="LOCAL" />
       <updated>1694351382107</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Base UI">
+      <created>1694454165561</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1694454165561</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -184,6 +177,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial" />
     <MESSAGE value="Added masonry" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added masonry" />
+    <MESSAGE value="Base UI" />
+    <option name="LAST_COMMIT_MESSAGE" value="Base UI" />
   </component>
 </project>
