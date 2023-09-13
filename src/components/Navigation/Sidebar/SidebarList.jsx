@@ -1,16 +1,16 @@
 import React from 'react';
 import SidebarItem from "./SidebarItem";
 
-const SidebarList = ({pages}) => {
+const SidebarList = React.forwardRef(function SidebarList({pages, callback, ...props}, ref) {
     return (
-        <div className="sidebar__list">
+        <div className="sidebar__list" {...props} ref={ref}>
             {
                 pages.map((page, index) =>
-                    <SidebarItem page={page} key={index}></SidebarItem>
+                    <SidebarItem currentCallback={callback} page={page} key={index}></SidebarItem>
                 )
             }
         </div>
     );
-};
+});
 
 export default SidebarList;

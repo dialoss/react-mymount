@@ -1,10 +1,11 @@
 import React from 'react';
+import {initPicker} from "scripts/network/picker";
+import {showPicker} from "scripts/network/picker";
 
-const GooglePicker = () => {
+const GooglePicker = ({text, ...props}) => {
+    initPicker();
     return (
-        <div>
-            
-        </div>
+        <button {...props} onClick={() => showPicker(null)}>{text}</button>
     );
 };
 

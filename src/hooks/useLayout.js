@@ -1,12 +1,12 @@
-import {useEffect, useState} from "react";
+import {useEffect, useLayoutEffect, useState} from "react";
 
 export const useLayout = (dims, ref) => {
-    const [dimensions, setDimensions] = useState(dims);
+    const [height, setHeight] = useState(0);
 
     useEffect(() => {
         let curWidth = ref.current.getBoundingClientRect().width;
-        let curHeight = curWidth * dimensions.height / dimensions.width;
-        setDimensions({width:curWidth, height: curHeight, changed:true});
+        let curHeight = curWidth * dims.height / dims.width;
+        setHeight(curHeight);
     }, []);
-    return dimensions;
+    return [height, setHeight];
 }

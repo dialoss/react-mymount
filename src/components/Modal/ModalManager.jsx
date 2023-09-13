@@ -23,7 +23,7 @@ const ModalManager = ({content}) => {
     });
 
     return (
-        <Modal closeModal={closeModal} opened={modalOpened}>{content}</Modal>
+        <Modal modalStyles={content.style} closeModal={closeModal} opened={modalOpened}>{content.data}</Modal>
     );
 };
 

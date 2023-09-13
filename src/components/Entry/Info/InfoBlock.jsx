@@ -1,15 +1,11 @@
 import React from 'react';
 import InfoParagraph from "./InfoParagraph";
 import 'styles/entry/info.scss';
+import dayjs from "dayjs";
 
 const InfoBlock = ({data}) => {
-    const dateFormat = new Date(data.date);
-    const formattedDate = dateFormat.toLocaleDateString('en-GB', {
-        year: 'numeric',
-        month: '2-digit',
-        day: '2-digit',
-    }).split('/').reverse().join('-');
-    return (
+   const formattedDate = dayjs(data.date).format("hh:mm DD.MM.YYYY");
+   return (
         <div className="info__block">
             <div className="info__block-inner">
                 {data.title && <InfoParagraph type={'title'}>{data.title}</InfoParagraph>}

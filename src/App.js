@@ -1,29 +1,23 @@
-import React, {useEffect, useState} from "react";
-import './styles/App.scss';
-import Navbar from "./components/Navigation/Navbar";
+import React from "react";
+import 'styles/App.scss';
+import Navbar from "components/Navigation/Navbar";
 import {BrowserRouter} from "react-router-dom";
-import ModalManager, {openModal} from "./components/Modal/ModalManager";
-import AppRouter from "./components/Navigation/AppRouter";
-import MyForm from "./components/MyForm/MyForm";
-import Footer from "./components/Footer/Footer";
-import Sidebar from "./components/Navigation/Sidebar/Sidebar";
-import {useFetching} from "./hooks/useFetching";
-import sendRequest from "./scripts/network/requests";
-import {actions, baseURL} from "./store/reducers/location";
+import ModalManager, {openModal} from "components/Modal/ModalManager";
+import AppRouter from "components/Navigation/AppRouter";
+import MyForm from "components/MyForm/MyForm";
+import Footer from "components/Footer/Footer";
+import Sidebar from "components/Navigation/Sidebar/Sidebar";
+import {actions} from "store/reducers/location";
 import {useDispatch} from "react-redux";
+import ContextMenu from "components/Modal/Context/Context";
 
 function App() {
-    const modalManager = (function() {
-        return <ModalManager content={<MyForm/>}/>
+    const formModal = (function() {
+        return <ModalManager content={{data:<MyForm/>}}/>
     })();
-    const [pages, setPages] = useState([]);
-    const [appData, s1, s2] = useFetching(async () => {
-        const response = await sendRequest(baseURL + '/get_static_data/', {});
-        setPages(response.pages);
-    });
-    useEffect(() => {
-        appData();
-    }, []);
+    const contextModal = (function() {
+        return <ModalManager content={{data:<ContextMenu/>}}/>
+    })();
 
     const dispatch = useDispatch();
     dispatch(actions.setLocation());
@@ -37,11 +31,12 @@ function App() {
                         <AppRouter></AppRouter>
                     </BrowserRouter>
                     <button onClick={openModal}>open</button>
-                    {modalManager}
                 </div>
             </div>
-            <Sidebar pagesTree={pages}/>
-            <Footer totalViews={0} curViews={0}/>
+            {formModal}
+            {contextModal}
+            {/*<Sidebar/>*/}
+            <Footer/>
         </div>
     );
 }

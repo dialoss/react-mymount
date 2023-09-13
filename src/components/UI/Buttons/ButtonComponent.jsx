@@ -1,15 +1,16 @@
 import React from 'react';
+import styles from 'styles/ui/ActionButton.module.scss';
 import burger from 'assets/svg/burger.svg';
 import cross from 'assets/svg/cross.svg';
 
 const ComponentSVG = {
-    'burger': burger,
-    'cross': cross,
+    'open': burger,
+    'close': cross,
 }
 
-const ButtonComponent = ({type, callback}) => {
+const ButtonComponent = ({type, callback, ...props}) => {
     return (
-        <button className={`action-button ${type}-btn`} onClick={callback}>
+        <button {...props} className={`action-button ${styles.button} ${type}-btn`} onClick={callback}>
             <img src={ComponentSVG[type]} alt={""}/>
         </button>
     );

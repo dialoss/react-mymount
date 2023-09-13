@@ -1,20 +1,23 @@
-import React from 'react';
+import React, {useContext, useEffect, useRef, useState} from 'react';
 import InfoBlock from "../Info/InfoBlock";
 import 'styles/item/item.scss';
 import ItemData from "./ItemData/ItemData";
-import {useLayout} from "hooks/useLayout";
+import {ThemeContext} from "../../Pages/ListView";
 
-const EntryItem = ({item}) => {
-    const ref = React.createRef();
-    const dimensions = useLayout({width:item.media_width, height:item.media_height, changed:false}, ref);
+const EntryItem = ({item, container}) => {
+    const listStyle = useContext(ThemeContext);
+    const [height, setHeight] = useState(0);
+    // const [height, setHeight] = useLayout({width:item.media_width, height:item.media_height}, container);
+    const mounted = useRef(null);
+    useEffect(() => {
+        let curWidth = container.current.getBoundingClientRect().width;
+        let curHeight = curWidth * item.media_height / item.media_width;
+        setHeight(curHeight);
+    });
 
     return (
-        <div className={"item__wrapper "} ref={ref}
-             style={dimensions.changed ? {
-                 width:`${dimensions.width}px`,
-                 height:`${dimensions.height}px`,
-             } : {}}>
-
+        <div className={listStyle.item__wrapper} style={{height: (height === -1 ? "auto" : height + "px")}}>
+        {/* <div className={listStyle.item__wrapper} >*/}
             <div className={`item-${item.id} item item-${item.type}`}>
                 <ItemData data={item}></ItemData>
                 <InfoBlock data={{

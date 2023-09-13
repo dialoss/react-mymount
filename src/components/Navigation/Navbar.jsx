@@ -1,15 +1,24 @@
 import React from 'react';
 import NavButton from "components/Navigation/NavButton";
 import 'styles/navigation/Navbar.scss';
-import {routes} from "router/index";
 import {useSelector} from "react-redux";
+
+const NavbarRoutes = [
+    {path:'/main/',         text:'главная'},
+    {path:'/models/',       text:'модели'},
+    {path:'/orders/',       text:'заказы'},
+    {path:'/parts/',        text:'детали'},
+    {path:'/blueprints/',   text:'чертежи'},
+    {path:'/shop/',         text:'в продаже'},
+]
 
 const Navbar = () => {
     const location = useSelector((state) => state.location);
     return (
         <div className={"navbar"}>
-            {routes.map((navData, index) => {
-                return <NavButton active={location.relativeURL === navData.path} navData={navData} key={index}/>
+            {NavbarRoutes.map((navData, index) => {
+                const isActive = (location.relativeURL.split('/')[1] === navData.path.split('/')[1]);
+                return <NavButton active={isActive} navData={navData} key={index}/>
             })}
         </div>
     );

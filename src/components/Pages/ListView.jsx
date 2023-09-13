@@ -1,67 +1,81 @@
-import React, {useEffect, useMemo} from 'react';
+import React, {useCallback, useEffect, useLayoutEffect, useMemo, useState} from 'react';
 import EntryList from "components/Entry/EntryList";
 import sendRequest from "scripts/network/requests";
 import {useFetching} from "hooks/useFetching";
 import PageLoading from "./PageLoading";
-import {useDispatch, useSelector} from "react-redux";
-import {actions} from "store/reducers/entrys";
+import {useSelector} from "react-redux";
 import {baseURL} from "store/reducers/location";
 
-function sleep(ms) {
-    return new Promise(resolve => setTimeout(resolve, ms));
-}
+export const ThemeContext = React.createContext({});
 
-const ListView = () => {
-    const dispatch = useDispatch();
-    const entrys = useSelector((state) => state.entrys.entrys);
-    const entrysAmount = useSelector((state) => state.entrys.entrysAmount);
+const ListView = ({listStyle}) => {
+    let entrysWrapper = [];
+    const [entrys, setEntrys] = useState([]);
     const location = useSelector((state) => state.location);
-
-
 
     let curPage = {
         page_url: location.relativeURL,
         page_slug: location.pageSlug,
     }
     let sendData = {
-        url: baseURL + '/ajax/',
+        url: baseURL + '/fetch_entrys/',
         data: {
             ...curPage
         }
     };
 
+    let entrysAmount = 0;
+
     const [fetchEntrys, loading, setLoading] = useFetching(async () => {
         const response = await sendRequest(sendData.url, sendData.data)
-        dispatch(actions.addEntrys(response.entrys_data));
-        window.entrysAmount = response.entrys_amount;
-        dispatch(actions.setAmount(response.entrys_amount));
+        addEntrys(response);
     });
 
+    function addEntrys(response) {
+        entrysWrapper = [...entrysWrapper, ...response.entrys_data]
+        setEntrys(entrysWrapper);
+        entrysAmount = response.entrys_amount;
+    }
+
+    function check(cur) {
+        return (cur >= entrysAmount);
+    }
+
     const fetchEntrysAll = async () => {
-        let step = 5;
+        let step = 10;
         let cur = 0;
         while (true) {
+            if (cur / step === 2) step = 20;
             sendData.data = {
                 ...curPage,
-                data_start: cur * step,
-                data_end: (cur + 1) * step
-            }
+                data_start: cur,
+                data_end: cur + step,
+            };
             await fetchEntrys();
-            cur += 1;
-            if (cur >= window.entrysAmount / step) break;
+            cur += step;
+            if (check(cur)) break;
         }
         setLoading(false);
     }
 
+    useEffect(()=>{
+        console.log('mount');
+    }, [location])
+
     useEffect(() => {
-        dispatch(actions.clearEntrys());
         fetchEntrysAll();
+        // console.log(t)
+        // return () => {
+            // console.log("unmount", t);
+        // }
     }, [location]);
 
     return (
         <div>
-            <EntryList entrys={entrys}></EntryList>
-            {loading && <PageLoading/>}
+            <ThemeContext.Provider value={listStyle}>
+                <EntryList entrys={entrys}></EntryList>
+                {loading && <PageLoading/>}
+            </ThemeContext.Provider>
         </div>
     );
 };

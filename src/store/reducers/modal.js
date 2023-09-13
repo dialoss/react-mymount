@@ -3,7 +3,7 @@ import {createSlice} from "@reduxjs/toolkit";
 export const changeModal = createSlice({
     name: "modal",
     initialState: {
-        modalOpened: false
+        modalsOpened: []
     },
     reducers: {
         toggleModal: (state, {payload: modalOpened}) => {

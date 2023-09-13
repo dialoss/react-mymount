@@ -1,9 +1,9 @@
 import React from 'react';
 import 'styles/modal/Modal.scss';
 
-const Modal = ({opened, closeModal, children}) => {
+const Modal = ({opened, closeModal, modalStyles, children}) => {
     return (
-        <div className="modal">
+        <div className={"modal"} style={modalStyles}>
             <div className={"modal__wrapper " + (opened ? "opened" : "")}>
                 <div className="modal__background" onClick={(event) => {
                     event.stopPropagation();

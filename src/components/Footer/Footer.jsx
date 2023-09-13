@@ -1,7 +1,9 @@
 import React from 'react';
 import 'styles/pages/footer.scss';
+import {useSelector} from "react-redux";
 
-const Footer = ({totalViews, curViews}) => {
+const Footer = () => {
+    const views = useSelector(state => state.location.views);
     return (
         <footer className="footer">
             <div className="footer__wrapper">
@@ -21,10 +23,10 @@ const Footer = ({totalViews, curViews}) => {
                         <div className="footer__info">
                             <div className="footer__counter">
                                 <p className="footer__text">
-                                    {totalViews}
+                                    {views.totalViews}
                                 </p>
                                 <p className="footer__text">
-                                    {curViews}
+                                    {views.curViews}
                                 </p>
                             </div>
                         </div>
