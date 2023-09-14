@@ -3,8 +3,8 @@ import CarouselNavArrow from "./CarouselNavArrow";
 
 const CarouselNavbar = ({side}) => {
     return (
-        <div className="carousel__nav-bar">
-            <CarouselNavArrow direction={side}></CarouselNavArrow>
+        <div className={"carousel__nav-bar " +  "carousel__nav-bar--" + side}>
+            <CarouselNavArrow side={side}></CarouselNavArrow>
         </div>
     );
 };

@@ -1,0 +1,36 @@
+@import "./parent.module.scss";
+
+:export {
+    masonry: 1;
+}
+
+.item__wrapper {
+    padding: 5px;
+}
+
+.entry {
+    background-color: white;
+    box-shadow: none;
+    border-radius: 0;
+    height: auto;
+
+    &__items {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+
+    &:hover {
+        opacity: 1;
+        background-color: white;
+        cursor: default;
+    }
+
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+}

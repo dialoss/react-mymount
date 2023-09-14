@@ -1,10 +1,10 @@
 import React from 'react';
 import rightArrow from 'assets/svg/right.svg';
 
-const CarouselNavArrow = ({direction}) => {
+const CarouselNavArrow = ({side}) => {
     return (
-        <button>
-            <img style={{transform:`scale(${direction})`}} src={rightArrow} alt=""/>
+        <button className={"carousel__nav-btn"} onClick={() => changeCarousel(side)}>
+            <img src={rightArrow} alt=""/>
         </button>
     );
 };

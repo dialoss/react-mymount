@@ -1,6 +1,13 @@
 @import '../constants';
 
 .modal {
+    &__window {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+
     &__wrapper {
         width: 100vw;
         height: 100vh;
@@ -26,25 +33,5 @@
         height: 200vh;
         left: 50%;
         top: 50%;
-    }
-    
-    &__window {
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
-        height: auto;
-        max-width: 90vw;
-        min-width: 30vw;
-        max-height: 95vh;
-        background-color: white;
-        border-radius: 8px;
-        overflow-y: auto;
-
-        @media only screen and (max-width: 700px) {
-            & {
-                width: 95vw;
-            }
-        }
     }
 }

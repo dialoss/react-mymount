@@ -1,5 +1,5 @@
 import {createSlice} from "@reduxjs/toolkit";
-import {emptyForm} from "../../components/MyForm/FormData";
+import {emptyForm} from "components/MyForm/FormData";
 
 export const changeForm = createSlice({
     name: "form",

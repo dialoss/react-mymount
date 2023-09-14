@@ -3,6 +3,7 @@ import InfoBlock from "../Info/InfoBlock";
 import 'styles/item/item.scss';
 import ItemData from "./ItemData/ItemData";
 import {ThemeContext} from "../../Pages/ListView";
+import ItemFile from "./ItemData/ItemFile";
 
 const EntryItem = ({item, container}) => {
     const listStyle = useContext(ThemeContext);
@@ -17,7 +18,6 @@ const EntryItem = ({item, container}) => {
 
     return (
         <div className={listStyle.item__wrapper} style={{height: (height === -1 ? "auto" : height + "px")}}>
-        {/* <div className={listStyle.item__wrapper} >*/}
             <div className={`item-${item.id} item item-${item.type}`}>
                 <ItemData data={item}></ItemData>
                 <InfoBlock data={{
@@ -25,6 +25,7 @@ const EntryItem = ({item, container}) => {
                     filename:item.filename,
                     description:item.media_description,
                 }}></InfoBlock>
+                {item.file && <ItemFile data={item.file_data}></ItemFile>}
             </div>
             <div className="item__transform item__resize item__resize--right"></div>
             <div className="item__transform item__resize item__resize--left"></div>

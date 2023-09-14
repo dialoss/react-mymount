@@ -1,30 +1,55 @@
 import React from 'react';
 import useKeypress from "react-use-keypress";
 import Modal from "./Modal";
-import {useDispatch, useSelector} from "react-redux";
+import MyForm from "../MyForm/MyForm";
+import {useDispatch} from "react-redux";
 import {actions} from "store/reducers/modal";
+import {changeModal, closeAllModals} from "components/Modal/changeModal";
+import ContextMenu from "components/ContextMenu/ContextMenu";
+import Carousel from "../Carousel/Carousel";
 
-let dispatch = null;
+const ModalManager = () => {
+    const modals = [
+        {
+            name: 'form',
+            content: <MyForm/>,
+            style: {},
+        },
+        {
+            name: 'context',
+            content: <ContextMenu/>,
+            style: {
+                bg: {
+                    backgroundColor: "rgba(0,0,0,0)",
+                },
+                win: {
+                    transform: "translate(0,0)"
+                }
+            },
+        },
+        {
+            name: 'carousel',
+            content: <Carousel/>,
+            style: {},
+        }
+    ]
 
-export function openModal() {
-    dispatch(actions.toggleModal(true));
-}
+    const dispatch = useDispatch();
 
-export function closeModal() {
-    dispatch(actions.toggleModal(false));
-}
-
-const ModalManager = ({content}) => {
-    const modalOpened = useSelector((state) => state.modal.modalOpened);
-    dispatch = useDispatch();
-
-    useKeypress('Escape', () => {
-        closeModal();
+    useKeypress('Escape', (event) => {
+        closeAllModals();
     });
 
     return (
-        <Modal modalStyles={content.style} closeModal={closeModal} opened={modalOpened}>{content.data}</Modal>
+        <div className={"modal-manager"}>
+            {
+                modals.map((modal, index) => {
+                    dispatch(actions.addModal(modal.name));
+                    return <Modal modal={modal} key={index}></Modal>
+                })
+            }
+        </div>
     );
-};
+}
 
 export default ModalManager;

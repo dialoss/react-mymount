@@ -2,23 +2,15 @@ import React from "react";
 import 'styles/App.scss';
 import Navbar from "components/Navigation/Navbar";
 import {BrowserRouter} from "react-router-dom";
-import ModalManager, {openModal} from "components/Modal/ModalManager";
 import AppRouter from "components/Navigation/AppRouter";
-import MyForm from "components/MyForm/MyForm";
 import Footer from "components/Footer/Footer";
 import Sidebar from "components/Navigation/Sidebar/Sidebar";
 import {actions} from "store/reducers/location";
 import {useDispatch} from "react-redux";
-import ContextMenu from "components/Modal/Context/Context";
+import ModalManager from "components/Modal/ModalManager";
+import {changeModal} from "./components/Modal/changeModal";
 
 function App() {
-    const formModal = (function() {
-        return <ModalManager content={{data:<MyForm/>}}/>
-    })();
-    const contextModal = (function() {
-        return <ModalManager content={{data:<ContextMenu/>}}/>
-    })();
-
     const dispatch = useDispatch();
     dispatch(actions.setLocation());
 
@@ -30,13 +22,12 @@ function App() {
                         <Navbar></Navbar>
                         <AppRouter></AppRouter>
                     </BrowserRouter>
-                    <button onClick={openModal}>open</button>
+                    <button onClick={() => changeModal('form', {isOpened:true})}>open</button>
                 </div>
             </div>
-            {formModal}
-            {contextModal}
-            {/*<Sidebar/>*/}
+            <Sidebar/>
             <Footer/>
+            <ModalManager/>
         </div>
     );
 }

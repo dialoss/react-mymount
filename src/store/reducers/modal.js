@@ -1,13 +1,20 @@
 import {createSlice} from "@reduxjs/toolkit";
 
 export const changeModal = createSlice({
-    name: "modal",
-    initialState: {
-        modalsOpened: []
-    },
+    name: "modals",
+    initialState: {},
     reducers: {
-        toggleModal: (state, {payload: modalOpened}) => {
-            state.modalOpened = modalOpened;
+        toggleModal: (state, {payload: {name, modalState}}) => {
+            state[name].isOpened = modalState;
+        },
+        addModal: (state, {payload: name}) => {
+            state[name] = {
+                isOpened: false,
+                position: {},
+            }
+        },
+        changeModal: (state, {payload: {name, changes}}) => {
+            state[name] = {...state[name], ...changes};
         }
     }
 });

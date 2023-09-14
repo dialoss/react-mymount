@@ -1,42 +1,60 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9b37537a-6286-4d32-9202-d8554b8ac243" name="Changes" comment="Added context menu">
-      <change afterPath="$PROJECT_DIR$/src/components/Navigation/Sidebar/SidebarLink.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/scripts/network/picker.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/scripts/utils/rgbmanip.js" afterDir="false" />
+    <list default="true" id="9b37537a-6286-4d32-9202-d8554b8ac243" name="Changes" comment="Fixes">
+      <change afterPath="$PROJECT_DIR$/src/components/Modal/changeModal.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/MyForm/FormElements/FormButton.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/MyForm/FormElements/FormInput.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/MyForm/FormElements/FormOption.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/MyForm/FormElements/FormSelect.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/MyForm/FormElements/FormTextarea.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/MyForm/FormElements/FormUpload.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/scripts/utils/correctElementPosition.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/scripts/utils/files.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/styles/entry/entry.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/styles/form/form-elements/FormOption.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/styles/listview/child.module.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/styles/listview/parent.module.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/styles/modal/context/ContextMenu.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/styles/ui/ActionButton.module.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Entry/Entry.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Entry/Entry.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Entry/EntryList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Entry/EntryList.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Entry/Info/InfoBlock.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Entry/Info/InfoBlock.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Carousel/CarouselNav.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Carousel/CarouselNav.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Carousel/CarouselNavArrow.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Carousel/CarouselNavArrow.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Carousel/CarouselNavbar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Carousel/CarouselNavbar.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Carousel/ModalCarousel.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Carousel/Carousel.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Entry/Item/Item.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Entry/Item/Item.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Footer/Footer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Footer/Footer.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Modal/Context/Context.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Modal/Context/Context.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Entry/Item/ItemData/ItemImage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Entry/Item/ItemData/ItemImage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Modal/Context/Context.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ContextMenu/ContextMenu.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Modal/Context/ContextActions.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ContextMenu/ContextActions.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Modal/Context/ContextItem.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ContextMenu/ContextItem.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Modal/Modal.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Modal/Modal.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Modal/ModalElements/ModalButton.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Modal/ModalElements/ModalComponent.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/MyForm/FormElements/FormComponent.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Modal/ModalElements/ModalInput.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Modal/ModalElements/ModalOption.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Modal/ModalElements/ModalSelect.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Modal/ModalElements/ModalTextarea.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Modal/ModalElements/ModalUpload.jsx" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Modal/ModalManager.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Modal/ModalManager.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Navigation/Navbar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navigation/Navbar.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Navigation/Sidebar/Sidebar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navigation/Sidebar/Sidebar.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/MyForm/FormData.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/MyForm/FormData.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/MyForm/MyForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/MyForm/MyForm.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Navigation/Sidebar/SidebarItem.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navigation/Sidebar/SidebarItem.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Navigation/Sidebar/SidebarList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navigation/Sidebar/SidebarList.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Pages/ListView.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Pages/ListView.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/UI/Buttons/ButtonComponent.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UI/Buttons/ButtonComponent.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Utils/GooglePicker.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Utils/GooglePicker.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hooks/useLayout.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/hooks/useLayout.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/router/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scripts/network/requests.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/scripts/network/requests.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/reducers/location.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/reducers/location.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hooks/useLayout.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/reducers/changeform.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/reducers/changeform.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/reducers/entrys.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/store/reducers/modal.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/reducers/modal.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/entry/entry.module.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/item/item.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/item/item.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/store.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/form/MyForm.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/form/MyForm.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/mixins.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/mixins.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/styles/modal/Modal.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/modal/Modal.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/styles/modal/context/Context.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/modal/context/Context.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/navigation/Navbar.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/navigation/Navbar.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/navigation/sidebar/Sidebar.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/navigation/sidebar/Sidebar.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/ui/CloseButton.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/modal/modal-elements/ModalButton.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/form/form-elements/FormButton.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/modal/modal-elements/ModalInput.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/form/form-elements/FormInput.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/modal/modal-elements/ModalOption.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/carousel/changeCarousel.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/modal/modal-elements/ModalSelect.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/form/form-elements/FormSelect.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/modal/modal-elements/ModalTextarea.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/form/form-elements/FormTextarea.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/modal/modal-elements/ModalUpload.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/form/form-elements/FormUpload.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,29 +83,36 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Programming/react-mymount/src/store/reducers&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
-    &quot;nodejs_interpreter_path&quot;: &quot;node&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;settings.javascript.linters.eslint&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;C:\\Program Files\\JetBrains\\WebStorm 2022.2\\plugins\\JavaScriptLanguage\\jsLanguageServicesImpl\\external&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "D:/Programming/react-mymount/src/hooks",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.standard": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.standard": "",
+    "nodejs_interpreter_path": "node",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "settings.javascript.linters.eslint",
+    "ts.external.directory.path": "C:\\Program Files\\JetBrains\\WebStorm 2022.2\\plugins\\JavaScriptLanguage\\jsLanguageServicesImpl\\external",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Programming\react-mymount\src\hooks" />
+      <recent name="D:\Programming\react-mymount\src\components\Modal\Context" />
       <recent name="D:\Programming\react-mymount\src\store\reducers" />
       <recent name="D:\Programming\react-mymount\src\components\UI\Buttons" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Programming\react-mymount\src\components" />
+      <recent name="D:\Programming\react-mymount\src\scripts\utils" />
+      <recent name="D:\Programming\react-mymount\src\components\Modal" />
     </key>
   </component>
   <component name="RunManager" selected="npm.npm start">
@@ -120,7 +145,7 @@
       <workItem from="1694368130763" duration="675000" />
       <workItem from="1694423482680" duration="5599000" />
       <workItem from="1694429444635" duration="45986000" />
-      <workItem from="1694596706586" duration="11340000" />
+      <workItem from="1694596706586" duration="36635000" />
     </task>
     <task id="LOCAL-00001" summary="Initial">
       <created>1693824071090</created>
@@ -185,7 +210,14 @@
       <option name="project" value="LOCAL" />
       <updated>1694455022657</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Fixes">
+      <created>1694618243826</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1694618243826</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -207,18 +239,7 @@
     <MESSAGE value="Added masonry" />
     <MESSAGE value="Base UI" />
     <MESSAGE value="Added context menu" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added context menu" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/components/Entry/Info/InfoBlock.jsx</url>
-          <line>13</line>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="18" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="Fixes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixes" />
   </component>
 </project>

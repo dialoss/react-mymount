@@ -42,7 +42,6 @@
  @mixin custom-scrollbar {
     &::-webkit-scrollbar {
         width: 20px;
-        // display: block;
     }
     
     &::-webkit-scrollbar-thumb {

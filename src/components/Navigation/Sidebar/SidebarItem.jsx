@@ -31,9 +31,6 @@ const SidebarItem = ({page, currentCallback}) => {
     const haveSublist = !!sublist.length;
     const location = useSelector((state) => state.location);
     const isCurrent = (location.relativeURL === page.link);
-    if (isCurrent && currentCallback) {
-        currentCallback();
-    }
 
     useEffect(() => {
         if (!mounted.current) {
@@ -45,6 +42,12 @@ const SidebarItem = ({page, currentCallback}) => {
             }
         }
     });
+
+    useEffect(() => {
+        if (isCurrent && currentCallback) {
+            currentCallback();
+        }
+    }, [])
 
     return (
         <div className="sidebar__item">

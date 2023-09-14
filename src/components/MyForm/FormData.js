@@ -16,6 +16,13 @@ export const emptyForm = [
     {...new FormField("new_page_slug",  'Название страницы', ['required'], 'input', '')},
     {...new FormField("description",    'Описание',   [],           'textarea', '')},
     {...new FormField("title",          'Заголовок',  [],           'textarea', '')},
-    {...new FormField("textfields",   'Количество текстовых полей', {},'input','0')},
-    {...new FormField("price",        'Цена',       [],             'input', '')}
+    {...new FormField("textfields",   'Количество текстовых полей', [],'input','0')},
+    {...new FormField("price",        'Цена',       [],             'input', '')},
+    {...new FormField("settings",        'Изменить значения', [
+            {name:'empty',          value:'---'},
+            {name:'toggle_date',    value:''},
+            {name:'toggle_shadow',  value:''},
+            {name:'clear_position', value:'Сбросить расположение'},
+            {name:'clear_size',     value:'Сбросить размер'},
+            {name:'clear_data',     value:'Стереть данные'}],'select', '')}
 ];

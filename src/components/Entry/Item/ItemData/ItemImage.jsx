@@ -1,12 +1,16 @@
 import React from 'react';
-import ItemFile from "./ItemFile";
 import 'styles/item/itemImage.scss';
+import {changeModal} from "components/Modal/changeModal";
 
 const ItemImage = ({data}) => {
     return (
-        <div className="item__image">
+        <div className="item__image" onClick={() =>
+            changeModal('carousel', {
+                isOpened: true,
+                currentImage: data.img,
+                imageText:
+            })}>
             <img src={data.img} alt="" className="item__data"/>
-            {data.file && <ItemFile data={data.file_data}></ItemFile>}
         </div>
     );
 };
