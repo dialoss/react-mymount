@@ -6,6 +6,7 @@
         margin: 0 auto;
         word-wrap: break-word; 
         word-break: normal;
+        text-align: center;
         font-size: 18px;
 
         &:empty {
@@ -27,7 +28,6 @@
         &-description {
             width: 100%;
             white-space: pre-line;
-            text-align: center;
             text-indent: 0;
         }
 

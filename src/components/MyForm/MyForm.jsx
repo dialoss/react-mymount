@@ -7,6 +7,7 @@ import FormComponent from "components/MyForm/FormElements/FormComponent";
 import {useSelector} from "react-redux";
 import {changeModal} from "../Modal/changeModal";
 import ButtonComponent from "../UI/Buttons/ButtonComponent";
+import {submitForm} from "scripts/network/requests";
 
 const FormBlock = ({formField, id}) => {
     return (

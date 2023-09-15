@@ -5,18 +5,23 @@ import {connect, useSelector} from "react-redux";
 import "styles/carousel/Carousel.scss";
 import ButtonComponent from "../UI/Buttons/ButtonComponent";
 import {changeModal} from "components/Modal/changeModal";
+import useKeypress from "react-use-keypress";
+import {changeCarousel} from "./changeCarousel";
 
 const Carousel = () => {
-    const carouselState = useSelector(state => state.modal['carousel']);
-    // const carouselState = this.props.carousel;
-    const currentImage = carouselState.currentImage || "";
-    const imageText = carouselState.imageText || {};
-    console.log(carouselState);
+
+    useKeypress('ArrowRight', () => changeCarousel("right"));
+    useKeypress('ArrowLeft', () => changeCarousel("left"));
+
+    const carouselState = useSelector(state => state.modal['carousel'].currentSlide);
+
+    const image = carouselState.image || "";
+    const info = carouselState.info || {};
     return (
         <div className="carousel">
             <div className="carousel__content">
-                <img className="carousel__image" src={currentImage} alt=""/>
-                <InfoBlock data={imageText}></InfoBlock>
+                <img className="carousel__image" src={image} alt=""/>
+                <InfoBlock data={info}></InfoBlock>
             </div>
             <CarouselNav></CarouselNav>
             <ButtonComponent callback={() => changeModal('carousel', {isOpened:false})}
@@ -31,4 +36,4 @@ function mapStateToProps(state) {
     };
 }
 
-export default connect(mapStateToProps)(Carousel);
+export default Carousel;

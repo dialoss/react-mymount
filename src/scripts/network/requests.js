@@ -26,5 +26,7 @@ export async function sendLocalRequest(request, data) {
 }
 
 export async function submitForm(form) {
-    await sendLocalRequest('/change_entry/', form);
+    let sendForm = {};
+    Object.keys(form).forEach((field) => sendForm[field] = form[field].value);
+    await sendLocalRequest('/change_entry/', sendForm);
 }

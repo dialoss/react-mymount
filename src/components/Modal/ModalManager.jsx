@@ -36,8 +36,7 @@ const ModalManager = () => {
             content: <Carousel/>,
             style: {},
             fields: {
-                currentImage: 0,
-                imageList: []
+                currentSlide: {}
             },
         }
     ]

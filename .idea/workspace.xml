@@ -2,43 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9b37537a-6286-4d32-9202-d8554b8ac243" name="Changes" comment="General modal fixes">
-      <change afterPath="$PROJECT_DIR$/src/components/ContextMenu/ContextActions.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/MyForm/FormData.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/store/reducers/entrys.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/svg/right.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/svg/right.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Carousel/Carousel.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Carousel/Carousel.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Carousel/CarouselNavArrow.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Carousel/CarouselNavArrow.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ContextMenu/ContextActions.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ContextMenu/ContextMenu.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ContextMenu/ContextMenu.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Carousel/changeCarousel.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Carousel/changeCarousel.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ContextMenu/ContextActions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ContextMenu/ContextActions.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Entry/Entry.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Entry/Entry.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Entry/Info/InfoBlock.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Entry/Info/InfoBlock.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Entry/Item/ItemData/ItemImage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Entry/Item/ItemData/ItemImage.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Modal/Modal.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Modal/Modal.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Modal/ModalManager.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Modal/ModalManager.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Modal/changeModal.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Modal/changeModal.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/MyForm/FormData.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/MyForm/FormData.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/MyForm/FormElements/FormComponent.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/MyForm/FormElements/FormComponent.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/MyForm/FormElements/FormUpload.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/MyForm/FormElements/FormUpload.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/MyForm/MyForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/MyForm/MyForm.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Navigation/AppRouter.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navigation/AppRouter.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Navigation/Sidebar/Sidebar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navigation/Sidebar/Sidebar.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Navigation/Sidebar/SidebarItem.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navigation/Sidebar/SidebarItem.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Pages/ListView.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Pages/ListView.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/UI/Buttons/ButtonComponent.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UI/Buttons/ButtonComponent.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Utils/GooglePicker.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Utils/GooglePicker.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scripts/network/picker.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/scripts/network/picker.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/scripts/network/requests.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/scripts/network/requests.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/reducers/changeform.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/reducers/location.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/reducers/location.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/reducers/modal.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/reducers/modal.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/store/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/store.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/App.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/App.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/carousel/changeCarousel.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Carousel/changeCarousel.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/styles/entry/info.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/entry/info.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/form/MyForm.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/form/MyForm.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/modal/Modal.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/modal/Modal.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/modal/context/ContextMenu.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/modal/context/ContextMenu.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/navigation/sidebar/Sidebar.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/navigation/sidebar/Sidebar.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,30 +43,30 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Programming/react-mymount/src/hooks&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
-    &quot;nodejs_interpreter_path&quot;: &quot;node&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;settings.javascript.linters.eslint&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;C:\\Program Files\\JetBrains\\WebStorm 2022.2\\plugins\\JavaScriptLanguage\\jsLanguageServicesImpl\\external&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "D:/Programming/react-mymount/src/store/reducers",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.standard": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.standard": "",
+    "nodejs_interpreter_path": "node",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "settings.javascript.linters.eslint",
+    "ts.external.directory.path": "C:\\Program Files\\JetBrains\\WebStorm 2022.2\\plugins\\JavaScriptLanguage\\jsLanguageServicesImpl\\external",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Programming\react-mymount\src\store\reducers" />
       <recent name="D:\Programming\react-mymount\src\hooks" />
       <recent name="D:\Programming\react-mymount\src\components\Modal\Context" />
-      <recent name="D:\Programming\react-mymount\src\store\reducers" />
       <recent name="D:\Programming\react-mymount\src\components\UI\Buttons" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -131,6 +107,7 @@
       <workItem from="1694423482680" duration="5599000" />
       <workItem from="1694429444635" duration="45986000" />
       <workItem from="1694596706586" duration="64103000" />
+      <workItem from="1694802530698" duration="4751000" />
     </task>
     <task id="LOCAL-00001" summary="Initial">
       <created>1693824071090</created>
@@ -209,7 +186,14 @@
       <option name="project" value="LOCAL" />
       <updated>1694716996391</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="General modal fixes">
+      <created>1694802561574</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1694802561574</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

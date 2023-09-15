@@ -1,6 +1,7 @@
 import {sendLocalRequest} from "scripts/network/requests";
 import {changeModal} from "components/Modal/changeModal";
 import {getFormData} from "components/MyForm/FormData";
+import store from "store/store";
 
 let actionElement = null;
 let copiedElement = null;
@@ -43,7 +44,14 @@ export function setActionElement(event) {
 }
 
 function getElementPosition(element) {
-    return 1
+    const entrys = store.getState().entrys;
+    let pos = 0;
+    entrys.forEach((entry, index) => {
+        if (entry.id === element.entry.id) {
+            pos = index;
+        }
+    });
+    return pos;
 }
 
 export const ContextActions = [

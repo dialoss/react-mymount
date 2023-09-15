@@ -27,7 +27,6 @@ const Entry = ({entry}) => {
                     }
                 </div>
                 <InfoBlock data={entry}></InfoBlock>
-
             </div>
         </div>
     );

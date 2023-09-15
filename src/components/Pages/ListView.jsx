@@ -3,11 +3,13 @@ import EntryList from "components/Entry/EntryList";
 import {sendLocalRequest} from "scripts/network/requests";
 import {useFetching} from "hooks/useFetching";
 import PageLoading from "./PageLoading";
-import {useSelector} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
+import {actions} from "store/reducers/entrys";
 
 export const ThemeContext = React.createContext({});
 
 const ListView = ({listStyle}) => {
+    const dispatch = useDispatch();
     let entrysWrapper = [];
     const [entrys, setEntrys] = useState([]);
     const location = useSelector((state) => state.location);
@@ -24,6 +26,7 @@ const ListView = ({listStyle}) => {
         entrysWrapper = [...entrysWrapper, ...response.entrys_data]
         setEntrys(entrysWrapper);
         entrysAmount = response.entrys_amount;
+        dispatch(actions.addEntrys(response.entrys_data));
     }
 
     function check(cur) {
@@ -46,17 +49,9 @@ const ListView = ({listStyle}) => {
         setLoading(false);
     }
 
-    useEffect(()=>{
-        console.log('mount');
-    }, [location])
-
     useEffect(() => {
         fetchEntrysAll();
-        // console.log(t)
-        // return () => {
-            // console.log("unmount", t);
-        // }
-    }, [location]);
+    }, []);
 
     return (
         <div>
