@@ -13,6 +13,7 @@ const InfoBlock = ({data}) => {
                     {data.date && data.show_date && <InfoParagraph type={'date'}>{formattedDate}</InfoParagraph>}
                     {data.description && <InfoParagraph type={'description'}>{data.description}</InfoParagraph>}
                 </div>
+                {data.price && <InfoParagraph type={'price'}>{data.price}</InfoParagraph>}
                 {data.filename && <InfoParagraph style={{display:"none"}} type={'filename'}>{data.filename}</InfoParagraph>}
             </div>
         </div>

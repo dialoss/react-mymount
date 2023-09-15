@@ -1,4 +1,3 @@
-import {actions} from "store/reducers/modal";
 import store from 'store/store';
 
 export const changeCarousel = function() {

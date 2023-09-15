@@ -14,29 +14,38 @@ const ModalManager = () => {
             name: 'form',
             content: <MyForm/>,
             style: {},
+            fields: {
+                data: {},
+            },
         },
         {
             name: 'context',
             content: <ContextMenu/>,
             style: {
                 bg: {
-                    backgroundColor: "rgba(0,0,0,0)",
+                    backgroundColor: "rgba(0,0,0,0)"
                 },
                 win: {
-                    transform: "translate(0,0)"
+                    position: "fixed"
                 }
             },
+            fields: {},
         },
         {
             name: 'carousel',
             content: <Carousel/>,
             style: {},
+            fields: {
+                currentImage: 0,
+                imageList: []
+            },
         }
     ]
 
     const dispatch = useDispatch();
 
     useKeypress('Escape', (event) => {
+        if (event.target.classList.contains("picker")) return;
         closeAllModals();
     });
 
@@ -45,6 +54,7 @@ const ModalManager = () => {
             {
                 modals.map((modal, index) => {
                     dispatch(actions.addModal(modal.name));
+                    changeModal(modal.name, modal.fields);
                     return <Modal modal={modal} key={index}></Modal>
                 })
             }

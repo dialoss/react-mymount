@@ -3,8 +3,7 @@ import SidebarList from "./SidebarList";
 import 'styles/navigation/sidebar/Sidebar.scss';
 import ButtonComponent from "components/UI/Buttons/ButtonComponent";
 import {useFetching} from "hooks/useFetching";
-import sendRequest from "scripts/network/requests";
-import {baseURL} from "store/reducers/location";
+import {sendLocalRequest} from "scripts/network/requests";
 import GooglePicker from "components/Utils/GooglePicker";
 
 const SidebarStates = {
@@ -38,7 +37,7 @@ const Sidebar = () => {
     const [pages, setPages] = useState([]);
 
     const [getPages, s1, s2] = useFetching(async () => {
-        const response = await sendRequest(baseURL + '/get_static_data/', {});
+        const response = await sendLocalRequest('/get_static_data/', {});
         setPages(response.pages);
     });
     useEffect(() => {

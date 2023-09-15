@@ -1,6 +1,5 @@
-import sendRequest from "./requests";
-import {baseURL} from "store/reducers/location";
 import {getFileType} from "../utils/files";
+import {sendLocalRequest} from "./requests";
 
 const clientId = '1024510478167-dufqr18l2g3nmt7gkr5rakc9sjk5nf54.apps.googleusercontent.com';
 const developerKey = 'AIzaSyDDqSATTGIXHgBRwl_S4mPCcATYJsISOhM';
@@ -28,12 +27,13 @@ function gisLoaded() {
 }
 
 export function showPicker(uploadField) {
+    curUploadField = uploadField;
     picker.setVisible(true);
 }
 
 async function setAll() {
     if (accessToken === '') {
-        const response = await sendRequest(baseURL + '/get_gdrive_token/', {});
+        const response = await sendLocalRequest('/get_gdrive_token/', {});
         accessToken = response.token;
     }
     const google = window.google;
@@ -56,11 +56,6 @@ async function setAll() {
         .setSize((2000, 2000))
         .enableFeature(google.picker.Feature.MULTISELECT_ENABLED)
         .build();
-
-        // if (uploadField != null) curUploadField = uploadField.parentNode.querySelector(".modal__file-text");
-    // for (const fileUploadBtn of document.querySelectorAll(".modal__file-button")) {
-    //     fileUploadBtn.onmousedown = function(){showPicker(fileUploadBtn)};
-    // }
 }
 
 async function pickerCallback(data) {
@@ -80,11 +75,9 @@ async function pickerCallback(data) {
                 // await updatePage(send_data);
             }
         }
-        // if (curUploadField != null) {
-        //     if (filesList.length) curUploadField.innerHTML = setUploadedFiles(getUploadType(curUploadField), filesList);
-        //     else curUploadField.innerHTML = "No media chosen";
-        //     curUploadField.parentNode.querySelector("input").value = JSON.stringify(filesList);
-        // }
+        if (curUploadField != null) {
+            if (filesList.length) curUploadField(filesList);
+        }
     }
 }
 

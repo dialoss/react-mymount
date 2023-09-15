@@ -8,9 +8,9 @@ const ComponentSVG = {
     'close': cross,
 }
 
-const ButtonComponent = ({type, callback, ...props}) => {
+const ButtonComponent = ({type, callback, className={}, ...props}) => {
     return (
-        <button {...props} className={`action-button ${styles.button} ${type}-btn`} onClick={callback}>
+        <button {...props} className={`action-button ${styles.button} ${type}-btn ${className}`} onClick={callback}>
             <img src={ComponentSVG[type]} alt={""}/>
         </button>
     );

@@ -16,7 +16,7 @@ const Modal = ({modal}) => {
     }, [position]);
 
     return (
-        <div className={"modal"}>
+        <div className={"modal modal-" + modal.name}>
             <div className={"modal__wrapper " + (isOpened ? "opened" : "")}>
                 <div className={"modal__background"} style={modal.style.bg}
                      onClick={(event) => {

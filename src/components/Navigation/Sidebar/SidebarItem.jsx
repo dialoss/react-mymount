@@ -1,10 +1,8 @@
 import React, {useEffect, useRef, useState} from 'react';
 import SidebarList from "./SidebarList";
 import styles from 'styles/navigation/sidebar/Sidebar.scss';
-import {Link} from "react-router-dom";
 import {darkenColor} from "scripts/utils/rgbmanip";
 import {useSelector} from "react-redux";
-import {current} from "@reduxjs/toolkit";
 
 function ListStyle(opened, height) {
     const styles = {

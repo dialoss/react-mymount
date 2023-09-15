@@ -1,5 +1,7 @@
+import {baseURL} from "store/reducers/location";
+import store from 'store/store';
 
-export default async function sendRequest(url, data) {
+export async function sendRequest(url, data) {
     let response = null;
     let emptyData = !(Boolean(Object.keys(data).length));
     const type = (!emptyData ? "POST" : "GET");
@@ -12,4 +14,17 @@ export default async function sendRequest(url, data) {
     }
     await fetch(url, query).then(res => res.json()).then(data => response = data);
     return response;
+}
+
+export async function sendLocalRequest(request, data) {
+    const location = store.getState().location;
+    if (Object.keys(data).length !== 0) {
+        data.page_url = location.relativeURL;
+        data.page_slug = location.pageSlug;
+    }
+    return await sendRequest(baseURL + request, data);
+}
+
+export async function submitForm(form) {
+    await sendLocalRequest('/change_entry/', form);
 }

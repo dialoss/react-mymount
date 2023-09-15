@@ -16,7 +16,7 @@ const Entry = ({entry}) => {
     }, []);
     return (
         <div className={listStyle.entry__wrapper}>
-            <div className={`entry-${entry.id} ${listStyle.entry} content__tab-${entry.tab_id}`}>
+            <div className={`entry-${entry.id} entry ${listStyle.entry} content__tab-${entry.tab_id}`}>
                 {entry.page_from.length > 1 && <Link className={listStyle.entry__link} to={entry.page_from}></Link>}
                 <div className={listStyle.entry__items + ' ' + listStyle[itemsClass]} ref={ref}>
                     {
@@ -27,6 +27,7 @@ const Entry = ({entry}) => {
                     }
                 </div>
                 <InfoBlock data={entry}></InfoBlock>
+
             </div>
         </div>
     );

@@ -5,7 +5,7 @@ import FormInput from "./FormInput";
 import FormTextarea from "./FormTextarea";
 import FormSelect from "./FormSelect";
 import {useDispatch, useSelector} from "react-redux";
-import {actions} from "store/reducers/changeForm";
+import {actions} from "store/reducers/modal";
 
 const Components = {
     'button': FormButton,
@@ -17,11 +17,10 @@ const Components = {
 
 const FormComponent = ({componentType, id}) => {
     let TargetComponent = Components[componentType];
+    const field = useSelector((state) => state.modal['form'].data[id]);
     const dispatch = useDispatch();
-    const field = useSelector((state) => state.form[id]);
-
     function componentCallback(event) {
-        dispatch(actions.changeField({id, value:event.target.value}));
+        dispatch(actions.changeForm( {id, value:event.target.value}));
     }
 
     return (

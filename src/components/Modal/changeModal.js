@@ -1,8 +1,8 @@
 import {actions} from "store/reducers/modal";
 import store from 'store/store';
 
-export const changeModal = function(name, payload) {
-    store.dispatch(actions.changeModal({name: name, changes: payload}));
+export const changeModal = function(name, payload, field="") {
+    store.dispatch(actions.changeModal({name: name, changes: payload, changeField: field}));
 }
 
 export const closeAllModals = function() {

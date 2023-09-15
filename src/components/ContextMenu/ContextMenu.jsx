@@ -1,20 +1,24 @@
 import React from 'react';
 import ContextItem from "./ContextItem";
-import {ContextActions} from "./ContextActions";
+import {ContextActions, handleAction, setActionElement} from "./ContextActions";
 import 'styles/modal/context/ContextMenu.scss';
 import {changeModal} from "../Modal/changeModal";
 
 const ContextMenu = () => {
     function handleMenu(action) {
-
-        action.callback();
-
+        handleAction(action);
+        changeModal('context', {isOpened: false});
     }
 
     window.addEventListener("contextmenu", event => {
         event.preventDefault();
+        setActionElement(event);
         changeModal('context', {isOpened: true, position: {
                 left: event.clientX, top: event.clientY}});
+    });
+
+    window.addEventListener("scroll", () => {
+        changeModal('context', {isOpened: false});
     });
 
     return (

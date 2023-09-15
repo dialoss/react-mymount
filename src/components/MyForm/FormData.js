@@ -1,28 +1,56 @@
-function FormField(name, text, attrs, type, value) {
-    this.name = name;
-    this.text = text;
-    this.attrs = attrs;
-    this.type = type;
-    this.value = value;
+import formData from './FormData.json';
+import store from 'store/store';
+
+function initData() {
+    let propsRefactor = {};
+    Object.values(formData.properties).forEach((field, index) => {
+        propsRefactor[field.name] = field;
+    });
+    formData.properties = propsRefactor;
 }
 
-export const emptyForm = [
-    {...new FormField('display_pos',    '',           ['hidden'],   'input', '-1')},
-    {...new FormField("tab_id",         '',           ['hidden'],   'input',  '0')},
-    {...new FormField("customer_email", 'Ваш email',  [],           'input', '')},
-    {...new FormField("customer_name",  'Ваше имя',   [],           'input', '')},
-    {...new FormField("media",          'Медиа',      [],           'upload',[])},
-    {...new FormField("files",          'Файлы',      [],           'upload',[])},
-    {...new FormField("new_page_slug",  'Название страницы', ['required'], 'input', '')},
-    {...new FormField("description",    'Описание',   [],           'textarea', '')},
-    {...new FormField("title",          'Заголовок',  [],           'textarea', '')},
-    {...new FormField("textfields",   'Количество текстовых полей', [],'input','0')},
-    {...new FormField("price",        'Цена',       [],             'input', '')},
-    {...new FormField("settings",        'Изменить значения', [
-            {name:'empty',          value:'---'},
-            {name:'toggle_date',    value:''},
-            {name:'toggle_shadow',  value:''},
-            {name:'clear_position', value:'Сбросить расположение'},
-            {name:'clear_size',     value:'Сбросить размер'},
-            {name:'clear_data',     value:'Стереть данные'}],'select', '')}
-];
+initData();
+
+function fillForm(form, element) {
+    if (element.id === -1) return form;
+    const infoBlock = element.data.querySelector(":scope > .info__block");
+    for (const field of ['description', 'title']) {
+        form.data[field].value = infoBlock.querySelector(`info__paragraph-${field}`).value;
+    }
+    return form;
+}
+
+export function getFormData(type, element) {
+    const location = store.getState().location;
+    const properties = formData.properties;
+    const formType = formData.fields[type];
+    let formFields = {};
+    if (element.item.id !== -1 && type === 'edit') {
+        let type = element.item.data.classList[2].split('-')[1];
+        formFields = formType[type];
+    }
+    else {
+        let fieldsPage = {};
+        if (location.pageParent === location.pageSlug) {
+            fieldsPage = formType['parent'];
+        } else {
+            fieldsPage = formType['child'];
+        }
+        formFields = fieldsPage[location.pageSlug];
+        if (formFields === undefined) {
+            formFields = fieldsPage['base'];
+        }
+    }
+
+    let form = {
+        title: formType.title,
+        button: formType.button.split('_')[1],
+        data: {},
+    };
+    formFields.forEach((field) => {
+        form.data[properties[field].name] = properties[field];
+    });
+    form = fillForm(form, element.item);
+    form = fillForm(form, element.entry);
+    return form;
+}

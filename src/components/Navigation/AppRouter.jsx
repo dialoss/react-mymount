@@ -1,4 +1,4 @@
-import React, {useEffect, useLayoutEffect} from 'react';
+import React, {useLayoutEffect} from 'react';
 import {Navigate, Route, Routes, useNavigate} from "react-router-dom";
 import {routes} from "router/index";
 import {useDispatch} from "react-redux";

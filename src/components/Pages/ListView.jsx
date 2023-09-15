@@ -1,10 +1,9 @@
-import React, {useCallback, useEffect, useLayoutEffect, useMemo, useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import EntryList from "components/Entry/EntryList";
-import sendRequest from "scripts/network/requests";
+import {sendLocalRequest} from "scripts/network/requests";
 import {useFetching} from "hooks/useFetching";
 import PageLoading from "./PageLoading";
 import {useSelector} from "react-redux";
-import {baseURL} from "store/reducers/location";
 
 export const ThemeContext = React.createContext({});
 
@@ -13,21 +12,11 @@ const ListView = ({listStyle}) => {
     const [entrys, setEntrys] = useState([]);
     const location = useSelector((state) => state.location);
 
-    let curPage = {
-        page_url: location.relativeURL,
-        page_slug: location.pageSlug,
-    }
-    let sendData = {
-        url: baseURL + '/fetch_entrys/',
-        data: {
-            ...curPage
-        }
-    };
-
+    let sendData = {};
     let entrysAmount = 0;
 
     const [fetchEntrys, loading, setLoading] = useFetching(async () => {
-        const response = await sendRequest(sendData.url, sendData.data)
+        const response = await sendLocalRequest('/fetch_entrys/', sendData)
         addEntrys(response);
     });
 
@@ -46,8 +35,7 @@ const ListView = ({listStyle}) => {
         let cur = 0;
         while (true) {
             if (cur / step === 2) step = 20;
-            sendData.data = {
-                ...curPage,
+            sendData = {
                 data_start: cur,
                 data_end: cur + step,
             };

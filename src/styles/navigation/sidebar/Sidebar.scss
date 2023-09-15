@@ -11,21 +11,21 @@ $color-current-background: blue;
     linkColor: $color-link-background;
 }
 
-.action-button {
-    left: 10px;
-    top: 10px;
-    
-    img {
-        width: 40px;
-    }
-}
-
 .sidebar {
     font-size: 15px;
     position: fixed;
     left: 0;
     top: 0;
     z-index: $zindex-utility;
+
+    .action-button {
+        left: 10px;
+        top: 10px;
+
+        img {
+            width: 40px;
+        }
+    }
 
     &__wrapper {
         overflow-y: auto;

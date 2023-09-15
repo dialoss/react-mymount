@@ -1,11 +1,10 @@
 import React from 'react';
-import {initPicker} from "scripts/network/picker";
-import {showPicker} from "scripts/network/picker";
+import {initPicker, showPicker} from "scripts/network/picker";
 
-const GooglePicker = ({text, ...props}) => {
+const GooglePicker = ({text, uploadField=null, ...props}) => {
     initPicker();
     return (
-        <button {...props} onClick={() => showPicker(null)}>{text}</button>
+        <button {...props} onClick={() => showPicker(uploadField)}>{text}</button>
     );
 };
 

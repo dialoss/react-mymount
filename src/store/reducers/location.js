@@ -8,6 +8,7 @@ export const location = createSlice({
         fullURL : null,
         relativeURL : null,
         pageSlug : null,
+        pageParent : null,
         views: {
             curViews: 0,
             totalViews: 0,
@@ -20,6 +21,7 @@ export const location = createSlice({
             if (state.relativeURL.slice(-1) !== '/') state.relativeURL = state.relativeURL + '/';
             state.fullURL = baseURL + state.relativeURL;
             state.pageSlug = state.relativeURL.split('/').slice(-2, -1)[0];
+            state.pageParent = state.relativeURL.split('/').slice(1, 2)[0];
         },
     }
 });
