@@ -24,7 +24,7 @@ const ContextMenu = () => {
     return (
         <div className="context-menu">
             {
-                ContextActions.map((action, index) =>
+                Object.values(ContextActions).map((action, index) =>
                     <ContextItem callback={() => handleMenu(action)} name={action.name} key={index}></ContextItem>
                 )
             }

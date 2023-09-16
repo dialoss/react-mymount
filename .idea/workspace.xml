@@ -1,20 +1,102 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9b37537a-6286-4d32-9202-d8554b8ac243" name="Changes" comment="General modal fixes">
-      <change afterPath="$PROJECT_DIR$/src/store/reducers/entrys.js" afterDir="false" />
+    <list default="true" id="9b37537a-6286-4d32-9202-d8554b8ac243" name="Changes" comment="Added carousel">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Carousel/Carousel.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Carousel/Carousel.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Carousel/changeCarousel.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Carousel/changeCarousel.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ContextMenu/ContextActions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ContextMenu/ContextActions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Entry/Entry.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Entry/Entry.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Entry/Item/ItemData/ItemImage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Entry/Item/ItemData/ItemImage.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Modal/ModalManager.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Modal/ModalManager.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/MyForm/MyForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/MyForm/MyForm.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Pages/ListView.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Pages/ListView.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scripts/network/requests.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/scripts/network/requests.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/store.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/entry/info.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/entry/info.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/client_secrets.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/gifs/loading.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/img/img-self.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/img/logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/img/plus.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/key.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/svg/burger.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/svg/cross.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/svg/right.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Carousel/Carousel.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Carousel/CarouselNav.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Carousel/CarouselNavArrow.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Carousel/CarouselNavbar.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Carousel/changeCarousel.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ContextMenu/ContextActions.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ContextMenu/ContextItem.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ContextMenu/ContextMenu.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ContextMenu/ContextMenu.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Entry/Entry.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Entry/EntryList.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Entry/Info/InfoBlock.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Entry/Info/InfoParagraph.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Entry/Item/Item.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Entry/Item/ItemData/ItemData.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Entry/Item/ItemData/ItemFile.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Entry/Item/ItemData/ItemImage.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Entry/Item/ItemData/ItemTable.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Entry/Item/ItemData/ItemTextfield.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Entry/Item/ItemData/ItemVideo.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Modal/ModalManager.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Modal/changeModal.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/MyForm/FormData.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/MyForm/FormData.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/MyForm/FormElements/FormButton.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/MyForm/FormElements/FormComponent.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/MyForm/FormElements/FormInput.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/MyForm/FormElements/FormOption.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/MyForm/FormElements/FormSelect.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/MyForm/FormElements/FormTextarea.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/MyForm/FormElements/FormUpload.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/MyForm/MyForm.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Navigation/AppRouter.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Navigation/NavButton.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Navigation/Navbar.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Navigation/Sidebar/Sidebar.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Navigation/Sidebar/SidebarItem.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Navigation/Sidebar/SidebarLink.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Navigation/Sidebar/SidebarList.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Pages/Intro.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Pages/ListView.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Pages/PageLoading.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/UI/Buttons/ButtonComponent.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Utils/GooglePicker.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hooks/useFetching.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/router/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scripts/network/picker.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scripts/network/requests.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scripts/utils/correctElementPosition.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scripts/utils/files.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scripts/utils/rgbmanip.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/reducers/entrys.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/reducers/location.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/reducers/modal.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/store.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/App.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/constants.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/entry/entry.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/entry/info.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/form/MyForm.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/form/form-elements/FormButton.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/form/form-elements/FormInput.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/form/form-elements/FormOption.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/form/form-elements/FormSelect.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/form/form-elements/FormTextarea.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/form/form-elements/FormUpload.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/item/item.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/item/itemImage.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/listview/child.module.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/listview/parent.module.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/mixins.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/modal/Modal.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/modal/context/Context.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/modal/context/ContextMenu.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/navigation/NavButton.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/navigation/Navbar.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/navigation/sidebar/Sidebar.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/navigation/sidebar/SidebarItem.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/navigation/sidebar/SidebarList.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/pages/footer.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/pages/intro.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/ui/ActionButton.module.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/ui/PageLoading.scss" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,6 +113,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/src/pages/AppRouter/constants/routes.json" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -50,7 +135,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "D:/Programming/react-mymount/src/store/reducers",
+    "last_opened_file_path": "D:/Programming/react-refactor",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.standard": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -64,6 +149,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Programming\react-mymount\src\components\MyForm\FormElements" />
       <recent name="D:\Programming\react-mymount\src\store\reducers" />
       <recent name="D:\Programming\react-mymount\src\hooks" />
       <recent name="D:\Programming\react-mymount\src\components\Modal\Context" />
@@ -107,7 +193,9 @@
       <workItem from="1694423482680" duration="5599000" />
       <workItem from="1694429444635" duration="45986000" />
       <workItem from="1694596706586" duration="64103000" />
-      <workItem from="1694802530698" duration="4751000" />
+      <workItem from="1694802530698" duration="11354000" />
+      <workItem from="1694860538084" duration="21329000" />
+      <workItem from="1694895748166" duration="1686000" />
     </task>
     <task id="LOCAL-00001" summary="Initial">
       <created>1693824071090</created>
@@ -193,7 +281,14 @@
       <option name="project" value="LOCAL" />
       <updated>1694802561574</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Added carousel">
+      <created>1694807339808</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1694807339808</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -218,6 +313,7 @@
     <MESSAGE value="Fixes" />
     <MESSAGE value="Added modals" />
     <MESSAGE value="General modal fixes" />
-    <option name="LAST_COMMIT_MESSAGE" value="General modal fixes" />
+    <MESSAGE value="Added carousel" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added carousel" />
   </component>
 </project>
