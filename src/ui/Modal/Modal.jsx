@@ -1,7 +1,7 @@
 import React, {useEffect} from 'react';
 import 'styles/modal/Modal.scss';
 import {useSelector} from "react-redux";
-import {changeModal} from "components/Modal/changeModal";
+import {changeModal} from "ui/Modal/changeModal";
 import {correctElementPosition} from "scripts/utils/correctElementPosition";
 
 const Modal = ({modal}) => {

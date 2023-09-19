@@ -1,13 +1,12 @@
 import React from 'react';
-import 'styles/pages/footer.scss';
-import {useSelector} from "react-redux";
+import './Footer.scss';
+import Container from "ui/Container/Container";
 
-const Footer = () => {
-    const views = useSelector(state => state.location.views);
+const Footer = ({totalViews, currentViews}) => {
     return (
         <footer className="footer">
             <div className="footer__wrapper">
-                <div className="container">
+                <Container>
                     <div className="footer__inner">
                         <div className="footer__info">
                             <p className="footer__text footer__text--accent">
@@ -23,15 +22,15 @@ const Footer = () => {
                         <div className="footer__info">
                             <div className="footer__counter">
                                 <p className="footer__text">
-                                    {views.totalViews}
+                                    {totalViews}
                                 </p>
                                 <p className="footer__text">
-                                    {views.curViews}
+                                    {currentViews}
                                 </p>
                             </div>
                         </div>
                     </div>
-                </div>
+                </Container>
             </div>
         </footer>
     );

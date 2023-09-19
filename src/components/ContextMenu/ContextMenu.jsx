@@ -1,8 +1,8 @@
 import React from 'react';
 import ContextItem from "./ContextItem";
-import {ContextActions, handleAction, setActionElement} from "./ContextActions";
+import {ContextActions, handleAction, setActionElement} from "./Actions";
 import 'styles/modal/context/ContextMenu.scss';
-import {changeModal} from "../Modal/changeModal";
+import {changeModal} from "../../ui/Modal/changeModal";
 
 const ContextMenu = () => {
     function handleMenu(action) {

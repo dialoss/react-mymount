@@ -1,0 +1,10 @@
+.info {
+    &__block {
+        text-align: center;
+    }
+
+    &__block-section {
+        display: flex;
+        flex-direction: row;
+    }
+}

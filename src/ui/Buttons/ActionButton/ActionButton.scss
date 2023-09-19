@@ -1,0 +1,20 @@
+$color-button: rgb(54, 59, 75);
+
+.action-button {
+    border: 0;
+    background-color: $color-button;
+    text-align: center;
+    padding: 10px 15px;
+    font-size: 22px;
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: all 0.2s linear;
+    border-radius: 5px;
+    margin: 15px;
+
+    &:hover {
+        background-color: rgb(86, 93, 115);
+        cursor: pointer;
+    }
+}

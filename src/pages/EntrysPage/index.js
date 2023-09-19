@@ -1,0 +1,1 @@
+export EntrysPage from "./components/EntrysPage";

@@ -1,0 +1,19 @@
+$color-main: rgb(219, 228, 235);
+
+button {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border: none;
+    background-color: $color-main;
+    border-radius: 8px;
+    width: 100%;
+    min-height: 20px;
+    text-align: center;
+    padding: 5px 15px;
+    font-size: 20px;
+    transition: all 0.1s linear;
+
+    &:hover {
+        background-color: rgb(174, 184, 192);
+        cursor: pointer;
+    }
+}
