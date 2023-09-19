@@ -4,6 +4,7 @@ import InfoParagraph from "ui/InfoParagraph/InfoParagraph";
 
 const ItemTextfield = ({data}) => {
     const [value, setValue] = useState('');
+
     useEffect(() => {
         let tempContent = document.createElement("div");
         let dataJson = JSON.parse(data.text_transformed).ops;
@@ -12,8 +13,9 @@ const ItemTextfield = ({data}) => {
         tempContent.remove();
         setValue(htmlText);
     }, []);
+
     return (
-        <div className={"item__textfields"} onClick={()=>console.log("22")}>
+        <div className={"item__textfields"}>
             <InfoParagraph type={"textfield"}>{value}</InfoParagraph>
         </div>
     );

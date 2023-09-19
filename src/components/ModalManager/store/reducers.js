@@ -1,6 +1,6 @@
 import {createSlice} from "@reduxjs/toolkit";
 
-export const changeModal = createSlice({
+export const modalSlice = createSlice({
     name: "modals",
     initialState: {},
     reducers: {
@@ -23,4 +23,4 @@ export const changeModal = createSlice({
     }
 });
 
-export const { actions, reducer } = changeModal;
+export const { actions, reducer } = modalSlice;

@@ -1,0 +1,47 @@
+
+.item {
+  border-radius: 8px;
+  box-shadow: 0 0 5px gray;
+  flex-direction: row;
+
+  @media only screen and (max-width: 700px) {
+    & {
+      flex-direction: column;
+    }
+  }
+
+  &__wrapper {
+    padding: 10px;
+  }
+
+  &:hover {
+    cursor: pointer;
+    opacity: 0.8;
+  }
+
+}
+.entry {
+  &__items {
+    padding: 5px;
+    max-width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  &__buy {
+    flex-direction: row;
+  }
+
+  &__price {
+    margin: 0 auto;
+  }
+}
+
+.info__block {
+  min-width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

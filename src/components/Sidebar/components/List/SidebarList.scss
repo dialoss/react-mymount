@@ -1,0 +1,11 @@
+.sidebar__list {
+    display: flex;
+    flex-direction: column;
+    transition: max-height 0.3s linear;
+    overflow: hidden;
+    margin-top: 4px;
+
+    &-wrapper {
+        overflow: hidden;
+    }
+}

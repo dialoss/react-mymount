@@ -1,32 +1,21 @@
-import React, {useEffect} from 'react';
-import 'styles/modal/Modal.scss';
-import {useSelector} from "react-redux";
-import {changeModal} from "ui/Modal/changeModal";
-import {correctElementPosition} from "scripts/utils/correctElementPosition";
+import React from 'react';
+import './Modal.scss';
 
-const Modal = ({modal}) => {
-    const modalState = useSelector(state => state.modal[modal.name]);
-    const isOpened = modalState.isOpened;
-    const position = modalState.position;
-
+const Modal = ({content, isOpened, closeCallback}) => {
     const modalWin = React.createRef();
 
-    useEffect(() => {
-        changeModal(modal.name, correctElementPosition(modalState.position, modalWin));
-    }, [position]);
-
     return (
-        <div className={"modal modal-" + modal.name}>
+        <div className={"modal modal-" + content.name}>
             <div className={"modal__wrapper " + (isOpened ? "opened" : "")}>
-                <div className={"modal__background"} style={modal.style.bg}
+                <div className={"modal__background"} style={content.style.bg}
                      onClick={(event) => {
                          event.stopPropagation();
-                         changeModal(modal.name, {isOpened: false});
+                         closeCallback();
                      }}>
                 </div>
-                <div className="modal__window" style={{...position, ...modal.style.win}}>
+                <div className="modal__window" style={content.style.win}>
                     <div className="modal__content" ref={modalWin}>
-                        {modal.content}
+                        {content.data}
                     </div>
                 </div>
             </div>

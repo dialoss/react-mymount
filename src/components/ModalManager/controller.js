@@ -1,4 +1,4 @@
-import store from "store/index";
+import store from "store";
 import {actions} from './store/reducers';
 
 export function changeModal(name, payload, field="") {

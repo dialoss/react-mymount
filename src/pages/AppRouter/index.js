@@ -1,1 +1,1 @@
-export AppRouter from "components/AppRouter";
+export {default as AppRouter} from "./components/AppRouter";

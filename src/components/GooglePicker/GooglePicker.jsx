@@ -1,12 +1,11 @@
 import {initPicker, showPicker} from "components/GooglePicker/api/picker";
 
 import React from 'react';
-import GooglePicker from "../../ui/Buttons/GooglePickerButton/GooglePickerButton";
 
-const GooglePicker = ({uploadField=null, children}) => {
+const GooglePicker = ({uploadField=null, children, ...props}) => {
     initPicker();
     return (
-        <GooglePicker callback={() => showPicker(uploadField)}/>
+        <button onClick={() => showPicker(uploadField)} {...props}>{children}</button>
     );
 };
 

@@ -1,1 +1,1 @@
-export EntrysPage from "./components/EntrysPage";
+export {default as EntrysPage} from "./components/EntrysPage";

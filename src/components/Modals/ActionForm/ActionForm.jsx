@@ -6,11 +6,11 @@ import FormComponent from "./FormComponent";
 import WindowButton from "ui/Buttons/WindowButton/WindowButton";
 import ActionButton from "ui/Buttons/ActionButton/ActionButton";
 
-const FormBlock = ({formField, id}) => {
+const FormBlock = ({formField}) => {
     return (
         <div className="form__block">
             {formField.type !== "upload" && <p>{formField.text}</p>}
-            <FormComponent id={id} field={formField}></FormComponent>
+            <FormComponent field={formField}></FormComponent>
         </div>
     );
 }
@@ -26,7 +26,7 @@ const MyForm = ({formData, submitCallback}) => {
             <div className={"form__fields"}>
                 {
                     Object.keys(formData.data).map((index) => {
-                        return <FormBlock formField={formData.data[index]} id={index} key={index}/>
+                        return <FormBlock formField={formData.data[index]} key={index}/>
                     })
                 }
                 <ActionButton onClick={submitCallback}>{formData.button}</ActionButton>

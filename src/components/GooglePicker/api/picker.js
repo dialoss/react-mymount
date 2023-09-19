@@ -1,9 +1,7 @@
 import {getFileType} from "../helpers/files";
-// import {sendLocalRequest} from "./requests";
+import {sendLocalRequest} from "api/requests";
 
-const clientId = '1024510478167-dufqr18l2g3nmt7gkr5rakc9sjk5nf54.apps.googleusercontent.com';
 const developerKey = 'AIzaSyDDqSATTGIXHgBRwl_S4mPCcATYJsISOhM';
-
 
 let accessToken = '';
 let pickerInited = false;

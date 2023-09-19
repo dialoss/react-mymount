@@ -2,12 +2,12 @@ import React from 'react';
 import CarouselNav from "../Navigation/Navigation";
 
 import InfoBlock from "ui/InfoBlock/InfoBlock";
-import "styles/carousel/Carousel.scss";
-import ButtonComponent from "ui/Buttons/WindowButton/WindowButton";
+import "./Carousel.scss";
 import useKeypress from "react-use-keypress";
 import {changeCarousel} from "../../controller";
+import WindowButton from "ui/Buttons/WindowButton/WindowButton";
 
-const Carousel = ({image, info}) => {
+const Carousel = ({data}) => {
 
     useKeypress('ArrowRight', () => changeCarousel("right"));
     useKeypress('ArrowLeft', () => changeCarousel("left"));
@@ -15,11 +15,11 @@ const Carousel = ({image, info}) => {
     return (
         <div className="carousel">
             <div className="carousel__content">
-                <img className="carousel__image" src={image} alt=""/>
-                <InfoBlock data={info}></InfoBlock>
+                <img className="carousel__image" src={data.image} alt=""/>
+                <InfoBlock data={data.info}></InfoBlock>
             </div>
             <CarouselNav></CarouselNav>
-            <ButtonComponent callback={() => changeModal('carousel', {isOpened:false})}
+            <WindowButton callback={() => changeModal('carousel', {isOpened:false})}
                              className={"carousel__close-btn"} type={'close'}/>
         </div>
     );

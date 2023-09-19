@@ -1,1 +1,1 @@
-export Intro from "./components/MainPage";
+export {default as Intro} from "./components/Intro/Intro";

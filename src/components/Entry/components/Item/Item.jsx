@@ -1,33 +1,57 @@
-import React, {useContext, useEffect, useRef, useState} from 'react';
-import InfoBlock from "../Info/InfoBlockContainer";
-import 'styles/item/item.scss';
-import ItemData from "./ItemData/ItemData";
-import {ThemeContext} from "../../Pages/ListView";
-import ItemFile from "./ItemData/ItemFile";
+import React, {createContext, useContext, useLayoutEffect, useRef, useState} from 'react';
+import InfoBlock from "ui/InfoBlock/InfoBlock";
+import './Item.scss';
+import ItemData from "./components/ItemData";
+import ItemFile from "./components/File/ItemFile";
+import {ThemeContext} from "ui/ListView/Themes";
+// import ItemTransform from "./ItemTransform";
+// import {changeCarousel} from "../../Carousel/changeCarousel";
+// import "./ItemTransform.scss";
+
+export const TransformContext = createContext({});
 
 const EntryItem = ({item, container}) => {
-    const listStyle = useContext(ThemeContext);
-    const [height, setHeight] = useState(0);
-    // const [height, setHeight] = useLayout({width:item.media_width, height:item.media_height}, container);
-    const mounted = useRef(null);
-    useEffect(() => {
+    const theme = useContext(ThemeContext);
+    const [height, setHeight] = useState(-1);
+    const ref = useRef();
+    const testr = useRef();
+    const test2 = useRef();
+
+    useLayoutEffect(() => {
         let curWidth = container.current.getBoundingClientRect().width;
         let curHeight = curWidth * item.media_height / item.media_width;
+        // if (['images', 'video'].includes(item.type)) setHeight(item.media_height + 10);
         setHeight(curHeight);
-    });
+    }, []);
 
     return (
-        <div className={listStyle.item__wrapper} style={{height: (height === -1 ? "auto" : height + "px")}}>
-            <div className={`item-${item.id} item item-${item.type}`} style={{
-                ...(!item.show_shadow && {boxShadow: "none"})
-            }}>
-                <ItemData data={item}></ItemData>
-                <InfoBlock data={item}></InfoBlock>
-                {item.file && <ItemFile data={item.file_data}></ItemFile>}
+        <TransformContext.Provider value={{container:container, item:ref}}>
+        {/*<ItemTransform type={"move"}>*/}
+            <div className={Object.values(theme).map(th => th.item__wrapper).join(' ')}
+                style={{height: (height === -1 ? "auto" : height + "px")}}
+                 ref={ref}
+                 onClick={() => {
+                     if (item.type !== "images") return;
+                     if (Array.from(ref.current.classList).slice(-1)[0] === 'moved') {
+                         ref.current.classList.remove("moved");
+                         return;
+                     }
+                     // changeCarousel("", item.id)
+                 }}>
+                <div className={`item-${item.id} item item-${item.type}`} style={{
+                    ...(!item.show_shadow && {boxShadow: "none"})
+                }}>
+                    <ItemData data={item}></ItemData>
+                    <InfoBlock data={item}></InfoBlock>
+                    {item.file && <ItemFile data={item.file_data}></ItemFile>}
+                    {/*<ItemTransform type={"resize--left"}><div className={"item__resize--left"} ref={testr}>*/}
+                    {/*</div></ItemTransform>*/}
+                    {/*<ItemTransform type={"resize--right"}><div className={"item__resize--right"} ref={test2}>*/}
+                    {/*</div></ItemTransform>*/}
+                </div>
             </div>
-            <div className="item__transform item__resize item__resize--right"></div>
-            <div className="item__transform item__resize item__resize--left"></div>
-        </div>
+        {/*</ItemTransform>*/}
+        </TransformContext.Provider>
     );
 };
 

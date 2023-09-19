@@ -1,8 +1,6 @@
-@import "../form-variables.scss";
-
 .form-input {
     border: 0;
-    background-color: $color-main;
+    background-color: $form-color-main;
     border-radius: 8px;
     width: 60%;
     height: 30px;
