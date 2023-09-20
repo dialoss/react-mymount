@@ -2,90 +2,59 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9b37537a-6286-4d32-9202-d8554b8ac243" name="Changes" comment="init">
-      <change afterPath="$PROJECT_DIR$/src/components/Modals/Carousel/CarouselContainer.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Navbar/NavbarContainer.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Navbar/components/Button/NavButton.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Navbar/components/Navbar/Navbar.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Navbar/components/Navbar/Navbar.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Navbar/routes.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Sidebar/SidebarContainer.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Sidebar/components/Item/SidebarItem.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Sidebar/components/Link/SidebarLink.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Sidebar/components/List/SidebarList.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Sidebar/components/List/style.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Sidebar/components/Sidebar/Sidebar.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Sidebar/components/Sidebar/Sidebar.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Sidebar/components/Sidebar/constants.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Sidebar/components/rgbmanip.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Sidebar/components/variables.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/hooks/useMyLocation.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/modules/ActionForm/FormContainer.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/modules/ActionForm/api/submitForm.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/modules/EntryList/api/fetchEntrys.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/modules/EntryList/components/EntryListContainer.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/modules/EntryList/store/reducers.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/modules/Navigation/components/Navigation.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/TemplatePage/components/TemplatePage.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/TemplatePage/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/styles/App.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ui/ContentWrapper/ContentWrapper.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ui/ContentWrapper/ContentWrapper.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ui/ListView/ListView.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ui/ListView/Themes/edit.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ui/ListView/Themes/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ui/ListView/Themes/shop.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ui/Modal/Modal.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Modals/Carousel/store/context.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/helpers/themes/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/helpers/themes/themes.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/helpers/toggleThemes.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/hooks/useThemes.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/modules/ActionManager/components/EntryActions/EntryActions.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/modules/ActionManager/components/EntryActions/actions.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/modules/Footer/components/FooterContainer.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/modules/Footer/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/modules/ThemeManager/components/ThemeManager.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/modules/ThemeManager/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ui/ObjectTransform/Movable/MovableContainer.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ui/ObjectTransform/Movable/MovableItem.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ui/ObjectTransform/Movable/helper.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ui/ObjectTransform/Resizable/Resizable.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ui/ObjectTransform/Resizable/helper.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/api/requests.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/requests.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ContextMenu/ContextMenu.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ContextMenu/ContextMenu.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Entry/Entry.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Entry/Entry.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Entry/Entry.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Entry/Entry.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Entry/components/Item/Item.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Entry/components/Item/Item.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Entry/components/Item/Item.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Entry/components/Item/Item.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Entry/components/Item/components/Image/ItemImage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Entry/components/Item/components/Image/ItemImage.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Entry/components/Item/components/Image/ItemImage.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Entry/components/Item/components/Image/ItemImage.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Entry/components/Item/components/Textfield/ItemTextfield.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Entry/components/Item/components/Textfield/ItemTextfield.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/GooglePicker/GooglePicker.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/GooglePicker/GooglePicker.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/EntryList/EntryList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/EntryList/EntryList.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/GooglePicker/api/picker.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/GooglePicker/api/picker.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/GooglePicker/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/craco.config.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/ModalManager/components/ModalManager.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ModalManager/components/ModalManager.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ModalManager/controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ModalManager/controller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ModalManager/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ModalManager/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/ModalManager/store/reducers.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ModalManager/store/reducers.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Modals/ActionForm/ActionForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Modals/ActionForm/ActionForm.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Modals/Carousel/CarouselContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Modals/Carousel/CarouselContainer.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Modals/Carousel/components/Carousel/Carousel.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Modals/Carousel/components/Carousel/Carousel.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Modals/Carousel/components/Carousel/Carousel.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Modals/Carousel/components/Carousel/Carousel.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Modals/Carousel/components/Navigation/NavArrow/NavArrow.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Modals/Carousel/components/Navigation/NavArrow/NavArrow.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Modals/Carousel/controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Modals/Carousel/controller.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Modals/Carousel/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Modals/Carousel/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Sidebar/SidebarContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Sidebar/SidebarContainer.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modules/ActionForm/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/ActionForm/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modules/EntryList/api/requests.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modules/EntryList/components/EntryList/EntryList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/EntryList/EntryList.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modules/EntryList/components/ListView/ListView.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modules/EntryList/components/ListView/themes/child.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/ListView/Themes/child.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modules/EntryList/components/ListView/themes/parent.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/ListView/Themes/parent.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modules/EntryList/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/EntryList/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modules/Navigation/components/Navbar/Button/Button.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navbar/components/Button/NavButton.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modules/Navigation/components/Navbar/Navbar.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modules/Navigation/components/Sidebar/Sidebar.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modules/Navigation/components/Sidebar/components/Item/SidebarItem.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modules/Navigation/components/Sidebar/components/Link/SidebarLink.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Sidebar/components/Link/SidebarLink.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modules/Navigation/components/Sidebar/components/List/SidebarList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Sidebar/components/List/SidebarList.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modules/Navigation/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/Navigation/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modules/ActionManager/components/ActionManager/ActionManager.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/ActionManager/components/ActionManager.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modules/ActionManager/components/ActionManager/Actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/ActionManager/components/actionManager.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modules/EntryList/components/EntryListContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/EntryList/components/EntryListContainer.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modules/EntryList/store/reducers.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/EntryList/store/reducers.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/AppRouter/components/AppRouter.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/AppRouter/components/AppRouter.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/AppRouter/components/AppRoutes.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/AppRouter/components/AppRoutes.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/AppRouter/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/AppRouter/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/EntrysPage/components/EntrysPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/EntrysPage/components/EntrysPage.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/EntrysPage/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/EntrysPage/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/MainPage/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/MainPage/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/AppRouter/constants/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/AppRouter/constants/routes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/TemplatePage/components/TemplatePage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/TemplatePage/components/TemplatePage.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/store/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/location/location.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/helpers/location/reducers.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/location/store.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/Footer/Footer.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/Footer/Footer.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/Buttons/WindowButton/WindowButton.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/Buttons/WindowButton/WindowButton.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/Footer/Footer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/Footer/Footer.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ui/InfoParagraph/InfoParagraph.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/InfoParagraph/InfoParagraph.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/Input/FormInput.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/Input/FormInput.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/Modal/Modal.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/Modal/Modal.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/constants.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/InfoParagraph/InfoParagraph.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/InfoParagraph/InfoParagraph.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/ListView/ListView.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/ListView/ListView.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/ListView/Themes/child.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/Themes/child.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/ListView/Themes/edit.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/Themes/edit.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/ListView/Themes/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/ListView/Themes/parent.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/Themes/parent.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/ListView/Themes/shop.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/Themes/shop.module.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -125,7 +94,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "D:/Programming/react-refactor/src/modules/EntryList/store",
+    "last_opened_file_path": "D:/Programming/react-refactor/src/ui/ObjectTransform/Resizable",
     "list.type.of.created.stylesheet": "SCSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.standard": "true",
@@ -140,18 +109,18 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Programming\react-refactor\src\ui\ObjectTransform\Resizable" />
       <recent name="D:\Programming\react-refactor\src\modules\EntryList\store" />
       <recent name="D:\Programming\react-refactor\src\components\Navbar\components\Button" />
       <recent name="D:\Programming\react-refactor\src\components\Navbar\components\Navbar" />
       <recent name="D:\Programming\react-refactor\src\components\Navbar\components" />
-      <recent name="D:\Programming\react-refactor\src\ui\ContentWrapper" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Programming\react-refactor\src\modules\ActionManager\components" />
+      <recent name="D:\Programming\react-refactor\src\modules\ThemeManager" />
+      <recent name="D:\Programming\react-refactor\src\helpers\themes" />
       <recent name="D:\Programming\react-refactor\src" />
-      <recent name="D:\Programming\react-refactor\src\helpers" />
-      <recent name="D:\Programming\react-refactor\src\app" />
-      <recent name="D:\Programming\react-refactor\src\components\Sidebar\components\List" />
-      <recent name="D:\Programming\react-refactor\src\styles" />
+      <recent name="D:\Programming\react-refactor\src\ui\Themes" />
     </key>
   </component>
   <component name="RunManager" selected="npm.npm start">
@@ -189,7 +158,8 @@
       <workItem from="1694860538084" duration="21329000" />
       <workItem from="1694895748166" duration="2636000" />
       <workItem from="1694953106206" duration="4402000" />
-      <workItem from="1695030420810" duration="33893000" />
+      <workItem from="1695030420810" duration="39644000" />
+      <workItem from="1695235965679" duration="6307000" />
     </task>
     <task id="LOCAL-00001" summary="Initial">
       <created>1693824071090</created>
@@ -296,7 +266,14 @@
       <option name="project" value="LOCAL" />
       <updated>1695112045599</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="init">
+      <created>1695159161487</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1695159161487</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

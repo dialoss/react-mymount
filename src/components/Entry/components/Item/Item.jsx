@@ -3,7 +3,7 @@ import InfoBlock from "ui/InfoBlock/InfoBlock";
 import './Item.scss';
 import ItemData from "./components/ItemData";
 import ItemFile from "./components/File/ItemFile";
-import {ThemeContext} from "ui/ListView/Themes";
+import {useThemes} from "hooks/useThemes";
 // import ItemTransform from "./ItemTransform";
 // import {changeCarousel} from "../../Carousel/changeCarousel";
 // import "./ItemTransform.scss";
@@ -11,17 +11,17 @@ import {ThemeContext} from "ui/ListView/Themes";
 export const TransformContext = createContext({});
 
 const EntryItem = ({item, container}) => {
-    const theme = useContext(ThemeContext);
+    const theme = useThemes();
     const [height, setHeight] = useState(-1);
     const ref = useRef();
     const testr = useRef();
     const test2 = useRef();
 
     useLayoutEffect(() => {
-        let curWidth = container.current.getBoundingClientRect().width;
-        let curHeight = curWidth * item.media_height / item.media_width;
+        // let curWidth = container.current.getBoundingClientRect().width;
+        // let curHeight = curWidth * item.media_height / item.media_width;
         // if (['images', 'video'].includes(item.type)) setHeight(item.media_height + 10);
-        setHeight(curHeight);
+        // setHeight(curHeight);
     }, []);
 
     return (

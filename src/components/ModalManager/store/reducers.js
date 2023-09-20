@@ -15,7 +15,6 @@ export const modalSlice = createSlice({
         },
         changeModal: (state, {payload: {name, changes}}) => {
             state[name] = {...state[name], ...changes};
-            // console.log(state[name]);
         },
         changeForm: (state, {payload: field}) => {
             state['form'].data[field.id].value = field.value;

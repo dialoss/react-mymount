@@ -1,11 +1,5 @@
-import {useSelector} from "react-redux";
 import store from 'store/store';
 import {changeModal} from ""
-
-const carouselState = useSelector(state => state.modal['carousel'].currentSlide);
-
-const image = carouselState.image || "";
-const info = carouselState.info || {};
 
 export function changeCarousel(side, id=-1) {
     const state = store.getState();

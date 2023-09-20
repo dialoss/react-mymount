@@ -8,7 +8,7 @@ const SidebarContainer = () => {
 
     useEffect(() => {
         (async () => {
-            const response = await sendLocalRequest('/get_static_data/', {});
+            const response = await sendLocalRequest('/get_static_data/');
             setPages(response.pages);
         })();
     }, []);

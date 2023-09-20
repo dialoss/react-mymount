@@ -1,12 +1,23 @@
-import React from 'react';
-import {BrowserRouter} from "react-router-dom";
+import React, {useLayoutEffect} from 'react';
 import AppRoutes from "./AppRoutes";
+import {useNavigate} from "react-router-dom";
+import {useDispatch} from "react-redux";
+import {actions} from "helpers/location/reducers";
+import {Navigation} from "modules/Navigation";
 
 const AppRouter = () => {
+    const location = useNavigate();
+    const dispatch = useDispatch();
+    dispatch(actions.setLocation());
+    useLayoutEffect(() => {
+        dispatch(actions.setLocation());
+    }, [location]);
+
     return (
-        <BrowserRouter>
-           <AppRoutes/>
-        </BrowserRouter>
+        <>
+            <Navigation/>
+            <AppRoutes/>
+        </>
     );
 };
 

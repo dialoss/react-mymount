@@ -8,6 +8,12 @@ export const entrysSlice = createSlice({
     reducers: {
         addEntrys: (state, {payload: {newEntrys}}) => {
             state.entrys = [...state.entrys, ...newEntrys];
+        },
+        clearEntrys: (state) => {
+            state.entrys = [];
+        },
+        setEntrys: (state, {payload: {entrys}}) => {
+            state.entrys = entrys;
         }
     }
 });

@@ -1,11 +1,11 @@
 import React from "react";
 import 'styles/App.scss';
-import {AppRouter} from "../pages/AppRouter";
+import {TemplatePage} from "pages/TemplatePage";
 
 function App() {
     return (
         <div className="App">
-            <AppRouter/>
+            <TemplatePage/>
         </div>
     );
 }

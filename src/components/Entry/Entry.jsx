@@ -1,11 +1,13 @@
-import React, {useContext, useEffect, useRef, useState} from 'react';
+import React, { useEffect, useRef, useState} from 'react';
 import EntryItem from "./components/Item/Item";
 import InfoBlock from "ui/InfoBlock/InfoBlock";
 import {Link} from "react-router-dom";
-import {ThemeContext} from "ui/ListView/Themes";
+import {useThemes} from "hooks/useThemes";
+import MovableContainer from "ui/ObjectTransform/Movable/MovableContainer";
+import MovableItem from "../../ui/ObjectTransform/Movable/MovableItem";
 
 const Entry = ({entry}) => {
-    const theme = useContext(ThemeContext);
+    const theme = useThemes();
     const style = theme.listStyle;
 
     const ref = useRef();
@@ -25,14 +27,19 @@ const Entry = ({entry}) => {
                     entry.page_from.length > 1 &&
                     <Link className={style.entry__link} to={entry.page_from}></Link>
                 }
-                <div className={style.entry__items + ' ' + style[itemsClass]} ref={ref}>
-                    {
-                        entry.items.map((item) => {
-                            if (item.type === 'videos' || item.type === 'images') mediaItems += 1;
-                            // return <EntryItem item={item} key={item.id} container={ref}></EntryItem>
-                        })
-                    }
-                </div>
+                <MovableContainer>
+                    <div className={style.entry__items + ' ' + style[itemsClass]} ref={ref}>
+                        {
+                            entry.items.map((item) => {
+                                if (item.type === 'videos' || item.type === 'images') mediaItems += 1;
+                                return <MovableItem>
+                                            <EntryItem item={item} key={item.id} container={ref}></EntryItem>
+                                        </MovableItem>
+                            })
+                        }
+                    </div>
+                </MovableContainer>
+
                 <InfoBlock data={entry}></InfoBlock>
             </div>
         </div>

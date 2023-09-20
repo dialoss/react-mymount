@@ -5,11 +5,6 @@ import 'styles/modal/context/ContextMenu.scss';
 import {changeModal} from "../../ui/Modal/changeModal";
 
 const ContextMenu = () => {
-    function handleMenu(action) {
-        handleAction(action);
-        changeModal('context', {isOpened: false});
-    }
-
     window.addEventListener("contextmenu", event => {
         event.preventDefault();
         setActionElement(event);

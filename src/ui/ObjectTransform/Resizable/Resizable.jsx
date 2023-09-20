@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ActionManager = () => {
+const Resizable = () => {
     return (
         <div>
             
@@ -8,4 +8,4 @@ const ActionManager = () => {
     );
 };
 
-export default ActionManager;
+export default Resizable;

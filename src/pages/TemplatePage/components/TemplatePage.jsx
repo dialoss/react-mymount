@@ -1,17 +1,19 @@
 import React from 'react';
-import {Navigation} from "modules/Navigation";
-import Footer from "ui/Footer/Footer";
+import {Footer} from "modules/Footer";
 import ContentWrapper from "ui/ContentWrapper/ContentWrapper";
+import {AppRouter} from "pages/AppRouter";
+import {BrowserRouter} from "react-router-dom";
+import {ThemeManager} from "modules/ThemeManager";
 
-const TemplatePage = ({children}) => {
+const TemplatePage = () => {
     return (
-        <>
+        <BrowserRouter>
             <ContentWrapper>
-                <Navigation></Navigation>
-                {children}
+                <AppRouter/>
             </ContentWrapper>
-            <Footer totalViews={0} currentViews={0}></Footer>
-        </>
+            <Footer></Footer>
+            <ThemeManager/>
+        </BrowserRouter>
     );
 };
 

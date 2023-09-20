@@ -31,7 +31,7 @@ export function showPicker(uploadField) {
 
 async function setAll() {
     if (accessToken === '') {
-        const response = await sendLocalRequest('/get_gdrive_token/', {});
+        const response = await sendLocalRequest('/get_gdrive_token/');
         accessToken = response.token;
     }
     const google = window.google;

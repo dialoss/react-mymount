@@ -1,5 +1,6 @@
 import React from 'react';
 import rightArrow from './right.svg';
+import {changeCarousel} from "../../../controller";
 
 const CarouselNavArrow = ({side}) => {
     return (

@@ -21,10 +21,10 @@ const Footer = ({totalViews, currentViews}) => {
                         </div>
                         <div className="footer__info">
                             <div className="footer__counter">
-                                <p className="footer__text">
+                                <p className="footer__text footer__total">
                                     {totalViews}
                                 </p>
-                                <p className="footer__text">
+                                <p className="footer__text footer__current">
                                     {currentViews}
                                 </p>
                             </div>

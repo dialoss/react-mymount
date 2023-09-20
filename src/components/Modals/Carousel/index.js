@@ -1,2 +1,1 @@
-export Carousel from "./components/Carousel/Carousel";
-import "./controller";
+export {default as Carousel} from "./components/Carousel/Carousel";

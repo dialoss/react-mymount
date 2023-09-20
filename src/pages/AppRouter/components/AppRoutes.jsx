@@ -1,32 +1,37 @@
 import React, {useLayoutEffect} from 'react';
-import {Navigate, Route, Routes, useNavigate} from "react-router-dom";
+import {Navigate, Route, Routes} from "react-router-dom";
 import {routes} from "../constants/routes";
 import {EntrysPage} from "pages/EntrysPage";
 import {Intro} from "pages/MainPage";
-import {TemplatePage} from "pages/TemplatePage";
-import {useDispatch} from "react-redux";
-import {actions} from "helpers/location/reducers";
+import {useMyLocation} from "hooks/useMyLocation";
+import {addTheme, clearThemes} from "helpers/themes";
 
 const Components = {
-    'EntrysPage': <EntrysPage/>,
-    'Main': <Intro/>,
+    'EntrysPage': EntrysPage,
+    'Main': Intro,
+};
+
+const PageWrapper = ({route}) => {
+    const location = useMyLocation();
+    addTheme("listStyle", route.style);
+    useLayoutEffect(() => {
+        clearThemes();
+        addTheme("listStyle", route.style);
+    }, [location])
+    
+    return (
+        <>
+            {React.createElement(Components[route.component], {key: route.path})}
+        </>
+    );
 };
 
 const AppRoutes = () => {
-    const location = useNavigate();
-    const dispatch = useDispatch();
-    dispatch(actions.setLocation());
-    useLayoutEffect(() => {
-        dispatch(actions.setLocation());
-    }, [location]);
-
     return (
         <Routes>
             {
                 routes.map((route) =>
-                    <Route element={<TemplatePage>
-                                        {Components[route.component]}
-                                    </TemplatePage>}
+                    <Route element={<PageWrapper route={route} key={route.path}/>}
                            path={route.path}
                            exact={route.exact}
                            key={route.path}/>
