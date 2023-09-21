@@ -4,6 +4,7 @@ import {useDispatch} from "react-redux";
 import EntryList from "components/EntryList/EntryList";
 import {actions} from "../store/reducers";
 import {fetchEntrys} from "../api/fetchEntrys";
+import {useAddEvent} from "hooks/useAddEvent";
 
 const EntryListContainer = () => {
     let tempContainer = [];
@@ -19,6 +20,12 @@ const EntryListContainer = () => {
     useEffect(() => {
         fetchEntrys(addEntrys);
     }, []);
+
+    function handleElements(event) {
+
+    }
+
+    useAddEvent('element-changed', handleElements);
 
     return (
         <ListView>

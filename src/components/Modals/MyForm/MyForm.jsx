@@ -1,6 +1,6 @@
 import React from 'react';
 
-import 'styles/form/MyForm.scss';
+import './MyForm.scss';
 
 import FormComponent from "./FormComponent";
 import WindowButton from "ui/Buttons/WindowButton/WindowButton";

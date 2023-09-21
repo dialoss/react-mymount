@@ -4,8 +4,8 @@ import './Item.scss';
 import ItemData from "./components/ItemData";
 import ItemFile from "./components/File/ItemFile";
 import {useThemes} from "hooks/useThemes";
+import {triggerEvent} from "helpers/events";
 // import ItemTransform from "./ItemTransform";
-// import {changeCarousel} from "../../Carousel/changeCarousel";
 // import "./ItemTransform.scss";
 
 export const TransformContext = createContext({});
@@ -36,7 +36,7 @@ const EntryItem = ({item, container}) => {
                          ref.current.classList.remove("moved");
                          return;
                      }
-                     // changeCarousel("", item.id)
+                     triggerEvent('open-carousel', item.id);
                  }}>
                 <div className={`item-${item.id} item item-${item.type}`} style={{
                     ...(!item.show_shadow && {boxShadow: "none"})

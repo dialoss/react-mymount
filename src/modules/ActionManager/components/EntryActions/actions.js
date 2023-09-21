@@ -1,27 +1,29 @@
 import {sendLocalRequest} from "api/requests";
+import {triggerEvent} from "helpers/events";
 
 export const ContextActions = {
     'add-quick': {
         name: 'Quick New',
-        callback: (actionElement) => {
+        callback: async (actionElement) => {
             let data = {
                 'entry_action_type' : 'add',
                 'type' : 'add-entry-quick',
                 'display_pos' : actionElement.position
             }
-            sendLocalRequest('/entry_action/', data);
+            const response = sendLocalRequest('/entry_action/', data);
+            triggerEvent('element-changed', {data, response});
         }
     },
     'add':{
         name: 'Добавить',
         callback: (actionElement) => {
-            changeModal('form', {isOpened: true, ...getFormData('add', actionElement)});
+            triggerEvent('form-data', {type:'add', element:actionElement})
         }
     },
     'edit':{
         name: 'Редактировать',
         callback: (actionElement) => {
-            changeModal('form', {isOpened: true, ...getFormData('edit', actionElement)});
+            triggerEvent('form-data', {type:'edit', element:actionElement})
         }
     },
     'copy':{
@@ -39,6 +41,7 @@ export const ContextActions = {
                 'entry_id' : copiedElement.entry.id,
                 'item_id' : copiedElement.item.id,
             };
+            triggerEvent('element-changed', data);
             console.log(data);
         }
     },
@@ -51,13 +54,14 @@ export const ContextActions = {
     },
     'delete':{
         name: 'Удалить',
-        callback: (actionElement) => {
+        callback: async (actionElement) => {
             let data = {
                 'entry_action_type' : 'delete',
                 'entry_id' : actionElement.entry.id,
                 'item_id' : actionElement.item.id,
             }
-            sendLocalRequest('/entry_action/', data);
+            const response = sendLocalRequest('/entry_action/', data);
+            triggerEvent('element-changed', {data, response});
         }
     }
 }

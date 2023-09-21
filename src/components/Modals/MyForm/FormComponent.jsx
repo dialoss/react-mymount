@@ -1,7 +1,7 @@
 import React from 'react';
 import FormUpload from "./Upload/FormUpload";
-import FormInput from "ui/Input/FormInput";
-import FormTextarea from "ui/Textarea/FormTextarea";
+import FormInput from "components/Modals/MyForm/Input/FormInput";
+import FormTextarea from "components/Modals/MyForm/Textarea/FormTextarea";
 import FormSelect from "./Select/FormSelect";
 
 const Components = {

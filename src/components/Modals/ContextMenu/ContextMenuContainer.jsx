@@ -11,6 +11,7 @@ const ContextMenuContainer = ({actions}) => {
         event.preventDefault();
         setPosition({left: event.clientX, top: event.clientY});
         triggerEvent(name, {isOpened: true});
+        triggerEvent('action-event', event);
     }
     function onScroll() {
         triggerEvent(name, {isOpened: false});

@@ -7,7 +7,6 @@ import {useAddEvent} from "hooks/useAddEvent";
 const EntryActions = () => {
     function handleContext(event) {
         handleEntryAction(ContextActions[event.detail.name]);
-        setActionElement(event);
     }
     useAddEvent('context-action', handleContext);
 

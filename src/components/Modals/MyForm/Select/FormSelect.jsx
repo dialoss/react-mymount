@@ -1,6 +1,6 @@
 import React from 'react';
 import FormOption from "./FormOption";
-import 'styles/form/form-elements/FormSelect.scss';
+import './FormSelect.scss';
 
 const FormSelect = ({data}) => {
     return (

@@ -32,7 +32,7 @@ const Entry = ({entry}) => {
                         {
                             entry.items.map((item) => {
                                 if (item.type === 'videos' || item.type === 'images') mediaItems += 1;
-                                return <MovableItem>
+                                return <MovableItem key={item.id}>
                                             <EntryItem item={item} key={item.id} container={ref}></EntryItem>
                                         </MovableItem>
                             })

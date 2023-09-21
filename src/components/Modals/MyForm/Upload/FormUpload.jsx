@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
-import 'styles/form/form-elements/FormUpload.scss';
-import GooglePicker from "components/Utils/GooglePicker";
+import './FormUpload.scss';
 import FormMedia from "./FormMedia";
+import GooglePicker from "components/GooglePicker/GooglePicker";
 
 const FormUpload = ({data}) => {
     const [upload, setUpload] = useState([]);
