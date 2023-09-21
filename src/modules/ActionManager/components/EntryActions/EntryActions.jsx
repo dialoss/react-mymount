@@ -3,10 +3,12 @@ import {ContextMenu} from "components/Modals/ContextMenu";
 import {ContextActions} from "./actions";
 import {handleEntryAction, setActionElement} from "../helpers";
 import {useAddEvent} from "hooks/useAddEvent";
+import {triggerEvent} from "../../../../helpers/events";
 
 const EntryActions = () => {
     function handleContext(event) {
         handleEntryAction(ContextActions[event.detail.type]);
+        triggerEvent("context-window", {isOpened: false});
     }
     useAddEvent('context-action', handleContext);
 

@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import useKeypress from "react-use-keypress";
 import Modal from "ui/Modal/Modal";
 import {useAddEvent} from "hooks/useAddEvent";
@@ -16,8 +16,15 @@ const ModalManager = ({name, children}) => {
 
     useAddEvent(name, toggleModal);
 
+    const ref = useRef();
+    useEffect(() => {
+        ref.current.querySelectorAll(".window-close").forEach(button => {
+            button.addEventListener("click", () => setOpened(false));
+        });
+    }, []);
+
     return (
-        <div className={"modal-manager"}>
+        <div className={"modal-manager"} ref={ref}>
             <Modal content={children}
                    isOpened={isOpened}
                    closeCallback={() => setOpened(false)}

@@ -13,7 +13,7 @@ const Carousel = ({item}) => {
                 <InfoBlock data={item.info}></InfoBlock>
             </div>
             <CarouselNav></CarouselNav>
-            <WindowButton className={"carousel__close-btn"} type={'close'}/>
+            <WindowButton type={'close'}/>
         </div>
     );
 };

@@ -20,7 +20,7 @@ const MyForm = ({formData, submitCallback}) => {
         <div className="form__content">
             <div className="form__header">
                 <p className={"form__title"}>{formData.title}</p>
-                <WindowButton className={"form__close-btn"} type={'close'}/>
+                <WindowButton type={'close'}/>
             </div>
             <div className={"form__fields"}>
                 {

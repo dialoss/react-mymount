@@ -119,29 +119,26 @@ $media-resize-width: 850px;
         }
     }
 
-    &__close-btn {
-        position: fixed;
-        right: 0;
-        top: 0;
+    @media only screen and (max-width:$media-resize-width) {
+        button,
+        a {
+            -webkit-tap-highlight-color: transparent;
+        }
+    }
 
+
+    .window-close {
         img {
             width: 70px;
             height: 70px;
             margin: 15px;
             filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(244deg) brightness(106%) contrast(100%);
-
             @media only screen and (max-width:$media-resize-width) {
                 & {
                     width: 45px;
                     margin: 5px;
                 }
             }
-        }
-    }
-    @media only screen and (max-width:$media-resize-width) {
-        button,
-        a {
-            -webkit-tap-highlight-color: transparent;
         }
     }
 }

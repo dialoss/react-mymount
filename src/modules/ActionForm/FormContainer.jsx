@@ -12,6 +12,7 @@ const FormContainer = () => {
     const form = useSelector(state => state.form);
     const dispatch = useDispatch();
     function handleFormData(event) {
+        dispatch(actions.setForm({data:{}}));
         dispatch(actions.setForm(getFormData(event.detail.type, event.detail.element)));
         triggerEvent('form-window', {isOpened: true});
     }

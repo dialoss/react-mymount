@@ -26,11 +26,13 @@ const CarouselContainer = () => {
         setCurrent(bounds(currentWrapper, items.length));
     }
 
+    const windowName = 'carousel-window';
+
     function openCarousel(event) {
         for (let i = 0; i < itemsWrapper.length; i++) {
             if (itemsWrapper[i].id === event.detail) {
                 setCurrent(i);
-                triggerEvent('carousel-window', {isOpened: true});
+                triggerEvent(windowName, {isOpened: true});
                 return;
             }
         }
@@ -67,7 +69,7 @@ const CarouselContainer = () => {
         <>
             {
                 !!items.length &&
-                <ModalManager name={'carousel-window'}>
+                <ModalManager name={windowName}>
                     <Carousel style={{background: {}}} item={items[currentItem]}/>
                 </ModalManager>
             }
