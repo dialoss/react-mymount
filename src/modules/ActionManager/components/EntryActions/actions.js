@@ -4,7 +4,7 @@ import {triggerEvent} from "helpers/events";
 export const ContextActions = {
     'add-quick': {
         name: 'Quick New',
-        callback: async (actionElement) => {
+        callback: async ({actionElement}) => {
             let data = {
                 'entry_action_type' : 'add',
                 'type' : 'add-entry-quick',
@@ -16,13 +16,13 @@ export const ContextActions = {
     },
     'add':{
         name: 'Добавить',
-        callback: (actionElement) => {
+        callback: ({actionElement}) => {
             triggerEvent('form-data', {type:'add', element:actionElement})
         }
     },
     'edit':{
         name: 'Редактировать',
-        callback: (actionElement) => {
+        callback: ({actionElement}) => {
             triggerEvent('form-data', {type:'edit', element:actionElement})
         }
     },
@@ -34,27 +34,27 @@ export const ContextActions = {
     },
     'paste':{
         name: 'Вставить',
-        callback: (actionElement, copiedElement) => {
+        callback: ({actionElement, copiedElement}) => {
             let data = {
                 'entry_action_type' : 'paste',
                 'display_pos' : actionElement.position,
                 'entry_id' : copiedElement.entry.id,
                 'item_id' : copiedElement.item.id,
             };
-            triggerEvent('element-changed', data);
+            triggerEvent('element-changed', {data, response: {}});
             console.log(data);
         }
     },
     'cut':{
         name: 'Вырезать',
-        callback: (copiedElement) => {
+        callback: ({copiedElement}) => {
             ContextActions["paste"].callback();
             copiedElement.entry.data.style.opacity = "0.3";
         }
     },
     'delete':{
         name: 'Удалить',
-        callback: async (actionElement) => {
+        callback: async ({actionElement}) => {
             let data = {
                 'entry_action_type' : 'delete',
                 'entry_id' : actionElement.entry.id,

@@ -6,11 +6,13 @@ import {useAddEvent} from "hooks/useAddEvent";
 
 const EntryActions = () => {
     function handleContext(event) {
-        handleEntryAction(ContextActions[event.detail.name]);
+        handleEntryAction(ContextActions[event.detail.type]);
     }
     useAddEvent('context-action', handleContext);
 
-    const actions = Object.values(ContextActions).map(action => action.name);
+    const actions = Object.keys(ContextActions).map(action => {
+        return {type: action, name:ContextActions[action].name};
+    });
     return (
         <ContextMenu actions={actions}></ContextMenu>
     );

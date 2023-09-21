@@ -2,12 +2,12 @@ import React, {useCallback} from 'react';
 import {triggerEvent} from "helpers/events";
 import "./Button.scss";
 
-const ContextButton = ({name}) => {
+const ContextButton = ({action}) => {
     const callback = useCallback(() => {
-        triggerEvent('context-action', {name});
+        triggerEvent('context-action', {type:action.type});
     }, []);
     return (
-        <button className="context__button" onClick={callback}>{name}</button>
+        <button className="context__button" onClick={callback}>{action.name}</button>
     );
 };
 

@@ -7,7 +7,7 @@ const ContextMenu = ({actions, position}) => {
         <div className="context-menu" style={position}>
             {
                 actions.map((action, index) =>
-                    <ContextButton name={action} key={index}></ContextButton>
+                    <ContextButton action={action} key={index}></ContextButton>
                 )
             }
         </div>

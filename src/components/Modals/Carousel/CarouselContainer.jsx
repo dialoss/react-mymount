@@ -11,8 +11,9 @@ function bounds(n, bound) {
 }
 
 const CarouselContainer = () => {
-    const entrys = useSelector(state => state.entrys.entrys);
-    let items = [];
+    const entrys = useSelector(state => state.elements.entrys);
+    let itemsWrapper = [];
+    const [items, setItems] = useState([]);
 
     const [currentItem, setCurrent] = useState(0);
     let currentWrapper = 0;
@@ -26,10 +27,10 @@ const CarouselContainer = () => {
     }
 
     function openCarousel(event) {
-        for (let i = 0; i < items.length; i++) {
-            if (items[i].id === event.detail) {
+        for (let i = 0; i < itemsWrapper.length; i++) {
+            if (itemsWrapper[i].id === event.detail) {
                 setCurrent(i);
-                triggerEvent('carousel', {isOpened: true});
+                triggerEvent('carousel-window', {isOpened: true});
                 return;
             }
         }
@@ -41,9 +42,12 @@ const CarouselContainer = () => {
 
     useLayoutEffect(() => {
         // items.forEach(item => new Image().src = item.image);
+        itemsWrapper = [];
         entrys.forEach(entry => {
             entry.items.forEach(item => {
-                items.push({
+                if (item.type !== 'images') return;
+                itemsWrapper.push({
+                    id: item.id,
                     image: item.img,
                     info: {
                         title: item.title || entry.title,
@@ -53,6 +57,8 @@ const CarouselContainer = () => {
                 });
             })
         })
+        console.log(items, itemsWrapper);
+        setItems(itemsWrapper);
     }, [entrys]);
 
     useKeypress('ArrowRight', () => triggerEvent('carousel-right'));
@@ -61,12 +67,11 @@ const CarouselContainer = () => {
         <>
             {
                 !!items.length &&
-                <ModalManager name={'carousel'}>
+                <ModalManager name={'carousel-window'}>
                     <Carousel style={{background: {}}} item={items[currentItem]}/>
                 </ModalManager>
             }
         </>
-
     );
 };
 

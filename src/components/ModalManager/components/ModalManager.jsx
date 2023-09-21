@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 import useKeypress from "react-use-keypress";
 import Modal from "ui/Modal/Modal";
 import {useAddEvent} from "hooks/useAddEvent";

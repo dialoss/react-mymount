@@ -5,7 +5,7 @@ import {setActionElement} from "./helpers";
 
 const ActionManager = () => {
     function handleAction(event) {
-        setActionElement(event);
+        setActionElement(event.detail);
     }
     useAddEvent('action-event', handleAction);
     return (

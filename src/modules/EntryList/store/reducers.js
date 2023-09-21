@@ -1,21 +1,26 @@
 import {createSlice} from "@reduxjs/toolkit";
 
-export const entrysSlice = createSlice({
-    name: "entrys",
+export const elementsSlice = createSlice({
+    name: "elements",
     initialState: {
-        entrys: []
+        entrys: [],
+        items: [],
     },
     reducers: {
-        addEntrys: (state, {payload: {newEntrys}}) => {
-            state.entrys = [...state.entrys, ...newEntrys];
-        },
-        clearEntrys: (state) => {
+        clearElements: (state) => {
             state.entrys = [];
+            state.items = [];
         },
-        setEntrys: (state, {payload: {entrys}}) => {
+        setElements: (state, {payload: {entrys}}) => {
             state.entrys = entrys;
+
+            let newItems = [];
+            entrys.forEach(entry => {
+                newItems = [...newItems, ...entry.items]
+            })
+            state.items = newItems;
         }
     }
 });
 
-export const { actions, reducer } = entrysSlice;
+export const { actions, reducer } = elementsSlice;

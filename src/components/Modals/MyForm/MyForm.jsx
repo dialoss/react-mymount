@@ -24,8 +24,8 @@ const MyForm = ({formData, submitCallback}) => {
             </div>
             <div className={"form__fields"}>
                 {
-                    Object.keys(formData.data).map((index) => {
-                        return <FormBlock formField={formData.data[index]} key={index}/>
+                    Object.keys(formData.data).map((key) => {
+                        return <FormBlock formField={formData.data[key]} key={key}/>
                     })
                 }
                 <ActionButton onClick={submitCallback}>{formData.button}</ActionButton>

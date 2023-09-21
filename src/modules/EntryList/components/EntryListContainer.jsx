@@ -14,7 +14,7 @@ const EntryListContainer = () => {
     function addEntrys(response) {
         tempContainer = [...tempContainer, ...response.entrys_data];
         setEntrys(tempContainer);
-        dispatch(actions.setEntrys({entrys: tempContainer}));
+        dispatch(actions.setElements({entrys: tempContainer}));
     }
 
     useEffect(() => {
@@ -22,6 +22,7 @@ const EntryListContainer = () => {
     }, []);
 
     function handleElements(event) {
+        const [data, response] = event.detail;
 
     }
 
