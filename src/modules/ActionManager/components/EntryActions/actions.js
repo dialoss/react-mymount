@@ -1,7 +1,9 @@
-export const Actions = {
+import {sendLocalRequest} from "api/requests";
+
+export const ContextActions = {
     'add-quick': {
         name: 'Quick New',
-        callback: () => {
+        callback: (actionElement) => {
             let data = {
                 'entry_action_type' : 'add',
                 'type' : 'add-entry-quick',
@@ -12,25 +14,25 @@ export const Actions = {
     },
     'add':{
         name: 'Добавить',
-        callback: () => {
+        callback: (actionElement) => {
             changeModal('form', {isOpened: true, ...getFormData('add', actionElement)});
         }
     },
     'edit':{
         name: 'Редактировать',
-        callback: () => {
+        callback: (actionElement) => {
             changeModal('form', {isOpened: true, ...getFormData('edit', actionElement)});
         }
     },
     'copy':{
         name: 'Копировать',
         callback: () => {
-            copiedElement = actionElement;
+            // copiedElement = actionElement;
         }
     },
     'paste':{
         name: 'Вставить',
-        callback: () => {
+        callback: (actionElement, copiedElement) => {
             let data = {
                 'entry_action_type' : 'paste',
                 'display_pos' : actionElement.position,
@@ -42,14 +44,14 @@ export const Actions = {
     },
     'cut':{
         name: 'Вырезать',
-        callback: () => {
-            Actions["paste"].callback();
+        callback: (copiedElement) => {
+            ContextActions["paste"].callback();
             copiedElement.entry.data.style.opacity = "0.3";
         }
     },
     'delete':{
         name: 'Удалить',
-        callback: () => {
+        callback: (actionElement) => {
             let data = {
                 'entry_action_type' : 'delete',
                 'entry_id' : actionElement.entry.id,

@@ -1,15 +1,9 @@
 import React from 'react';
+import EntryActions from "./EntryActions/EntryActions";
 
 const ActionManager = () => {
-    function handleMenu(action) {
-        handleAction(action);
-        changeModal('context', {isOpened: false});
-    }
-
     return (
-        <>
-
-        </>
+        <EntryActions></EntryActions>
     );
 };
 

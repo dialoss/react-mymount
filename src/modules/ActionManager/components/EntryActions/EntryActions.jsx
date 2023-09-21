@@ -1,13 +1,19 @@
 import React from 'react';
-import ContextMenu from "components/ContextMenu/ContextMenu";
+import {ContextMenu} from "components/Modals/ContextMenu";
+import {ContextActions} from "./actions";
+import {handleEntryAction, setActionElement} from "../helpers";
+import {useAddEvent} from "hooks/useAddEvent";
 
 const EntryActions = () => {
-    return (
-        <>
-            <ContextMenu>
+    function handleContext(event) {
+        handleEntryAction(ContextActions[event.detail.name]);
+        setActionElement(event);
+    }
+    useAddEvent('context-action', handleContext);
 
-            </ContextMenu>
-        </>
+    const actions = Object.values(ContextActions).map(action => action.name);
+    return (
+        <ContextMenu actions={actions}></ContextMenu>
     );
 };
 

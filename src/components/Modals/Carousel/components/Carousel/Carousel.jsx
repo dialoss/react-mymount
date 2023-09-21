@@ -5,12 +5,12 @@ import InfoBlock from "ui/InfoBlock/InfoBlock";
 import "./Carousel.scss";
 import WindowButton from "ui/Buttons/WindowButton/WindowButton";
 
-const Carousel = ({data}) => {
+const Carousel = ({item}) => {
     return (
         <div className="carousel">
             <div className="carousel__content">
-                <img className="carousel__image" src={data.image} alt=""/>
-                <InfoBlock data={data.info}></InfoBlock>
+                <img className="carousel__image" src={item.image} alt=""/>
+                <InfoBlock data={item.info}></InfoBlock>
             </div>
             <CarouselNav></CarouselNav>
             <WindowButton className={"carousel__close-btn"} type={'close'}/>

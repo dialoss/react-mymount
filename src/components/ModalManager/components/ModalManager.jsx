@@ -1,19 +1,26 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import useKeypress from "react-use-keypress";
 import Modal from "ui/Modal/Modal";
-import {closeAllModals} from "../controller";
+import {useAddEvent} from "hooks/useAddEvent";
 
-const ModalManager = ({children}) => {
+const ModalManager = ({name, children}) => {
+    const [isOpened, setOpened] = useState(false);
     useKeypress('Escape', (event) => {
         if (event.target.classList.contains("picker")) return;
-        closeAllModals();
+        setOpened(false);
     });
+
+    function toggleModal(state) {
+        setOpened(state.detail.isOpened);
+    }
+
+    useAddEvent(name, toggleModal);
 
     return (
         <div className={"modal-manager"}>
             <Modal content={children}
-                   isOpened={false}
-                   closeCallback={children.closeCallback}
+                   isOpened={isOpened}
+                   closeCallback={() => setOpened(false)}
                    key={children.name}></Modal>
         </div>
     );

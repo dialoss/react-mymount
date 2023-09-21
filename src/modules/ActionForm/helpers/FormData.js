@@ -1,9 +1,9 @@
 import formData from './FormData.json';
-import store from 'store/store';
+import store from 'store';
 
 function initData() {
     let propsRefactor = {};
-    Object.values(formData.properties).forEach((field, index) => {
+    Object.values(formData.properties).forEach(field => {
         propsRefactor[field.name] = field;
     });
     formData.properties = propsRefactor;
@@ -79,7 +79,7 @@ export function getFormData(type, element) {
             setSelect(form, 'toggle_date', element.entry.data.show_date);
         }
     }
-    form.meta['entry_action_type'] = type;
+    form.meta.entry_action_type = type;
     form.meta.entry_id = element.entry.id;
     form.meta.item_id = element.item.id;
     form.meta.display_pos = element.position;

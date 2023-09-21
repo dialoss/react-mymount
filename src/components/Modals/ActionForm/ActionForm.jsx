@@ -20,8 +20,7 @@ const MyForm = ({formData, submitCallback}) => {
         <div className="form__content">
             <div className="form__header">
                 <p className={"form__title"}>{formData.title}</p>
-                <WindowButton callback={() => changeModal('form', {isOpened:false})}
-                                 className={"form__close-btn"} type={'close'}/>
+                <WindowButton className={"form__close-btn"} type={'close'}/>
             </div>
             <div className={"form__fields"}>
                 {

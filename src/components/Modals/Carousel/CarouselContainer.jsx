@@ -1,26 +1,42 @@
-import React from 'react';
-import {ModalManager} from "components/ModalManager";
-import {Carousel} from "components/Modals/Carousel";
-import {CarouselContext} from "./store/context";
-import {useSelector} from "react-redux";
+import React, {useEffect, useState} from 'react';
+import Carousel from "./components/Carousel/Carousel.jsx";
 import useKeypress from "react-use-keypress";
-import {changeCarousel} from "./controller";
+import {triggerEvent} from "helpers/events";
+import {useAddEvent} from "hooks/useAddEvent";
 
-const CarouselContainer = () => {
-    const entrys = useSelector(state => state.entrys).entrys;
+function bounds(n, bound) {
+    return (n + bound) % bound;
+}
 
-    const image = carouselState.image || "";
-    const info = carouselState.info || {};
+const CarouselContainer = ({items, currentItem}) => {
+    let currentWrapper = 0;
+    const [current, setCurrent] = useState(() => {
+        for (let i = 0; i < items.length; i++) {
+            if (items[i].id === currentItem) {
+                return i;
+            }
+        }
+    });
+    const forward = () => {
+        currentWrapper += 1;
+        setCurrent(bounds(currentWrapper, items.length));
+    }
+    const back = () => {
+        currentWrapper -= 1;
+        setCurrent(bounds(currentWrapper, items.length));
+    }
 
-    useKeypress('ArrowRight', () => changeCarousel("right"));
-    useKeypress('ArrowLeft', () => changeCarousel("left"));
+    useAddEvent("carousel-right", forward);
+    useAddEvent("carousel-left", back);
 
+    useEffect(() => {
+        items.forEach(item => new Image().src = item.image);
+    }, [items]);
+
+    useKeypress('ArrowRight', () => triggerEvent('carousel-right'));
+    useKeypress('ArrowLeft', () => triggerEvent('carousel-left'));
     return (
-        <CarouselContext.Provider value={}>
-            <ModalManager>
-                <Carousel data={{info, image}}/>
-            </ModalManager>
-        </CarouselContext.Provider>
+        <Carousel item={items[current]}/>
     );
 };
 
