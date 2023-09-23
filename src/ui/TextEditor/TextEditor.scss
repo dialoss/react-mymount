@@ -3,6 +3,9 @@
   font-size: 16px;
   font-weight: 400;
   background-color: rgb(219, 228, 235);
+  margin: 0 auto;
+  width: 100%;
+  border-radius: 5px;
 }
 
 .ql-snow{
@@ -21,4 +24,12 @@
 .ql-toolbar.ql-snow .ql-picker.ql-expanded .ql-picker-options {
   max-height: 150px;
   overflow-y: auto;
+}
+
+.ql-container.ql-snow {
+  border: none;
+}
+
+.ql-toolbar.ql-snow {
+  border: none;
 }

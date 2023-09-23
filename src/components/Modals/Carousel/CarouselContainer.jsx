@@ -1,4 +1,4 @@
-import React, {useLayoutEffect, useState} from 'react';
+import React, {useCallback, useLayoutEffect, useReducer, useRef, useState} from 'react';
 import Carousel from "./components/Carousel/Carousel.jsx";
 import useKeypress from "react-use-keypress";
 import {triggerEvent} from "helpers/events";
@@ -10,45 +10,47 @@ function bounds(n, bound) {
     return (n + bound) % bound;
 }
 
+function reducer(state, action) {
+    return action;
+}
+
 const CarouselContainer = () => {
     const entrys = useSelector(state => state.elements.entrys);
-    let itemsWrapper = [];
-    const [items, setItems] = useState([]);
+    const [items, dispatch] = useReducer(reducer, []);
+    const itemsRef = useRef();
+    itemsRef.current = items;
 
     const [currentItem, setCurrent] = useState(0);
-    let currentWrapper = 0;
-    const forward = () => {
-        currentWrapper += 1;
-        setCurrent(bounds(currentWrapper, items.length));
-    }
-    const back = () => {
-        currentWrapper -= 1;
-        setCurrent(bounds(currentWrapper, items.length));
-    }
+
+    const forward = useCallback(() => {
+        setCurrent(currentItem => bounds(currentItem + 1, itemsRef.current.length));
+    }, []);
+    const back = useCallback(() => {
+        setCurrent(currentItem => bounds(currentItem - 1, itemsRef.current.length));
+    }, []);
 
     const windowName = 'carousel-window';
 
-    function openCarousel(event) {
-        for (let i = 0; i < itemsWrapper.length; i++) {
-            if (itemsWrapper[i].id === event.detail) {
+    const openCarousel = useCallback(event => {
+        for (let i = 0; i < itemsRef.current.length; i++) {
+            if (itemsRef.current[i].id === event.detail) {
                 setCurrent(i);
                 triggerEvent(windowName, {isOpened: true});
                 return;
             }
         }
-    }
+    }, []);
 
     useAddEvent("open-carousel", openCarousel);
     useAddEvent("carousel-right", forward);
     useAddEvent("carousel-left", back);
 
     useLayoutEffect(() => {
-        // items.forEach(item => new Image().src = item.image);
-        itemsWrapper = [];
+        let newItems = [];
         entrys.forEach(entry => {
             entry.items.forEach(item => {
                 if (item.type !== 'images') return;
-                itemsWrapper.push({
+                newItems.push({
                     id: item.id,
                     image: item.img,
                     info: {
@@ -59,9 +61,14 @@ const CarouselContainer = () => {
                 });
             })
         })
-        console.log(items, itemsWrapper);
-        setItems(itemsWrapper);
+        dispatch(newItems);
     }, [entrys]);
+
+    useLayoutEffect(() => {
+        if (!!currentItem) {
+            new Image().src = items[currentItem].image
+        }
+    }, [currentItem]);
 
     useKeypress('ArrowRight', () => triggerEvent('carousel-right'));
     useKeypress('ArrowLeft', () => triggerEvent('carousel-left'));

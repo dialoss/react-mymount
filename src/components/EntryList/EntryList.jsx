@@ -5,7 +5,7 @@ import Container from "ui/Container/Container";
 import {useThemes} from "hooks/useThemes";
 
 const EntryList = ({entrys}) => {
-    const style = useThemes().listStyle
+    const style = useThemes().listStyle;
 
     return (
         <div className="entrys" style={{marginBottom: "50px"}}>

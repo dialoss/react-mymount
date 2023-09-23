@@ -5,14 +5,10 @@ export const themesSlice = createSlice({
     name: "themes",
     initialState: {
         themes: {},
-        editTheme: {
-            active: false,
-            stylesheet: null,
-        },
     },
     reducers: {
         addTheme: (state, {payload: style}) => {
-            state.themes[style.name] = style.stylesheet;
+            state.themes[style.name] = {active: true, style: style.stylesheet};
         },
         clearThemes: (state) => {
             state.themes = {};
@@ -22,11 +18,8 @@ export const themesSlice = createSlice({
                 delete state.name;
             }
         },
-        toggleEdit: (state) => {
-            state.editTheme.active = !state.editTheme.active;
-            if (state.editTheme.active) {
-                // addTheme()
-            }
+        toggleTheme: (state, {payload: name}) => {
+            state.themes[name].active = !state.themes[name].active;
         }
     }
 });

@@ -3,8 +3,8 @@ import EntryItem from "./components/Item/Item";
 import InfoBlock from "ui/InfoBlock/InfoBlock";
 import {Link} from "react-router-dom";
 import {useThemes} from "hooks/useThemes";
-import MovableContainer from "ui/ObjectTransform/Movable/MovableContainer";
-import MovableItem from "../../ui/ObjectTransform/Movable/MovableItem";
+import TransformContainer from "ui/ObjectTransform/components/TransformContainer/TransformContainer";
+import TransformItem from "ui/ObjectTransform/components/TransformItem/TransformItem";
 
 const Entry = ({entry}) => {
     const theme = useThemes();
@@ -27,18 +27,18 @@ const Entry = ({entry}) => {
                     entry.page_from.length > 1 &&
                     <Link className={style.entry__link} to={entry.page_from}></Link>
                 }
-                <MovableContainer>
+                <TransformContainer>
                     <div className={style.entry__items + ' ' + style[itemsClass]} ref={ref}>
                         {
                             entry.items.map((item) => {
                                 if (item.type === 'videos' || item.type === 'images') mediaItems += 1;
-                                return <MovableItem key={item.id}>
+                                return <TransformItem key={item.id}>
                                             <EntryItem item={item} key={item.id} container={ref}></EntryItem>
-                                        </MovableItem>
+                                        </TransformItem>
                             })
                         }
                     </div>
-                </MovableContainer>
+                </TransformContainer>
 
                 <InfoBlock data={entry}></InfoBlock>
             </div>

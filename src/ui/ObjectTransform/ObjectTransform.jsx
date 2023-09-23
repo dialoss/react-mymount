@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Resizable = () => {
+const ObjectTransform = () => {
     return (
         <div>
             
@@ -8,4 +8,4 @@ const Resizable = () => {
     );
 };
 
-export default Resizable;
+export default ObjectTransform;

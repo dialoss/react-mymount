@@ -1,4 +1,4 @@
-import React, {useEffect, useReducer, useState} from 'react';
+import React, {useEffect, useReducer, useRef, useState} from 'react';
 import ListView from "ui/ListView/ListView";
 import {useDispatch} from "react-redux";
 import EntryList from "components/EntryList/EntryList";
@@ -25,14 +25,15 @@ function reducer(state, action) {
 }
 
 const EntryListContainer = () => {
-    let tempContainer = [];
-    const [localEntrys, localDispatch] = useReducer(reducer, []);
-    const dispatch = useDispatch();
+    const [entrys, dispatch] = useReducer(reducer, []);
+    const entrysRef = useRef();
+    entrysRef.current = entrys;
+    const globalDispatch = useDispatch();
 
     function addEntrys(response) {
-        tempContainer = [...tempContainer, ...response.entrys_data];
-        localDispatch({type: 'SET', payload: tempContainer});
-        dispatch(actions.setElements({entrys: tempContainer}));
+        let newEntrys = [...entrysRef.current, ...response.entrys_data];
+        dispatch({type: 'SET', payload: newEntrys});
+        globalDispatch(actions.setElements({entrys: newEntrys}));
     }
 
     useEffect(() => {
@@ -40,17 +41,16 @@ const EntryListContainer = () => {
     }, []);
 
     async function handleElements(event) {
-        const data = event.detail.data;
         const response = await event.detail.response;
         const responseData = response.data.entrys_data[0];
-        localDispatch({type: 'UPDATE', payload: responseData});
+        dispatch({type: 'UPDATE', payload: responseData});
     }
 
     useAddEvent('element-changed', handleElements);
 
     return (
         <ListView>
-            <EntryList entrys={localEntrys}/>
+            <EntryList entrys={entrys}/>
         </ListView>
     );
 };

@@ -4,7 +4,7 @@ import {routes} from "../constants/routes";
 import {EntrysPage} from "pages/EntrysPage";
 import {Intro} from "pages/MainPage";
 import {useMyLocation} from "hooks/useMyLocation";
-import {addTheme, clearThemes} from "helpers/themes";
+import {addTheme, removeTheme} from "helpers/themes";
 
 const Components = {
     'EntrysPage': EntrysPage,
@@ -15,7 +15,7 @@ const PageWrapper = ({route}) => {
     const location = useMyLocation();
     addTheme("listStyle", route.style);
     useLayoutEffect(() => {
-        clearThemes();
+        removeTheme("listStyle");
         addTheme("listStyle", route.style);
     }, [location])
     

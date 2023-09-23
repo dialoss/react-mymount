@@ -8,3 +8,7 @@ export function clearThemes() {
 export function addTheme(name, stylesheet) {
     store.dispatch(actions.addTheme({name, stylesheet}));
 }
+
+export function removeTheme(name) {
+    store.dispatch(actions.removeTheme({name}));
+}

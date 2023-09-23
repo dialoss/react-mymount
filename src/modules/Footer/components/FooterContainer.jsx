@@ -11,7 +11,7 @@ const FooterContainer = () => {
             const response = await sendLocalRequest('/get_page_views/');
             setViews({curViews: response.page_views, totalViews: response.total_views});
         })();
-    }, [location]);
+    }, [location.relativeURL]);
     return (
         <Footer totalViews={views.totalViews} currentViews={views.curViews}></Footer>
     );
