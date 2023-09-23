@@ -1,5 +1,6 @@
 import {getFileType} from "../helpers/files";
 import {sendLocalRequest} from "api/requests";
+import {triggerEvent} from "../../../helpers/events";
 
 const developerKey = 'AIzaSyDDqSATTGIXHgBRwl_S4mPCcATYJsISOhM';
 
@@ -64,14 +65,24 @@ async function pickerCallback(data) {
             let url = d[google.picker.Document.URL];
             url = "https://drive.google.com/uc?id=" + url.split('/').slice(-2, -1);
             filesList.push({name : d.name, url : url, type : getFileType(d.name)});
-            if (curUploadField == null && data[google.picker.Response.VIEW][0] !== 'upload') {
-                let send_data = {
-                    'entry_action_type' : 'add',
-                    'from' : 'drive_select',
-                    'file_media' : [{'type':'img', 'title':'','description':'','url':url, 'width':1, 'height':1}]
-                }
-                // updatePage(send_data);
+        }
+        if (curUploadField == null && data[google.picker.Response.VIEW][0] !== 'upload') {
+            let send_data = {
+                'event_type': 'ADD',
+                'entry_action_type' : 'add',
+                'from' : 'drive_select',
+                'file_media' : filesList.map(file => {
+                    return {
+                        type:'img',
+                        title:"",
+                        description:"",
+                        url:file.url,
+                        width:1,
+                        height:1
+                    }
+                })
             }
+            triggerEvent("action-callback", send_data);
         }
         if (curUploadField != null) {
             if (filesList.length) curUploadField(filesList);

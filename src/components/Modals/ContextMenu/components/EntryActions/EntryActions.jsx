@@ -1,7 +1,6 @@
 import React from 'react';
 import {ContextMenu} from "components/Modals/ContextMenu/index";
 import {ContextActions} from "./actions";
-import {handleEntryAction} from "modules/ActionManager/components/helpers";
 import {useAddEvent} from "hooks/useAddEvent";
 import {triggerEvent} from "helpers/events";
 

@@ -135,6 +135,7 @@ export function setItemTransform(event, type, _item, _btn, callback) {
         if (!mouseMoved) return;
 
         let data = {
+            'event_type': 'UPDATE',
             'entry_action_type' : 'transform',
             'position' : item.style.position || '',
             'max_width' : item.style.maxWidth.replace("%", "") || "0",

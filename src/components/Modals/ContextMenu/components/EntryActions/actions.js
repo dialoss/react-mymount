@@ -7,6 +7,7 @@ export const ContextActions = {
         name: 'Quick New',
         callback: ({actionElement}) => {
             let data = {
+                'event_type': 'ADD',
                 'entry_action_type' : 'add',
                 'type' : 'add-entry-quick',
                 'display_pos': actionElement.position
@@ -39,6 +40,7 @@ export const ContextActions = {
         name: 'Вставить',
         callback: ({actionElement}) => {
             let data = {
+                'event_type': 'ADD',
                 'entry_action_type' : 'paste',
                 'display_pos' : actionElement.position,
                 'entry_id': copiedElement.entry.id,
@@ -59,6 +61,7 @@ export const ContextActions = {
         name: 'Удалить',
         callback: ({actionElement}) => {
             let data = {
+                'event_type': 'DELETE',
                 'entry_action_type' : 'delete',
                 'entry_id' : actionElement.entry.id,
                 'item_id' : actionElement.item.id,

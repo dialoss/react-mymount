@@ -78,6 +78,9 @@ export function getFormData(type, element) {
             }
             setSelect(form, 'toggle_date', element.entry.data.show_date);
         }
+        form.meta.event_type = 'UPDATE';
+    } else {
+        form.meta.event_type = 'ADD';
     }
     form.meta.entry_action_type = type;
     form.meta.entry_id = element.entry.id;

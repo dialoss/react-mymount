@@ -13,7 +13,7 @@ const ObjectTransform = () => {
         const item = btn.closest(".transform-item");
 
         setItemTransform(event.detail.event, event.detail.type, item, btn, transformCallback);
-        triggerEvent("action-event", event);
+        triggerEvent("action-event", event.detail.event);
     }
 
     useAddEvent("transform-item", initTransform)

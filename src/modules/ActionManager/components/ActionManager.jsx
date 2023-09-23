@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useRef, useState} from 'react';
 import EntryActions from "components/Modals/ContextMenu/components/EntryActions/EntryActions";
 import {useAddEvent} from "hooks/useAddEvent";
 import {setActionElement} from "./helpers";
@@ -9,12 +9,17 @@ import {triggerEvent} from "helpers/events";
 
 const ActionManager = () => {
     const [actionElement, setElement] = useState({});
+    const elementRef = useRef();
+    elementRef.current = actionElement;
     function setEvent(event) {
         setElement(setActionElement(event.detail));
     }
     useAddEvent('action-event', setEvent);
 
-    function actionCallback(data) {
+    function actionCallback(event) {
+        const data = event.detail;
+        data.entry_id ||= elementRef.current.entry.id;
+        data.item_id ||= elementRef.current.item.id;
         const response = sendLocalRequest("/entry_action/", data);
         triggerEvent('element-changed', {data, response});
     }
