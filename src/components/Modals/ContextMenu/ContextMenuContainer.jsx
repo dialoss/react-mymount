@@ -21,8 +21,8 @@ const ContextMenuContainer = ({actions}) => {
     useAddEvent("scroll", onScroll);
 
     return (
-        <ModalManager name={name}>
-            <ContextMenu style={{background: {opacity: "0"}}} actions={actions} position={position}></ContextMenu>
+        <ModalManager name={name} key={name}>
+            <ContextMenu style={{opacity: "0"}} actions={actions} position={position}></ContextMenu>
         </ModalManager>
     );
 };

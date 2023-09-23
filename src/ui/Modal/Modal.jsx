@@ -2,19 +2,17 @@ import React from 'react';
 import './Modal.scss';
 
 const Modal = ({content, isOpened, closeCallback}) => {
-    const modalWin = React.createRef();
-
     return (
         <div className={"modal"}>
             <div className={"modal__wrapper " + (isOpened ? "opened" : "")}>
-                <div className={"modal__background"} style={content.props.style.background}
+                <div className={"modal__background"} style={!!content?content.props.style:{}}
                      onClick={(event) => {
                          event.stopPropagation();
                          closeCallback();
                      }}>
                 </div>
                 <div className="modal__window">
-                    <div className="modal__content" ref={modalWin}>
+                    <div className="modal__content">
                         {content}
                     </div>
                 </div>

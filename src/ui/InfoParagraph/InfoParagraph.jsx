@@ -7,6 +7,7 @@ const InfoParagraph = ({type, children, ...props}) => {
     const editorCallback = useCallback((event) => {
         if (event.detail === 2) {
             triggerEvent('toggle-editor', {
+                event,
                 simple: (type !== "textfield"),
                 isOpened: true,
                 props,
@@ -19,7 +20,7 @@ const InfoParagraph = ({type, children, ...props}) => {
         ref.current.innerHTML = children;
     }, [children]);
     return (
-        <div ref={ref} {...props} onClick={editorCallback}
+        <div ref={ref} {...props} onClick={editorCallback} key={type}
            className={`info__paragraph info__paragraph-${type}`}></div>
     );
 };

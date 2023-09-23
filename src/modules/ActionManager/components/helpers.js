@@ -1,7 +1,6 @@
 import store from "store";
 
 let actionElement = null;
-let copiedElement = null;
 
 const emptyElement = {
     entry: {
@@ -17,12 +16,6 @@ const emptyElement = {
 
 function getElementID(element) {
     return element.classList[0].split('-')[1];
-}
-
-export function handleEntryAction(action) {
-    action.callback({actionElement, copiedElement});
-    actionElement = structuredClone(emptyElement);
-    copiedElement = structuredClone(emptyElement);
 }
 
 export function setActionElement(event) {
@@ -44,6 +37,7 @@ export function setActionElement(event) {
     }
     actionElement.position = getElementPosition(actionElement);
     console.log(actionElement);
+    return actionElement;
 }
 
 function getElementPosition(element) {

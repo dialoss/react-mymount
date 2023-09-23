@@ -21,7 +21,7 @@ const ModalManager = ({name, children}) => {
         ref.current.querySelectorAll(".window-close").forEach(button => {
             button.addEventListener("click", () => setOpened(false));
         });
-    }, []);
+    }, [children]);
 
     return (
         <div className={"modal-manager"} ref={ref}>

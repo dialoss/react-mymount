@@ -1,14 +1,17 @@
 import React from 'react';
-import {ContextMenu} from "components/Modals/ContextMenu";
+import {ContextMenu} from "components/Modals/ContextMenu/index";
 import {ContextActions} from "./actions";
-import {handleEntryAction, setActionElement} from "../helpers";
+import {handleEntryAction} from "modules/ActionManager/components/helpers";
 import {useAddEvent} from "hooks/useAddEvent";
-import {triggerEvent} from "../../../../helpers/events";
+import {triggerEvent} from "helpers/events";
 
-const EntryActions = () => {
+const EntryActions = ({actionElement}) => {
     function handleContext(event) {
-        handleEntryAction(ContextActions[event.detail.type]);
         triggerEvent("context-window", {isOpened: false});
+        const requestData = ContextActions[event.detail.type].callback(actionElement);
+        for (const data of requestData) {
+            triggerEvent("action-callback", data);
+        }
     }
     useAddEvent('context-action', handleContext);
 

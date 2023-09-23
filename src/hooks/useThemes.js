@@ -8,7 +8,7 @@ export function useThemes() {
         Object.keys(allThemes).forEach(theme => {
             if (allThemes[theme].active) activeThemes[theme] = allThemes[theme].style;
         });
-        console.log(11)
+        // console.log(11)
         return activeThemes;
     }, [allThemes]);
 }

@@ -9,12 +9,13 @@ import {useDispatch, useSelector} from "react-redux";
 import {actions} from "./store/reducer";
 
 const FormContainer = () => {
+    const windowName = "form-window";
     const form = useSelector(state => state.form);
     const dispatch = useDispatch();
     function handleFormData(event) {
         dispatch(actions.setForm({data:{}}));
         dispatch(actions.setForm(getFormData(event.detail.type, event.detail.element)));
-        triggerEvent('form-window', {isOpened: true});
+        triggerEvent(windowName, {isOpened: true});
     }
     function handleFieldChange(event) {
         dispatch(actions.changeField(event.detail));
@@ -23,8 +24,8 @@ const FormContainer = () => {
     useAddEvent('fieldChange', handleFieldChange);
     useAddEvent('form-data', handleFormData);
     return (
-        <ModalManager name={'form-window'}>
-            <MyForm style={{background: {}}} formData={form} submitCallback={() => submitForm(form)}></MyForm>
+        <ModalManager name={windowName} key={windowName}>
+            <MyForm formData={form} submitCallback={() => submitForm(form)}></MyForm>
         </ModalManager>
     );
 };

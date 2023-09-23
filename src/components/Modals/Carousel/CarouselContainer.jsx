@@ -73,14 +73,12 @@ const CarouselContainer = () => {
     useKeypress('ArrowRight', () => triggerEvent('carousel-right'));
     useKeypress('ArrowLeft', () => triggerEvent('carousel-left'));
     return (
-        <>
+        <ModalManager name={windowName} key={windowName}>
             {
-                !!items.length &&
-                <ModalManager name={windowName}>
-                    <Carousel style={{background: {}}} item={items[currentItem]}/>
-                </ModalManager>
+                !!items.length && currentItem < items.length &&
+                <Carousel item={items[currentItem]}/>
             }
-        </>
+        </ModalManager>
     );
 };
 

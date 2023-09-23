@@ -1,67 +1,69 @@
-import {sendLocalRequest} from "api/requests";
 import {triggerEvent} from "helpers/events";
+
+let copiedElement = null;
 
 export const ContextActions = {
     'add-quick': {
         name: 'Quick New',
-        callback: async ({actionElement}) => {
+        callback: ({actionElement}) => {
             let data = {
                 'entry_action_type' : 'add',
                 'type' : 'add-entry-quick',
-                'display_pos' : actionElement.position
+                'display_pos': actionElement.position
             }
-            const response = sendLocalRequest('/entry_action/', data);
-            triggerEvent('element-changed', {data, response});
+            return [data];
         }
     },
     'add':{
         name: 'Добавить',
         callback: ({actionElement}) => {
             triggerEvent('form-data', {type:'add', element:actionElement})
+            return [];
         }
     },
     'edit':{
         name: 'Редактировать',
         callback: ({actionElement}) => {
             triggerEvent('form-data', {type:'edit', element:actionElement})
+            return [];
         }
     },
     'copy':{
         name: 'Копировать',
-        callback: () => {
-            // copiedElement = actionElement;
+        callback: ({actionElement}) => {
+            copiedElement = actionElement;
+            return [];
         }
     },
     'paste':{
         name: 'Вставить',
-        callback: ({actionElement, copiedElement}) => {
+        callback: ({actionElement}) => {
             let data = {
                 'entry_action_type' : 'paste',
                 'display_pos' : actionElement.position,
-                'entry_id' : copiedElement.entry.id,
-                'item_id' : copiedElement.item.id,
+                'entry_id': copiedElement.entry.id,
+                'item_id': copiedElement.item.id,
             };
-            triggerEvent('element-changed', {data, response: {}});
-            console.log(data);
+            return [data, ContextActions['delete'].callback({actionElement:copiedElement})];
         }
     },
     'cut':{
         name: 'Вырезать',
-        callback: ({copiedElement}) => {
-            ContextActions["paste"].callback();
+        callback: ({actionElement}) => {
+            copiedElement = actionElement;
             copiedElement.entry.data.style.opacity = "0.3";
+            return [];
         }
     },
     'delete':{
         name: 'Удалить',
-        callback: async ({actionElement}) => {
+        callback: ({actionElement}) => {
             let data = {
                 'entry_action_type' : 'delete',
                 'entry_id' : actionElement.entry.id,
                 'item_id' : actionElement.item.id,
             }
-            const response = sendLocalRequest('/entry_action/', data);
-            triggerEvent('element-changed', {data, response});
+            return [data];
         }
     }
 }

@@ -21,6 +21,8 @@ function reducer(state, action) {
             break;
         case "ADD":
             return state.insert(action.payload.display_pos, action.payload);
+        case 'DELETE':
+            return state;
     }
 }
 
@@ -43,7 +45,7 @@ const EntryListContainer = () => {
     async function handleElements(event) {
         const response = await event.detail.response;
         const responseData = response.data.entrys_data[0];
-        dispatch({type: 'UPDATE', payload: responseData});
+        dispatch({type: event.detail.type, payload: responseData});
     }
 
     useAddEvent('element-changed', handleElements);

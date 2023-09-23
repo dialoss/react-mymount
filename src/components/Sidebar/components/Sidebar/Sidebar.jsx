@@ -10,9 +10,9 @@ const Sidebar = ({data, isOpened, windowCallback}) => {
         <div className="sidebar">
             <div className="sidebar__header">
                 <WindowButton style={SidebarStates[isOpened]['btn_open']} type={'open'}
-                                 callback={() => windowCallback(true)}></WindowButton>
+                                 onClick={() => windowCallback(true)}></WindowButton>
                 <WindowButton style={SidebarStates[isOpened]['btn_close']} type={'close'}
-                                 callback={() => windowCallback(false)}></WindowButton>
+                                onClick={() => windowCallback(false)}></WindowButton>
             </div>
             <div className="sidebar__wrapper" style={SidebarStates[isOpened]['wrapper']}>
                 <div className="sidebar__inner">

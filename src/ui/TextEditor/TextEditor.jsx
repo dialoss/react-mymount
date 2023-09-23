@@ -9,16 +9,14 @@ const TextEditor = React.forwardRef(function TextEditor({simple, value, callback
         configQuill();
     }, []);
 
-    const quill = useRef();
     useEffect(() => {
-        quill.current.focus();
-        ref = quill;
+        ref.current.focus();
     }, []);
 
     let config = (!simple ? modules : {toolbar:false});
 
     return (
-        <ReactQuill ref={quill}
+        <ReactQuill ref={ref}
                     theme="snow"
                     value={value}
                     onChange={callback}

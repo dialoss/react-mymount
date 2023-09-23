@@ -21,10 +21,11 @@ $media-resize-width: 850px;
     &__image {
         margin: 0 auto;
         display: block;
+        border-radius: 8px;
         max-height: 80vh;
         min-height: 50vh;
         max-width: 80vw;
-        border-radius: 8px;
+        object-fit: cover;
 
         @media only screen and (max-width:$media-resize-width) {
             & {

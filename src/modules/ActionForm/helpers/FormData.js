@@ -67,7 +67,7 @@ export function getFormData(type, element) {
     if (type === 'edit') {
         fillForm(form, element.item, [element.item.data]);
         if (element.item.id === -1) {
-            fillForm(form, element.entry, element.entry.data.items);
+            fillForm(form, element.entry, element.entry.data.items.filter(item => item.type === 'images'));
         }
         if (Object.keys(form.data).includes("settings")) {
             if (element.item.id !== -1) {

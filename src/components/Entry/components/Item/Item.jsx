@@ -24,8 +24,9 @@ const EntryItem = ({item, container}) => {
 
     const carouselCallback = useCallback(() => {
         if (item.type !== "images") return;
-        if (Array.from(ref.current.classList).slice(-1)[0] === 'moved') {
-            ref.current.classList.remove("moved");
+        const itemTransform = ref.current.closest(".transform-item");
+        if (!!itemTransform && Array.from(itemTransform.classList).slice(-1)[0] === 'transformed') {
+            itemTransform.classList.remove("transformed");
             return;
         }
         triggerEvent('open-carousel', item.id);

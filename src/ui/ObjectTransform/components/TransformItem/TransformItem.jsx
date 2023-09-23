@@ -1,19 +1,23 @@
-import React, {useEffect, useRef} from 'react';
-import {triggerEvent} from "helpers/events";
-import {setItemTransform} from "../../transform";
+import React from 'react';
+import {Transforms} from "../../config";
+import TransformButton from "./TransformButton";
 
 const TransformItem = ({children}) => {
-    const ref = useRef();
-    useEffect(() => {
-        // ref.current.addEventListener("mousedown", (event) =>
-            // setItemTransform(event, ))
-
-        // ref.current.addEventListener("mousedown", () => triggerEvent("transform-item", {item:ref.current}));
-    }, []);
     return (
-        <div className={"transform-item"} ref={ref}>
+        <TransformButton className={"transform-item transform--" + Transforms.parent.name}
+                         type={Transforms.parent.name}>
             {children}
-        </div>
+            {Object.keys(Transforms.child).map(name => {
+                const tr = Transforms.child[name];
+                return tr.buttons.map(btn => {
+                    return React.createElement(TransformButton, {
+                        className: "transform--" + btn.name + ' ' + btn.style,
+                        key: btn.name,
+                        type: btn.name,
+                    });
+                })
+            })}
+        </TransformButton>
     );
 };
 
