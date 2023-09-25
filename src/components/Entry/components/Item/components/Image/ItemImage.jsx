@@ -1,4 +1,4 @@
-import React, {useCallback, useEffect, useRef, useState} from 'react';
+import React, {useCallback, useEffect, useRef} from 'react';
 import './ItemImage.scss';
 import {triggerEvent} from "helpers/events";
 
@@ -12,6 +12,7 @@ const ItemImage = ({data}) => {
         }
         triggerEvent('open-carousel', data.id);
     }, []);
+
     useEffect(()=>{
         const itemRef = ref.current;
         const container = itemRef.closest(".transform-container");
@@ -24,11 +25,9 @@ const ItemImage = ({data}) => {
             if (data.row > 1) {
                 itemTransform.style.width = 100 / data.row + "%";
             } else {
-                if (itemRef.getBoundingClientRect().width === 0) {
+                if (itemRef.getBoundingClientRect().width === 0 || !!itemTransform.style.width) {
                     itemTransform.style.width = Math.min(contWidth, data.media_width) / contWidth * 100 + "%";
-                    // ref.current.style.width = data.media_width / contWidth * 100 + "%";
                 }
-                // ref.current.style.height = ratio * ref.current.getBoundingClientRect().width + "px";
             }
         } else {
             triggerEvent("init-container", container);

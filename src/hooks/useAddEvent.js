@@ -1,10 +1,12 @@
 import {useEffect} from "react";
 
-export function useAddEvent(name, func) {
+export function useAddEvent(name, func, condition=true) {
     useEffect(() => {
-        window.addEventListener(name, func);
-        return () => {
-            window.removeEventListener(name, func);
+        if (condition) {
+            window.addEventListener(name, func);
+            return () => {
+                window.removeEventListener(name, func);
+            }
         }
     }, []);
 }

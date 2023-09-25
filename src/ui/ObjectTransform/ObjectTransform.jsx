@@ -2,6 +2,7 @@ import React from 'react';
 import {triggerEvent} from "helpers/events";
 import {useAddEvent} from "hooks/useAddEvent";
 import {setItemTransform} from "./transform";
+import {initContainerHeight} from "./helpers";
 
 const ObjectTransform = () => {
     function transformCallback(data) {
@@ -17,6 +18,11 @@ const ObjectTransform = () => {
         triggerEvent("action-event", event.detail.event);
     }
 
+    function initContainer(event) {
+        initContainerHeight(event.detail);
+    }
+
+    useAddEvent("init-container", initContainer);
     useAddEvent("transform-item", initTransform)
 
     return (

@@ -19,7 +19,7 @@ const ItemData = ({data, ...props}) => {
     let TargetComponent = Components[data.type];
 
     return (
-        <TargetComponent {...props} data={data}/>
+        <TargetComponent {...props} data={data} key={data.id}/>
     );
 };
 

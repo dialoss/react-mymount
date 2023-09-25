@@ -3,14 +3,10 @@ import "./MyMasonry.scss";
 import {CSSTransition, TransitionGroup} from "react-transition-group";
 import {getViewportSize} from "components/helpers/viewport";
 import {useAddEvent} from "../../hooks/useAddEvent";
-import {initContainerHeight} from "../ObjectTransform/helpers";
 
 const MyMasonry = ({maxColumns=1, widthPoints, children}) => {
     const [layout, setLayout] = useState([]);
     const [count, setCount] = useState(maxColumns);
-    const childrenRef = useRef();
-    childrenRef.current = children;
-    console.log(children)
 
     function setColumns() {
         const [vw, vh] = getViewportSize();
@@ -23,11 +19,6 @@ const MyMasonry = ({maxColumns=1, widthPoints, children}) => {
         if (newColumns + 1 <= maxColumns) {
             setCount(newColumns + 1);
         }
-        childrenRef.current.forEach(child => {
-            if (!!child.ref) {
-                initContainerHeight(child.ref.current.querySelector(".transform-container"));
-            }
-        })
     }
 
     useLayoutEffect(() => {
@@ -42,10 +33,7 @@ const MyMasonry = ({maxColumns=1, widthPoints, children}) => {
         setLayout(newLayout);
     }, [children, count]);
 
-    useLayoutEffect(() => {
-        window.addEventListener('resize', setColumns);
-        return () => window.removeEventListener('resize', setColumns);
-    }, []);
+    useAddEvent('resize', setColumns);
 
     return (
         <div className={"masonry__grid"}>

@@ -1,8 +1,7 @@
 import React, {useRef} from 'react';
 import {triggerEvent} from "helpers/events";
 
-const TransformButton = ({children, type, ...props}) => {
-    const ref = useRef();
+const TransformButton = React.forwardRef(function TransformButton({children, type, ...props}, ref) {
     function transformCallback(event) {
         event.stopPropagation();
         if (event.button !== 0) return;
@@ -13,6 +12,6 @@ const TransformButton = ({children, type, ...props}) => {
             {children}
         </div>
     );
-};
+});
 
 export default TransformButton;

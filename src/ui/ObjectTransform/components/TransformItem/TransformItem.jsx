@@ -1,6 +1,8 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useLayoutEffect, useRef, useState} from 'react';
 import {Transforms} from "../../config";
 import TransformButton from "./TransformButton";
+import {useAddEvent} from "../../../../hooks/useAddEvent";
+import {initContainerHeight} from "../../helpers";
 
 const TransformItem = ({children}) => {
     const item = children.props.item;
@@ -15,21 +17,14 @@ const TransformItem = ({children}) => {
         top: formatProperty('top', item.top,"px"),
         ...(item.position === "absolute" ? {position:"absolute", zIndex: 1}:{position: "relative"})
     };
-    // let dims = {width: -1, height:-1};
-    // let contWidth = container.current.getBoundingClientRect().width;
-    // const ratio = item.media_height / item.media_width;
-    // let itemWidth = 0;
-    // if (item.max_width !== "0") {
-    //     itemWidth = +item.max_width * contWidth / 100;
-    // } else {
-    //     itemWidth = contWidth / row - 2 * +theme.listStyle.mypadding;
-    // }
-    // itemWidth = Math.min(itemWidth, item.media_width);
-    // setDims({width: itemWidth, height: itemWidth * ratio});
-
+    const ref = useRef();
+    function changeContainer() {
+        initContainerHeight(ref.current.closest(".transform-container"));
+    }
+    useAddEvent('resize', changeContainer, initialTransform.position === 'absolute');
     return (
         <TransformButton className={"transform-item transform--" + Transforms.parent.name}
-                         type={Transforms.parent.name} style={initialTransform}>
+                         type={Transforms.parent.name} style={initialTransform} ref={ref}>
             {children}
             {Object.keys(Transforms.child).map(name => {
                 const tr = Transforms.child[name];
