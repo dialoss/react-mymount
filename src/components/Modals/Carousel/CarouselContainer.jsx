@@ -49,10 +49,10 @@ const CarouselContainer = () => {
         let newItems = [];
         entrys.forEach(entry => {
             entry.items.forEach(item => {
-                if (item.type !== 'images') return;
+                if (item.type !== 'image') return;
                 newItems.push({
                     id: item.id,
-                    image: item.img,
+                    image: item.url,
                     info: {
                         title: item.title || entry.title,
                         description: item.description || entry.description,

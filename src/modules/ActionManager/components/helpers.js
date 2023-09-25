@@ -35,6 +35,7 @@ export function setActionElement(event) {
             }
         }
     }
+    console.log(intersect)
     actionElement.position = getElementPosition(actionElement);
     console.log(actionElement);
     return actionElement;

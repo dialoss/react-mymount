@@ -1,19 +1,33 @@
 import {getFileType} from "../helpers/files";
 import {sendLocalRequest} from "api/requests";
-import {triggerEvent} from "../../../helpers/events";
+import {triggerEvent} from "helpers/events";
 
 const developerKey = 'AIzaSyDDqSATTGIXHgBRwl_S4mPCcATYJsISOhM';
+const clientId = '1024510478167-dufqr18l2g3nmt7gkr5rakc9sjk5nf54.apps.googleusercontent.com';
 
+const DISCOVERY_DOC = 'https://www.googleapis.com/discovery/v1/apis/drive/v3/rest';
+
+let tokenClient = '';
 let accessToken = '';
 let pickerInited = false;
 let gisInited = false;
 let uploadView = null;
 let curUploadField = null;
 let picker = null;
+let gapiInited = false;
 
 function onApiLoad() {
+    window.gapi.load('client', initializeGapiClient);
     window.gapi.load('auth');
     window.gapi.load('picker', { callback: onPickerApiLoad });
+}
+
+async function initializeGapiClient() {
+    await window.gapi.client.init({
+        apiKey: developerKey,
+        discoveryDocs: [DISCOVERY_DOC],
+    });
+    gapiInited = true;
 }
 
 function onPickerApiLoad() {
@@ -22,6 +36,14 @@ function onPickerApiLoad() {
 }
 
 function gisLoaded() {
+    tokenClient = window.google.accounts.oauth2.initTokenClient({
+        client_id: clientId,
+        scope: ['https://www.googleapis.com/auth/drive.file',
+            'https://www.googleapis.com/auth/drive.metadata',
+            'https://www.googleapis.com/auth/drive',
+            'https://www.googleapis.com/auth/drive.readonly',
+            'openid'].join(' ')
+    });
     gisInited = true;
 }
 
@@ -102,4 +124,28 @@ export function initPicker() {
     pickerClient.setAttribute("defer", "defer");
     document.head.append(pickerApi);
     document.head.append(pickerClient);
+}
+
+export async function listFiles() {
+    setTimeout(async () => {
+        if (!(gisInited && gapiInited)) return;
+        if (window.gapi.client.getToken() === null) {
+            tokenClient.requestAccessToken({prompt: 'consent'});
+        } else {
+            tokenClient.requestAccessToken({prompt: ''});
+        }
+        setTimeout(async () => {
+            let response = null;
+            await window.gapi.client.drive.files.get({
+                fileId: "1s5c_vwxbA6eiV7YQ30ePgjHqlAukyZkb",
+                alt: 'media',
+            }).then(res => {
+                console.log(res)
+                response = res.body.arrayBuffer();
+            });
+            return response;
+        }, 1000)
+
+    }, 2000)
+
 }

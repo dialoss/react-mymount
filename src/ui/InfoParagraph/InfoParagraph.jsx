@@ -20,8 +20,8 @@ const InfoParagraph = ({type, children, ...props}) => {
         ref.current.innerHTML = children;
     }, [children]);
     return (
-        <div ref={ref} {...props} onClick={editorCallback} key={type}
-           className={`info__paragraph info__paragraph-${type}`}></div>
+        <span ref={ref} {...props} onClick={editorCallback} key={type}
+           className={`info__paragraph info__paragraph-${type}`}></span>
     );
 };
 

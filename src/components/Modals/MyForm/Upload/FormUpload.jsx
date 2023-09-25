@@ -9,7 +9,7 @@ const FormUpload = ({data}) => {
         setUpload(data.value);
     }, [data]);
     function setUploadedFiles(filesList) {
-        setUpload(filesList);
+        data.callback({target: {value:filesList}});
     }
     return (
         <div className={"form-upload"}>

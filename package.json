@@ -3,11 +3,17 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@react-three/drei": "^9.84.2",
+    "@react-three/fiber": "^8.14.2",
     "@reduxjs/toolkit": "^1.9.5",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "dayjs": "^1.11.9",
+    "disqus-react": "^1.1.5",
+    "gapi-client": "^0.0.3",
+    "googleapis": "^126.0.1",
+    "list-react-files": "^0.2.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-google-drive-picker": "^1.2.2",
@@ -22,9 +28,9 @@
     "redux": "^4.2.1",
     "sass": "^1.66.1",
     "styles": "^0.2.1",
+    "three": "^0.156.1",
     "web-vitals": "^2.1.4"
   },
-
   "scripts": {
     "start": "craco start",
     "build": "craco build",

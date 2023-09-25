@@ -8,6 +8,7 @@ const EditorManager = () => {
     const [editors, setEditors] = useState([]);
 
     function toggleEditor(event) {
+        triggerEvent("action-event", event.detail.event);
         const element = event.detail.element;
 
         const edit = React.createElement(InlineEditor, {
@@ -27,7 +28,6 @@ const EditorManager = () => {
                 }
             ];
         });
-        triggerEvent("action-event", event.detail.event);
     }
 
     const fieldToUpdate = useRef();
@@ -42,7 +42,8 @@ const EditorManager = () => {
                 return ed;
             }).filter(Boolean)
         );
-        triggerEvent("action-callback", {value, mount});
+        let type = mount.classList[1].split('-')[1];
+        triggerEvent("action-callback", {[type]: value, event_type: 'UPDATE', entry_action_type: 'edit'});
     }, []);
 
     useEffect(() => {

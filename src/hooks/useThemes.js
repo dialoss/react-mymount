@@ -1,14 +1,18 @@
 import store from "store";
-import {useEffect, useMemo} from "react";
+import {useEffect, useMemo, useRef, useState} from "react";
 
-export function useThemes() {
+export function useThemes(defaultTheme) {
+    const [activeThemes, setActive] = useState(defaultTheme);
     const allThemes = store.getState().themes.themes;
-    return useMemo(() => {
-        const activeThemes = {};
+    useEffect(() => {
+        let addThemes = {};
         Object.keys(allThemes).forEach(theme => {
-            if (allThemes[theme].active) activeThemes[theme] = allThemes[theme].style;
+            if (allThemes[theme].active) {
+                addThemes[theme] = allThemes[theme].style;
+            }
         });
-        // console.log(11)
-        return activeThemes;
+        setActive(activeThemes => {return {...activeThemes, ...addThemes}});
     }, [allThemes]);
+
+    return activeThemes;
 }

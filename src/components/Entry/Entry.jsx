@@ -1,23 +1,33 @@
-import React, { useEffect, useRef, useState} from 'react';
+import React, {useContext, useEffect, useRef, useState} from 'react';
 import EntryItem from "./components/Item/Item";
 import InfoBlock from "ui/InfoBlock/InfoBlock";
 import {Link} from "react-router-dom";
-import {useThemes} from "hooks/useThemes";
 import TransformContainer from "ui/ObjectTransform/components/TransformContainer/TransformContainer";
 import TransformItem from "ui/ObjectTransform/components/TransformItem/TransformItem";
+import {ThemeContext} from "ui/Themes";
+import {initContainerHeight} from "../../ui/ObjectTransform/helpers";
 
 const Entry = ({entry}) => {
-    const theme = useThemes();
+    const theme = useContext(ThemeContext);
     const style = theme.listStyle;
 
-    const ref = useRef();
-
     let mediaItems = 0;
-    const [itemsClass, setClass] = useState("");
+    let itemsRow = 1;
+    entry.items.forEach(item => {
+        if (item.type === 'video' || item.type === 'image') mediaItems += 1;
+    })
+    if (mediaItems >= 3) itemsRow = 3;
+    else if (mediaItems >= 2) itemsRow = 2;
+
+    const [items, setItems] = useState([]);
     useEffect(() => {
-        if (mediaItems >= 3) setClass("entry__items--3");
-        else if (mediaItems >= 2) setClass("entry__items--2");
-        else if (mediaItems >= 1) setClass("entry__items--1");
+        setItems(entry.items.map((item) => {
+            item = {...item, row:itemsRow};
+            // item.row = itemsRow;
+            return <TransformItem key={item.id}>
+                <EntryItem item={item} key={item.id}></EntryItem>
+            </TransformItem>
+        }));
     }, []);
 
     return (
@@ -28,15 +38,8 @@ const Entry = ({entry}) => {
                     <Link className={style.entry__link} to={entry.page_from}></Link>
                 }
                 <TransformContainer>
-                    <div className={style.entry__items + ' ' + style[itemsClass]} ref={ref}>
-                        {
-                            entry.items.map((item) => {
-                                if (item.type === 'videos' || item.type === 'images') mediaItems += 1;
-                                return <TransformItem key={item.id}>
-                                            <EntryItem item={item} key={item.id} container={ref}></EntryItem>
-                                        </TransformItem>
-                            })
-                        }
+                    <div className={style.entry__items} style={{width:"100%"}}>
+                        {items}
                     </div>
                 </TransformContainer>
 

@@ -1,5 +1,6 @@
 import store from "store";
 import {actions} from "./themes";
+import {createContext} from "react";
 
 export function clearThemes() {
     store.dispatch(actions.clearThemes());

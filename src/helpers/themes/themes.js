@@ -19,7 +19,8 @@ export const themesSlice = createSlice({
             }
         },
         toggleTheme: (state, {payload: name}) => {
-            state.themes[name].active = !state.themes[name].active;
+            let newTheme = {style: state.themes[name].style, active: !state.themes[name].active};
+            state.themes = {...state.themes, [name]: newTheme};
         }
     }
 });

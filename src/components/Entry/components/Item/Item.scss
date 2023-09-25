@@ -1,6 +1,5 @@
 .item {
   position: relative;
-  transition: opacity 0.2s linear;
   border-radius: 8px;
   box-shadow: 0 0 5px gray;
   overflow: hidden;
@@ -11,17 +10,16 @@
     }
   }
 
-  &:hover {
+  &__image {
+    transition: opacity 0.2s linear;
+  }
+
+  &__image:hover {
     opacity: 0.8;
     cursor: pointer;
   }
 
-  &__img:hover {
-    opacity: 0.8;
-    cursor: pointer;
-  }
-
-  &__files {
+  &__file {
     overflow: visible;
 
     &:hover {
@@ -29,16 +27,16 @@
     }
   }
 
-  &__tables {
+  &__table {
     width: 100%;
   }
 
-  &__files, &__tables {
+  &__file, &__table {
     border-radius: 0;
     box-shadow: none;
   }
 
-  &__textfields {
+  &__textfield {
     box-shadow: none;
     background: none;
     background-color: white;

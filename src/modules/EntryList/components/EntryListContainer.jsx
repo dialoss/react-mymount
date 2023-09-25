@@ -5,6 +5,7 @@ import EntryList from "components/EntryList/EntryList";
 import {actions} from "../store/reducers";
 import {fetchEntrys} from "../api/fetchEntrys";
 import {useAddEvent} from "hooks/useAddEvent";
+import {sendLocalRequest} from "../../../api/requests";
 
 function reducer(state, action) {
     switch (action.type) {
@@ -18,11 +19,13 @@ function reducer(state, action) {
                     return newState;
                 }
             }
-            break;
-        case "ADD":
-            return state.insert(action.payload.display_pos, action.payload);
-        case 'DELETE':
             return state;
+        case "ADD":
+            let newState = [...state];
+            newState.splice(action.payload.display_pos, 0, action.payload);
+            return newState;
+        case 'DELETE':
+            return [...state].filter(el => el.id !== action.payload.id);
     }
 }
 
@@ -43,9 +46,16 @@ const EntryListContainer = () => {
     }, []);
 
     async function handleElements(event) {
-        const response = await event.detail.response;
-        const responseData = response.data.entrys_data[0];
-        dispatch({type: event.detail.data.event_type, payload: responseData});
+        let actionEntry = null;
+        for (const entry of entrysRef.current) {
+            if (entry.id === (event.detail.id || event.detail.entry_id)) {
+                actionEntry = entry;
+            }
+        }
+        let requestData = {...actionEntry, ...event.detail};
+        const response = await sendLocalRequest("/entry_action/", requestData);
+        if (Object.keys(response).length === 0) return;
+        dispatch({type: event.detail.event_type, payload: (response.entrys_data[0] || requestData)});
     }
 
     useAddEvent('element-changed', handleElements);

@@ -2,10 +2,13 @@ export function getFileType(fileName) {
     let ext = fileName.split('.').slice(-1)[0];
     let type = '';
     if (['png', 'jpg', 'webp'].includes(ext)){
-        type = 'img';
+        type = 'image';
     }
     else if (['mp4', 'webm', 'avi'].includes(ext)) {
         type = 'video';
+    }
+    else if (['stl', 'obj'].includes(ext)) {
+        type = 'model';
     }
     else {
         type = 'file';

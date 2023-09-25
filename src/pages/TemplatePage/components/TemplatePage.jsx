@@ -8,11 +8,11 @@ import {ThemeManager} from "modules/ThemeManager";
 const TemplatePage = () => {
     return (
         <BrowserRouter>
+            <ThemeManager/>
             <ContentWrapper>
                 <AppRouter/>
             </ContentWrapper>
             <Footer></Footer>
-            <ThemeManager/>
         </BrowserRouter>
     );
 };

@@ -1,0 +1,366 @@
+{
+    "asset": {
+        "version": "2.0"
+    },
+    "scene": 0,
+    "scenes": [
+        {
+            "nodes": [
+                0
+            ]
+        }
+    ],
+    "nodes": [
+        {
+            "children": [
+                1,
+                2,
+                3,
+                4
+            ],
+            "matrix": [
+                0.001,
+                0,
+                0,
+                0,
+                0,
+                0.001,
+                0,
+                0,
+                0,
+                0,
+                0.001,
+                0,
+                0,
+                0,
+                0,
+                1
+            ],
+            "name": "60-GT2 8mm bore 6mm belt (1)",
+            "extras": {
+                "Dtk_PrototypeID": 1
+            }
+        },
+        {
+            "mesh": 0,
+            "name": "Mesh"
+        },
+        {
+            "mesh": 1,
+            "name": "Mesh"
+        },
+        {
+            "mesh": 2,
+            "name": "Mesh"
+        },
+        {
+            "name": "Mesh"
+        }
+    ],
+    "meshes": [
+        {
+            "primitives": [
+                {
+                    "attributes": {
+                        "NORMAL": 2,
+                        "POSITION": 1
+                    },
+                    "indices": 0,
+                    "material": 0,
+                    "mode": 4
+                },
+                {
+                    "attributes": {
+                        "NORMAL": 2,
+                        "POSITION": 1
+                    },
+                    "indices": 3,
+                    "material": 1,
+                    "mode": 4
+                }
+            ]
+        },
+        {
+            "primitives": [
+                {
+                    "attributes": {
+                        "NORMAL": 6,
+                        "POSITION": 5
+                    },
+                    "indices": 4,
+                    "material": 2,
+                    "mode": 4
+                }
+            ]
+        },
+        {
+            "primitives": [
+                {
+                    "attributes": {
+                        "NORMAL": 9,
+                        "POSITION": 8
+                    },
+                    "indices": 7,
+                    "material": 2,
+                    "mode": 4
+                }
+            ]
+        }
+    ],
+    "accessors": [
+        {
+            "bufferView": 0,
+            "byteOffset": 0,
+            "componentType": 5123,
+            "count": 11001,
+            "max": [
+                4093
+            ],
+            "min": [
+                0
+            ],
+            "type": "SCALAR"
+        },
+        {
+            "bufferView": 1,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 4170,
+            "max": [
+                32.03168488,
+                43.37561798,
+                8.5
+            ],
+            "min": [
+                -8.163171768,
+                3.1445117,
+                -8.5
+            ],
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 1,
+            "byteOffset": 50040,
+            "componentType": 5126,
+            "count": 4170,
+            "max": [
+                0.9999988079,
+                1,
+                1
+            ],
+            "min": [
+                -0.9999988079,
+                -1,
+                -1
+            ],
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 0,
+            "byteOffset": 22002,
+            "componentType": 5123,
+            "count": 453,
+            "max": [
+                4169
+            ],
+            "min": [
+                1345
+            ],
+            "type": "SCALAR"
+        },
+        {
+            "bufferView": 2,
+            "byteOffset": 0,
+            "componentType": 5123,
+            "count": 12573,
+            "max": [
+                4258
+            ],
+            "min": [
+                0
+            ],
+            "type": "SCALAR"
+        },
+        {
+            "bufferView": 3,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 4259,
+            "max": [
+                11.32893372,
+                35.24613953,
+                7.034813404
+            ],
+            "min": [
+                2.595142603,
+                25.03303146,
+                2.996915817
+            ],
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 3,
+            "byteOffset": 51108,
+            "componentType": 5126,
+            "count": 4259,
+            "max": [
+                0.9127395749,
+                0.9953961372,
+                1
+            ],
+            "min": [
+                -0.9128852487,
+                -0.9953314662,
+                -1
+            ],
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 4,
+            "byteOffset": 0,
+            "componentType": 5123,
+            "count": 12561,
+            "max": [
+                4252
+            ],
+            "min": [
+                0
+            ],
+            "type": "SCALAR"
+        },
+        {
+            "bufferView": 5,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 4253,
+            "max": [
+                24.04070091,
+                32.56918716,
+                7.021335602
+            ],
+            "min": [
+                13.69911003,
+                23.83239746,
+                2.978752851
+            ],
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 5,
+            "byteOffset": 51036,
+            "componentType": 5126,
+            "count": 4253,
+            "max": [
+                0.9953436852,
+                0.912732482,
+                0.9995260239
+            ],
+            "min": [
+                -0.9953249097,
+                -0.9126749039,
+                -0.9999552965
+            ],
+            "type": "VEC3"
+        }
+    ],
+    "materials": [
+        {
+            "pbrMetallicRoughness": {
+                "baseColorFactor": [
+                    0.9607843137,
+                    0.9607843137,
+                    0.9647058824,
+                    1
+                ],
+                "metallicFactor": 0,
+                "roughnessFactor": 1
+            },
+            "doubleSided": true,
+            "alphaMode": "OPAQUE",
+            "extras": {
+                "Dtk_ColorId": 5
+            }
+        },
+        {
+            "pbrMetallicRoughness": {
+                "baseColorFactor": [
+                    0.9568627451,
+                    0.9568627451,
+                    0.9607843137,
+                    1
+                ],
+                "metallicFactor": 0,
+                "roughnessFactor": 1
+            },
+            "doubleSided": true,
+            "alphaMode": "OPAQUE",
+            "extras": {
+                "Dtk_ColorId": 3
+            }
+        },
+        {
+            "pbrMetallicRoughness": {
+                "baseColorFactor": [
+                    0.4509803922,
+                    0.4509803922,
+                    0.4509803922,
+                    1
+                ],
+                "metallicFactor": 0,
+                "roughnessFactor": 1
+            },
+            "doubleSided": true,
+            "alphaMode": "OPAQUE",
+            "extras": {
+                "Dtk_ColorId": 4
+            }
+        }
+    ],
+    "bufferViews": [
+        {
+            "buffer": 0,
+            "byteOffset": 0,
+            "byteLength": 22908,
+            "target": 34963
+        },
+        {
+            "buffer": 0,
+            "byteOffset": 22908,
+            "byteLength": 100080,
+            "byteStride": 12,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteOffset": 122988,
+            "byteLength": 25146,
+            "target": 34963
+        },
+        {
+            "buffer": 0,
+            "byteOffset": 148136,
+            "byteLength": 102216,
+            "byteStride": 12,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteOffset": 250352,
+            "byteLength": 25122,
+            "target": 34963
+        },
+        {
+            "buffer": 0,
+            "byteOffset": 275476,
+            "byteLength": 102072,
+            "byteStride": 12,
+            "target": 34962
+        }
+    ],
+    "buffers": [
+        {
+            "byteLength": 377548,
+            "uri": "60-GT2 8mm bore 6mm belt (1).bin"
+        }
+    ]
+}

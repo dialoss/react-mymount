@@ -46,7 +46,7 @@ export const ContextActions = {
                 'entry_id': copiedElement.entry.id,
                 'item_id': copiedElement.item.id,
             };
-            return [data, ContextActions['delete'].callback({actionElement:copiedElement})];
+            return [data, ...(!!copiedElement.cut ? ContextActions['delete'].callback({actionElement:copiedElement}) : [])];
         }
     },
     'cut':{
@@ -54,6 +54,7 @@ export const ContextActions = {
         callback: ({actionElement}) => {
             copiedElement = actionElement;
             copiedElement.entry.data.style.opacity = "0.3";
+            copiedElement.cut = true;
             return [];
         }
     },

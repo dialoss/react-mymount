@@ -2,10 +2,16 @@
 
 :export {
     masonry: 1;
+    mypadding: 5;
+    widthPoints: [400, 500, 800]
 }
 
 .item__wrapper {
     padding: 5px;
+}
+
+.info__block {
+    background-color: white;
 }
 
 .entry {

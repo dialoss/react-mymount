@@ -1,5 +1,6 @@
 import formData from './FormData.json';
 import store from 'store';
+import {getFileType} from "../../../components/GooglePicker/helpers/files";
 
 function initData() {
     let propsRefactor = {};
@@ -20,7 +21,7 @@ function fillForm(form, element, media) {
     for (const field of ['description', 'title']) {
         setFormField(form.data, field, element.data[field]);
     }
-    setFormField(form.data, 'media', media.map(med => {return {url: med.img, name: med.file}}));
+    setFormField(form.data, 'media', media.map(med => {return {type: med.type, url: med.url, name: med.filename}}));
 }
 
 function setSelect(form, select, toggle) {
@@ -67,7 +68,7 @@ export function getFormData(type, element) {
     if (type === 'edit') {
         fillForm(form, element.item, [element.item.data]);
         if (element.item.id === -1) {
-            fillForm(form, element.entry, element.entry.data.items.filter(item => item.type === 'images'));
+            fillForm(form, element.entry, element.entry.data.items.filter(item => item.type === 'image'));
         }
         if (Object.keys(form.data).includes("settings")) {
             if (element.item.id !== -1) {

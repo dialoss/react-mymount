@@ -4,7 +4,6 @@ import {TemplatePage} from "pages/TemplatePage";
 import ActionManager from "modules/ActionManager/components/ActionManager";
 import {ActionForm} from "modules/ActionForm";
 import CarouselContainer from "components/Modals/Carousel/CarouselContainer";
-
 function App() {
     return (
         <div className="App">

@@ -7,7 +7,7 @@ import {triggerEvent} from "helpers/events";
 const EntryActions = ({actionElement}) => {
     function handleContext(event) {
         triggerEvent("context-window", {isOpened: false});
-        const requestData = ContextActions[event.detail.type].callback(actionElement);
+        const requestData = ContextActions[event.detail.type].callback({actionElement:actionElement.current});
         for (const data of requestData) {
             triggerEvent("action-callback", data);
         }

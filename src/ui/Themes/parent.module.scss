@@ -4,10 +4,13 @@ $color-item-hover: rgb(141, 176, 236);
 
 :export {
     masonry: 3;
+    mypadding: 0;
+    mywrapper: 6;
+    widthPoints: [400, 500, 800]
 }
 
-.item__wrapper {
-    //position: relative;
+.info__block {
+    background-color: $color-item-background;
 }
 
 .entry {

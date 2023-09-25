@@ -11,6 +11,7 @@ const ObjectTransform = () => {
     function initTransform(event) {
         const btn = event.detail.btn;
         const item = btn.closest(".transform-item");
+        if (!!item.querySelector(".item-model")) return;
 
         setItemTransform(event.detail.event, event.detail.type, item, btn, transformCallback);
         triggerEvent("action-event", event.detail.event);

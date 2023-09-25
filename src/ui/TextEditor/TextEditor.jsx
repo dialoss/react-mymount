@@ -16,7 +16,8 @@ const TextEditor = React.forwardRef(function TextEditor({simple, value, callback
     let config = (!simple ? modules : {toolbar:false});
 
     return (
-        <ReactQuill ref={ref}
+        <ReactQuill className={simple?"ql-simple":""}
+                    ref={ref}
                     theme="snow"
                     value={value}
                     onChange={callback}

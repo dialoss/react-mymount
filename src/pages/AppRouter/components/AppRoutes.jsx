@@ -1,10 +1,14 @@
-import React, {useLayoutEffect} from 'react';
+import React, {useLayoutEffect, useState} from 'react';
 import {Navigate, Route, Routes} from "react-router-dom";
 import {routes} from "../constants/routes";
 import {EntrysPage} from "pages/EntrysPage";
 import {Intro} from "pages/MainPage";
-import {useMyLocation} from "hooks/useMyLocation";
-import {addTheme, removeTheme} from "helpers/themes";
+import {ThemeContext} from "ui/Themes";
+import store from "../../../store";
+import {actions} from "../../../helpers/themes/themes";
+import {useAddEvent} from "../../../hooks/useAddEvent";
+import editStyle from "../../../ui/Themes/edit.module.scss";
+import {useThemes} from "hooks/useThemes";
 
 const Components = {
     'EntrysPage': EntrysPage,
@@ -12,17 +16,12 @@ const Components = {
 };
 
 const PageWrapper = ({route}) => {
-    const location = useMyLocation();
-    addTheme("listStyle", route.style);
-    useLayoutEffect(() => {
-        removeTheme("listStyle");
-        addTheme("listStyle", route.style);
-    }, [location])
-    
+    const activeThemes = useThemes({listStyle:route.style});
+
     return (
-        <>
+        <ThemeContext.Provider value={activeThemes}>
             {React.createElement(Components[route.component], {key: route.path})}
-        </>
+        </ThemeContext.Provider>
     );
 };
 

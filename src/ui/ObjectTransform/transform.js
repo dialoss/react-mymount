@@ -1,23 +1,9 @@
-
+import {initContainerHeight} from "./helpers";
 
 let item = null;
 let container = null;
 let btn = null;
 let transform = null;
-
-function getMaxBottom(container) {
-    let m = 0;
-    for (const block of container.children[0].children) {
-        let rect = block.getBoundingClientRect();
-        m = Math.max(m, block.offsetTop + rect.height);
-    }
-    return m;
-}
-
-export function initContainerHeight(container) {
-    let contHeight = getMaxBottom(container);
-    container.style.height = contHeight + "px";
-}
 
 function checkNears(px, py) {
     let curBlock = item.getBoundingClientRect();
@@ -60,8 +46,8 @@ let mouseMoved = false;
 
 export function setItemProps(offset, width) {
     let win = container.getBoundingClientRect();
-    if (width != null) item.style.maxWidth = width / win.width * 100 + "%";
-    if (offset != null) item.style.left = offset / win.width * 100 + "%";
+    if (width != null) item.style.width = Math.min(width / win.width * 100, 100) + "%";
+    if (offset != null) item.style.left = Math.min(offset / win.width * 100, 100) + "%";
 }
 
 function moveAt(event, shiftX, shiftY) {
@@ -100,7 +86,7 @@ function moveAt(event, shiftX, shiftY) {
         if (py < 0) py = 0;
         if (px + block.width > win.width) px = win.width - block.width;
         item.style.top = py + "px";
-        item.style.left = px / win.width * 100 + "%";
+        setItemProps(px, block.width);
     }
     initContainerHeight(container);
     mouseMoved = true;
@@ -123,6 +109,8 @@ export function setItemTransform(event, type, _item, _btn, callback) {
         if (!item.classList.contains("transformed")) item.classList.add("transformed");
         if (transform.type === "move") {
             item.style.position = 'absolute';
+        } else {
+            // item.style.position = 'auto';
         }
 
         moveAt(event, shiftX, shiftY);
@@ -138,7 +126,7 @@ export function setItemTransform(event, type, _item, _btn, callback) {
             'event_type': 'UPDATE',
             'entry_action_type' : 'transform',
             'position' : item.style.position || '',
-            'max_width' : item.style.maxWidth.replace("%", "") || "0",
+            'max_width' : item.style.width.replace("%", "") || "0",
             'top' : item.style.top.replace("px", "") || "0",
             'left' : item.style.left.replace("%", "") || "0",
         };

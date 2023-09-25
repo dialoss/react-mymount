@@ -1,6 +1,17 @@
 import store from "../store";
 import {baseURL} from "../helpers/location/reducers";
 
+const API_KEY = "AIzaSyDDqSATTGIXHgBRwl_S4mPCcATYJsISOhM";
+
+export async function fetchRequest(FILE_ID) {
+    let response = null;
+    await fetch("https://www.googleapis.com/drive/v3/files/" + FILE_ID, {
+        method: 'GET',
+        key: API_KEY,
+    }).then(res => res.json()).then(data => console.log(data));
+    return response;
+}
+
 export async function sendRequest(url, data) {
     let response = null;
     let query = {

@@ -20,14 +20,13 @@ const ActionManager = () => {
         const data = event.detail;
         data.entry_id ||= elementRef.current.entry.id;
         data.item_id ||= elementRef.current.item.id;
-        const response = sendLocalRequest("/entry_action/", data);
-        triggerEvent('element-changed', {data, response});
+        triggerEvent('element-changed', data);
     }
 
     useAddEvent('action-callback', actionCallback);
     return (
         <>
-            <EntryActions actionElement={actionElement}></EntryActions>
+            <EntryActions actionElement={elementRef}></EntryActions>
             <EditorManager></EditorManager>
             <ObjectTransform></ObjectTransform>
         </>
