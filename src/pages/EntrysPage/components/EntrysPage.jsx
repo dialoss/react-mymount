@@ -1,9 +1,13 @@
 import React from 'react';
 import {EntryListContainer} from "modules/EntryList";
+import PageComments from "modules/PageComments/PageComments";
 
-const EntrysPage = () => {
+const EntrysPage = ({addComments}) => {
     return (
-        <EntryListContainer/>
+        <>
+            <EntryListContainer/>
+            {addComments && <PageComments/>}
+        </>
     );
 };
 

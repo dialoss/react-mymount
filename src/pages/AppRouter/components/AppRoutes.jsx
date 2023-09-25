@@ -20,7 +20,7 @@ const PageWrapper = ({route}) => {
 
     return (
         <ThemeContext.Provider value={activeThemes}>
-            {React.createElement(Components[route.component], {key: route.path})}
+            {React.createElement(Components[route.component], {addComments: route.comments, key: route.path})}
         </ThemeContext.Provider>
     );
 };

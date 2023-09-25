@@ -50,12 +50,14 @@ const EntryListContainer = () => {
         for (const entry of entrysRef.current) {
             if (entry.id === (event.detail.id || event.detail.entry_id)) {
                 actionEntry = entry;
+                break;
             }
         }
         let requestData = {...actionEntry, ...event.detail};
         const response = await sendLocalRequest("/entry_action/", requestData);
-        if (Object.keys(response).length === 0) return;
-        dispatch({type: event.detail.event_type, payload: (response.entrys_data[0] || requestData)});
+        let payload = requestData;
+        if (Object.keys(response).length !== 0) payload = {...payload, ...response.entrys_data[0]};
+        dispatch({type: event.detail.event_type, payload});
     }
 
     useAddEvent('element-changed', handleElements);

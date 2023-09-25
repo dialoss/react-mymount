@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9b37537a-6286-4d32-9202-d8554b8ac243" name="Changes" comment="layout fixed">
+    <list default="true" id="9b37537a-6286-4d32-9202-d8554b8ac243" name="Changes" comment="layout resize">
+      <change afterPath="$PROJECT_DIR$/src/modules/PageComments/Disqus.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Entry/components/Item/Item.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Entry/components/Item/Item.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Entry/components/Item/components/Image/ItemImage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Entry/components/Item/components/Image/ItemImage.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Entry/components/Item/components/ItemData.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Entry/components/Item/components/ItemData.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/EntryList/EntryList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/EntryList/EntryList.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hooks/useAddEvent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/hooks/useAddEvent.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/Masonry/MyMasonry.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/Masonry/MyMasonry.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/ObjectTransform/ObjectTransform.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/ObjectTransform/ObjectTransform.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/ObjectTransform/components/TransformContainer/TransformContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/ObjectTransform/components/TransformContainer/TransformContainer.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Sidebar/SidebarContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Sidebar/SidebarContainer.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/helpers/location/reducers.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/helpers/location/reducers.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modules/EntryList/components/EntryListContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/EntryList/components/EntryListContainer.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modules/PageComments/PageComments.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/PageComments/PageComments.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modules/PageComments/api/comments.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/PageComments/api/comments.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/AppRouter/components/AppRoutes.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/AppRouter/components/AppRoutes.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/AppRouter/constants/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/AppRouter/constants/routes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/EntrysPage/components/EntrysPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/EntrysPage/components/EntrysPage.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ui/ObjectTransform/components/TransformItem/TransformButton.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/ObjectTransform/components/TransformItem/TransformButton.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ui/ObjectTransform/components/TransformItem/TransformItem.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/ObjectTransform/components/TransformItem/TransformItem.jsx" afterDir="false" />
     </list>
@@ -23,8 +24,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="tsconfig.json" />
-        <option value="SCSS File" />
         <option value="JavaScript File" />
+        <option value="SCSS File" />
       </list>
     </option>
   </component>
@@ -126,7 +127,7 @@
       <workItem from="1695493128725" duration="650000" />
       <workItem from="1695493939560" duration="23526000" />
       <workItem from="1695559135370" duration="47652000" />
-      <workItem from="1695663963251" duration="6336000" />
+      <workItem from="1695663963251" duration="9914000" />
     </task>
     <task id="LOCAL-00001" summary="Initial">
       <created>1693824071090</created>
@@ -296,7 +297,14 @@
       <option name="project" value="LOCAL" />
       <updated>1695667913104</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="layout resize">
+      <created>1695670366584</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1695670366584</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -328,7 +336,8 @@
     <MESSAGE value="actions" />
     <MESSAGE value="transform" />
     <MESSAGE value="layout fixed" />
-    <option name="LAST_COMMIT_MESSAGE" value="layout fixed" />
+    <MESSAGE value="layout resize" />
+    <option name="LAST_COMMIT_MESSAGE" value="layout resize" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

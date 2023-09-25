@@ -1,19 +1,20 @@
 import React from 'react';
 import Container from "ui/Container/Container";
+import "./Disqus.scss";
 
 import { DiscussionEmbed } from 'disqus-react';
-import {useMyLocation} from "../../hooks/useMyLocation";
+import {useMyLocation} from "hooks/useMyLocation";
 
 const PageComments = () => {
     const location = useMyLocation();
     return (
-        <div className={"comments " + location.pageID} style={{display:"none"}}>
+        <div className={"comments " + location.pageID}>
             <div className="comments__inner">
                 <Container>
                     <DiscussionEmbed
-                        shortname='example'
+                        shortname='my75'
                         config={{
-                            url: location.relativeURL,
+                            url: location.fullURL,
                             identifier: location.pageID,
                             language: 'ru'
                         }}
