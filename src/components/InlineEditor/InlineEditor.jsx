@@ -9,7 +9,7 @@ const InlineEditor = ({data, closeCallback, mount}) => {
     const ref = useRef();
     useEffect(() => {
         ref.current.editor.container.addEventListener('keydown', event => {
-            if (event.key === 'Enter' && event.ctrlKey) {
+            if (event.key === 'Escape' || (event.key === 'Enter' && event.ctrlKey)) {
                 closeCallback(ref.current.value, mount);
             }
         })

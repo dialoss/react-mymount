@@ -19,3 +19,8 @@ body {
 
   @include custom-scrollbar;
 }
+
+.picker-dialog {
+  position: fixed;
+  z-index: $zindex-modal;
+}

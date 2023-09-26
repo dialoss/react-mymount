@@ -1,5 +1,4 @@
 import store from "../store";
-import {baseURL} from "../helpers/location/reducers";
 
 const API_KEY = "AIzaSyDDqSATTGIXHgBRwl_S4mPCcATYJsISOhM";
 
@@ -29,5 +28,5 @@ export function sendLocalRequest(request, data={}) {
     const location = store.getState().location;
     data.page_url = location.relativeURL;
     data.page_slug = location.pageSlug;
-    return sendRequest(baseURL + request, data);
+    return sendRequest(location.baseURL + request, data);
 }

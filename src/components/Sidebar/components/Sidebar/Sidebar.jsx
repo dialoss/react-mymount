@@ -4,6 +4,7 @@ import WindowButton from "ui/Buttons/WindowButton/WindowButton";
 import SidebarList from "../List/SidebarList";
 import {SidebarStates} from "./constants";
 import "./Sidebar.scss";
+import "../Link/SidebarLink.scss";
 
 const Sidebar = ({data, isOpened, windowCallback}) => {
     return (

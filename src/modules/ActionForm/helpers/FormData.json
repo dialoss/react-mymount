@@ -160,24 +160,24 @@
           "settings"
         ]
       },
-      "textfields": [
+      "textfield": [
         "settings"
       ],
-      "images": [
+      "image": [
         "media",
         "description",
         "title",
         "files",
         "settings"
       ],
-      "tables": [
+      "table": [
         "files",
         "settings"
       ],
-      "files": [
+      "file": [
         "files"
       ],
-      "videos": [
+      "video": [
         "media",
         "description",
         "title"
@@ -186,10 +186,12 @@
     "buy": {
       "title": "Приобрести",
       "button": "btn_отправить",
-      "parent": [
-        "email",
-        "name"
-      ]
+      "child": {
+        "base": [
+          "customer_email",
+          "customer_name"
+        ]
+      }
     }
   }
 }

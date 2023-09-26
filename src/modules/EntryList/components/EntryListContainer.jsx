@@ -58,6 +58,7 @@ const EntryListContainer = () => {
         let payload = requestData;
         if (Object.keys(response).length !== 0) payload = {...payload, ...response.entrys_data[0]};
         dispatch({type: event.detail.event_type, payload});
+        globalDispatch(actions.setElements({entrys: entrysRef.current}));
     }
 
     useAddEvent('element-changed', handleElements);

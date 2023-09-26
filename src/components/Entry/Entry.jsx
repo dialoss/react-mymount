@@ -23,7 +23,6 @@ const Entry = ({entry}) => {
     useEffect(() => {
         setItems(entry.items.map((item) => {
             item = {...item, row:itemsRow};
-            // item.row = itemsRow;
             return <TransformItem key={item.id}>
                 <EntryItem item={item} key={item.id}></EntryItem>
             </TransformItem>

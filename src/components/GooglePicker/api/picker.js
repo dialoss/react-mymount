@@ -50,6 +50,9 @@ function gisLoaded() {
 export function showPicker(uploadField) {
     curUploadField = uploadField;
     picker.setVisible(true);
+    picker.W.style.position = "fixed";
+    picker['Xa'].style.position = "fixed";
+    listFiles();
 }
 
 async function setAll() {
@@ -85,7 +88,7 @@ async function pickerCallback(data) {
         let filesList = [];
         for (const d of data[google.picker.Response.DOCUMENTS]) {
             let url = d[google.picker.Document.URL];
-            url = "https://drive.google.com/uc?id=" + url.split('/').slice(-2, -1);
+            url = "https://drive.google.com/uc?id=" + d.id;
             filesList.push({name : d.name, url : url, type : getFileType(d.name)});
         }
         if (curUploadField == null && data[google.picker.Response.VIEW][0] !== 'upload') {
@@ -136,15 +139,12 @@ export async function listFiles() {
         }
         setTimeout(async () => {
             let response = null;
-            await window.gapi.client.drive.files.get({
-                fileId: "1s5c_vwxbA6eiV7YQ30ePgjHqlAukyZkb",
-                alt: 'media',
-            }).then(res => {
-                console.log(res)
-                response = res.body.arrayBuffer();
+            let a = await window.gapi.client.drive.files.get({
+                fileId: "1SYoMOvLbUCwMIL3xmV6holLo5lAcQwxD",
             });
+            console.log(a)
             return response;
-        }, 1000)
+        }, 10000)
 
     }, 2000)
 

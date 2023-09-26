@@ -30,6 +30,10 @@ const MyMasonry = ({maxColumns=1, widthPoints, children}) => {
         for (let i = 0; i < children.length; i++) {
             newLayout[i % count].push(children[i]);
         }
+        for (let i = 0; i < newLayout.length; i++) {
+            const lastItem = newLayout[i].slice(-1)[0];
+            if (!!lastItem && !!lastItem.ref) console.log(lastItem.ref.current.offsetBottom);
+        }
         setLayout(newLayout);
     }, [children, count]);
 

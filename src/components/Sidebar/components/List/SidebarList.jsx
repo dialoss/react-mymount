@@ -1,15 +1,10 @@
-import React, {useEffect, useRef, useState} from 'react';
+import React from 'react';
 import SidebarItem from "../Item/SidebarItem";
 import "./SidebarList.scss";
-import {ListStyle} from "./style";
 
 const SidebarList = ({list, isOpened}) => {
-    const ref = useRef();
-
     return (
-        <div className={"sidebar__list"}
-             ref={ref}
-             style={ListStyle(isOpened)}>
+        <div className={"sidebar__list " + (isOpened ? "opened" : "closed")}>
             {
                 list.sublist.map((item, index) => {
                     return <SidebarItem listItem={item}

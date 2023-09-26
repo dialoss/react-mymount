@@ -21,7 +21,15 @@ function fillForm(form, element, media) {
     for (const field of ['description', 'title']) {
         setFormField(form.data, field, element.data[field]);
     }
-    setFormField(form.data, 'media', media.map(med => {return {type: med.type, url: med.url, name: med.filename}}));
+    setFormField(form.data, 'media', media.map(med => {
+        return {
+            type: med.type,
+            url: med.url,
+            name: med.filename,
+            width: med.media_width,
+            height: med.media_height,
+        }
+    }));
 }
 
 function setSelect(form, select, toggle) {
@@ -40,17 +48,17 @@ export function getFormData(type, element) {
     let properties = formData.properties;
     let formType = formData.fields[type];
     let formFields = {};
-    if (element.item.id !== -1 && type === 'edit') {
+    if (type === 'edit' && element.item.id !== -1) {
         formFields = formType[element.item.type];
     }
     else {
         let fieldsPage = {};
-        if (location.pageParent === location.pageSlug) {
+        if (location.parentSlug === location.pageSlug) {
             fieldsPage = formType['parent'];
         } else {
             fieldsPage = formType['child'];
         }
-        formFields = fieldsPage[location.pageSlug];
+        formFields = fieldsPage[location.parentSlug];
         if (formFields === undefined) {
             formFields = fieldsPage['base'];
         }
@@ -65,6 +73,7 @@ export function getFormData(type, element) {
     formFields.forEach((field) => {
         form.data[properties[field].name] = structuredClone(properties[field]);
     });
+    if (type === 'buy') return form;
     if (type === 'edit') {
         fillForm(form, element.item, [element.item.data]);
         if (element.item.id === -1) {
@@ -80,7 +89,7 @@ export function getFormData(type, element) {
             setSelect(form, 'toggle_date', element.entry.data.show_date);
         }
         form.meta.event_type = 'UPDATE';
-    } else {
+    } else if (type === 'add') {
         form.meta.event_type = 'ADD';
     }
     form.meta.entry_action_type = type;

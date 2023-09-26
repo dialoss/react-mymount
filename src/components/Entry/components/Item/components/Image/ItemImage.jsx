@@ -1,38 +1,14 @@
 import React, {useCallback, useEffect, useRef} from 'react';
 import './ItemImage.scss';
 import {triggerEvent} from "helpers/events";
+import {preventOnTransformClick} from "ui/ObjectTransform/helpers";
 
 const ItemImage = ({data}) => {
     const ref = useRef();
     const carouselCallback = useCallback(() => {
-        const itemTransform = ref.current.closest(".transform-item");
-        if (!!itemTransform && Array.from(itemTransform.classList).slice(-1)[0] === 'transformed') {
-            itemTransform.classList.remove("transformed");
-            return;
-        }
+        if (preventOnTransformClick(ref)) return;
         triggerEvent('open-carousel', data.id);
     }, []);
-
-    useEffect(()=>{
-        const itemRef = ref.current;
-        const container = itemRef.closest(".transform-container");
-        const contWidth = container.getBoundingClientRect().width;
-        const ratio = data.media_width / data.media_height;
-        itemRef.style['aspect-ratio'] = ratio;
-        const itemTransform = itemRef.closest(".transform-item");
-
-        if (itemTransform.style.position !== "absolute") {
-            if (data.row > 1) {
-                itemTransform.style.width = 100 / data.row + "%";
-            } else {
-                if (itemRef.getBoundingClientRect().width === 0 || !!itemTransform.style.width) {
-                    itemTransform.style.width = Math.min(contWidth, data.media_width) / contWidth * 100 + "%";
-                }
-            }
-        } else {
-            triggerEvent("init-container", container);
-        }
-    },[]);
 
     return (
         <div className="item__image" ref={ref}>

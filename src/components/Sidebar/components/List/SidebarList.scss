@@ -3,9 +3,21 @@
     flex-direction: column;
     transition: max-height 0.3s linear;
     overflow: hidden;
-    margin-top: 4px;
 
     &-wrapper {
         overflow: hidden;
+    }
+
+    .opened {
+        max-height: 1000px;
+        margin-top: 4px;
+        transition: max-height 0.3s ease-in-out, margin-top 0.1s ease-in-out;
+    }
+
+    .closed {
+        max-height: 0;
+        margin-top: 0;
+        overflow: hidden;
+        transition: max-height 0.1s cubic-bezier(0, 1, 0, 1);
     }
 }

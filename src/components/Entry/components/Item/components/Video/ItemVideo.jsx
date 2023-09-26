@@ -1,10 +1,12 @@
 import React from 'react';
+import "./ItemVideo.scss";
 
-const ItemVideo = () => {
+const ItemVideo = ({data}) => {
     return (
-        <div>
-            
-        </div>
+        <video className="item__video" preload="metadata" id="player"
+               playsInline controls>
+            <source src={data.url} type="video/mp4"/>
+        </video>
     );
 };
 

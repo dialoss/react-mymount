@@ -29,13 +29,15 @@ export default MyCanvas;
 const Lights = () => {
     return (
         <>
-            {/*<ambientLight intensity={0.6}/>*/}
-            {/*<directionalLight position={[10, 0, 0]} intensity={1} />*/}
+            <ambientLight intensity={0.4}/>
+            <directionalLight position={[10, 10, 10]} intensity={1} color={"#fff"}></directionalLight>
+            <directionalLight position={[-10, -10, -10]} intensity={1} color={"#fff"}></directionalLight>
+            {/*<directionalLight position={[10, 10, 0]} intensity={1} />*/}
             {/*<directionalLight position={[-10, 0, 0]} intensity={1} />*/}
             {/*<directionalLight position={[0, 10, 0]} intensity={1} />*/}
-            <directionalLight position={[0, 0, 10]} intensity={1} />
-            <directionalLight position={[0, 0, -10]} intensity={1} />
-            <directionalLight position={[0, -10, 0]} intensity={1} />
+            {/*<directionalLight position={[0, 0, 10]} intensity={1} />*/}
+            {/*<directionalLight position={[0, 0, -10]} intensity={1} />*/}
+            {/*<directionalLight position={[0, -10, 0]} intensity={1} />*/}
         </>
     );
 };
@@ -44,8 +46,8 @@ const Model = ({data}) => {
     // fetchRequest("1s5c_vwxbA6eiV7YQ30ePgjHqlAukyZkb")
     // listReactFiles(__models).then(files => console.log(files))
 
-    const arr = ['Вилка левая 2шт', 'Крышка кронштейна двигателя Nema17AZ','17HS15-1684-HG10', 'MT-20-100H']
-    const object = useLoader(GLTFLoader, `/models/${arr[3]}.gltf`);
+    const arr = ['MT-20-100LHN', 'Крышка кронштейна двигателя Nema17AZ','17HS15-1684-HG10', 'MT-20-100H']
+    const object = useLoader(GLTFLoader, `/models/${arr[0]}.gltf`);
     // const [object, setObject] = useState({});
     // const object = useLoader(GLTFLoader, '/test.gltf');
     // listFiles().then(arrayBuffer => {

@@ -6,11 +6,11 @@ import {useMyLocation} from "../../../../hooks/useMyLocation";
 const SidebarItem = ({listItem}) => {
     const haveSublist = !!listItem.sublist.length;
     const [isOpened, setOpened] = useState(false);
-    const location = useMyLocation().relativeURL;
+    const parentLink = useMyLocation().parentURL;
 
     useEffect(() => {
-        if (location === listItem.link) setOpened(true);
-    }, []);
+        if (parentLink === listItem.link) setOpened(true);
+    }, [parentLink]);
 
     return (
         <div className="sidebar__item">

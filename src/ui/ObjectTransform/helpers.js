@@ -11,3 +11,12 @@ export function initContainerHeight(container) {
     let contHeight = getMaxBottom(container);
     container.style.height = contHeight + "px";
 }
+
+export function preventOnTransformClick(ref) {
+    const itemTransform = ref.current.closest(".transform-item");
+    if (!!itemTransform && Array.from(itemTransform.classList).slice(-1)[0] === 'transformed') {
+        itemTransform.classList.remove("transformed");
+        return true;
+    }
+    return false;
+}
