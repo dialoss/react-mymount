@@ -1,45 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9b37537a-6286-4d32-9202-d8554b8ac243" name="Changes" comment="layout resize">
-      <change afterPath="$PROJECT_DIR$/public/models/MT-20-100LHN.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/models/MT-20-100LHN.gltf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Entry/components/Item/components/File/ItemFile.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Entry/components/Item/components/Table/ItemTable.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Entry/components/Item/components/Video/ItemVideo.scss" afterDir="false" />
+    <list default="true" id="9b37537a-6286-4d32-9202-d8554b8ac243" name="Changes" comment="file loading">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/api/requests.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/requests.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/EditorManager/EditorManager.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/EditorManager/EditorManager.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Entry/Entry.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Entry/Entry.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Entry/components/Item/Item.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Entry/components/Item/Item.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Entry/components/Item/components/File/ItemFile.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Entry/components/Item/components/File/ItemFile.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Entry/components/Item/components/Image/ItemImage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Entry/components/Item/components/Image/ItemImage.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Entry/components/Item/components/Model/Canvas.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Entry/components/Item/components/Model/Canvas.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Entry/components/Item/components/Table/ItemTable.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Entry/components/Item/components/Table/ItemTable.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Entry/components/Item/components/Video/ItemVideo.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Entry/components/Item/components/Video/ItemVideo.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/GooglePicker/GooglePicker.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/GooglePicker/GooglePicker.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Entry/components/Item/components/Textfield/ItemTextfield.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Entry/components/Item/components/Textfield/ItemTextfield.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/GooglePicker/api/picker.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/GooglePicker/api/picker.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/InlineEditor/InlineEditor.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/InlineEditor/InlineEditor.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Sidebar/components/Item/SidebarItem.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Sidebar/components/Item/SidebarItem.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Modals/MyForm/Upload/FormMedia.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Modals/MyForm/Upload/FormMedia.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Sidebar/components/Link/SidebarLink.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Sidebar/components/Link/SidebarLink.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Sidebar/components/Link/SidebarLink.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Sidebar/components/Link/SidebarLink.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Sidebar/components/List/SidebarList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Sidebar/components/List/SidebarList.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Sidebar/components/List/SidebarList.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Sidebar/components/List/SidebarList.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Sidebar/components/List/style.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Sidebar/components/Sidebar/Sidebar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Sidebar/components/Sidebar/Sidebar.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/helpers/location/reducers.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/helpers/location/reducers.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/modules/ActionForm/helpers/FormData.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/ActionForm/helpers/FormData.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modules/ActionForm/helpers/FormData.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/ActionForm/helpers/FormData.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modules/ActionManager/components/helpers.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/ActionManager/components/helpers.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/modules/EntryList/components/EntryListContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/EntryList/components/EntryListContainer.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modules/PageComments/Disqus.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/PageComments/Disqus.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/modules/PageComments/PageComments.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/PageComments/PageComments.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/App.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/App.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/AppRouter/components/AppRoutes.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/AppRouter/components/AppRoutes.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ui/InfoBlock/InfoBlock.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/InfoBlock/InfoBlock.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/InfoBlock/InfoBlock.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/InfoBlock/InfoBlock.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/InfoParagraph/InfoParagraph.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/InfoParagraph/InfoParagraph.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/Masonry/MyMasonry.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/Masonry/MyMasonry.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/ObjectTransform/components/styles/resize.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/ObjectTransform/components/styles/resize.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/ObjectTransform/helpers.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/ObjectTransform/helpers.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/Themes/blueprints.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/Themes/blueprints.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/Themes/child.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/Themes/child.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/Themes/empty.module.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/Themes/parent.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/Themes/parent.module.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ui/Themes/shop.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/Themes/shop.module.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -61,6 +45,11 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/src/pages/AppRouter/constants/routes.json" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="JsbtTreeLayoutManager">
+    <layout place="tools.popupnpm">
+      <scroll-view-position x="0" y="0" />
+    </layout>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -88,7 +77,7 @@
     "node.js.selected.package.standard": "",
     "nodejs_interpreter_path": "node",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.lookFeel",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
     "ts.external.directory.path": "C:\\Program Files\\JetBrains\\WebStorm 2022.2\\plugins\\JavaScriptLanguage\\jsLanguageServicesImpl\\external",
     "vue.rearranger.settings.migration": "true"
   }
@@ -156,7 +145,7 @@
       <workItem from="1695559135370" duration="47652000" />
       <workItem from="1695663963251" duration="13339000" />
       <workItem from="1695677770711" duration="1821000" />
-      <workItem from="1695713645201" duration="11292000" />
+      <workItem from="1695713645201" duration="20964000" />
     </task>
     <task id="LOCAL-00001" summary="Initial">
       <created>1693824071090</created>
@@ -340,7 +329,14 @@
       <option name="project" value="LOCAL" />
       <updated>1695674079227</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="file loading">
+      <created>1695734398843</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1695734398843</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -373,7 +369,8 @@
     <MESSAGE value="transform" />
     <MESSAGE value="layout fixed" />
     <MESSAGE value="layout resize" />
-    <option name="LAST_COMMIT_MESSAGE" value="layout resize" />
+    <MESSAGE value="file loading" />
+    <option name="LAST_COMMIT_MESSAGE" value="file loading" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -382,6 +379,12 @@
           <url>file://$PROJECT_DIR$/src/modules/Carousel/CarouselManager.jsx</url>
           <line>23</line>
           <option name="timeStamp" value="17" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/modules/EntryList/components/EntryListContainer.jsx</url>
+          <line>68</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="78" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

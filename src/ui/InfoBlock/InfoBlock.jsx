@@ -16,17 +16,12 @@ const InfoBlock = ({data}) => {
                 {!!data.date && data.show_date && <InfoParagraph type={'date'}>{formattedDate}</InfoParagraph>}
                 {!!data.description && <InfoParagraph type={'description'}>{data.description}</InfoParagraph>}
             </span>
-             <span className="info__block-section info__block-buy">
-                 {!!data.price &&
-                     <>
-                         <InfoParagraph type={'price'}>{data.price}</InfoParagraph>
-                         <ActionButton onClick={() => triggerEvent("form-data", {type:'buy'})}>
-                             заказать изготовление
-                         </ActionButton>
-                     </>
-                 }
-            </span>
-
+            {!!data.price && <span className="info__block-section info__block-buy">
+                <InfoParagraph type={'price'}>{data.price}</InfoParagraph>
+                <ActionButton onClick={() => triggerEvent("form-data", {type:'buy'})}>
+                    заказать изготовление
+                </ActionButton>
+            </span>}
             {!!data.filename && <InfoParagraph style={{display:"none"}} type={'filename'}>{data.filename}</InfoParagraph>}
         </span>
     );

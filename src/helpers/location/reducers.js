@@ -18,7 +18,7 @@ export const locationSlice = createSlice({
     },
     reducers: {
         setLocation: (state) => {
-            state.relativeURL = window.location.href.split('/').slice(3).join('/');
+            state.relativeURL = decodeURI(window.location.href.split('/').slice(3).join('/'));
             if (state.relativeURL[0] !== '/') state.relativeURL = '/' + state.relativeURL;
             if (state.relativeURL.slice(-1) !== '/') state.relativeURL = state.relativeURL + '/';
             state.fullURL = state.baseURL + state.relativeURL;

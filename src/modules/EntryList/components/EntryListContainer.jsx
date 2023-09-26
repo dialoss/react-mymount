@@ -25,7 +25,8 @@ function reducer(state, action) {
             newState.splice(action.payload.display_pos, 0, action.payload);
             return newState;
         case 'DELETE':
-            return [...state].filter(el => el.id !== action.payload.id);
+            if (action.payload.delete) return [...state].filter(el => el.id !== action.payload.id);
+            else return reducer(state, {...action, type: 'UPDATE'});
     }
 }
 
@@ -57,11 +58,16 @@ const EntryListContainer = () => {
         const response = await sendLocalRequest("/entry_action/", requestData);
         let payload = requestData;
         if (Object.keys(response).length !== 0) payload = {...payload, ...response.entrys_data[0]};
+        else payload = {id: requestData.id, delete: true};
         dispatch({type: event.detail.event_type, payload});
-        globalDispatch(actions.setElements({entrys: entrysRef.current}));
     }
 
     useAddEvent('element-changed', handleElements);
+
+    useEffect(() => {
+        globalDispatch(actions.setElements({entrys: entrys}));
+    }, [entrys]);
+
 
     return (
         <ListView>

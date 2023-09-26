@@ -1,5 +1,6 @@
 import React, {useCallback, useEffect, useRef, useState} from 'react';
 import TextEditor from "ui/TextEditor/TextEditor";
+import {triggerEvent} from "../../helpers/events";
 
 const InlineEditor = ({data, closeCallback, mount}) => {
     const [value, setValue] = useState(data.value);
@@ -12,7 +13,8 @@ const InlineEditor = ({data, closeCallback, mount}) => {
             if (event.key === 'Escape' || (event.key === 'Enter' && event.ctrlKey)) {
                 closeCallback(ref.current.value, mount);
             }
-        })
+        });
+        triggerEvent("init-container", ref.current.editor.container.closest(".transform-container"));
     }, []);
     return (
         <TextEditor ref={ref}

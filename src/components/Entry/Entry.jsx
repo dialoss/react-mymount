@@ -5,7 +5,6 @@ import {Link} from "react-router-dom";
 import TransformContainer from "ui/ObjectTransform/components/TransformContainer/TransformContainer";
 import TransformItem from "ui/ObjectTransform/components/TransformItem/TransformItem";
 import {ThemeContext} from "ui/Themes";
-import {initContainerHeight} from "../../ui/ObjectTransform/helpers";
 
 const Entry = ({entry}) => {
     const theme = useContext(ThemeContext);
@@ -27,7 +26,7 @@ const Entry = ({entry}) => {
                 <EntryItem item={item} key={item.id}></EntryItem>
             </TransformItem>
         }));
-    }, []);
+    }, [entry.items]);
 
     return (
         <div className={Object.values(theme).map(th => th.entry__wrapper).join(' ')}>

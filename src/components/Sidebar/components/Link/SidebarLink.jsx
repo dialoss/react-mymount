@@ -7,15 +7,17 @@ import {Link} from "react-router-dom";
 const linkColor = styles.linkColor;
 
 const SidebarLink = ({link, children, depth, haveSublist, callback}) => {
-    const isCurrent = useMyLocation().relativeURL === link;
+    const location = useMyLocation();
+    const isCurrent = location.relativeURL === link;
     let style = {
         ...(!isCurrent ? {backgroundColor: darkenColor(linkColor, depth * 10 / 100)} : {}),
         ...(haveSublist ? {marginLeft: "20px"} : {})
     };
+    let linkEdit = link.slice(0, -1);
     return (
         <div className={"sidebar__link-wrapper"}>
             <Link className={"sidebar__link " + (isCurrent ? 'sidebar__link--current' : '')}
-                  to={link}
+                  to={linkEdit}
                   style={style}>{children}
             </Link>
             {haveSublist && <button className="sidebar__link-btn" onClick={callback}></button>}

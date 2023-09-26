@@ -44,12 +44,14 @@ const EditorManager = () => {
         );
         let type = mount.classList[1].split('-')[1];
         if (type !== 'textfield') value = value.replace(/<\/?[^>]+(>|$)/g, "");
+        else type = 'new_text_transformed';
         triggerEvent("action-callback", {[type]: value, event_type: 'UPDATE', entry_action_type: 'edit'});
     }, []);
 
     useEffect(() => {
         if (!!fieldToUpdate.current) {
             fieldToUpdate.current.mount.innerHTML = fieldToUpdate.current.value;
+            triggerEvent("init-container", fieldToUpdate.current.mount.closest(".transform-container"));
             fieldToUpdate.current = null;
         }
     }, [editors]);

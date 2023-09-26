@@ -35,7 +35,6 @@ export function setActionElement(event) {
             }
         }
     }
-    console.log(intersect)
     actionElement.position = getElementPosition(actionElement);
     console.log(actionElement);
     return actionElement;
@@ -43,12 +42,13 @@ export function setActionElement(event) {
 
 function getElementPosition(element) {
     const entrys = store.getState().elements.entrys;
-    let pos = 0;
+    let pos = -1;
     for (let i = 0; i < entrys.length; i++) {
         if (entrys[i].id === element.entry.id) {
             pos = i;
             break;
         }
     }
+    if (pos === -1) pos = entrys.length;
     return pos;
 }

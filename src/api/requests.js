@@ -1,6 +1,6 @@
 import store from "../store";
 
-const API_KEY = "AIzaSyDDqSATTGIXHgBRwl_S4mPCcATYJsISOhM";
+const API_KEY = "AIzaSyC2WnrtQoQ6fm82N_0CMfWZgdS23hGZe-g";
 
 export async function fetchRequest(FILE_ID) {
     let response = null;

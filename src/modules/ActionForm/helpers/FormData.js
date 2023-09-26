@@ -16,20 +16,34 @@ function setFormField(form, field, value) {
     if (Object.keys(form).includes(field)) form[field].value = value;
 }
 
-function fillForm(form, element, media) {
+function fillUploads(form, uploads) {
+    const media = uploads.filter(upload => (upload.type === 'image' || upload.type === 'video'));
+    const files = uploads.filter(upload => upload.type === 'file');
+    setFormField(form.data, 'media', media.map(f => {
+        return {
+            type: f.type,
+            url: f.url,
+            filename: f.filename,
+            media_width: f.media_width,
+            media_height: f.media_height,
+        }
+    }));
+    setFormField(form.data, 'files', files.map(f => {
+        return {
+            type: f.type,
+            url: f.url,
+            filename: f.filename,
+            media_width: f.media_width,
+            media_height: f.media_height,
+        }
+    }));
+}
+
+function fillText(form, element) {
     if (element.id === -1) return;
     for (const field of ['description', 'title']) {
         setFormField(form.data, field, element.data[field]);
     }
-    setFormField(form.data, 'media', media.map(med => {
-        return {
-            type: med.type,
-            url: med.url,
-            name: med.filename,
-            width: med.media_width,
-            height: med.media_height,
-        }
-    }));
 }
 
 function setSelect(form, select, toggle) {
@@ -75,9 +89,12 @@ export function getFormData(type, element) {
     });
     if (type === 'buy') return form;
     if (type === 'edit') {
-        fillForm(form, element.item, [element.item.data]);
         if (element.item.id === -1) {
-            fillForm(form, element.entry, element.entry.data.items.filter(item => item.type === 'image'));
+            fillText(form, element.entry);
+            fillUploads(form, element.entry.data.items);
+        } else {
+            fillText(form, element.item);
+            fillUploads(form, [element.item.data])
         }
         if (Object.keys(form.data).includes("settings")) {
             if (element.item.id !== -1) {

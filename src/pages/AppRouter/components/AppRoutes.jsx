@@ -1,14 +1,11 @@
-import React, {useLayoutEffect, useState} from 'react';
+import React from 'react';
 import {Navigate, Route, Routes} from "react-router-dom";
 import {routes} from "../constants/routes";
 import {EntrysPage} from "pages/EntrysPage";
 import {Intro} from "pages/MainPage";
 import {ThemeContext} from "ui/Themes";
-import store from "../../../store";
-import {actions} from "../../../helpers/themes/themes";
-import {useAddEvent} from "../../../hooks/useAddEvent";
-import editStyle from "../../../ui/Themes/edit.module.scss";
 import {useThemes} from "hooks/useThemes";
+import {useMyLocation} from "hooks/useMyLocation";
 
 const Components = {
     'EntrysPage': EntrysPage,
@@ -17,10 +14,11 @@ const Components = {
 
 const PageWrapper = ({route}) => {
     const activeThemes = useThemes({listStyle:route.style});
+    const location = useMyLocation();
 
     return (
         <ThemeContext.Provider value={activeThemes}>
-            {React.createElement(Components[route.component], {addComments: route.comments, key: route.path})}
+            {React.createElement(Components[route.component], {addComments: route.comments, key: location.relativeURL})}
         </ThemeContext.Provider>
     );
 };

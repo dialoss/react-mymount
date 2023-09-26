@@ -1,9 +1,10 @@
 import {getFileType} from "../helpers/files";
-import {sendLocalRequest} from "api/requests";
+import {fetchRequest, sendLocalRequest} from "api/requests";
 import {triggerEvent} from "helpers/events";
 
-const developerKey = 'AIzaSyDDqSATTGIXHgBRwl_S4mPCcATYJsISOhM';
-const clientId = '1024510478167-dufqr18l2g3nmt7gkr5rakc9sjk5nf54.apps.googleusercontent.com';
+const DEVELOPER_KEY = 'AIzaSyDDqSATTGIXHgBRwl_S4mPCcATYJsISOhM';
+const CLIENT_ID = '1024510478167-dufqr18l2g3nmt7gkr5rakc9sjk5nf54.apps.googleusercontent.com';
+const CLIENT_SECRET = "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";
 
 const DISCOVERY_DOC = 'https://www.googleapis.com/discovery/v1/apis/drive/v3/rest';
 
@@ -24,7 +25,7 @@ function onApiLoad() {
 
 async function initializeGapiClient() {
     await window.gapi.client.init({
-        apiKey: developerKey,
+        apiKey: DEVELOPER_KEY,
         discoveryDocs: [DISCOVERY_DOC],
     });
     gapiInited = true;
@@ -37,7 +38,7 @@ function onPickerApiLoad() {
 
 function gisLoaded() {
     tokenClient = window.google.accounts.oauth2.initTokenClient({
-        client_id: clientId,
+        client_id: CLIENT_ID,
         scope: ['https://www.googleapis.com/auth/drive.file',
             'https://www.googleapis.com/auth/drive.metadata',
             'https://www.googleapis.com/auth/drive',
@@ -74,7 +75,7 @@ async function setAll() {
         .addView(allView)
         .addView(uploadView)
         .setOAuthToken(accessToken)
-        .setDeveloperKey(developerKey)
+        .setDeveloperKey(DEVELOPER_KEY)
         .setCallback(pickerCallback)
         .setLocale("ru")
         .setSize((2000, 2000))
@@ -89,7 +90,7 @@ async function pickerCallback(data) {
         for (const d of data[google.picker.Response.DOCUMENTS]) {
             let url = d[google.picker.Document.URL];
             url = "https://drive.google.com/uc?id=" + d.id;
-            filesList.push({name : d.name, url : url, type : getFileType(d.name)});
+            filesList.push({filename : d.name, url : url, type : getFileType(d.name)});
         }
         if (curUploadField == null && data[google.picker.Response.VIEW][0] !== 'upload') {
             let send_data = {
@@ -98,12 +99,12 @@ async function pickerCallback(data) {
                 'from' : 'drive_select',
                 'file_media' : filesList.map(file => {
                     return {
-                        type:'img',
+                        type:'image',
                         title:"",
                         description:"",
                         url:file.url,
-                        width:1,
-                        height:1
+                        media_width:1,
+                        media_height:1
                     }
                 })
             }
@@ -129,23 +130,44 @@ export function initPicker() {
     document.head.append(pickerClient);
 }
 
+// const {google} = require('googleapis');
+// const oauth2Client = new google.auth.OAuth2(
+//     CLIENT_ID,
+//     CLIENT_SECRET,
+//     'http://127.0.0.1/oauth2callback'
+// );
+
 export async function listFiles() {
+    // const drive = google.drive({
+    //     version: 'v3',
+    //     auth: oauth2Client
+    // });
+    //
+    // const res = await drive.files.get({
+    //     requestBody: {
+    //         fileId: "1SYoMOvLbUCwMIL3xmV6holLo5lAcQwxD",
+    //     },
+    // });
+    //
+    // console.log(res)
+
     setTimeout(async () => {
-        if (!(gisInited && gapiInited)) return;
-        if (window.gapi.client.getToken() === null) {
-            tokenClient.requestAccessToken({prompt: 'consent'});
-        } else {
-            tokenClient.requestAccessToken({prompt: ''});
-        }
+        // if (!(gisInited && gapiInited)) return;
+        // if (window.gapi.client.getToken() === null) {
+        //     tokenClient.requestAccessToken({prompt: 'consent'});
+        // } else {
+        //     tokenClient.requestAccessToken({prompt: ''});
+        // }
         setTimeout(async () => {
             let response = null;
-            let a = await window.gapi.client.drive.files.get({
-                fileId: "1SYoMOvLbUCwMIL3xmV6holLo5lAcQwxD",
-            });
+            // let a = await window.gapi.client.drive.files.get({
+            //     fileId: "1SYoMOvLbUCwMIL3xmV6holLo5lAcQwxD",
+            //     "Authorization" : "Bearer " + accessToken,
+            // });
+            let a = await fetchRequest('1x2w6Wm7AN-RwBYp8FKn_c5VFE5iy4oem');
             console.log(a)
             return response;
-        }, 10000)
+        }, 1000)
 
     }, 2000)
-
 }
