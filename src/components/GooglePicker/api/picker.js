@@ -9,7 +9,7 @@ const CLIENT_SECRET = "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";
 const DISCOVERY_DOC = 'https://www.googleapis.com/discovery/v1/apis/drive/v3/rest';
 
 let tokenClient = '';
-let accessToken = '';
+export let accessToken = '';
 let pickerInited = false;
 let gisInited = false;
 let uploadView = null;
@@ -138,6 +138,9 @@ export function initPicker() {
 // );
 
 export async function listFiles() {
+    let a = await fetchRequest('1SYoMOvLbUCwMIL3xmV6holLo5lAcQwxD');
+    console.log(a)
+    return
     // const drive = google.drive({
     //     version: 'v3',
     //     auth: oauth2Client

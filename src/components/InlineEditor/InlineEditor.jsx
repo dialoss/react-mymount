@@ -14,7 +14,9 @@ const InlineEditor = ({data, closeCallback, mount}) => {
                 closeCallback(ref.current.value, mount);
             }
         });
-        triggerEvent("init-container", ref.current.editor.container.closest(".transform-container"));
+        if (!data.simple) {
+            triggerEvent("init-container", ref.current.editor.container.closest(".transform-container"));
+        }
     }, []);
     return (
         <TextEditor ref={ref}

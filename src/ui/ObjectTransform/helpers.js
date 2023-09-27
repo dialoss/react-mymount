@@ -8,6 +8,7 @@ function getMaxBottom(container) {
 }
 
 export function initContainerHeight(container) {
+    if (!(!!container)) return;
     let contHeight = getMaxBottom(container);
     container.style.height = contHeight + "px";
 }

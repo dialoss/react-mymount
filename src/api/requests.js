@@ -1,14 +1,15 @@
-import store from "../store";
+import store from "store";
+import {accessToken} from "../components/GooglePicker/api/picker";
 
 const API_KEY = "AIzaSyC2WnrtQoQ6fm82N_0CMfWZgdS23hGZe-g";
 
 export async function fetchRequest(FILE_ID) {
-    let response = null;
-    await fetch("https://www.googleapis.com/drive/v3/files/" + FILE_ID, {
-        method: 'GET',
-        key: API_KEY,
-    }).then(res => res.json()).then(data => console.log(data));
-    return response;
+    console.log(accessToken)
+    return await fetch("https://www.googleapis.com/drive/v3/files/" + FILE_ID + "?alt=media",{
+        headers: {
+            "Authorization": "Bearer " + accessToken,
+        }
+    });
 }
 
 export async function sendRequest(url, data) {
