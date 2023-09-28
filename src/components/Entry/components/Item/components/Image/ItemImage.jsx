@@ -7,7 +7,7 @@ const ItemImage = ({data}) => {
     const ref = useRef();
     const carouselCallback = useCallback(() => {
         if (preventOnTransformClick(ref)) return;
-        triggerEvent('open-carousel', data.id);
+        triggerEvent('carousel:open', data.id);
     }, []);
 
     return (

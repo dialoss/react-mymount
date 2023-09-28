@@ -1,25 +1,27 @@
-import React from 'react';
+import React, {createContext, useEffect} from 'react';
 import {Navigate, Route, Routes} from "react-router-dom";
 import {routes} from "../constants/routes";
 import {EntrysPage} from "pages/EntrysPage";
 import {Intro} from "pages/MainPage";
-import {ThemeContext} from "ui/Themes";
-import {useThemes} from "hooks/useThemes";
 import {useMyLocation} from "hooks/useMyLocation";
+import {triggerEvent} from "helpers/events";
 
 const Components = {
     'EntrysPage': EntrysPage,
     'Main': Intro,
 };
+export const ActiveThemes = createContext([]);
 
 const PageWrapper = ({route}) => {
-    const activeThemes = useThemes({listStyle:route.style});
     const location = useMyLocation();
+    useEffect(() => {
+        triggerEvent("themes:add", {name:'listStyle', path:route.style});
+    }, []);
 
     return (
-        <ThemeContext.Provider value={activeThemes}>
+        <ActiveThemes.Provider value={{listStyle: route.style}}>
             {React.createElement(Components[route.component], {addComments: route.comments, key: location.relativeURL})}
-        </ThemeContext.Provider>
+        </ActiveThemes.Provider>
     );
 };
 

@@ -186,7 +186,7 @@
     "buy": {
       "title": "Приобрести",
       "button": "btn_отправить",
-      "child": {
+      "parent": {
         "base": [
           "customer_email",
           "customer_name"

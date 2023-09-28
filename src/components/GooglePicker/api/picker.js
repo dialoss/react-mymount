@@ -53,7 +53,6 @@ export function showPicker(uploadField) {
     picker.setVisible(true);
     picker.W.style.position = "fixed";
     picker['Xa'].style.position = "fixed";
-    listFiles();
 }
 
 async function setAll() {
@@ -90,29 +89,52 @@ async function pickerCallback(data) {
         for (const d of data[google.picker.Response.DOCUMENTS]) {
             let url = d[google.picker.Document.URL];
             url = "https://drive.google.com/uc?id=" + d.id;
-            filesList.push({filename : d.name, url : url, type : getFileType(d.name)});
-        }
-        if (curUploadField == null && data[google.picker.Response.VIEW][0] !== 'upload') {
-            let send_data = {
-                'event_type': 'ADD',
-                'entry_action_type' : 'add',
-                'from' : 'drive_select',
-                'file_media' : filesList.map(file => {
-                    return {
-                        type:'image',
-                        title:"",
-                        description:"",
-                        url:file.url,
-                        media_width:1,
-                        media_height:1
+            // await fetchRequest(d.id).then(res => res.arrayBuffer()).then(data => {
+                // console.log(data)
+                // let sizeOf = require('buffer-image-size');
+                // let dimensions = sizeOf(data);
+                // console.log(dimensions.width, dimensions.height);
+            // })
+            let type = getFileType(d.name);
+            filesList.push(new Promise((resolve, reject) => {
+                if (type === 'image' || type === 'video') {
+                    let media = document.createElement("img");
+                    media.src = url;
+                    media.onload = () => {
+                        resolve({
+                            filename : d.name,
+                            url,
+                            type,
+                            media_width: media.width,
+                            media_height: media.height
+                        })
                     }
-                })
+                    media.remove();
+                } else {
+                    resolve({
+                        filename : d.name,
+                        url,
+                        type,
+                    })
+                }
+            }));
+        }
+        Promise.all(filesList).then(files => {
+            if (curUploadField == null && data[google.picker.Response.VIEW][0] !== 'upload') {
+                files.forEach(file => {
+                    let send_data = {
+                        'event_type': 'ADD',
+                        'entry_action_type' : 'add',
+                        'from' : 'drive_select',
+                        'media' : [file],
+                    }
+                    triggerEvent("action:callback", send_data);
+                });
             }
-            triggerEvent("action-callback", send_data);
-        }
-        if (curUploadField != null) {
-            if (filesList.length) curUploadField(filesList);
-        }
+            if (curUploadField != null) {
+                if (files.length) curUploadField(files);
+            }
+        })
     }
 }
 
@@ -128,49 +150,4 @@ export function initPicker() {
     pickerClient.setAttribute("defer", "defer");
     document.head.append(pickerApi);
     document.head.append(pickerClient);
-}
-
-// const {google} = require('googleapis');
-// const oauth2Client = new google.auth.OAuth2(
-//     CLIENT_ID,
-//     CLIENT_SECRET,
-//     'http://127.0.0.1/oauth2callback'
-// );
-
-export async function listFiles() {
-    let a = await fetchRequest('1SYoMOvLbUCwMIL3xmV6holLo5lAcQwxD');
-    console.log(a)
-    return
-    // const drive = google.drive({
-    //     version: 'v3',
-    //     auth: oauth2Client
-    // });
-    //
-    // const res = await drive.files.get({
-    //     requestBody: {
-    //         fileId: "1SYoMOvLbUCwMIL3xmV6holLo5lAcQwxD",
-    //     },
-    // });
-    //
-    // console.log(res)
-
-    setTimeout(async () => {
-        // if (!(gisInited && gapiInited)) return;
-        // if (window.gapi.client.getToken() === null) {
-        //     tokenClient.requestAccessToken({prompt: 'consent'});
-        // } else {
-        //     tokenClient.requestAccessToken({prompt: ''});
-        // }
-        setTimeout(async () => {
-            let response = null;
-            // let a = await window.gapi.client.drive.files.get({
-            //     fileId: "1SYoMOvLbUCwMIL3xmV6holLo5lAcQwxD",
-            //     "Authorization" : "Bearer " + accessToken,
-            // });
-            let a = await fetchRequest('1x2w6Wm7AN-RwBYp8FKn_c5VFE5iy4oem');
-            console.log(a)
-            return response;
-        }, 1000)
-
-    }, 2000)
 }

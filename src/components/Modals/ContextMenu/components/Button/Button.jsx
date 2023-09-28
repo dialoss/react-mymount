@@ -4,7 +4,7 @@ import "./Button.scss";
 
 const ContextButton = ({action}) => {
     const callback = useCallback(() => {
-        triggerEvent('context-action', {type:action.type});
+        triggerEvent('context-window:button', {type:action.type});
     }, []);
     return (
         <button className="context__button" onClick={callback}>{action.name}</button>

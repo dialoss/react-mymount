@@ -2,11 +2,9 @@ import React, {useContext, useEffect, useRef, useState} from 'react';
 import InfoBlock from "ui/InfoBlock/InfoBlock";
 import './Item.scss';
 import ItemData from "./components/ItemData";
-import {ThemeContext} from "ui/Themes";
 import {triggerEvent} from "helpers/events";
 
 const EntryItem = ({item}) => {
-    const theme = useContext(ThemeContext);
     const ref = useRef();
     const [itemData, setItemData] = useState(<></>);
     useEffect(() => {
@@ -31,11 +29,11 @@ const EntryItem = ({item}) => {
             }
         }
         if (itemTransform.style.position === "absolute") {
-            triggerEvent("init-container", container);
+            triggerEvent("container:init", container);
         }
     }, []);
     return (
-        <div className={Object.values(theme).map(th => th.item__wrapper).join(' ')}>
+        <div className={"item__wrapper"}>
             <div className={`item-${item.id} item item-${item.type}`} ref={ref}
                  style={{...(!item.show_shadow && {boxShadow: "none"})}}>
                 {itemData}

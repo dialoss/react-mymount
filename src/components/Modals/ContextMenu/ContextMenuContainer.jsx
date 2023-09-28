@@ -6,14 +6,14 @@ import {getPressDelta, registerPress} from "helpers/events";
 import {useAddEvent} from "hooks/useAddEvent";
 
 const ContextMenuContainer = ({actions}) => {
-    const name = "context-window";
+    const name = "context-window:toggle";
     const [position, setPosition] = useState({left: 0, top: 0});
     function contextMenu(event) {
         event.preventDefault();
         if (getPressDelta() > 100) return;
         setPosition({left: event.clientX, top: event.clientY});
         triggerEvent(name, {isOpened: true});
-        triggerEvent('action-event', event);
+        triggerEvent('action:init', event);
     }
     function onScroll() {
         triggerEvent(name, {isOpened: false});

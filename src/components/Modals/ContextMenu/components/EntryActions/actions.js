@@ -18,14 +18,15 @@ export const ContextActions = {
     'add':{
         name: 'Добавить',
         callback: ({actionElement}) => {
-            triggerEvent('form-data', {type:'add', element:actionElement})
+            triggerEvent('form:set-data', {type:'add', element:actionElement})
             return [];
         }
     },
     'edit':{
         name: 'Редактировать',
         callback: ({actionElement}) => {
-            triggerEvent('form-data', {type:'edit', element:actionElement})
+            if (actionElement.item.id === -1 && actionElement.entry.id === -1) return [];
+            triggerEvent('form:set-data', {type:'edit', element:actionElement})
             return [];
         }
     },

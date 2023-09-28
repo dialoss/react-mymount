@@ -15,7 +15,7 @@ const InlineEditor = ({data, closeCallback, mount}) => {
             }
         });
         if (!data.simple) {
-            triggerEvent("init-container", ref.current.editor.container.closest(".transform-container"));
+            triggerEvent("container:init", ref.current.editor.container.closest(".transform-container"));
         }
     }, []);
     return (

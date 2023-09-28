@@ -6,7 +6,7 @@ const InfoParagraph = ({type, children, ...props}) => {
     const ref = useRef();
     const editorCallback = useCallback((event) => {
         if (event.detail === 2) {
-            triggerEvent('toggle-editor', {
+            triggerEvent('text-editor:toggle', {
                 event,
                 simple: (type !== "textfield"),
                 isOpened: true,

@@ -17,6 +17,7 @@ function setFormField(form, field, value) {
 }
 
 function fillUploads(form, uploads) {
+    if (!(!!uploads)) return;
     const media = uploads.filter(upload => (upload.type === 'image' || upload.type === 'video'));
     const files = uploads.filter(upload => upload.type === 'file');
     setFormField(form.data, 'media', media.map(f => {
@@ -41,7 +42,7 @@ function fillUploads(form, uploads) {
 
 function fillText(form, element) {
     if (element.id === -1) return;
-    for (const field of ['description', 'title']) {
+    for (const field of ['description', 'title', 'price']) {
         setFormField(form.data, field, element.data[field]);
     }
 }
@@ -79,6 +80,7 @@ export function getFormData(type, element) {
     }
 
     let form = {
+        type:type,
         title: formType.title,
         button: formType.button.split('_')[1],
         meta: {},

@@ -1,0 +1,65 @@
+@import "parent";
+
+:export {
+  masonry: 1;
+  widthPoints: [300, 400]
+}
+
+.item {
+  border-radius: 8px;
+  box-shadow: 0 0 5px gray;
+  flex-direction: row;
+
+  @media only screen and (max-width: 700px) {
+    & {
+      flex-direction: column;
+    }
+  }
+
+  &__wrapper {
+    padding: 10px;
+  }
+
+  &:hover {
+    cursor: pointer;
+    opacity: 0.8;
+  }
+}
+
+.info__block {
+  background-color: white;
+}
+
+.entry {
+  display: flex;
+  flex-direction: row;
+  background-color: white;
+
+  &__items {
+    max-width: 100%;
+    padding: 5px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+  }
+  &:hover {
+    opacity: 1;
+    background-color: white;
+  }
+  &__buy {
+    flex-direction: row;
+  }
+
+  &__price {
+    margin: 0 auto;
+  }
+}
+
+.info__block {
+  min-width: 50%;
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

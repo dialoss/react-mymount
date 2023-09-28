@@ -6,7 +6,7 @@ import {initContainerHeight} from "./helpers";
 
 const ObjectTransform = () => {
     function transformCallback(data) {
-        triggerEvent("action-callback", data);
+        triggerEvent("action:callback", data);
     }
 
     function initTransform(event) {
@@ -15,15 +15,10 @@ const ObjectTransform = () => {
         if (!!item.querySelector(".item-model")) return;
 
         setItemTransform(event.detail.event, event.detail.type, item, btn, transformCallback);
-        triggerEvent("action-event", event.detail.event);
+        triggerEvent("action:init", event.detail.event);
     }
 
-    function initContainer(event) {
-        initContainerHeight(event.detail);
-    }
-
-    useAddEvent("init-container", initContainer);
-    useAddEvent("transform-item", initTransform)
+    useAddEvent("transform:init", initTransform)
 
     return (
         <></>

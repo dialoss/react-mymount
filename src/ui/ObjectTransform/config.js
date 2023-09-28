@@ -1,5 +1,5 @@
 import styles from "./components/styles/resize.module.scss";
-console.log(styles)
+
 export const Transforms = {
     parent: {
         name: "move",

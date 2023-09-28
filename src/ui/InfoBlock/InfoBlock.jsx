@@ -18,7 +18,7 @@ const InfoBlock = ({data}) => {
             </span>
             {!!data.price && <span className="info__block-section info__block-buy">
                 <InfoParagraph type={'price'}>{data.price}</InfoParagraph>
-                <ActionButton onClick={() => triggerEvent("form-data", {type:'buy'})}>
+                <ActionButton onClick={() => triggerEvent("form:set-data", {type:'buy'})}>
                     заказать изготовление
                 </ActionButton>
             </span>}

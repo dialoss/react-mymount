@@ -8,7 +8,7 @@ const EditorManager = () => {
     const [editors, setEditors] = useState([]);
 
     function toggleEditor(event) {
-        triggerEvent("action-event", event.detail.event);
+        triggerEvent("action:init", event.detail.event);
         const element = event.detail.element;
 
         const edit = React.createElement(InlineEditor, {
@@ -45,18 +45,19 @@ const EditorManager = () => {
         let type = mount.classList[1].split('-')[1];
         if (type !== 'textfield') value = value.replace(/<\/?[^>]+(>|$)/g, "");
         else type = 'new_text_transformed';
-        triggerEvent("action-callback", {[type]: value, event_type: 'UPDATE', entry_action_type: 'edit'});
+        triggerEvent("action:callback", {[type]: value, event_type: 'UPDATE', entry_action_type: 'edit'});
     }, []);
 
     useEffect(() => {
         if (!!fieldToUpdate.current) {
+            fieldToUpdate.current.mount.style.width = "auto";
             fieldToUpdate.current.mount.innerHTML = fieldToUpdate.current.value;
-            triggerEvent("init-container", fieldToUpdate.current.mount.closest(".transform-container"));
+            triggerEvent("container:init", fieldToUpdate.current.mount.closest(".transform-container"));
             fieldToUpdate.current = null;
         }
     }, [editors]);
 
-    useAddEvent('toggle-editor', toggleEditor);
+    useAddEvent('text-editor:toggle', toggleEditor);
     return (
         <>
             {

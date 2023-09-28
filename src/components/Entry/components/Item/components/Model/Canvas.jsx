@@ -5,6 +5,7 @@ import {GLTFLoader} from 'three/examples/jsm/loaders/GLTFLoader';
 import {fetchRequest} from "api/requests";
 import {registerPress} from "helpers/events";
 import JSZip from "jszip"
+import {Mesh, MeshBasicMaterial, MeshStandardMaterial} from "three";
 
 const MyCanvas = ({ data }) => {
     function enableSelect() {
@@ -23,7 +24,7 @@ const MyCanvas = ({ data }) => {
             <Suspense fallback={null}>
                 <Stage environment={null}>
                     <Model data={data} />
-                    <OrbitControls zoomSpeed={5}/>
+                    <OrbitControls zoomSpeed={5} onWheel={(e)=>false}/>
                 </Stage>
             </Suspense>
 
@@ -36,51 +37,48 @@ export default MyCanvas;
 const Lights = () => {
     return (
         <>
-            <ambientLight intensity={0.4}/>
+            <ambientLight intensity={1}/>
             <directionalLight position={[10, 10, 10]} intensity={1} color={"#fff"}></directionalLight>
             <directionalLight position={[-10, -10, -10]} intensity={1} color={"#fff"}></directionalLight>
-            {/*<directionalLight position={[10, 10, 0]} intensity={1} />*/}
-            {/*<directionalLight position={[-10, 0, 0]} intensity={1} />*/}
-            {/*<directionalLight position={[0, 10, 0]} intensity={1} />*/}
-            {/*<directionalLight position={[0, 0, 10]} intensity={1} />*/}
+            <directionalLight position={[10, 10, 0]} intensity={1} />
+            <directionalLight position={[-10, 0, 0]} intensity={1} />
+            <directionalLight position={[0, 10, 0]} intensity={1} />
+            <directionalLight position={[0, 0, 10]} intensity={1} />
             {/*<directionalLight position={[0, 0, -10]} intensity={1} />*/}
             {/*<directionalLight position={[0, -10, 0]} intensity={1} />*/}
         </>
     );
 };
 
-function uncompressFile(unzip, extension) {
-    return unzip
-        .then(files => files.file(new RegExp(extension))[0].async("arraybuffer"))
-        .then(data => data);
-}
-
 const Model = ({data}) => {
-    const [object, setObject] = useState(null);
+    const [model, setModel] = useState(null);
 
     const query = new URL(data.url);
     const FILE_ID = query.searchParams.get('id');
 
     useEffect(() => {
-        fetchRequest(FILE_ID).then(res => res.arrayBuffer()).then(modelArchive => {
-            console.log(modelArchive)
-            const zip = new JSZip();
+        fetchRequest(FILE_ID).then(res => res.arrayBuffer()).then(file => {
             const loader = new GLTFLoader();
-            const unzip = zip.loadAsync(modelArchive);
-            let gltfFile = uncompressFile(unzip, 'gltf');
-            let binFile = uncompressFile(unzip, 'bin');
-            Promise.all([gltfFile, binFile]).then(files => {
-                loader.parse(files[0], '/models/', obj => {
-                    setObject(obj);
-                })
-            })
+            loader.parse(file, '', model => {
+                model.scene.traverse((obj) => {
+                        if(obj instanceof Mesh){
+                            obj.material = new MeshStandardMaterial({
+                                color: obj.material.color,
+                                roughness: "0.1",
+                                metalness: "0.8",
+                            });
+                        }
+                    }
+                )
+                setModel(model);
+            });
         });
     }, [])
 
     return (
         <>
-            {!!object &&
-                <primitive object={object.scene}
+            {!!model &&
+                <primitive object={model.scene}
                            scale={10}
                            dispose={null}
                            position={[0, 0, 0]}>

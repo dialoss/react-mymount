@@ -62,7 +62,7 @@ const EntryListContainer = () => {
         dispatch({type: event.detail.event_type, payload});
     }
 
-    useAddEvent('element-changed', handleElements);
+    useAddEvent('entrylist:handle-changes', handleElements);
 
     useEffect(() => {
         globalDispatch(actions.setElements({entrys: entrys}));

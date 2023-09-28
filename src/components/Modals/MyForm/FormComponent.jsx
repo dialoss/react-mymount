@@ -16,7 +16,7 @@ const FormComponent = ({field}) => {
     let TargetComponent = Components[field.type];
 
     function componentCallback(event) {
-        triggerEvent('fieldChange', {name:field.name, value:event.target.value});
+        triggerEvent('form:field-changed', {name:field.name, value:event.target.value});
     }
 
     return (

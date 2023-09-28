@@ -1,22 +1,30 @@
-import React, {useContext} from 'react';
+import React, {useContext, useState} from 'react';
 import Entry from "components/Entry/Entry";
 import MyMasonry from "ui/Masonry/MyMasonry";
 import Container from "ui/Container/Container";
-import {ThemeContext} from "ui/Themes";
+import {ActiveThemes} from "../../pages/AppRouter/components/AppRoutes";
 
 const EntryList = ({entrys}) => {
-    const style = useContext(ThemeContext).listStyle;
+    const [vars, setVars] = useState(null);
+    const stylePath = useContext(ActiveThemes).listStyle;
+    import("ui/Themes/" + stylePath).then(data => {
+        console.log(data.default)
+        setVars(data.default);
+    });
     return (
         <div className="entrys" style={{marginBottom: "50px"}}>
             <div className="entrys__inner">
                 <Container>
-                    <MyMasonry maxColumns={+style.masonry} widthPoints={JSON.parse(style.widthPoints)}>
+                    {!!vars && <MyMasonry
+                        maxColumns={+vars.masonry}
+                        widthPoints={JSON.parse(vars.widthPoints)}
+                    >
                         {
                             entrys.map((entry) =>
                                 <Entry entry={entry} key={entry.id}></Entry>
                             )
                         }
-                    </MyMasonry>
+                    </MyMasonry>}
                 </Container>
             </div>
         </div>

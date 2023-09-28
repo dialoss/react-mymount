@@ -1,6 +1,6 @@
 import store from "store";
 
-let actionElement = null;
+export let actionElement = null;
 
 const emptyElement = {
     entry: {

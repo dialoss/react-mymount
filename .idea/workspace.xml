@@ -1,23 +1,181 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9b37537a-6286-4d32-9202-d8554b8ac243" name="Changes" comment="minor fixes">
-      <change afterPath="$PROJECT_DIR$/public/models/LHT-20-120.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Modals/MyForm/Upload/FormMedia.scss" afterDir="false" />
+    <list default="true" id="9b37537a-6286-4d32-9202-d8554b8ac243" name="Changes" comment="file loading from google drive / unzipping">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/requests.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/requests.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/models/17HS15-1684-HG10.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/models/17HS15-1684-HG10.gltf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/models/4P.gltf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/models/60-GT2 8mm bore 6mm belt (1).gltf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/models/84 tuf 6mm tajming belt.gltf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/models/AXK.gltf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/models/Assem1.gltf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/models/DC Power Jack 5.5mm x 2.1mm.gltf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/models/Dovatail Fix.gltf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/models/Dovatail140.gltf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/models/EqDriveMini.gltf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/models/EqDriveMiniCover.gltf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/models/GT2_12T.gltf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/models/GT2_16T.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/models/GT2_16T.gltf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/models/GT2_40T_8_6.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/models/GT2_40T_8_6.gltf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/models/GT2_40teeth_10bore.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/models/GT2_40teeth_10bore.gltf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/models/GT2_80teeth_10bore.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/models/GT2_80teeth_10bore.gltf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/models/GX12-8.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/models/GX12-8.gltf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/models/GX16 4P.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/models/GX16 4P.gltf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/models/GX16-4P.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/models/GX16-4P.gltf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/models/GX16M-9B.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/models/GX16M-9B.gltf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/models/LHT-20-120.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/models/MT-20-100H.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/models/MT-20-100H.gltf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/models/MT-20-100LHN.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/models/MT-20-100LHN.gltf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/models/NEMA14 Stepper Motor.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/models/NEMA14 Stepper Motor.gltf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/models/NEMA17 ЧПУ.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/models/NEMA17 ЧПУ.gltf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/models/NEMA23.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/models/NEMA23.gltf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/models/Nema17Cover.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/models/Nema17Cover.gltf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/models/Nema17HolderCover(2pcs).bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/models/Nema17HolderCover(2pcs).gltf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/models/Part1.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/models/Part1.gltf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/models/Part3.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/models/Part3.gltf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/models/ProtectBase110.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/models/ProtectBase110.gltf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/models/ProtectBase120.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/models/ProtectBase120.gltf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/models/ProtectBase90.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/models/ProtectBase90.gltf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/models/ProtectCover115.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/models/ProtectCover115.gltf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/models/ProtectRing110.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/models/ProtectRing110.gltf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/models/ProtectRing120.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/models/ProtectRing120.gltf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/models/ProtectRing120D.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/models/ProtectRing120D.gltf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/models/ProtectRing120DV3.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/models/ProtectRing120DV3.gltf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/models/ProtectRing120V3.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/models/ProtectRing120V3.gltf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/models/ProtectRing90.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/models/ProtectRing90.gltf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/models/ProtectRing90V3.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/models/ProtectRing90V3.gltf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/models/ProtectRingCover110V3.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/models/ProtectRingCover110V3.gltf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/models/ProtectRingCover120 Nema 23.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/models/ProtectRingCover120 Nema 23.gltf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/models/ProtectRingCover120.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/models/ProtectRingCover120.gltf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/models/ProtectRingCover120D.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/models/ProtectRingCover120D.gltf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/models/ProtectRingCover120DV3.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/models/ProtectRingCover120DV3.gltf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/models/ProtectRingCover120V3.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/models/ProtectRingCover120V3.gltf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/models/ProtectRingCover90.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/models/ProtectRingCover90.gltf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/models/Stepper Motor Flexible Coupling 6,35 x 8 mm.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/models/Stepper Motor Flexible Coupling 6,35 x 8 mm.gltf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/models/TJ6P6C.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/models/TJ6P6C.gltf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/models/Timing pulley GT2-12 teeth.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/models/Timing pulley GT2-12 teeth.gltf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/models/USB type-B female PCB.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/models/USB type-B female PCB.gltf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/models/continous stud_am.gltf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/models/flat head screw_am.gltf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/models/flat washer narrow_am.gltf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/models/gt2 20T.gltf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/models/pan cross head_am.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/models/pan cross head_am.gltf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/models/radial ball bearing_68_am.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/models/radial ball bearing_68_am.gltf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/models/socket button head cap screw_am.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/models/socket button head cap screw_am.gltf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/models/socket head cap screw_am.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/models/socket head cap screw_am.gltf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/models/socket head cap screw_am2.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/models/socket head cap screw_am2.gltf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/models/socket set screw cone point_am.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/models/socket set screw cone point_am.gltf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/models/socket set screw cone point_am2.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/models/socket set screw cone point_am2.gltf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/models/socket set screw cup point_am.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/models/socket set screw cup point_am.gltf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/models/Адаптер EQ-6.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/models/Адаптер EQ-6.gltf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/models/Адаптер Nema23.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/models/Адаптер Nema23.gltf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/models/Адаптер корпуса 70.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/models/Адаптер корпуса 70.gltf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/models/Алюминиевый зубчатый шкив gt2-36-8mm.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/models/Алюминиевый зубчатый шкив gt2-36-8mm.gltf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/models/Барашек М6.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/models/Барашек противовеса.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/models/Барашек_старый.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/models/Вилка левая 2шт.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/models/Вилка левая 2шт.gltf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/models/Винт M6x12 ГОСТ 11738-84.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/models/Крышка кронштейна двигателя Nema17AZ.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/models/Крышка кронштейна двигателя Nema17AZ.gltf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/EditorManager/EditorManager.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/EditorManager/EditorManager.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Entry/Entry.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Entry/Entry.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Entry/components/Item/Item.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Entry/components/Item/Item.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Entry/components/Item/components/Image/ItemImage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Entry/components/Item/components/Image/ItemImage.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Entry/components/Item/components/Model/Canvas.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Entry/components/Item/components/Model/Canvas.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/EntryList/EntryList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/EntryList/EntryList.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/GooglePicker/api/picker.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/GooglePicker/api/picker.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/GooglePicker/helpers/files.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/GooglePicker/helpers/files.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/InlineEditor/InlineEditor.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/InlineEditor/InlineEditor.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Modals/Carousel/CarouselContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Modals/Carousel/CarouselContainer.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Modals/Carousel/components/Navigation/NavArrow/NavArrow.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Modals/Carousel/components/Navigation/NavArrow/NavArrow.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Modals/ContextMenu/ContextMenuContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Modals/ContextMenu/ContextMenuContainer.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Modals/MyForm/MyForm.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Modals/MyForm/MyForm.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Modals/MyForm/Upload/FormMedia.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Modals/MyForm/Upload/FormMedia.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/helpers/events.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/helpers/events.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/_variables.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/_variables.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/Buttons/ActionButton/ActionButton.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/Buttons/ActionButton/ActionButton.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/ObjectTransform/helpers.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/ObjectTransform/helpers.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Modals/ContextMenu/components/Button/Button.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Modals/ContextMenu/components/Button/Button.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Modals/ContextMenu/components/EntryActions/EntryActions.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Modals/ContextMenu/components/EntryActions/EntryActions.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Modals/ContextMenu/components/EntryActions/actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Modals/ContextMenu/components/EntryActions/actions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Modals/MyForm/FormComponent.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Modals/MyForm/FormComponent.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/helpers/location/reducers.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/helpers/location/reducers.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/helpers/themes/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/helpers/themes/themes.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modules/ActionForm/FormContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/ActionForm/FormContainer.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modules/ActionForm/api/submitForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/ActionForm/api/submitForm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modules/ActionForm/helpers/FormData.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/ActionForm/helpers/FormData.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modules/ActionForm/helpers/FormData.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/ActionForm/helpers/FormData.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modules/ActionManager/components/ActionManager.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/ActionManager/components/ActionManager.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modules/ActionManager/components/helpers.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/ActionManager/components/helpers.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modules/EntryList/components/EntryListContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/EntryList/components/EntryListContainer.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modules/ThemeManager/components/ThemeManager.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/ThemeManager/components/ThemeManager.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/AppRouter/components/AppRoutes.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/AppRouter/components/AppRoutes.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/AppRouter/constants/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/AppRouter/constants/routes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/AppRouter/constants/routes.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/TemplatePage/components/TemplatePage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/TemplatePage/components/TemplatePage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/InfoBlock/InfoBlock.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/InfoBlock/InfoBlock.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/InfoParagraph/InfoParagraph.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/InfoParagraph/InfoParagraph.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/Masonry/MyMasonry.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/Masonry/MyMasonry.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/ObjectTransform/ObjectTransform.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/ObjectTransform/ObjectTransform.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/ObjectTransform/components/TransformContainer/TransformContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/ObjectTransform/components/TransformContainer/TransformContainer.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/ObjectTransform/components/TransformItem/TransformButton.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/ObjectTransform/components/TransformItem/TransformButton.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/ObjectTransform/components/TransformItem/TransformItem.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/ObjectTransform/components/TransformItem/TransformItem.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/ObjectTransform/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/ObjectTransform/config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/Themes/blueprints.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/Themes/blueprints.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/Themes/child.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/Themes/child.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/Themes/edit.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/Themes/edit.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/Themes/parent.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/Themes/parent.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/Themes/shop.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/Themes/shop.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,9 +194,6 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/src/pages/AppRouter/constants/routes.json" root0="FORCE_HIGHLIGHTING" />
-  </component>
   <component name="JsbtTreeLayoutManager">
     <layout place="tools.popupnpm">
       <scroll-view-position x="0" y="0" />
@@ -55,40 +210,40 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Programming/react-refactor/public/models&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;SCSS&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
-    &quot;nodejs_interpreter_path&quot;: &quot;node&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;C:\\Program Files\\JetBrains\\WebStorm 2022.2\\plugins\\JavaScriptLanguage\\jsLanguageServicesImpl\\external&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "D:/Programming/react-refactor/src/pages/AppRouter/components",
+    "list.type.of.created.stylesheet": "SCSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.standard": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.standard": "",
+    "nodejs_interpreter_path": "node",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "ts.external.directory.path": "C:\\Program Files\\JetBrains\\WebStorm 2022.2\\plugins\\JavaScriptLanguage\\jsLanguageServicesImpl\\external",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Programming\react-refactor\src\pages\AppRouter\components" />
+      <recent name="D:\Programming\react-refactor\public" />
       <recent name="D:\Programming\react-refactor\public\models" />
       <recent name="D:\Programming\react-refactor\src\components\Entry\components\Item\components\Video" />
       <recent name="D:\Programming\react-refactor\src\components\Entry\components\Item\components\File" />
-      <recent name="D:\Programming\react-refactor\public" />
-      <recent name="D:\Programming\react-refactor\src\ui\Themes" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Programming\react-refactor\src\modules\ThemeManager" />
       <recent name="D:\Programming\react-refactor\src\components\Entry\components\Item\components\Table" />
       <recent name="D:\Programming\react-refactor\public\models" />
       <recent name="D:\Programming\react-refactor\public" />
       <recent name="D:\Programming\react-refactor\src\components\Entry\components\Item\components" />
-      <recent name="D:\Programming\react-refactor\src\components\ModelViewer" />
     </key>
   </component>
   <component name="RunManager" selected="JavaScript Debug.Debug Application">
@@ -139,7 +294,8 @@
       <workItem from="1695663963251" duration="13339000" />
       <workItem from="1695677770711" duration="1821000" />
       <workItem from="1695713645201" duration="23132000" />
-      <workItem from="1695819347914" duration="13152000" />
+      <workItem from="1695819347914" duration="21254000" />
+      <workItem from="1695893636697" duration="16860000" />
     </task>
     <task id="LOCAL-00001" summary="Initial">
       <created>1693824071090</created>
@@ -337,7 +493,14 @@
       <option name="project" value="LOCAL" />
       <updated>1695761237069</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="file loading from google drive / unzipping">
+      <created>1695846537047</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1695846537047</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -372,7 +535,8 @@
     <MESSAGE value="layout resize" />
     <MESSAGE value="file loading" />
     <MESSAGE value="minor fixes" />
-    <option name="LAST_COMMIT_MESSAGE" value="minor fixes" />
+    <MESSAGE value="file loading from google drive / unzipping" />
+    <option name="LAST_COMMIT_MESSAGE" value="file loading from google drive / unzipping" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -29,7 +29,7 @@ const CarouselContainer = () => {
         setCurrent(currentItem => bounds(currentItem - 1, itemsRef.current.length));
     }, []);
 
-    const windowName = 'carousel-window';
+    const windowName = 'carousel-window:toggle';
 
     const openCarousel = useCallback(event => {
         for (let i = 0; i < itemsRef.current.length; i++) {
@@ -41,9 +41,9 @@ const CarouselContainer = () => {
         }
     }, []);
 
-    useAddEvent("open-carousel", openCarousel);
-    useAddEvent("carousel-right", forward);
-    useAddEvent("carousel-left", back);
+    useAddEvent("carousel:open", openCarousel);
+    useAddEvent("carousel:right", forward);
+    useAddEvent("carousel:left", back);
 
     useLayoutEffect(() => {
         let newItems = [];
@@ -70,8 +70,8 @@ const CarouselContainer = () => {
         }
     }, [currentItem]);
 
-    useKeypress('ArrowRight', () => triggerEvent('carousel-right'));
-    useKeypress('ArrowLeft', () => triggerEvent('carousel-left'));
+    useKeypress('ArrowRight', () => triggerEvent('carousel:right'));
+    useKeypress('ArrowLeft', () => triggerEvent('carousel:left'));
     return (
         <ModalManager name={windowName} key={windowName}>
             {
