@@ -1,4 +1,4 @@
-import React, {createContext, useEffect} from 'react';
+import React, {useEffect} from 'react';
 import {Navigate, Route, Routes} from "react-router-dom";
 import {routes} from "../constants/routes";
 import {EntrysPage} from "pages/EntrysPage";
@@ -10,18 +10,17 @@ const Components = {
     'EntrysPage': EntrysPage,
     'Main': Intro,
 };
-export const ActiveThemes = createContext([]);
 
 const PageWrapper = ({route}) => {
     const location = useMyLocation();
     useEffect(() => {
-        triggerEvent("themes:add", {name:'listStyle', path:route.style});
+        triggerEvent("themes:add", {name:'listStyle', path:route.style, clear:true});
     }, []);
 
     return (
-        <ActiveThemes.Provider value={{listStyle: route.style}}>
+        <>
             {React.createElement(Components[route.component], {addComments: route.comments, key: location.relativeURL})}
-        </ActiveThemes.Provider>
+        </>
     );
 };
 

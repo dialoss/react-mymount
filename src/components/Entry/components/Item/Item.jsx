@@ -3,20 +3,20 @@ import InfoBlock from "ui/InfoBlock/InfoBlock";
 import './Item.scss';
 import ItemData from "./components/ItemData";
 import {triggerEvent} from "helpers/events";
+import {ActiveThemes} from "ui/Themes/index";
 
 const EntryItem = ({item}) => {
+    const theme = useContext(ActiveThemes);
     const ref = useRef();
-    const [itemData, setItemData] = useState(<></>);
+    const [itemProps, setItemProps] = useState({style: {}});
     useEffect(() => {
-        setItemData(<ItemData data={item}></ItemData>);
-
         const itemRef = ref.current;
         const itemTransform = itemRef.closest(".transform-item");
         const container = itemRef.closest(".transform-container");
-
+        let style = {};
         if (item.type === 'video' || item.type === 'image') {
             const contWidth = container.getBoundingClientRect().width;
-            itemRef.style['aspect-ratio'] = item.media_width / item.media_height;
+            style['aspectRatio'] = item.media_width / item.media_height;
 
             if (itemTransform.style.position !== "absolute") {
                 if (item.row > 1) {
@@ -28,15 +28,13 @@ const EntryItem = ({item}) => {
                 }
             }
         }
-        if (itemTransform.style.position === "absolute") {
-            triggerEvent("container:init", container);
-        }
+        setItemProps({style, itemTransform, container});
     }, []);
     return (
-        <div className={"item__wrapper"}>
+        <div className={Object.values(theme).map(th => th.item__wrapper).join(' ')}>
             <div className={`item-${item.id} item item-${item.type}`} ref={ref}
                  style={{...(!item.show_shadow && {boxShadow: "none"})}}>
-                {itemData}
+                <ItemData data={item} props={itemProps}></ItemData>
                 {item.type !== 'textfield' && <InfoBlock data={item}></InfoBlock>}
             </div>
         </div>

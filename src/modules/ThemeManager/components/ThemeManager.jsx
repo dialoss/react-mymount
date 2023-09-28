@@ -1,22 +1,18 @@
-import React, {createContext, useCallback, useEffect, useReducer, useRef, useState} from 'react';
+import React, {useEffect, useReducer, useRef, useState} from 'react';
 import {useAddEvent} from "hooks/useAddEvent";
+import {ActiveThemes} from "ui/Themes";
 
 function reducer(state, action) {
     let name = action.payload.name;
     switch (action.type) {
         case 'ADD':
-            // state.themes = {...state.themes, name: action.payload};
-            // state.themes[name] = action.payload;
-            return {themes:{...state.themes, name: action.payload}};
+            return {themes:{...state.themes, [name]: action.payload}};
         case 'TOGGLE':
             let newTheme = {...state.themes[name]};
             newTheme.active = !newTheme.active;
-            // state.themes[name].active = !state.themes[name].active;
-            return {themes:{...state.themes, name: newTheme}};
+            return {themes:{...state.themes, [name]: newTheme}};
     }
 }
-
-// export const ActiveThemes = createContext([]);
 
 const ThemeManager = ({children}) => {
     const [themes, dispatch] = useReducer(reducer, {themes: {}});
@@ -32,8 +28,8 @@ const ThemeManager = ({children}) => {
 
     function addTheme(event) {
         const theme = event.detail;
-        console.log(theme)
-        dispatch({type: "ADD", payload: {name:theme.name, stylesheet:theme.path, active:true}});
+        if (theme.clear) setActiveThemes({});
+        dispatch({type: "ADD", payload: {name:theme.name, stylesheet:theme.path, active:true, imported:false}});
     }
 
     useAddEvent("themes:add", addTheme);
@@ -46,37 +42,32 @@ const ThemeManager = ({children}) => {
     }, [children]);
 
     useEffect(() => {
-        addTheme({detail: {name:'editStyle', path:"edit.scss"}});
+        addTheme({detail: {name:'editStyle', path:"edit.module.scss", clear:false}});
     }, []);
 
     useEffect(() => {
         Object.values(themes.themes).forEach(theme => {
             if (theme.active) {
-                 const stylesheet = import("ui/Themes/" + theme.stylesheet);
-                 console.log(stylesheet)
-                 stylesheet.then(data => {
+                if (theme.imported) return;
+                const style = import("ui/Themes/" + theme.stylesheet);
+                style.then(data => {
                     setActiveThemes(activeThemes => {
-                        console.log(data)
-                        data.disabled = true;
                         return {
                             ...activeThemes,
-                            [theme.name]: {...theme, variables: data.default}
+                            [theme.name]: data.default
                         };
                     })
                 });
+            } else {
+                delete activeThemes[theme.name];
             }
         })
     }, [themes]);
-    console.log(themes.themes)
-    // console.log(activeThemes)
+
     return (
-        <>
+        <ActiveThemes.Provider value={activeThemes}>
             {component}
-        </>
-
-        // <ActiveThemes.Provider value={activeThemes}>
-
-        // </ActiveThemes.Provider>
+        </ActiveThemes.Provider>
     );
 };
 

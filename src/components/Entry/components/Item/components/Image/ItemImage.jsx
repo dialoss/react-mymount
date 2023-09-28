@@ -3,7 +3,7 @@ import './ItemImage.scss';
 import {triggerEvent} from "helpers/events";
 import {preventOnTransformClick} from "ui/ObjectTransform/helpers";
 
-const ItemImage = ({data}) => {
+const ItemImage = ({data, ...props}) => {
     const ref = useRef();
     const carouselCallback = useCallback(() => {
         if (preventOnTransformClick(ref)) return;
@@ -11,9 +11,8 @@ const ItemImage = ({data}) => {
     }, []);
 
     return (
-        <div className="item__image" ref={ref}>
+        <div className="item__image" ref={ref} {...props}>
             <img src={data.url} alt=""
-                 className="item__data"
                  onClick={carouselCallback}
                  onDragStart={e => e.preventDefault()}/>
         </div>

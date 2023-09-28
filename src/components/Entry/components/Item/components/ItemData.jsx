@@ -1,10 +1,11 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import ItemImage from "./Image/ItemImage";
 import ItemTable from "./Table/ItemTable";
 import ItemFile from "./File/ItemFile";
 import ItemTextfield from "./Textfield/ItemTextfield";
 import ItemVideo from "./Video/ItemVideo";
 import Viewer from "./Model/Viewer";
+import {triggerEvent} from "../../../../../helpers/events";
 
 const Components = {
     'image': ItemImage,
@@ -15,11 +16,21 @@ const Components = {
     'textfield': ItemTextfield,
 }
 
-const ItemData = ({data, ...props}) => {
-    let TargetComponent = Components[data.type];
+const ItemData = ({data, props}) => {
+    useEffect(() => {
+        if (!!props.itemTransform && props.itemTransform.style.position === "absolute") {
+            triggerEvent("container:init", props.container);
+        }
+    }, [props]);
 
     return (
-        <TargetComponent {...props} data={data} key={data.id}/>
+        <>
+            {React.createElement(Components[data.type], {
+                style:props.style,
+                data,
+                key: data.id
+            })}
+        </>
     );
 };
 
