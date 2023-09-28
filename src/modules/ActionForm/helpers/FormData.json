@@ -148,6 +148,12 @@
           "description",
           "title",
           "price"
+        ],
+        "blueprints": [
+          "media",
+          "description",
+          "title",
+          "price"
         ]
       },
       "child": {

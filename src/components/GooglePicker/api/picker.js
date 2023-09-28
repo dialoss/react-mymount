@@ -85,56 +85,29 @@ async function setAll() {
 async function pickerCallback(data) {
     const google = window.google;
     if (data[google.picker.Response.ACTION] === google.picker.Action.PICKED) {
-        let filesList = [];
+        let files = [];
         for (const d of data[google.picker.Response.DOCUMENTS]) {
-            let url = d[google.picker.Document.URL];
-            url = "https://drive.google.com/uc?id=" + d.id;
-            // await fetchRequest(d.id).then(res => res.arrayBuffer()).then(data => {
-                // console.log(data)
-                // let sizeOf = require('buffer-image-size');
-                // let dimensions = sizeOf(data);
-                // console.log(dimensions.width, dimensions.height);
-            // })
             let type = getFileType(d.name);
-            filesList.push(new Promise((resolve, reject) => {
-                if (type === 'image' || type === 'video') {
-                    let media = document.createElement("img");
-                    media.src = url;
-                    media.onload = () => {
-                        resolve({
-                            filename : d.name,
-                            url,
-                            type,
-                            media_width: media.width,
-                            media_height: media.height
-                        })
-                    }
-                    media.remove();
-                } else {
-                    resolve({
-                        filename : d.name,
-                        url,
-                        type,
-                    })
-                }
-            }));
+            files.push({
+                filename : d.name,
+                url: "https://drive.google.com/uc?id=" + d.id,
+                type,
+            });
         }
-        Promise.all(filesList).then(files => {
-            if (curUploadField == null && data[google.picker.Response.VIEW][0] !== 'upload') {
-                files.forEach(file => {
-                    let send_data = {
-                        'event_type': 'ADD',
-                        'entry_action_type' : 'add',
-                        'from' : 'drive_select',
-                        'media' : [file],
-                    }
-                    triggerEvent("action:callback", send_data);
-                });
-            }
-            if (curUploadField != null) {
-                if (files.length) curUploadField(files);
-            }
-        })
+        if (curUploadField == null && data[google.picker.Response.VIEW][0] !== 'upload') {
+            files.forEach(file => {
+                let send_data = {
+                    'event_type': 'ADD',
+                    'entry_action_type' : 'add',
+                    'from' : 'drive_select',
+                    'media' : [file],
+                }
+                triggerEvent("action:callback", send_data);
+            });
+        }
+        if (curUploadField != null) {
+            if (files.length) curUploadField(files);
+        }
     }
 }
 

@@ -1,7 +1,7 @@
 import React, {useLayoutEffect, useRef, useState} from 'react';
 import "./MyMasonry.scss";
 import {CSSTransition, TransitionGroup} from "react-transition-group";
-import {getViewportSize} from "components/helpers/viewport";
+import {getViewportSize} from "ui/helpers/viewport";
 import {useAddEvent} from "../../hooks/useAddEvent";
 
 const MyMasonry = ({maxColumns=1, widthPoints=[400,600,800], children}) => {

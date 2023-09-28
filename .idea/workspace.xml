@@ -1,27 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9b37537a-6286-4d32-9202-d8554b8ac243" name="Changes" comment="themes test">
+    <list default="true" id="9b37537a-6286-4d32-9202-d8554b8ac243" name="Changes" comment="themes and layout fixed">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Entry/Entry.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Entry/Entry.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Entry/components/Item/Item.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Entry/components/Item/Item.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Entry/components/Item/Item.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Entry/components/Item/Item.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Entry/components/Item/components/Image/ItemImage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Entry/components/Item/components/Image/ItemImage.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Entry/components/Item/components/Image/ItemImage.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Entry/components/Item/components/Image/ItemImage.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Entry/components/Item/components/ItemData.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Entry/components/Item/components/ItemData.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Entry/components/Item/components/Video/ItemVideo.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Entry/components/Item/components/Video/ItemVideo.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/EntryList/EntryList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/EntryList/EntryList.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/helpers/events.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/helpers/events.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modules/ThemeManager/components/ThemeManager.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/ThemeManager/components/ThemeManager.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/AppRouter/components/AppRoutes.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/AppRouter/components/AppRoutes.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/AppRouter/constants/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/AppRouter/constants/routes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/_constants.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/_constants.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/Themes/blueprints.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/Themes/child.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/Themes/edit.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/Themes/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/Themes/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/Themes/parent.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/Themes/shop.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/GooglePicker/api/picker.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/GooglePicker/api/picker.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Modals/Carousel/CarouselContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Modals/Carousel/CarouselContainer.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Modals/ContextMenu/ContextMenuContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Modals/ContextMenu/ContextMenuContainer.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/helpers/viewport.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/helpers/viewport.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modules/ActionForm/helpers/FormData.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/ActionForm/helpers/FormData.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modules/ActionForm/helpers/FormData.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/ActionForm/helpers/FormData.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/InfoBlock/InfoBlock.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/InfoBlock/InfoBlock.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/Masonry/MyMasonry.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/Masonry/MyMasonry.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/Modal/Modal.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/Modal/Modal.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,11 +75,11 @@
       <recent name="D:\Programming\react-refactor\src\components\Entry\components\Item\components\File" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Programming\react-refactor\src\ui" />
       <recent name="D:\Programming\react-refactor\src\modules\ThemeManager" />
       <recent name="D:\Programming\react-refactor\src\components\Entry\components\Item\components\Table" />
       <recent name="D:\Programming\react-refactor\public\models" />
       <recent name="D:\Programming\react-refactor\public" />
-      <recent name="D:\Programming\react-refactor\src\components\Entry\components\Item\components" />
     </key>
   </component>
   <component name="RunManager" selected="JavaScript Debug.Debug Application">
@@ -141,7 +131,7 @@
       <workItem from="1695677770711" duration="1821000" />
       <workItem from="1695713645201" duration="23132000" />
       <workItem from="1695819347914" duration="21254000" />
-      <workItem from="1695893636697" duration="21840000" />
+      <workItem from="1695893636697" duration="26025000" />
     </task>
     <task id="LOCAL-00001" summary="Initial">
       <created>1693824071090</created>
@@ -353,7 +343,14 @@
       <option name="project" value="LOCAL" />
       <updated>1695914221444</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="themes and layout fixed">
+      <created>1695919379538</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1695919379538</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -390,7 +387,8 @@
     <MESSAGE value="minor fixes" />
     <MESSAGE value="file loading from google drive / unzipping" />
     <MESSAGE value="themes test" />
-    <option name="LAST_COMMIT_MESSAGE" value="themes test" />
+    <MESSAGE value="themes and layout fixed" />
+    <option name="LAST_COMMIT_MESSAGE" value="themes and layout fixed" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -25,8 +25,6 @@ function fillUploads(form, uploads) {
             type: f.type,
             url: f.url,
             filename: f.filename,
-            media_width: f.media_width,
-            media_height: f.media_height,
         }
     }));
     setFormField(form.data, 'files', files.map(f => {
@@ -34,8 +32,6 @@ function fillUploads(form, uploads) {
             type: f.type,
             url: f.url,
             filename: f.filename,
-            media_width: f.media_width,
-            media_height: f.media_height,
         }
     }));
 }

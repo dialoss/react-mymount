@@ -1,14 +1,17 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import InfoParagraph from "ui/InfoParagraph/InfoParagraph";
 import './InfoBlock.scss';
 import ActionButton from "ui/Buttons/ActionButton/ActionButton.jsx";
 import dayjs from "dayjs";
 import {triggerEvent} from "helpers/events";
+import {ActiveThemes} from "../Themes";
 
 const InfoBlock = ({data}) => {
+    const theme = useContext(ActiveThemes);
+    const style = theme.listStyle || {};
     const formattedDate = dayjs(data.date).format("hh:mm DD.MM.YYYY");
     return (
-        <span className={"info__block"}>
+        <div className={style.info__block || "info__block"}>
             {!!data.title && <InfoParagraph type={'title'}
                                             style={!!data.description?{}:{paddingBottom:"8px"}}>
                                                 {data.title}</InfoParagraph>}
@@ -16,14 +19,14 @@ const InfoBlock = ({data}) => {
                 {!!data.date && data.show_date && <InfoParagraph type={'date'}>{formattedDate}</InfoParagraph>}
                 {!!data.description && <InfoParagraph type={'description'}>{data.description}</InfoParagraph>}
             </span>
-            {!!data.price && <span className="info__block-section info__block-buy">
+            {!!data.price && <span className={style['info__block-buy'] || "info__block-buy" + "info__block-section"}>
                 <InfoParagraph type={'price'}>{data.price}</InfoParagraph>
                 <ActionButton onClick={() => triggerEvent("form:set-data", {type:'buy'})}>
-                    заказать изготовление
+                    {style.buttonText || ""}
                 </ActionButton>
             </span>}
             {!!data.filename && <InfoParagraph style={{display:"none"}} type={'filename'}>{data.filename}</InfoParagraph>}
-        </span>
+        </div>
     );
 };
 

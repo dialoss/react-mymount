@@ -1,7 +1,13 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import './Modal.scss';
+import {correctElementPosition} from "../helpers/viewport";
 
 const Modal = ({content, isOpened, closeCallback}) => {
+    useEffect(() => {
+        // console.log(content)
+        // correctElementPosition(ref.current);
+    }, [content]);
+
     return (
         <div className={"modal"}>
             <div className={"modal__wrapper " + (isOpened ? "opened" : "")}>
@@ -11,7 +17,7 @@ const Modal = ({content, isOpened, closeCallback}) => {
                          closeCallback();
                      }}>
                 </div>
-                <div className="modal__window">
+                <div className="modal__window" style={content.props.position||{}}>
                     <div className="modal__content">
                         {content}
                     </div>
