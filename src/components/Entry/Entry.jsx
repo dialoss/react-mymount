@@ -13,7 +13,7 @@ const Entry = ({entry}) => {
     let mediaItems = 0;
     let itemsRow = 1;
     entry.items.forEach(item => {
-        if (item.type === 'video' || item.type === 'image') mediaItems += 1;
+        if (item.type === 'video' || item.type === 'image' || item.type === 'model') mediaItems += 1;
     })
     if (mediaItems >= 3) itemsRow = 3;
     else if (mediaItems >= 2) itemsRow = 2;
@@ -30,12 +30,12 @@ const Entry = ({entry}) => {
 
     return (
         <div className={Object.values(theme).map(th => th.entry__wrapper).join(' ')}>
-            <div className={`entry-${entry.id} entry ${style.entry} content__tab-${entry.tab_id}`}>
+            <div className={`entry-${entry.id} entry ${style.entry}`}>
                 {
                     entry.page_from.length > 1 &&
                     <Link className={style.entry__link} to={entry.page_from}></Link>
                 }
-                <TransformContainer>
+                <TransformContainer width={entry.container_width}>
                     <div className={style.entry__items} style={{width:"100%"}}>
                         {items}
                     </div>

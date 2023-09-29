@@ -54,7 +54,7 @@ export const ContextActions = {
         name: 'Вырезать',
         callback: ({actionElement}) => {
             copiedElement = actionElement;
-            copiedElement.entry.data.style.opacity = "0.3";
+            copiedElement.entry.html.style.opacity = "0.3";
             copiedElement.cut = true;
             return [];
         }

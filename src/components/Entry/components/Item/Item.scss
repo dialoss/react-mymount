@@ -1,6 +1,7 @@
 .item {
   position: relative;
   border-radius: 8px;
+  transition: all 0.2s linear;
   box-shadow: 0 0 5px gray;
   overflow: hidden;
   z-index: $zindex-item;
@@ -11,16 +12,7 @@
     }
   }
 
-  &__image {
-    transition: opacity 0.2s linear;
-  }
-
-  &__image:hover {
-    opacity: 0.8;
-    cursor: pointer;
-  }
-
-  &__file {
+  &-file {
     overflow: visible;
 
     &:hover {
@@ -35,24 +27,5 @@
   &__file, &__table {
     border-radius: 0;
     box-shadow: none;
-  }
-
-  &__textfield {
-    box-shadow: none;
-    background: none;
-    background-color: white;
-    padding: 5px;
-    p {
-      text-align: left;
-    }
-
-    &:hover {
-      opacity: 1;
-    }
-
-    .item__transform {
-      max-width: 40px;
-      max-height: 40px;
-    }
   }
 }

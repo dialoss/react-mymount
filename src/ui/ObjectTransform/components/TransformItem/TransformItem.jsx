@@ -1,8 +1,6 @@
-import React, {useRef} from 'react';
+import React from 'react';
 import {Transforms} from "../../config";
 import TransformButton from "./TransformButton";
-import {useAddEvent} from "hooks/useAddEvent";
-import {initContainerHeight} from "../../helpers";
 
 const resizers = {
     width:"100%",
@@ -23,16 +21,11 @@ const TransformItem = ({children}) => {
         top: formatProperty('top', item.top,"px"),
         ...(item.position === "absolute" ? {position:"absolute", zIndex: 1}:{})
     };
-    const ref = useRef();
-    function changeContainer() {
-        initContainerHeight(ref.current.closest(".transform-container"));
-    }
-    useAddEvent('resize', changeContainer, initialTransform.position === 'absolute');
     return (
         <TransformButton className={"transform-item transform--" + Transforms.parent.name}
                          type={Transforms.parent.name} style={initialTransform}>
             {children}
-            <div className={"transform-resizers"} ref={ref} style={resizers}>
+            <div className={"transform-resizers"} style={resizers}>
                 {Object.keys(Transforms.child).map(name => {
                     const tr = Transforms.child[name];
                     return tr.buttons.map(btn => {

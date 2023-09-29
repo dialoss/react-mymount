@@ -1,15 +1,15 @@
-import React from 'react';
-import {initContainerHeight} from "../../helpers";
+import React, {useRef} from 'react';
 import {useAddEvent} from "hooks/useAddEvent";
+import {initContainerDimensions} from "../../helpers";
 
-const TransformContainer = ({children}) => {
-    function initContainer(event) {
-        initContainerHeight(event.detail);
+const TransformContainer = ({children, width}) => {
+    const ref = useRef();
+    function resizeContainer() {
+        initContainerDimensions({container: ref.current, resize: true})
     }
-
-    useAddEvent("container:init", initContainer);
+    useAddEvent('resize', resizeContainer);
     return (
-        <div className={"transform-container"}>
+        <div className={"transform-container"} data-width={width} ref={ref}>
             {children}
         </div>
     );

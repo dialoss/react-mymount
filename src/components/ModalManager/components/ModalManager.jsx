@@ -28,7 +28,8 @@ const ModalManager = ({name, children}) => {
             <Modal content={children}
                    isOpened={isOpened}
                    closeCallback={() => setOpened(false)}
-                   key={children.name}></Modal>
+                   key={children.name}>
+            </Modal>
         </div>
     );
 }

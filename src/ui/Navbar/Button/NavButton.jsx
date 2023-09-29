@@ -5,7 +5,10 @@ import {Link} from "react-router-dom";
 const NavButton = ({navData, active}) => {
     return (
         <div className={"nav__button " + (active ? "nav__button--current" : "")}>
-            <Link to={`${navData.path}`}>{navData.text}</Link>
+            {navData.callback ?
+                <a onClick={navData.callback}>{navData.text}</a> :
+                <Link to={`${navData.path}`}>{navData.text}</Link>
+            }
         </div>
     );
 };

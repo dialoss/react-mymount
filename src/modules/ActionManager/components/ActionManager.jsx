@@ -5,6 +5,9 @@ import {actionElement, setActionElement} from "./helpers";
 import EditorManager from "components/EditorManager/EditorManager";
 import ObjectTransform from "ui/ObjectTransform/ObjectTransform";
 import {triggerEvent} from "helpers/events";
+import CarouselContainer from "components/Modals/Carousel/CarouselContainer";
+import {ActionForm} from "modules/ActionForm";
+import {useUserAuth} from "hooks/useUserAuth";
 
 const ActionManager = () => {
     function initAction(event) {
@@ -22,11 +25,20 @@ const ActionManager = () => {
     }
 
     useAddEvent('action:callback', actionCallback);
+
+    const userAuth = useUserAuth();
+
     return (
         <>
-            <EntryActions></EntryActions>
-            <EditorManager></EditorManager>
-            <ObjectTransform></ObjectTransform>
+            {userAuth &&
+                <>
+                    <EntryActions></EntryActions>
+                    <EditorManager></EditorManager>
+                    <ObjectTransform></ObjectTransform>
+                    <ActionForm></ActionForm>
+                </>
+            }
+            <CarouselContainer></CarouselContainer>
         </>
     );
 };

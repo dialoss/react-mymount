@@ -4,10 +4,9 @@ export function getViewportSize() {
 }
 
 export function getCorrectedPosition(element) {
-    let posX = element.clientX;
-    let posY = element.clientY;
-
     let block = element.getBoundingClientRect();
+    let posX = block.left;
+    let posY = block.top;
 
     let bRight = posX + block.width;
     let bBottom = posY + block.height;

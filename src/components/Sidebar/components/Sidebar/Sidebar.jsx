@@ -6,7 +6,8 @@ import {SidebarStates} from "./constants";
 import "./Sidebar.scss";
 import "../Link/SidebarLink.scss";
 
-const Sidebar = ({data, isOpened, windowCallback}) => {
+const Sidebar = ({data, picker, isOpened, windowCallback}) => {
+
     return (
         <div className="sidebar">
             <div className="sidebar__header">
@@ -17,7 +18,7 @@ const Sidebar = ({data, isOpened, windowCallback}) => {
             </div>
             <div className="sidebar__wrapper" style={SidebarStates[isOpened]['wrapper']}>
                 <div className="sidebar__inner">
-                    <GooglePicker className={"sidebar__link"}>Хранилище</GooglePicker>
+                    {picker && <GooglePicker className={"sidebar__link"}>Хранилище</GooglePicker>}
                     <SidebarList isOpened={true} list={data}></SidebarList>
                 </div>
             </div>

@@ -32,7 +32,7 @@ const MyMasonry = ({maxColumns=1, widthPoints=[400,600,800], children}) => {
         }
         for (let i = 0; i < newLayout.length; i++) {
             const lastItem = newLayout[i].slice(-1)[0];
-            if (!!lastItem && !!lastItem.ref) console.log(lastItem.ref.current.offsetBottom);
+            if (!!lastItem && !!lastItem.ref) console.log(lastItem.ref.current.offsetBottom); // make masonry columns equal height
         }
         setLayout(newLayout);
     }, [children, count]);

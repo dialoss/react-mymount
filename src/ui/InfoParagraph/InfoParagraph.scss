@@ -38,18 +38,5 @@
         font-size: 25px;
         font-weight: 600;
         margin: auto 0;
-
-        &::after {
-            content: '₽';
-            display: inline;
-            color: inherit;
-        }
-
-        &::before {
-            content: 'Цена:';
-            display: inline;
-            color: inherit;
-            margin-right: 10px;
-        }
     }
 }

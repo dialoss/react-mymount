@@ -1,4 +1,4 @@
-import {initContainerHeight} from "./helpers";
+import {initContainerDimensions} from "./helpers";
 
 let item = null;
 let container = null;
@@ -88,7 +88,7 @@ function moveAt(event, shiftX, shiftY) {
         item.style.top = py + "px";
         setItemProps(px, block.width);
     }
-    initContainerHeight(container);
+    initContainerDimensions({container});
     mouseMoved = true;
 }
 
@@ -99,7 +99,7 @@ export function setItemTransform(event, type, _item, _btn, callback) {
     item = _item;
     btn = _btn;
 
-    initContainerHeight(container);
+    initContainerDimensions({container});
     document.body.style.userSelect = 'none';
 
     let shiftX = event.clientX - (btn.getBoundingClientRect().left + btn.getBoundingClientRect().width / 2);
@@ -129,6 +129,7 @@ export function setItemTransform(event, type, _item, _btn, callback) {
             'max_width' : item.style.width.replace("%", "") || "0",
             'top' : item.style.top.replace("px", "") || "0",
             'left' : item.style.left.replace("%", "") || "0",
+            'container_width': container.getBoundingClientRect().width || "0",
         };
 
         callback(data);

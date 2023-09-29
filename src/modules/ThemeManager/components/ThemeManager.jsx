@@ -1,6 +1,7 @@
 import React, {useEffect, useReducer, useRef, useState} from 'react';
 import {useAddEvent} from "hooks/useAddEvent";
 import {ActiveThemes} from "ui/Themes";
+import {useUserAuth} from "hooks/useUserAuth";
 
 function reducer(state, action) {
     let name = action.payload.name;
@@ -19,9 +20,10 @@ const ThemeManager = ({children}) => {
     const [activeThemes, setActiveThemes] = useState({});
     const themesRef = useRef();
     themesRef.current = themes;
+    const userAuth = useUserAuth();
 
     function toggleThemes(event) {
-        if (event.ctrlKey && event.altKey && event.key === 'e') {
+        if (userAuth && event.ctrlKey && event.altKey && event.key === 'e') {
             dispatch({type:"TOGGLE", payload:{name:"editStyle"}});
         }
     }
@@ -29,7 +31,7 @@ const ThemeManager = ({children}) => {
     function addTheme(event) {
         const theme = event.detail;
         if (theme.clear) setActiveThemes({});
-        dispatch({type: "ADD", payload: {name:theme.name, stylesheet:theme.path, active:true, imported:false}});
+        dispatch({type: "ADD", payload: {name:theme.name, stylesheet:theme.path, active:theme.active, imported:false}});
     }
 
     useAddEvent("themes:add", addTheme);
@@ -42,8 +44,10 @@ const ThemeManager = ({children}) => {
     }, [children]);
 
     useEffect(() => {
-        addTheme({detail: {name:'editStyle', path:"edit.module.scss", clear:false}});
-    }, []);
+        if (userAuth) {
+            addTheme({detail: {name:'editStyle', path:"edit.module.scss", clear:false, active:true}});
+        }
+    }, [userAuth]);
 
     useEffect(() => {
         Object.values(themes.themes).forEach(theme => {

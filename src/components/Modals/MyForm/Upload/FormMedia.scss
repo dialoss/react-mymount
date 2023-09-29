@@ -20,6 +20,8 @@
 }
 
 .media-text {
+  max-width: 80%;
+  word-break: break-all;
   display: inline-block;
   text-align: center;
   position: relative;

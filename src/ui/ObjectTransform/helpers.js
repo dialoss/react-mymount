@@ -1,16 +1,24 @@
-function getMaxBottom(container) {
+function getMaxBottom(container, resize) {
     let m = 0;
-    for (const block of container.children[0].children) {
+    for (const block of container.querySelectorAll(".transform-item")) {
+        if ((resize || !block.attributes['inited']) && block.style.position === 'absolute') {
+            block.style.top = block.offsetTop * container.getBoundingClientRect().width /
+                +container.attributes['data-width'].value + 'px';
+            block.setAttribute('inited', true);
+        }
         let rect = block.getBoundingClientRect();
         m = Math.max(m, block.offsetTop + rect.height);
     }
+    container.setAttribute('data-width', container.getBoundingClientRect().width);
     return m;
 }
 
-export function initContainerHeight(container) {
-    if (!(!!container)) return;
-    let contHeight = getMaxBottom(container);
+export function initContainerDimensions({container, item, resize}) {
+    if (!container) return;
+    // console.log(container,container.style.height)
+    let contHeight = getMaxBottom(container, resize);
     container.style.height = contHeight + "px";
+    // console.log(container.style.height)
 }
 
 export function preventOnTransformClick(ref) {

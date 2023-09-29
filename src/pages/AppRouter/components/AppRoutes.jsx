@@ -5,16 +5,18 @@ import {EntrysPage} from "pages/EntrysPage";
 import {Intro} from "pages/MainPage";
 import {useMyLocation} from "hooks/useMyLocation";
 import {triggerEvent} from "helpers/events";
+import LoginPage from "pages/LoginPage/LoginPage";
 
 const Components = {
     'EntrysPage': EntrysPage,
     'Main': Intro,
+    'Login': LoginPage,
 };
 
 const PageWrapper = ({route}) => {
     const location = useMyLocation();
     useEffect(() => {
-        triggerEvent("themes:add", {name:'listStyle', path:route.style, clear:true});
+        triggerEvent("themes:add", {name:'listStyle', path:route.style, clear:true, active:true});
     }, []);
 
     return (

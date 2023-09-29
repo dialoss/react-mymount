@@ -1,17 +1,67 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9b37537a-6286-4d32-9202-d8554b8ac243" name="Changes" comment="themes and layout fixed">
+    <list default="true" id="9b37537a-6286-4d32-9202-d8554b8ac243" name="Changes" comment="minor fixes">
+      <change afterPath="$PROJECT_DIR$/src/components/ContentTabs/ContentTab.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/ContentTabs/ContentTabs.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/ContentTabs/routes.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/hooks/useUserAuth.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/modules/User/api/authorizeUser.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/modules/User/store/reducers.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/LoginPage/LoginPage.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/LoginPage/api/fetchLoginForm.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/requests.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/requests.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/EditorManager/EditorManager.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/EditorManager/EditorManager.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Entry/Entry.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Entry/Entry.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Entry/Entry.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Entry/components/Item/Item.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Entry/components/Item/Item.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Entry/components/Item/Item.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Entry/components/Item/Item.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Entry/components/Item/components/Image/ItemImage.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Entry/components/Item/components/Image/ItemImage.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Entry/components/Item/components/ItemData.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Entry/components/Item/components/ItemData.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Entry/components/Item/components/Model/Canvas.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Entry/components/Item/components/Model/Canvas.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Entry/components/Item/components/Textfield/ItemTextfield.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Entry/components/Item/components/Textfield/ItemTextfield.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Entry/components/Item/components/Textfield/ItemTextfield.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Entry/components/Item/components/Textfield/ItemTextfield.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Entry/components/Item/components/Video/ItemVideo.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Entry/components/Item/components/Video/ItemVideo.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/EntryList/EntryList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/EntryList/EntryList.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/GooglePicker/api/picker.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/GooglePicker/api/picker.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Modals/Carousel/CarouselContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Modals/Carousel/CarouselContainer.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Modals/ContextMenu/ContextMenuContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Modals/ContextMenu/ContextMenuContainer.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/helpers/viewport.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/helpers/viewport.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/InlineEditor/InlineEditor.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/InlineEditor/InlineEditor.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ModalManager/components/ModalManager.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ModalManager/components/ModalManager.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ModalManager/controller.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Modals/Carousel/components/Carousel/Carousel.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Modals/Carousel/components/Carousel/Carousel.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Modals/ContextMenu/components/ContextMenu/ContextMenu.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Modals/ContextMenu/components/ContextMenu/ContextMenu.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Modals/ContextMenu/components/EntryActions/actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Modals/ContextMenu/components/EntryActions/actions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Modals/MyForm/Upload/FormMedia.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Modals/MyForm/Upload/FormMedia.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Modals/MyForm/Upload/FormUpload.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Modals/MyForm/Upload/FormUpload.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Navbar/NavbarContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navbar/NavbarContainer.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Navbar/components/Button/NavButton.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/Navbar/Button/NavButton.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Navbar/components/Button/NavButton.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/Navbar/Button/NavButton.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Navbar/components/Navbar/Navbar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/Navbar/Navbar.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Navbar/components/Navbar/Navbar.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/Navbar/Navbar.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Sidebar/SidebarContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Sidebar/SidebarContainer.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Sidebar/components/Sidebar/Sidebar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Sidebar/components/Sidebar/Sidebar.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/modules/ActionForm/helpers/FormData.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/ActionForm/helpers/FormData.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modules/ActionForm/helpers/FormData.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/ActionForm/helpers/FormData.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modules/ActionManager/components/ActionManager.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/ActionManager/components/ActionManager.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modules/ActionManager/components/helpers.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/ActionManager/components/helpers.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modules/EntryList/components/EntryListContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/EntryList/components/EntryListContainer.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modules/ThemeManager/components/ThemeManager.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/ThemeManager/components/ThemeManager.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/AppRouter/components/AppRoutes.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/AppRouter/components/AppRoutes.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/AppRouter/constants/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/AppRouter/constants/routes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/TemplatePage/components/TemplatePage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/TemplatePage/components/TemplatePage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/Container/Container.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/Container/Container.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ui/InfoBlock/InfoBlock.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/InfoBlock/InfoBlock.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/InfoParagraph/InfoParagraph.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/InfoParagraph/InfoParagraph.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ui/Masonry/MyMasonry.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/Masonry/MyMasonry.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ui/Modal/Modal.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/Modal/Modal.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/Modal/Modal.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/Modal/Modal.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/ObjectTransform/ObjectTransform.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/ObjectTransform/ObjectTransform.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/ObjectTransform/components/TransformContainer/TransformContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/ObjectTransform/components/TransformContainer/TransformContainer.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/ObjectTransform/components/TransformItem/TransformItem.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/ObjectTransform/components/TransformItem/TransformItem.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/ObjectTransform/helpers.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/ObjectTransform/helpers.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/ObjectTransform/transform.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/ObjectTransform/transform.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/helpers/viewport.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/helpers/viewport.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,8 +72,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="tsconfig.json" />
-        <option value="JavaScript File" />
         <option value="SCSS File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -46,40 +96,40 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "D:/Programming/react-refactor/src/pages/AppRouter/components",
-    "list.type.of.created.stylesheet": "SCSS",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.standard": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.standard": "",
-    "nodejs_interpreter_path": "node",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "ts.external.directory.path": "C:\\Program Files\\JetBrains\\WebStorm 2022.2\\plugins\\JavaScriptLanguage\\jsLanguageServicesImpl\\external",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Programming/react-refactor/src/modules/User/store&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;SCSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
+    &quot;nodejs_interpreter_path&quot;: &quot;node&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Program Files\\JetBrains\\WebStorm 2022.2\\plugins\\JavaScriptLanguage\\jsLanguageServicesImpl\\external&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Programming\react-refactor\src\modules\User\store" />
       <recent name="D:\Programming\react-refactor\src\pages\AppRouter\components" />
       <recent name="D:\Programming\react-refactor\public" />
       <recent name="D:\Programming\react-refactor\public\models" />
       <recent name="D:\Programming\react-refactor\src\components\Entry\components\Item\components\Video" />
-      <recent name="D:\Programming\react-refactor\src\components\Entry\components\Item\components\File" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Programming\react-refactor\src\ui\Navbar" />
       <recent name="D:\Programming\react-refactor\src\ui" />
+      <recent name="D:\Programming\react-refactor\src\hooks" />
+      <recent name="D:\Programming\react-refactor\src\api" />
       <recent name="D:\Programming\react-refactor\src\modules\ThemeManager" />
-      <recent name="D:\Programming\react-refactor\src\components\Entry\components\Item\components\Table" />
-      <recent name="D:\Programming\react-refactor\public\models" />
-      <recent name="D:\Programming\react-refactor\public" />
     </key>
   </component>
   <component name="RunManager" selected="JavaScript Debug.Debug Application">
@@ -131,7 +181,8 @@
       <workItem from="1695677770711" duration="1821000" />
       <workItem from="1695713645201" duration="23132000" />
       <workItem from="1695819347914" duration="21254000" />
-      <workItem from="1695893636697" duration="26025000" />
+      <workItem from="1695893636697" duration="33744000" />
+      <workItem from="1695989429982" duration="22433000" />
     </task>
     <task id="LOCAL-00001" summary="Initial">
       <created>1693824071090</created>
@@ -350,7 +401,14 @@
       <option name="project" value="LOCAL" />
       <updated>1695919379538</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="minor fixes">
+      <created>1695923656154</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1695923656154</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -384,11 +442,11 @@
     <MESSAGE value="layout fixed" />
     <MESSAGE value="layout resize" />
     <MESSAGE value="file loading" />
-    <MESSAGE value="minor fixes" />
     <MESSAGE value="file loading from google drive / unzipping" />
     <MESSAGE value="themes test" />
     <MESSAGE value="themes and layout fixed" />
-    <option name="LAST_COMMIT_MESSAGE" value="themes and layout fixed" />
+    <MESSAGE value="minor fixes" />
+    <option name="LAST_COMMIT_MESSAGE" value="minor fixes" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

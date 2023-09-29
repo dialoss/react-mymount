@@ -1,11 +1,15 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useRef} from 'react';
 import './Modal.scss';
-import {correctElementPosition} from "../helpers/viewport";
+import {getCorrectedPosition} from "../helpers/viewport";
 
 const Modal = ({content, isOpened, closeCallback}) => {
+    const ref = useRef();
     useEffect(() => {
-        // console.log(content)
-        // correctElementPosition(ref.current);
+        const [px, py] = getCorrectedPosition(ref.current);
+        if (ref.current.style.top !== '') {
+            ref.current.style.left = px + "px";
+            ref.current.style.top = py + "px";
+        }
     }, [content]);
 
     return (
@@ -17,7 +21,7 @@ const Modal = ({content, isOpened, closeCallback}) => {
                          closeCallback();
                      }}>
                 </div>
-                <div className="modal__window" style={content.props.position||{}}>
+                <div className="modal__window" style={content.props.position||{}} ref={ref}>
                     <div className="modal__content">
                         {content}
                     </div>

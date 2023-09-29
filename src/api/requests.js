@@ -1,10 +1,7 @@
 import store from "store";
 import {accessToken} from "../components/GooglePicker/api/picker";
 
-const API_KEY = "AIzaSyC2WnrtQoQ6fm82N_0CMfWZgdS23hGZe-g";
-
 export async function fetchRequest(FILE_ID) {
-    console.log(accessToken)
     return await fetch("https://www.googleapis.com/drive/v3/files/" + FILE_ID + "?alt=media",{
         headers: {
             "Authorization": "Bearer " + accessToken,

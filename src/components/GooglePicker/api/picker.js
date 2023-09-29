@@ -1,34 +1,19 @@
 import {getFileType} from "../helpers/files";
-import {fetchRequest, sendLocalRequest} from "api/requests";
+import {sendLocalRequest} from "api/requests";
 import {triggerEvent} from "helpers/events";
 
 const DEVELOPER_KEY = 'AIzaSyDDqSATTGIXHgBRwl_S4mPCcATYJsISOhM';
-const CLIENT_ID = '1024510478167-dufqr18l2g3nmt7gkr5rakc9sjk5nf54.apps.googleusercontent.com';
-const CLIENT_SECRET = "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";
 
-const DISCOVERY_DOC = 'https://www.googleapis.com/discovery/v1/apis/drive/v3/rest';
-
-let tokenClient = '';
 export let accessToken = '';
 let pickerInited = false;
 let gisInited = false;
 let uploadView = null;
 let curUploadField = null;
 let picker = null;
-let gapiInited = false;
 
 function onApiLoad() {
-    window.gapi.load('client', initializeGapiClient);
     window.gapi.load('auth');
     window.gapi.load('picker', { callback: onPickerApiLoad });
-}
-
-async function initializeGapiClient() {
-    await window.gapi.client.init({
-        apiKey: DEVELOPER_KEY,
-        discoveryDocs: [DISCOVERY_DOC],
-    });
-    gapiInited = true;
 }
 
 function onPickerApiLoad() {
@@ -37,14 +22,6 @@ function onPickerApiLoad() {
 }
 
 function gisLoaded() {
-    tokenClient = window.google.accounts.oauth2.initTokenClient({
-        client_id: CLIENT_ID,
-        scope: ['https://www.googleapis.com/auth/drive.file',
-            'https://www.googleapis.com/auth/drive.metadata',
-            'https://www.googleapis.com/auth/drive',
-            'https://www.googleapis.com/auth/drive.readonly',
-            'openid'].join(' ')
-    });
     gisInited = true;
 }
 

@@ -30,6 +30,7 @@ export function setActionElement(event) {
                     data: elements[`${type}s`].find(obj => obj.id === id),
                     id,
                     type : element.classList[2].split('-')[1],
+                    html: element,
                 }
                 break;
             }

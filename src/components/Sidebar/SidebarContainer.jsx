@@ -4,6 +4,7 @@ import {sendLocalRequest} from "api/requests";
 import Sidebar from "./components/Sidebar/Sidebar";
 import {actions} from "helpers/location/reducers";
 import {useDispatch} from "react-redux";
+import {useUserAuth} from "hooks/useUserAuth";
 
 const SidebarContainer = () => {
     const [pages, setPages] = useState([]);
@@ -18,9 +19,14 @@ const SidebarContainer = () => {
     }, []);
 
     const [isOpened, setOpened] = useState(true);
+    const userAuth = useUserAuth();
 
     return (
-        <Sidebar isOpened={isOpened} windowCallback={setOpened} data={{sublist:pages, depth:-1}} key={pages.length}/>
+        <Sidebar isOpened={isOpened}
+                 picker={userAuth}
+                 windowCallback={setOpened}
+                 data={{sublist:pages, depth:-1}}
+                 key={pages.length}/>
     );
 };
 

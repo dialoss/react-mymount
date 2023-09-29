@@ -17,7 +17,7 @@ function setFormField(form, field, value) {
 }
 
 function fillUploads(form, uploads) {
-    if (!(!!uploads)) return;
+    if (!uploads) return;
     const media = uploads.filter(upload => (upload.type === 'image' || upload.type === 'video'));
     const files = uploads.filter(upload => upload.type === 'file');
     setFormField(form.data, 'media', media.map(f => {

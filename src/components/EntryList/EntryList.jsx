@@ -7,22 +7,17 @@ import {ActiveThemes} from "ui/Themes/index";
 const EntryList = ({entrys}) => {
     const style = useContext(ActiveThemes).listStyle;
     return (
-        <div className="entrys" style={{marginBottom: "50px"}}>
-            <div className="entrys__inner">
-                <Container>
-                    {!!style && <MyMasonry
-                        maxColumns={+style.masonry}
-                        widthPoints={JSON.parse(style.widthPoints)}
-                    >
-                        {
-                            entrys.map((entry) =>
-                                <Entry entry={entry} key={entry.id}></Entry>
-                            )
-                        }
-                    </MyMasonry>}
-                </Container>
-            </div>
-        </div>
+        <Container style={{marginBottom: "50px"}}>
+            {!!style && <MyMasonry
+                maxColumns={+style.masonry}
+                widthPoints={JSON.parse(style.widthPoints)}
+            >
+                {
+                    entrys.map((entry) => <Entry entry={entry} key={entry.id}></Entry>
+                    )
+                }
+            </MyMasonry>}
+        </Container>
     );
 };
 

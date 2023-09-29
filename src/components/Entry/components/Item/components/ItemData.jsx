@@ -19,7 +19,7 @@ const Components = {
 const ItemData = ({data, props}) => {
     useEffect(() => {
         if (!!props.itemTransform && props.itemTransform.style.position === "absolute") {
-            triggerEvent("container:init", props.container);
+            triggerEvent("container:init", {container: props.container, item: props.itemTransform});
         }
     }, [props]);
 

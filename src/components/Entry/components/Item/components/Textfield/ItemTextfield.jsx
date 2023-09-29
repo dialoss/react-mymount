@@ -1,10 +1,10 @@
-import React, {useEffect, useState} from 'react';
-import {Quill} from "react-quill";
+import React from 'react';
 import InfoParagraph from "ui/InfoParagraph/InfoParagraph";
+import "./ItemTextfield.scss";
 
 const ItemTextfield = ({data}) => {
     return (
-        <div className={"item__textfields"}>
+        <div className={"item__textfield"}>
             <InfoParagraph type={"textfield"}>{data.text_transformed}</InfoParagraph>
         </div>
     );

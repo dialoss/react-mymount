@@ -52,7 +52,7 @@ const EditorManager = () => {
         if (!!fieldToUpdate.current) {
             fieldToUpdate.current.mount.style.width = "auto";
             fieldToUpdate.current.mount.innerHTML = fieldToUpdate.current.value;
-            triggerEvent("container:init", fieldToUpdate.current.mount.closest(".transform-container"));
+            triggerEvent("container:init", {container:fieldToUpdate.current.mount.closest(".transform-container")});
             fieldToUpdate.current = null;
         }
     }, [editors]);

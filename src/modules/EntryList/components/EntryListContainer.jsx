@@ -5,7 +5,8 @@ import EntryList from "components/EntryList/EntryList";
 import {actions} from "../store/reducers";
 import {fetchEntrys} from "../api/fetchEntrys";
 import {useAddEvent} from "hooks/useAddEvent";
-import {sendLocalRequest} from "../../../api/requests";
+import {sendLocalRequest} from "api/requests";
+import ContentTabs from "components/ContentTabs/ContentTabs";
 
 function reducer(state, action) {
     switch (action.type) {
@@ -54,12 +55,16 @@ const EntryListContainer = () => {
                 break;
             }
         }
-        let requestData = {...actionEntry, ...event.detail};
+        let requestData = event.detail;
+        if (event.detail.type !== 'add-entry-quick') requestData = { ...actionEntry, ...requestData};
         const response = await sendLocalRequest("/entry_action/", requestData);
+        if (requestData.entry_action_type === 'transform') return;
         let payload = requestData;
         if (Object.keys(response).length !== 0) payload = {...payload, ...response.entrys_data[0]};
         else payload = {id: requestData.id, delete: true};
-        dispatch({type: event.detail.event_type, payload});
+        let actionType = requestData.event_type;
+        if (requestData.entry_action_type === 'paste' && requestData.item_id !== -1) actionType = 'UPDATE';
+        dispatch({type: actionType, payload});
     }
 
     useAddEvent('entrylist:handle-changes', handleElements);
@@ -68,11 +73,12 @@ const EntryListContainer = () => {
         globalDispatch(actions.setElements({entrys: entrys}));
     }, [entrys]);
 
-
     return (
-        <ListView>
-            <EntryList entrys={entrys}/>
-        </ListView>
+        <>
+            {/*<EntryList entrys={entrys}></EntryList>*/}
+            <ContentTabs content={entrys}></ContentTabs>
+        </>
+
     );
 };
 
