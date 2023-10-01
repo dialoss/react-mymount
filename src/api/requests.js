@@ -13,6 +13,7 @@ export async function sendRequest(url, data) {
     let response = null;
     let query = {
         method: "POST",
+        credentials: "include",
         headers: {
             "Content-Type": 'application/json;charset=utf-8',
         },

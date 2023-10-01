@@ -1,0 +1,22 @@
+
+.auth-button {
+  font-size: 20px;
+  border: none;
+  background-color: #fff;
+  box-shadow: 0 0 7px 0 grey;
+  border-radius: 8px;
+  padding: 5px;
+  transition: all 0.2s linear;
+
+  &:hover {
+    background-color: #eaeaea;
+    cursor: pointer;
+  }
+
+  &--signin {
+
+  }
+  &--signout {
+
+  }
+}

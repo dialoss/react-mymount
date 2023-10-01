@@ -5,9 +5,9 @@ import SidebarList from "../List/SidebarList";
 import {SidebarStates} from "./constants";
 import "./Sidebar.scss";
 import "../Link/SidebarLink.scss";
+import AuthContainer from "../../../../modules/Authorization/AuthContainer";
 
 const Sidebar = ({data, picker, isOpened, windowCallback}) => {
-
     return (
         <div className="sidebar">
             <div className="sidebar__header">
@@ -18,6 +18,7 @@ const Sidebar = ({data, picker, isOpened, windowCallback}) => {
             </div>
             <div className="sidebar__wrapper" style={SidebarStates[isOpened]['wrapper']}>
                 <div className="sidebar__inner">
+                    <AuthContainer></AuthContainer>
                     {picker && <GooglePicker className={"sidebar__link"}>Хранилище</GooglePicker>}
                     <SidebarList isOpened={true} list={data}></SidebarList>
                 </div>

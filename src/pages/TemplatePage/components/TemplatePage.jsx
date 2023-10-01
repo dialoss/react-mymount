@@ -5,12 +5,10 @@ import {AppRouter} from "pages/AppRouter";
 import {BrowserRouter} from "react-router-dom";
 import {ThemeManager} from "modules/ThemeManager";
 import ActionManager from "modules/ActionManager/components/ActionManager";
-import AuthContainer from "modules/Authorization/AuthContainer";
 
 const TemplatePage = () => {
     return (
         <>
-            <AuthContainer/>
             <BrowserRouter>
                 <ThemeManager>
                     <ContentWrapper>

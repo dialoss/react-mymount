@@ -9,22 +9,29 @@ function reducer(state, action) {
         case 'ADD':
             return {themes:{...state.themes, [name]: action.payload}};
         case 'TOGGLE':
+            if (!state.themes[name]) return state;
             let newTheme = {...state.themes[name]};
             newTheme.active = !newTheme.active;
             return {themes:{...state.themes, [name]: newTheme}};
+        case 'DISABLE':
+            return {themes:{...state.themes, [name]: {...state.themes[name], active: false}}};
     }
 }
 
 const ThemeManager = ({children}) => {
     const [themes, dispatch] = useReducer(reducer, {themes: {}});
     const [activeThemes, setActiveThemes] = useState({});
-    const themesRef = useRef();
-    themesRef.current = themes;
     const userAuth = useUserAuth();
+    const ref = useRef()
+    ref.current = userAuth;
 
-    function toggleThemes(event) {
-        if (userAuth && event.ctrlKey && event.altKey && event.key === 'e') {
-            dispatch({type:"TOGGLE", payload:{name:"editStyle"}});
+    function toggleTheme(name) {
+        dispatch({type:"TOGGLE", payload:{name}});
+    }
+
+    function hotkeyHandler(event) {
+        if (ref.current && event.ctrlKey && event.altKey && event.key === 'e') {
+            toggleTheme("editStyle");
         }
     }
 
@@ -35,7 +42,7 @@ const ThemeManager = ({children}) => {
     }
 
     useAddEvent("themes:add", addTheme);
-    useAddEvent("keydown", toggleThemes);
+    useAddEvent("keydown", hotkeyHandler);
 
     const [component, setComponent] = useState(<></>);
 
@@ -46,6 +53,8 @@ const ThemeManager = ({children}) => {
     useEffect(() => {
         if (userAuth) {
             addTheme({detail: {name:'editStyle', path:"edit.module.scss", clear:false, active:true}});
+        } else {
+            dispatch({type: 'DISABLE', payload: {name: 'editStyle'}});
         }
     }, [userAuth]);
 

@@ -3,11 +3,11 @@ import {createSlice} from "@reduxjs/toolkit";
 export const userSlice = createSlice({
     name: "user",
     initialState: {
-        authorized: false,
+        isAdmin: false,
     },
     reducers: {
-        setAuthorized: (state) => {
-            return {authorized: true};
+        setUser: (state, {payload: user}) => {
+            return user;
         }
     }
 });

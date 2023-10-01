@@ -5,6 +5,7 @@ import {triggerEvent} from "helpers/events";
 const DEVELOPER_KEY = 'AIzaSyDDqSATTGIXHgBRwl_S4mPCcATYJsISOhM';
 
 export let accessToken = '';
+let pickerCreated = false;
 let pickerInited = false;
 let gisInited = false;
 let uploadView = null;
@@ -89,7 +90,8 @@ async function pickerCallback(data) {
 }
 
 export function initPicker() {
-    if (pickerInited) return;
+    if (pickerInited || pickerCreated) return;
+    pickerCreated = true;
     let pickerApi = document.createElement("script");
     let pickerClient = document.createElement("script");
     pickerApi.onload = onApiLoad;

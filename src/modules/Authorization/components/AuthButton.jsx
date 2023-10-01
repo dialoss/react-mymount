@@ -1,8 +1,9 @@
 import React from 'react';
+import "./AuthButton.scss";
 
-const AuthButton = ({children}) => {
+const AuthButton = ({children, callback, type}) => {
     return (
-        <div className={"auth-button"}>{children}</div>
+        <button className={"auth-button auth-button--" + type} onClick={callback}>{children}</button>
     );
 };
 

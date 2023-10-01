@@ -1,13 +1,25 @@
-import React, {useState} from 'react';
-import {GoogleLogin, googleLogout, useGoogleLogin} from '@react-oauth/google';
-import jwt_decode from "jwt-decode";
+import React, {useEffect} from 'react';
+import {googleLogout, useGoogleLogin} from '@react-oauth/google';
 import "./Auth.scss";
+import AuthButton from "./AuthButton";
+import {sendLocalRequest} from "api/requests";
+import {useDispatch, useSelector} from "react-redux";
+import {actions} from "modules/User/store/reducers";
 
 const Auth = () => {
+    const user = useSelector(state => {
+        if (!state.user.email) return null;
+        return state.user;
+    });
+    const dispatch = useDispatch();
     const login = useGoogleLogin({
         onSuccess: async (credentials) => {
-            const url = "https://www.googleapis.com/oauth2/v3/userinfo?access_token=" + credentials.access_token;
-            fetch(url).then(res => res.json()).then(data => setUser(data));
+            const token = credentials.access_token;
+            sendLocalRequest('/user/login/', {token}).then(data => {
+                if (data.auth) {
+                    dispatch(actions.setUser(data.user));
+                }
+            });
         },
         onError: () => {
             console.log('error');
@@ -15,39 +27,30 @@ const Auth = () => {
         login_uri: 'https://127.0.0.1:8000/oauth2callback/'
     });
 
-    const [user, setUser] = useState(null);
     function logout() {
         googleLogout();
-        setUser(null);
+        dispatch(actions.setUser({}));
+        sendLocalRequest('/user/logout/');
     }
+
+    useEffect(() => {
+        sendLocalRequest('/user/auth/').then(data => {
+            if (data.auth) {
+                dispatch(actions.setUser(data.user));
+            }
+        });
+    }, []);
 
     return (
         <div className={"auth"}>
             {!user &&
-                // <GoogleLogin
-                //     login_uri={'https://127.0.0.1:8000/oauth2callback/'}
-                //     native_login_uri={'https://127.0.0.1:8000/oauth2callback/'}
-                //     shape={'pill'}
-                //     size={'medium'}
-                //     text={'signin'}
-                //     onSuccess={credentialResponse => {
-                //         let json = jwt_decode(credentialResponse.credential);
-                //         console.log(json)
-                //         setUser(json);
-                //     }}
-                //     onError={() => {
-                //         console.log('Login Failed');
-                //     }}
-                // />
-                <button className={"auth-button auth-button--signin"} onClick={() => login()}>
-                    Sign in with Google
-                </button>
+                <AuthButton type={'signin'} callback={login}>Авторизация</AuthButton>
             }
             {user &&
                 <div className={"user-profile"}>
                     <img src={user.picture} alt=""/>
                     <h3>{user.name}</h3>
-                    <button onClick={logout} className={"auth-button auth-button--signout"}>Sign Out</button>
+                    <AuthButton callback={logout} type={'signout'}>Выход</AuthButton>
                 </div>
             }
         </div>
