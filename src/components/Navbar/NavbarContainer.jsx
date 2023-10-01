@@ -5,8 +5,16 @@ import {useMyLocation} from "hooks/useMyLocation";
 
 const NavbarContainer = () => {
     const location = useMyLocation();
+    function isActive(path) {
+        return location.relativeURL.split('/')[1] === path;
+    }
     return (
-        <Navbar routes={NavbarRoutes} location={location}/>
+        <Navbar routes={NavbarRoutes.map(route => {
+            return {
+                ...route,
+                active: isActive(route.path.split('/')[1]),
+            }
+        })}/>
     );
 };
 

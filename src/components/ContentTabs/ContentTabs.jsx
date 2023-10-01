@@ -7,29 +7,35 @@ import {ContentTabsRoutes, EmptyTab} from "./routes";
 function reducer(state, action) {
     const id = action.payload.id;
     switch (action.type) {
-        case 'TOGGLE':
-            let activeTab = state[id];
-            activeTab.active = !activeTab.active;
-            return {...state, id: activeTab};
+        case 'SET_ACTIVE':
+            Object.keys(state).forEach(tab => state[tab].active = false);
+            state[id].active = true;
+            return state;
+            // let newState = Object.values(state).map(tab => {
+            //     return {
+            //         ...tab,
+            //         active: false,
+            //     }
+            // });
+            // newState[id].active = true;
+            // return newState;
         case 'ADD_ENTRYS':
             return {...state, id: {...state[id], entrys: action.payload.entrys}};
-        case 'SET':
+        case 'SET_STATE':
             return action.payload;
     }
 }
 
-
 const ContentTabs = ({content}) => {
     const location = useMyLocation();
     const [tabs, dispatch] = useReducer(reducer, ContentTabsRoutes[location.pageSlug] || EmptyTab);
-    // const [tabs, setTabs] = useState(ContentTabsRoutes[location.pageSlug] || EmptyTab);
 
     useEffect(() => {
         let newTabs = ContentTabsRoutes[location.pageSlug] || EmptyTab;
         content.forEach(item => {
             newTabs[item.tab_id].entrys.push(item);
         })
-        dispatch({type: 'SET', payload: {newTabs}});
+        dispatch({type: 'SET_STATE', payload: newTabs});
     }, [content]);
     return (
         <div className={"content-tabs"}>
@@ -38,10 +44,10 @@ const ContentTabs = ({content}) => {
                     <Navbar style={{paddingTop:0}}
                             routes={Object.values(tabs).map(tab => {
                                 function callback() {
-                                    dispatch({type: 'TOGGLE', payload: {tab.id}})
+                                    dispatch({type: 'SET_ACTIVE', payload: {id:tab.id}})
                                 }
                                 return {
-                                    active: (activeTab === tab.id),
+                                    active: tab.active,
                                     text:tab.text,
                                     path:tab.path,
                                     callback,
@@ -50,8 +56,8 @@ const ContentTabs = ({content}) => {
             </div>
             <div className="content">
                 {
-                    Object.values(tabs).map(tab =>
-                        <ContentTab content={tab.entrys} key={tab.id}>
+                    Object.values(tabs).map(tab => tab.active &&
+                        <ContentTab id={tab.id} content={tab.entrys} key={tab.id}>
                         </ContentTab>
                     )
                 }

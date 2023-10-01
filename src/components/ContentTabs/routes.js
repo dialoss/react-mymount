@@ -24,5 +24,6 @@ export const EmptyTab = {
         text: "",
         path: "",
         entrys: [],
+        active: true,
     }
 }

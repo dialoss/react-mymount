@@ -34,10 +34,10 @@ const ActionManager = () => {
                 <>
                     <EntryActions></EntryActions>
                     <EditorManager></EditorManager>
-                    <ObjectTransform></ObjectTransform>
                     <ActionForm></ActionForm>
                 </>
             }
+            <ObjectTransform></ObjectTransform>
             <CarouselContainer></CarouselContainer>
         </>
     );

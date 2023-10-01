@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@react-oauth/google": "^0.11.1",
     "@react-three/drei": "^9.84.2",
     "@react-three/fiber": "^8.14.2",
     "@reduxjs/toolkit": "^1.9.5",
@@ -15,6 +16,7 @@
     "gapi-client": "^0.0.3",
     "googleapis": "^126.0.1",
     "jszip": "^3.10.1",
+    "jwt-decode": "^3.1.2",
     "list-react-files": "^0.2.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

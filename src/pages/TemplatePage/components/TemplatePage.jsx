@@ -1,26 +1,26 @@
-import React, {useLayoutEffect} from 'react';
+import React from 'react';
 import {Footer} from "modules/Footer";
 import ContentWrapper from "ui/ContentWrapper/ContentWrapper";
 import {AppRouter} from "pages/AppRouter";
 import {BrowserRouter} from "react-router-dom";
 import {ThemeManager} from "modules/ThemeManager";
 import ActionManager from "modules/ActionManager/components/ActionManager";
-import {authorizeUser} from "modules/User/api/authorizeUser";
+import AuthContainer from "modules/Authorization/AuthContainer";
 
 const TemplatePage = () => {
-    // useLayoutEffect(() => {
-        authorizeUser();
-    // }, []);
     return (
-        <BrowserRouter>
-            <ThemeManager>
-                <ContentWrapper>
-                    <AppRouter/>
-                </ContentWrapper>
-                <Footer></Footer>
-            </ThemeManager>
-            <ActionManager></ActionManager>
-        </BrowserRouter>
+        <>
+            <AuthContainer/>
+            <BrowserRouter>
+                <ThemeManager>
+                    <ContentWrapper>
+                        <AppRouter/>
+                    </ContentWrapper>
+                    <Footer></Footer>
+                </ThemeManager>
+                <ActionManager></ActionManager>
+            </BrowserRouter>
+        </>
     );
 };
 

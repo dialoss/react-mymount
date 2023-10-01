@@ -75,8 +75,8 @@ const EntryListContainer = () => {
 
     return (
         <>
-            {/*<EntryList entrys={entrys}></EntryList>*/}
-            <ContentTabs content={entrys}></ContentTabs>
+            <EntryList entrys={entrys}></EntryList>
+            {/*<ContentTabs content={entrys}></ContentTabs>*/}
         </>
 
     );
