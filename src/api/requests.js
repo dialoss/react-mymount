@@ -1,10 +1,10 @@
 import store from "store";
-import {accessToken} from "../components/GooglePicker/api/picker";
+import Credentials from "../modules/Authorization/api/googleapi";
 
 export async function fetchRequest(FILE_ID) {
     return await fetch("https://www.googleapis.com/drive/v3/files/" + FILE_ID + "?alt=media",{
         headers: {
-            "Authorization": "Bearer " + accessToken,
+            "Authorization": "Bearer " + Credentials.get().ACCESS_TOKEN,
         }
     });
 }

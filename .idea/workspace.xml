@@ -1,25 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9b37537a-6286-4d32-9202-d8554b8ac243" name="Changes" comment="google auth">
+    <list default="true" id="9b37537a-6286-4d32-9202-d8554b8ac243" name="Changes" comment="google auth complete">
+      <change afterPath="$PROJECT_DIR$/src/components/Timeline/Body/Body.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Timeline/Connector/Connector.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Timeline/Dot/Dot.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Timeline/Item/Item.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Timeline/Separator/Separator.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Timeline/Timeline.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Timeline/Timeline.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/hooks/useCredentials.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/modules/Authorization/api/googleapi.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/modules/Authorization/store/reducers.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/CustomerPage/components/CustomerPage.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/CustomerPage/components/stages.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/googleapi.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/api/requests.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/requests.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/GooglePicker/api/picker.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/GooglePicker/api/picker.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Sidebar/components/Link/SidebarLink.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Sidebar/components/Link/SidebarLink.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Sidebar/components/Sidebar/Sidebar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Sidebar/components/Sidebar/Sidebar.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Sidebar/components/Sidebar/Sidebar.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Sidebar/components/Sidebar/Sidebar.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Sidebar/components/variables.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Sidebar/components/variables.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hooks/useUserAuth.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/hooks/useUserAuth.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modules/ActionManager/components/ActionManager.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/ActionManager/components/ActionManager.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modules/Authorization/AuthContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/Authorization/AuthContainer.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/modules/Authorization/components/Auth.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/Authorization/components/Auth.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/modules/Authorization/components/Auth.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/Authorization/components/Auth.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modules/Authorization/components/AuthButton.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/Authorization/components/AuthButton.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modules/Authorization/components/Button.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/Authorization/components/AuthButton.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modules/ThemeManager/components/ThemeManager.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/ThemeManager/components/ThemeManager.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modules/User/store/reducers.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/User/store/reducers.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/TemplatePage/components/TemplatePage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/TemplatePage/components/TemplatePage.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/_variables.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/_variables.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/ObjectTransform/ObjectTransform.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/ObjectTransform/ObjectTransform.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modules/Authorization/components/AuthButton.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/Authorization/components/AuthButton.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modules/User/api/authorizeUser.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/AppRouter/components/AppRoutes.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/AppRouter/components/AppRoutes.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/AppRouter/constants/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/AppRouter/constants/routes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/LoginPage/LoginPage.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/LoginPage/api/fetchLoginForm.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,8 +41,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="tsconfig.json" />
-        <option value="SCSS File" />
         <option value="JavaScript File" />
+        <option value="SCSS File" />
       </list>
     </option>
   </component>
@@ -83,11 +94,11 @@
       <recent name="D:\Programming\react-refactor\public\models" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Programming\react-refactor\src\pages\CustomerPage\components" />
+      <recent name="D:\Programming\react-refactor\src\components\Timeline" />
+      <recent name="D:\Programming\react-refactor\src\modules\Authorization\api" />
       <recent name="D:\Programming\react-refactor\src\modules\User\components" />
       <recent name="D:\Programming\react-refactor\src\ui\Navbar" />
-      <recent name="D:\Programming\react-refactor\src\ui" />
-      <recent name="D:\Programming\react-refactor\src\hooks" />
-      <recent name="D:\Programming\react-refactor\src\api" />
     </key>
   </component>
   <component name="RunManager" selected="JavaScript Debug.Debug Application">
@@ -141,7 +152,7 @@
       <workItem from="1695819347914" duration="21254000" />
       <workItem from="1695893636697" duration="33744000" />
       <workItem from="1695989429982" duration="30982000" />
-      <workItem from="1696146922899" duration="14911000" />
+      <workItem from="1696146922899" duration="33651000" />
     </task>
     <task id="LOCAL-00001" summary="Initial">
       <created>1693824071090</created>
@@ -381,7 +392,14 @@
       <option name="project" value="LOCAL" />
       <updated>1696147627831</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="google auth complete">
+      <created>1696169678030</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1696169678030</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -421,7 +439,8 @@
     <MESSAGE value="minor fixes" />
     <MESSAGE value="fixes" />
     <MESSAGE value="google auth" />
-    <option name="LAST_COMMIT_MESSAGE" value="google auth" />
+    <MESSAGE value="google auth complete" />
+    <option name="LAST_COMMIT_MESSAGE" value="google auth complete" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

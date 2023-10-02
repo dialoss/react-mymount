@@ -1,11 +1,17 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {GoogleOAuthProvider} from "@react-oauth/google";
 import Auth from "./components/Auth";
-const CLIENT_ID = '1024510478167-dufqr18l2g3nmt7gkr5rakc9sjk5nf54.apps.googleusercontent.com';
+import {useCredentials} from "hooks/useCredentials";
+import Credentials from "./api/googleapi";
 
 const AuthContainer = () => {
+    useEffect(() => {
+        Credentials.fetch();
+    }, []);
+
+    const credentials = useCredentials();
     return (
-        <GoogleOAuthProvider clientId={CLIENT_ID}>
+        <GoogleOAuthProvider clientId={credentials.CLIENT_ID}>
             <Auth></Auth>
         </GoogleOAuthProvider>
     );

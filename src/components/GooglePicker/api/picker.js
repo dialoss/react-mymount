@@ -1,10 +1,7 @@
 import {getFileType} from "../helpers/files";
-import {sendLocalRequest} from "api/requests";
 import {triggerEvent} from "helpers/events";
+import Credentials from "modules/Authorization/api/googleapi";
 
-const DEVELOPER_KEY = 'AIzaSyDDqSATTGIXHgBRwl_S4mPCcATYJsISOhM';
-
-export let accessToken = '';
 let pickerCreated = false;
 let pickerInited = false;
 let gisInited = false;
@@ -34,10 +31,6 @@ export function showPicker(uploadField) {
 }
 
 async function setAll() {
-    if (accessToken === '') {
-        const response = await sendLocalRequest('/get_gdrive_token/');
-        accessToken = response.token;
-    }
     const google = window.google;
     uploadView = new google.picker.DocsUploadView()
         .setIncludeFolders(true);
@@ -51,8 +44,8 @@ async function setAll() {
         .addView(folderView)
         .addView(allView)
         .addView(uploadView)
-        .setOAuthToken(accessToken)
-        .setDeveloperKey(DEVELOPER_KEY)
+        .setOAuthToken(Credentials.get().ACCESS_TOKEN)
+        .setDeveloperKey(Credentials.get().API_KEY)
         .setCallback(pickerCallback)
         .setLocale("ru")
         .setSize((2000, 2000))

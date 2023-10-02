@@ -5,6 +5,7 @@ import AuthButton from "./AuthButton";
 import {sendLocalRequest} from "api/requests";
 import {useDispatch, useSelector} from "react-redux";
 import {actions} from "modules/User/store/reducers";
+import {Link} from "react-router-dom";
 
 const Auth = () => {
     const user = useSelector(state => {
@@ -24,7 +25,6 @@ const Auth = () => {
         onError: () => {
             console.log('error');
         },
-        login_uri: 'https://127.0.0.1:8000/oauth2callback/'
     });
 
     function logout() {
@@ -43,16 +43,18 @@ const Auth = () => {
 
     return (
         <div className={"auth"}>
-            {!user &&
-                <AuthButton type={'signin'} callback={login}>Авторизация</AuthButton>
-            }
-            {user &&
-                <div className={"user-profile"}>
+            <div className={"user-profile"}>
+                {!user &&
+                    <AuthButton type={'signin'} callback={login}>Вход</AuthButton>
+                }
+                {user && <>
+                    <Link to={'/customer/'}></Link>
                     <img src={user.picture} alt=""/>
                     <h3>{user.name}</h3>
-                    <AuthButton callback={logout} type={'signout'}>Выход</AuthButton>
-                </div>
-            }
+                    <AuthButton type={'signout'} callback={logout}>Выйти</AuthButton>
+                </>
+                }
+            </div>
         </div>
     );
 };

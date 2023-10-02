@@ -5,12 +5,12 @@ import {EntrysPage} from "pages/EntrysPage";
 import {Intro} from "pages/MainPage";
 import {useMyLocation} from "hooks/useMyLocation";
 import {triggerEvent} from "helpers/events";
-import LoginPage from "pages/LoginPage/LoginPage";
+import CustomerPage from "pages/CustomerPage/components/CustomerPage";
 
 const Components = {
     'EntrysPage': EntrysPage,
     'Main': Intro,
-    'Login': LoginPage,
+    'CustomerPage': CustomerPage,
 };
 
 const PageWrapper = ({route}) => {

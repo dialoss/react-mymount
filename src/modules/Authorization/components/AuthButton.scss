@@ -1,5 +1,6 @@
 
 .auth-button {
+  font-family: Calibri, serif;
   font-size: 20px;
   border: none;
   background-color: #fff;
@@ -7,6 +8,8 @@
   border-radius: 8px;
   padding: 5px;
   transition: all 0.2s linear;
+  margin: 0 auto;
+  display: block;
 
   &:hover {
     background-color: #eaeaea;

@@ -5,7 +5,7 @@ import SidebarList from "../List/SidebarList";
 import {SidebarStates} from "./constants";
 import "./Sidebar.scss";
 import "../Link/SidebarLink.scss";
-import AuthContainer from "../../../../modules/Authorization/AuthContainer";
+import AuthContainer from "modules/Authorization/AuthContainer";
 
 const Sidebar = ({data, picker, isOpened, windowCallback}) => {
     return (
