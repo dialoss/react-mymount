@@ -11,7 +11,8 @@ const ModalManager = ({name, children}) => {
     });
 
     function toggleModal(state) {
-        setOpened(state.detail.isOpened);
+        if (state.detail.toggle) setOpened(opened => !opened);
+        else setOpened(state.detail.isOpened);
     }
 
     useAddEvent(name, toggleModal);

@@ -1,0 +1,29 @@
+.messenger-sidebar {
+  padding: 10px;
+  padding-top: 70px;
+  background-color: wheat;
+  height: 100%;
+
+  .sidebar-item {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    background-color: white;
+    padding: 6px;
+    border-radius: 8px;
+    box-shadow: 0 0 4px 0 grey;
+    transition: all 0.2s linear;
+    &:hover {
+      cursor: pointer;
+      opacity: 0.8;
+    }
+    &.current {
+      background-color: #d4d4d4;
+    }
+    //margin: 10px;
+  }
+  .title {
+    margin-left: 10px;
+  }
+}

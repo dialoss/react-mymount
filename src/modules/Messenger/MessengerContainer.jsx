@@ -8,35 +8,26 @@ import {
     useMessage,
     useSubscribe
 } from "./api/firebase";
+import {ModalManager} from "components/ModalManager";
 
-let messenger = {
-    room: {},
-    rooms: {},
-    user: {},
-    users: {},
-    messages: [],
-    message: {
-        value: '',
-        callback: () => {},
-    },
-};
+let messenger = {};
 
 const MessengerContainer = () => {
     messenger.user = useAuthorize();
     messenger.users = useGetUsers(messenger.user);
-
     messenger.rooms = useGetRooms(messenger.user, messenger.users);
     messenger.room = useGetRoom(messenger.user, messenger.rooms);
-
     messenger.messages = useSubscribe(messenger.room);
-    const [message, setMessage] = useMessage(messenger.user, messenger.room);
-    messenger.message = {
-        value: message,
-        callback: setMessage,
-    }
+    messenger.message = useMessage(messenger.user, messenger.room);
+
+    const windowName = "messenger-window:toggle";
 
     return (
-        <Messenger messenger={messenger}></Messenger>
+        <ModalManager name={windowName}>
+            <Messenger messenger={messenger}
+                       style={{opacity:0}}
+                       position={{right: 40, bottom: 100}}></Messenger>
+        </ModalManager>
     );
 };
 

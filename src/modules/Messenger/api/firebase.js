@@ -13,8 +13,9 @@ import {
 import {useSelector} from "react-redux";
 import {useEffect, useLayoutEffect, useRef, useState} from "react";
 import {useAddEvent} from "hooks/useAddEvent";
+import {firebaseConfig} from "./config";
 
-
+const app = initializeApp(firebaseConfig);
 
 const auth = getAuth();
 const db = getFirestore(app);
@@ -28,8 +29,9 @@ export async function sendMessage(data) {
     const time = await serverTimestamp();
     const docRef = await addDoc(collection(db, "rooms", data.room_id, "messages"), {
         user: data.user_id,
-        text: data.message,
+        value: data.message,
         time_sent: time,
+        type: '',
     });
     console.log("Document written with ID: ", docRef.id);
 }
@@ -154,14 +156,14 @@ export function useGetRoom(user, rooms) {
                 await createUser(user.current);
             } else {
                 let id = q.docs[0].data().rooms[0];
-                setRoom(rooms.current[id]);
+                setRoom({...rooms.current[id]});
             }
             console.log('room',ref.current)
         });
     }, [user.current, rooms.current]);
 
     function handleRoom(event) {
-        setRoom(rooms.current[event.detail]);
+        setRoom({...rooms.current[event.detail]});
     }
 
     useAddEvent("messenger:set-room", handleRoom);
@@ -187,5 +189,5 @@ export function useMessage(user, room) {
 
     useAddEvent("keydown", handleMessage);
 
-    return [message, setMessage];
+    return {value: message, callback: setMessage};
 }

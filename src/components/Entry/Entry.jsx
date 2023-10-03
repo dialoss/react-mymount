@@ -30,19 +30,21 @@ const Entry = ({entry}) => {
 
     return (
         <div className={Object.values(theme).map(th => th.entry__wrapper).join(' ')}>
-            <div className={`entry-${entry.id} entry ${style.entry}`}>
-                {
-                    entry.page_from.length > 1 &&
-                    <Link className={style.entry__link} to={entry.page_from}></Link>
-                }
-                <TransformContainer width={entry.container_width}>
-                    <div className={style.entry__items} style={{width:"100%"}}>
-                        {items}
-                    </div>
-                </TransformContainer>
+            {style &&
+                <div className={`entry-${entry.id} entry ${style.entry}`}>
+                    {
+                        entry.page_from.length > 1 &&
+                        <Link className={style.entry__link} to={entry.page_from}></Link>
+                    }
+                    <TransformContainer width={entry.container_width}>
+                        <div className={style.entry__items} style={{width: "100%"}}>
+                            {items}
+                        </div>
+                    </TransformContainer>
 
-                <InfoBlock data={entry}></InfoBlock>
-            </div>
+                    <InfoBlock data={entry}></InfoBlock>
+                </div>
+            }
         </div>
     );
 };

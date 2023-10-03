@@ -1,11 +1,25 @@
 import React from 'react';
+import "./Accordion.scss";
 
-const Accordion = ({isOpened, content}) => {
+import {ReactComponent as IconChevronDown} from "ui/Iconpack/icons/chevron-down.svg";
+
+const Accordion = React.forwardRef(function ({toggle, isOpened, height, text, children}, ref) {
+    const state = (isOpened ? "opened" : "closed");
+    const style = (isOpened ? {height:height} : {height:0})
+
     return (
-        <div className={"accordion " + (isOpened ? "opened" : "closed")}>
-            {content}
+        <div className={"accordion"}>
+            <div className={"accordion-header"} onClick={toggle}>
+                {text}
+                <div className={"accordion-toggler " + state}><IconChevronDown/></div>
+            </div>
+            <div className={"accordion-body " + state} style={style}>
+                <div className={"accordion-body__container"} ref={ref}>
+                    {children}
+                </div>
+            </div>
         </div>
     );
-};
+});
 
 export default Accordion;

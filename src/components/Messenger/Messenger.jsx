@@ -7,12 +7,11 @@ import MessagesField from "./Message/MessagesField";
 import MessengerHeader from "./Header/Header";
 import MessengerSidebar from "./Sidebar/MessengerSidebar";
 
-
-const Messenger = ({messenger}) => {
+const Messenger = ({messenger, position}) => {
     return (
         <div className={"messenger"}>
             <div className={"messenger-block"}>
-                <MessengerSidebar rooms={messenger.rooms.current}></MessengerSidebar>
+                <MessengerSidebar currentRoom={messenger.room.current} rooms={messenger.rooms.current}></MessengerSidebar>
             </div>
             <div className={"messenger-block"}>
                 <MessengerHeader room={messenger.room.current}></MessengerHeader>

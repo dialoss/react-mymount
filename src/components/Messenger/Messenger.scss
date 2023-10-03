@@ -1,12 +1,11 @@
 .messenger {
-  max-width: 600px;
+  width: 600px;
   background-color: #fff;
   border-radius: 10px;
   overflow: hidden;
   margin: 0 auto;
-  position: relative;
   box-shadow: 0 0 7px 0 grey;
-
+  //position: relative;
   display: flex;
 
   .ql-editor {

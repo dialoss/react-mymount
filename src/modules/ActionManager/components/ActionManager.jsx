@@ -8,6 +8,8 @@ import {triggerEvent} from "helpers/events";
 import CarouselContainer from "components/Modals/Carousel/CarouselContainer";
 import {ActionForm} from "modules/ActionForm";
 import {useUserAuth} from "hooks/useUserAuth";
+import MessengerContainer from "../../Messenger/MessengerContainer";
+import ActionButton from "../../../ui/Buttons/ActionButton/ActionButton";
 
 const ActionManager = () => {
     function initAction(event) {
@@ -28,6 +30,10 @@ const ActionManager = () => {
 
     const userAuth = useUserAuth();
 
+    function openMessenger() {
+        triggerEvent('messenger-window:toggle', {toggle: true});
+    }
+
     return (
         <>
             {userAuth &&
@@ -39,6 +45,10 @@ const ActionManager = () => {
             <ActionForm></ActionForm>
             <ObjectTransform></ObjectTransform>
             <CarouselContainer></CarouselContainer>
+            <MessengerContainer></MessengerContainer>
+            <ActionButton onClick={openMessenger}
+                    style={{position:"fixed",right:40,bottom:20, zIndex:10}}
+            >Связаться со мной</ActionButton>
         </>
     );
 };

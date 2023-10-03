@@ -5,6 +5,8 @@
 /.pnp
 .pnp.js
 
+/src/modules/Messenger/api/config.js
+
 # testing
 /coverage
 

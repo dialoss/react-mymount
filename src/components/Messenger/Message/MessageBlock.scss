@@ -1,0 +1,28 @@
+
+.message-inner {
+  box-shadow: 0 0 2px 0 grey;
+  padding: 5px;
+  background-color: $color-link-background;
+  border-radius: 10px;
+}
+
+.message-block {
+  display: flex;
+  margin: 10px;
+  &--right {
+    justify-content: flex-end;
+    .user-info {
+      flex-direction: row-reverse;
+    }
+    .message {
+      text-align: right;
+    }
+  }
+  &--left {
+    justify-content: flex-start;
+
+    .message {
+      text-align: left;
+    }
+  }
+}
