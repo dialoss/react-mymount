@@ -1,107 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9b37537a-6286-4d32-9202-d8554b8ac243" name="Changes" comment="created messenger">
+    <list default="true" id="9b37537a-6286-4d32-9202-d8554b8ac243" name="Changes" comment="created accordion">
       <change afterPath="$PROJECT_DIR$/src/modules/Messenger/api/config.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ui/Accordion/AccordionContainer.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ui/Iconpack/icons/H1.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ui/Iconpack/icons/H2.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ui/Iconpack/icons/H3.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ui/Iconpack/icons/H4.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ui/Iconpack/icons/H5.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ui/Iconpack/icons/H6.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ui/Iconpack/icons/add-background.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ui/Iconpack/icons/add-border.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ui/Iconpack/icons/align-center.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ui/Iconpack/icons/align-justify.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ui/Iconpack/icons/align-left.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ui/Iconpack/icons/align-right.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ui/Iconpack/icons/bold.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ui/Iconpack/icons/brackets.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ui/Iconpack/icons/check.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ui/Iconpack/icons/checklist.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ui/Iconpack/icons/chevron-down.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ui/Iconpack/icons/chevron-left.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ui/Iconpack/icons/chevron-right.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ui/Iconpack/icons/chevron-up.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ui/Iconpack/icons/clipboard.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ui/Iconpack/icons/collapse.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ui/Iconpack/icons/color.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ui/Iconpack/icons/copy.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ui/Iconpack/icons/cross.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ui/Iconpack/icons/curly-brackets.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ui/Iconpack/icons/delimiter.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ui/Iconpack/icons/direction-down-right.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ui/Iconpack/icons/direction-left-down.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ui/Iconpack/icons/direction-right-down.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ui/Iconpack/icons/direction-up-right.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ui/Iconpack/icons/dot-circle.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ui/Iconpack/icons/etc-horisontal.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ui/Iconpack/icons/etc-vertical.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ui/Iconpack/icons/file.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ui/Iconpack/icons/gift.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ui/Iconpack/icons/globe.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ui/Iconpack/icons/heading.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ui/Iconpack/icons/heart.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ui/Iconpack/icons/hidden.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ui/Iconpack/icons/html.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ui/Iconpack/icons/instagram.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ui/Iconpack/icons/italic.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ui/Iconpack/icons/link.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ui/Iconpack/icons/linkedin.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ui/Iconpack/icons/list-bulleted.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ui/Iconpack/icons/list-numbered.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ui/Iconpack/icons/loader.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ui/Iconpack/icons/marker.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ui/Iconpack/icons/menu-small.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ui/Iconpack/icons/menu.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ui/Iconpack/icons/picture.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ui/Iconpack/icons/play.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ui/Iconpack/icons/plus.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ui/Iconpack/icons/question.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ui/Iconpack/icons/quote.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ui/Iconpack/icons/redo.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ui/Iconpack/icons/remove-background.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ui/Iconpack/icons/replace.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ui/Iconpack/icons/save.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ui/Iconpack/icons/search.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ui/Iconpack/icons/star.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ui/Iconpack/icons/stretch.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ui/Iconpack/icons/strikethrough.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ui/Iconpack/icons/table-with-headings.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ui/Iconpack/icons/table-without-headings.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ui/Iconpack/icons/table.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ui/Iconpack/icons/text.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ui/Iconpack/icons/translate.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ui/Iconpack/icons/trash.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ui/Iconpack/icons/twitter.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ui/Iconpack/icons/underline.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ui/Iconpack/icons/undo.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ui/Iconpack/icons/unlink.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ui/Iconpack/icons/user.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ui/Iconpack/icons/users-group.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ui/Iconpack/icons/warning.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ui/Iconpack/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ui/Slider/Slider.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ui/Slider/Slider.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Entry/Entry.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Entry/Entry.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Messenger/Messenger.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Messenger/Messenger.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Messenger/Messenger.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Messenger/Messenger.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ModalManager/components/ModalManager.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ModalManager/components/ModalManager.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Modals/ContextMenu/components/ContextMenu/ContextMenu.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Modals/ContextMenu/components/ContextMenu/ContextMenu.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Timeline/Accordion/MyAccordion.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Modals/ContextMenu/ContextMenuContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Modals/ContextMenu/ContextMenuContainer.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Modals/ContextMenu/components/EntryActions/actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Modals/ContextMenu/components/EntryActions/actions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Sidebar/SidebarContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Sidebar/SidebarContainer.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Sidebar/components/Item/SidebarItem.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Sidebar/components/Item/SidebarItem.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Sidebar/components/Link/SidebarLink.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Sidebar/components/Link/SidebarLink.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Sidebar/components/Link/SidebarLink.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Sidebar/components/Link/SidebarLink.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Sidebar/components/List/SidebarList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Sidebar/components/List/SidebarList.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Sidebar/components/List/SidebarList.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Sidebar/components/List/SidebarList.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Sidebar/components/Sidebar/Sidebar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Sidebar/components/Sidebar/Sidebar.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Sidebar/components/Sidebar/Sidebar.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Sidebar/components/Sidebar/Sidebar.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Timeline/Item/Item.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Timeline/Item/Item.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Timeline/Timeline.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Timeline/Timeline.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Timeline/Timeline.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Timeline/Timeline.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hooks/useThemes.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modules/ActionForm/helpers/FormData.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/ActionForm/helpers/FormData.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modules/ActionForm/helpers/FormData.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/ActionForm/helpers/FormData.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/modules/ActionManager/components/ActionManager.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/ActionManager/components/ActionManager.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modules/Messenger/MessengerContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/Messenger/MessengerContainer.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modules/ActionManager/components/helpers.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/ActionManager/components/helpers.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/modules/Messenger/api/firebase.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/Messenger/api/firebase.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/AppRouter/constants/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/AppRouter/constants/routes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/AppRouter/components/AppRoutes.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/AppRouter/components/AppRoutes.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/CustomerPage/components/CustomerPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/CustomerPage/components/CustomerPage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/CustomerPage/components/stages.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/CustomerPage/components/stages.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ui/Accordion/Accordion.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/Accordion/Accordion.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ui/Accordion/Accordion.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/Accordion/Accordion.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/Accordion/AccordionContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/Accordion/AccordionContainer.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/Avatar/Avatar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/Avatar/Avatar.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/Avatar/Avatar.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/Avatar/Avatar.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/InfoBlock/InfoBlock.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/InfoBlock/InfoBlock.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -224,7 +156,7 @@
       <workItem from="1695893636697" duration="33744000" />
       <workItem from="1695989429982" duration="30982000" />
       <workItem from="1696146922899" duration="55074000" />
-      <workItem from="1696263595691" duration="41100000" />
+      <workItem from="1696263595691" duration="48917000" />
     </task>
     <task id="LOCAL-00001" summary="Initial">
       <created>1693824071090</created>
@@ -485,7 +417,14 @@
       <option name="project" value="LOCAL" />
       <updated>1696336650567</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="created accordion">
+      <created>1696362253076</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1696362253076</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -503,7 +442,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Initial" />
     <MESSAGE value="Added masonry" />
     <MESSAGE value="Base UI" />
     <MESSAGE value="Added context menu" />
@@ -528,7 +466,8 @@
     <MESSAGE value="google auth complete" />
     <MESSAGE value="added customer page and timeline" />
     <MESSAGE value="created messenger" />
-    <option name="LAST_COMMIT_MESSAGE" value="created messenger" />
+    <MESSAGE value="created accordion" />
+    <option name="LAST_COMMIT_MESSAGE" value="created accordion" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -537,6 +476,12 @@
           <url>file://$PROJECT_DIR$/src/modules/Carousel/CarouselManager.jsx</url>
           <line>23</line>
           <option name="timeStamp" value="17" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/pages/CustomerPage/components/CustomerPage.jsx</url>
+          <line>10</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="243" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

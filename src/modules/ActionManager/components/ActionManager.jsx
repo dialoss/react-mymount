@@ -46,9 +46,13 @@ const ActionManager = () => {
             <ObjectTransform></ObjectTransform>
             <CarouselContainer></CarouselContainer>
             <MessengerContainer></MessengerContainer>
-            <ActionButton onClick={openMessenger}
-                    style={{position:"fixed",right:40,bottom:20, zIndex:10}}
-            >Связаться со мной</ActionButton>
+            <div onClick={openMessenger}
+                    style={{position:"fixed",right:40,
+                        bottom:20, zIndex:10,
+                        width: 100, textAlign: "center",
+                        fontSize: "14px", padding: "8px",
+                        backgroundColor: "#fefefe", color:"#222", border:"2px solid grey"}}
+            >Связаться со мной</div>
         </>
     );
 };

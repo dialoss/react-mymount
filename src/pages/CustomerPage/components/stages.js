@@ -84,7 +84,7 @@ export function prepareColors(data) {
             bottom: grad((cur + 1) / all),
         };
 
-        cur += 1;
+        // cur += 1;
     }
     return stages;
 }

@@ -1,6 +1,7 @@
 import store from "store";
 
 export let actionElement = null;
+export let actionElements = [];
 
 const emptyElement = {
     entry: {
@@ -38,6 +39,17 @@ export function setActionElement(event) {
     }
     actionElement.position = getElementPosition(actionElement);
     console.log(actionElement);
+    if (event.ctrlKey) {
+        if (!!actionElements.filter(el => el.entry.id === actionElement.entry.id).length) {
+            actionElement.entry.html.style.border = "none";
+            actionElements = actionElements.map(el => el.entry.id !== actionElement.entry.id);
+        } else {
+            actionElement.entry.html.style.border = "solid 10px blue";
+            actionElements.push(actionElement);
+        }
+
+
+    }
     return actionElement;
 }
 

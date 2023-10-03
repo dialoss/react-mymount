@@ -7,7 +7,8 @@ import "./Sidebar.scss";
 import "../Link/SidebarLink.scss";
 import AuthContainer from "modules/Authorization/AuthContainer";
 
-const Sidebar = ({data, picker, isOpened, windowCallback}) => {
+const Sidebar = ({data, picker, windowCallback}) => {
+    let isOpened = true
     return (
         <div className="sidebar">
             <div className="sidebar__header">
@@ -20,7 +21,7 @@ const Sidebar = ({data, picker, isOpened, windowCallback}) => {
                 <div className="sidebar__inner">
                     <AuthContainer></AuthContainer>
                     {picker && <GooglePicker className={"sidebar__link"}>Хранилище</GooglePicker>}
-                    <SidebarList isOpened={true} list={data}></SidebarList>
+                    <SidebarList list={data}></SidebarList>
                 </div>
             </div>
         </div>

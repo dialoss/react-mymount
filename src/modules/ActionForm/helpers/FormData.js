@@ -1,6 +1,5 @@
 import formData from './FormData.json';
 import store from 'store';
-import {getFileType} from "../../../components/GooglePicker/helpers/files";
 
 function initData() {
     let propsRefactor = {};

@@ -9,11 +9,20 @@
   }
 
   &-header {
-    box-shadow: 0 0 2px 0 grey;
-    padding: 3px;
+    border-radius: 6px;
+    border: solid 1px rgba(128, 128, 128, 0.33);
+    overflow: hidden;
+    
+    &:hover {
+      cursor: pointer;
+    }
 
-    display: flex;
-    column-gap: 10px;
+    &__wrapper {
+      display: flex;
+      column-gap: 10px;
+      justify-content: space-between;
+      padding: 0 5px;
+    }
   }
 
   &-toggler {

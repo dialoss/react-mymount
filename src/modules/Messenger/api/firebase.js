@@ -15,6 +15,8 @@ import {useEffect, useLayoutEffect, useRef, useState} from "react";
 import {useAddEvent} from "hooks/useAddEvent";
 import {firebaseConfig} from "./config";
 
+const adminEmail = 'matthewwimsten@gmail.com';
+
 const app = initializeApp(firebaseConfig);
 
 const auth = getAuth();
@@ -126,7 +128,7 @@ export function useGetRooms(user, users) {
 
 async function createUser(user) {
     await addDoc(collection(db, "rooms"), {
-        users: ["maradonner75@gmail.com", user.email],
+        users: [adminEmail, user.email],
         picture: '',
         title: '',
     }).then((roomDoc) => {

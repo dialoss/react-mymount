@@ -11,8 +11,10 @@ const ContextMenuContainer = ({actions}) => {
     function contextMenu(event) {
         event.preventDefault();
         if (getPressDelta() > 100) return;
-        setPosition({left: event.clientX, top: event.clientY});
-        triggerEvent(name, {isOpened: true});
+        if (!event.ctrlKey) {
+            setPosition({left: event.clientX, top: event.clientY});
+            triggerEvent(name, {isOpened: true});
+        }
         triggerEvent('action:init', event);
     }
     function onScroll() {

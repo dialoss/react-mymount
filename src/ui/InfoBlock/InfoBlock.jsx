@@ -21,7 +21,7 @@ const InfoBlock = ({data}) => {
             </span>
             {!!data.price && <span className={style['info__block-buy'] || "info__block-buy" + "info__block-section"}>
                 <InfoParagraph type={'price'}>{`Цена: ${data.price}₽`}</InfoParagraph>
-                <ActionButton onClick={() => triggerEvent("form:set-data", {type:'buy'})}>
+                <ActionButton onClick={() => triggerEvent("customer:action", {action:'BUY'})}>
                     {style.buttonText || ""}
                 </ActionButton>
             </span>}

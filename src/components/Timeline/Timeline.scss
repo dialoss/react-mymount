@@ -1,9 +1,12 @@
 .timeline {
   margin: 0 auto;
-  max-width: 600px;
+  width: 80%;
+  display: flex;
+  justify-content: center;
+
   &-item {
     display: flex;
-
+    justify-content: flex-start;
     .timeline {
       &-dot {
         div {
@@ -29,7 +32,9 @@
       }
       &-body {
         min-height: 40px;
-        padding-bottom: 10px;
+        > div {
+          margin-top: -6px;
+        }
       }
       &-separator {
         width: 40px;
@@ -38,16 +43,8 @@
       }
     }
   }
-  &-item--primary {
-
-  }
-
   &-item--secondary {
     .timeline {
-      &-body {
-        //min-height: 40px;
-        margin-top: -6px;
-      }
       &-dot {
         div {
           width: 10px;

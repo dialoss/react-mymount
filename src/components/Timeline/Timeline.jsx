@@ -5,11 +5,18 @@ import Item from "./Item/Item";
 const Timeline = ({stages}) => {
     return (
         <div className={"timeline"}>
-            {
-                stages.map((stage, index) => {
-                    return <Item type={stage.type} data={stage} connector={index !== stages.length - 1} key={index}></Item>
-                })
-            }
+            <div className="timeline-wrapper">
+                {
+                    stages.map((stage, index) => {
+                        return <Item type={stage.type}
+                                     data={stage}
+                                     connector={index !== stages.length - 1}
+                                     key={index}
+                                     index={index}></Item>
+                    })
+                }
+            </div>
+
         </div>
     );
 };

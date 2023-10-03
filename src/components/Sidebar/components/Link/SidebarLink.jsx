@@ -11,7 +11,7 @@ const SidebarLink = ({link, children, depth, haveSublist, callback}) => {
     const isCurrent = location.relativeURL === link;
     let style = {
         ...(!isCurrent ? {backgroundColor: darkenColor(linkColor, depth * 10 / 100)} : {}),
-        ...(haveSublist ? {marginLeft: "20px"} : {})
+        ...(haveSublist ? {paddingLeft: "20px"} : {})
     };
     let linkEdit = link.slice(0, -1);
     return (

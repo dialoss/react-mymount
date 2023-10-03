@@ -1,6 +1,23 @@
 import {triggerEvent} from "helpers/events";
 
-let copiedElement = null;
+let copiedElements = [];
+let cuttedElements = [];
+
+function handleElements(actionElement, elements) {
+    let sendData = [];
+    for (let i = elements.length - 1; i >= 0; i--) {
+        let el = elements[i];
+        let data = {
+            'event_type': 'ADD',
+            'entry_action_type' : 'paste',
+            'display_pos' : actionElement.position,
+            'entry_id': el.entry.id,
+            'item_id': el.item.id,
+        };
+        sendData.push(data);
+    }
+    return sendData;
+}
 
 export const ContextActions = {
     'add-quick': {
@@ -33,29 +50,25 @@ export const ContextActions = {
     'copy':{
         name: 'Копировать',
         callback: ({actionElement}) => {
-            copiedElement = actionElement;
+            actionElement.entry.html.style.opacity = "0.7";
+            copiedElements.push(actionElement);
             return [];
         }
     },
     'paste':{
         name: 'Вставить',
         callback: ({actionElement}) => {
-            let data = {
-                'event_type': 'ADD',
-                'entry_action_type' : 'paste',
-                'display_pos' : actionElement.position,
-                'entry_id': copiedElement.entry.id,
-                'item_id': copiedElement.item.id,
-            };
-            return [data, ...(!!copiedElement.cut ? ContextActions['delete'].callback({actionElement:copiedElement}) : [])];
+            let copy = handleElements(actionElement, copiedElements);
+            let cut = handleElements(actionElement, cuttedElements);
+
+            return [...copy, ...cut, ...ContextActions['delete'].callback({actionElement:copiedElements})];
         }
     },
     'cut':{
         name: 'Вырезать',
         callback: ({actionElement}) => {
-            copiedElement = actionElement;
-            copiedElement.entry.html.style.opacity = "0.3";
-            copiedElement.cut = true;
+            cuttedElements.push(actionElement);
+            actionElement.entry.html.style.backgroundColor = "#747474";
             return [];
         }
     },

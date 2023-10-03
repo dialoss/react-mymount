@@ -1,8 +1,8 @@
 import React, {useEffect, useRef, useState} from 'react';
 import Accordion from "./Accordion";
 
-const AccordionContainer = ({children, title}) => {
-    const [opened, setOpened] = useState(false);
+const AccordionContainer = ({children, title, header=null, isOpened=false}) => {
+    const [opened, setOpened] = useState(isOpened);
 
     const handleChange = () => {
         setOpened(opened => !opened);
@@ -23,7 +23,11 @@ const AccordionContainer = ({children, title}) => {
     }, []);
 
     return (
-        <Accordion toggle={handleChange} isOpened={opened} text={title} ref={ref} height={height}>
+        <Accordion toggle={handleChange}
+                   isOpened={opened}
+                   text={title} ref={ref}
+                   height={height}
+                   header={header}>
             {children}
         </Accordion>
     );

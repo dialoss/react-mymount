@@ -164,6 +164,15 @@
           "textfields",
           "files",
           "settings"
+        ],
+        "models": [
+          "media",
+          "description",
+          "title",
+          "textfields",
+          "price",
+          "files",
+          "settings"
         ]
       },
       "textfield": [
@@ -193,6 +202,12 @@
       "title": "Приобрести",
       "button": "btn_отправить",
       "parent": {
+        "base": [
+          "customer_email",
+          "customer_name"
+        ]
+      },
+      "child": {
         "base": [
           "customer_email",
           "customer_name"

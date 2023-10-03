@@ -2,9 +2,9 @@ import React from 'react';
 import SidebarItem from "../Item/SidebarItem";
 import "./SidebarList.scss";
 
-const SidebarList = ({list, isOpened}) => {
+const SidebarList = ({list}) => {
     return (
-        <div className={"sidebar__list " + (isOpened ? "opened" : "closed")}>
+        <div className={"sidebar__list"}>
             {
                 list.sublist.map((item, index) => {
                     return <SidebarItem listItem={item}

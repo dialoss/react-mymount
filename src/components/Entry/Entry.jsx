@@ -6,7 +6,7 @@ import TransformContainer from "ui/ObjectTransform/components/TransformContainer
 import TransformItem from "ui/ObjectTransform/components/TransformItem/TransformItem";
 import {ActiveThemes} from "ui/Themes/index";
 
-const Entry = ({entry}) => {
+const Entry = ({entry, ...props}) => {
     const theme = useContext(ActiveThemes);
     const style = theme.listStyle;
 
@@ -29,7 +29,7 @@ const Entry = ({entry}) => {
     }, [entry.items]);
 
     return (
-        <div className={Object.values(theme).map(th => th.entry__wrapper).join(' ')}>
+        <div className={Object.values(theme).map(th => th.entry__wrapper).join(' ')} {...props}>
             {style &&
                 <div className={`entry-${entry.id} entry ${style.entry}`}>
                     {

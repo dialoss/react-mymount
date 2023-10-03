@@ -2,11 +2,12 @@ import React from 'react';
 import styles from "./Avatar.module.scss";
 
 const Avatar = ({style, hover, ...props}) => {
+    let src = props.src;
     return (
         <div className={"avatar " + styles.avatar + ' ' + (hover ? styles.hover : "")}
              style={style}>
-            {Object.values(props).length ?
-                <img {...props} alt=""/> :
+            {!!src ?
+                <img src={src} alt=""/> :
                 <div className={styles.placeholder}></div>
             }
         </div>
