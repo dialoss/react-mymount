@@ -43,8 +43,7 @@ const EditorManager = () => {
             }).filter(Boolean)
         );
         let type = mount.classList[1].split('-')[1];
-        if (type !== 'textfield') value = value.replace(/<\/?[^>]+(>|$)/g, "");
-        else type = 'new_text_transformed';
+        if (type === 'textfield') type = 'new_text_transformed';
         triggerEvent("action:callback", {[type]: value, event_type: 'UPDATE', entry_action_type: 'edit'});
     }, []);
 

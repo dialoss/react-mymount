@@ -2,15 +2,13 @@ import React from 'react';
 import "./Timeline.scss";
 import Item from "./Item/Item";
 
-const Timeline = ({stages, parent, ...props}) => {
+const Timeline = ({stages}) => {
     return (
-        <div className={"timeline " + (props.className ? props.className : "")}>
+        <div className={"timeline"}>
             {
-                stages.map((stage, index) => <Item parent={parent} data={{...stage, color: {
-                    top: stages[index].color,
-                            bottom: stages[Math.min(index + 1, stages.length - 1)].color}}} connector={index !== stages.length - 1} key={index}>
-                </Item>
-                )
+                stages.map((stage, index) => {
+                    return <Item type={stage.type} data={stage} connector={index !== stages.length - 1} key={index}></Item>
+                })
             }
         </div>
     );

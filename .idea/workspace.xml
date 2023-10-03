@@ -1,36 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9b37537a-6286-4d32-9202-d8554b8ac243" name="Changes" comment="google auth complete">
-      <change afterPath="$PROJECT_DIR$/src/components/Timeline/Body/Body.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Timeline/Connector/Connector.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Timeline/Dot/Dot.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Timeline/Item/Item.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Timeline/Separator/Separator.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Timeline/Timeline.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Timeline/Timeline.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/hooks/useCredentials.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/modules/Authorization/api/googleapi.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/modules/Authorization/store/reducers.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/CustomerPage/components/CustomerPage.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/CustomerPage/components/stages.js" afterDir="false" />
+    <list default="true" id="9b37537a-6286-4d32-9202-d8554b8ac243" name="Changes" comment="added customer page and timeline">
+      <change afterPath="$PROJECT_DIR$/src/components/ContentTabs/MaterialTabs.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Messenger/Messenger.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Messenger/Messenger.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Timeline/Accordion/MyAccordion.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/modules/Messenger/MessengerContainer.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/modules/Messenger/api/firebase.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ui/Accordion/Accordion.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ui/Accordion/Accordion.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ui/Avatar/Avatar.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ui/Avatar/Avatar.module.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/googleapi.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/requests.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/requests.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/GooglePicker/api/picker.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/GooglePicker/api/picker.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Sidebar/components/Sidebar/Sidebar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Sidebar/components/Sidebar/Sidebar.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ContentTabs/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ContentTabs/routes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/EditorManager/EditorManager.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/EditorManager/EditorManager.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Entry/components/Item/components/ItemData.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Entry/components/Item/components/ItemData.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Sidebar/components/Sidebar/Sidebar.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Sidebar/components/Sidebar/Sidebar.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modules/Authorization/AuthContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/Authorization/AuthContainer.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modules/Authorization/components/Auth.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/Authorization/components/Auth.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modules/Authorization/components/Auth.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/Authorization/components/Auth.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modules/Authorization/components/AuthButton.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/Authorization/components/AuthButton.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modules/User/api/authorizeUser.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/AppRouter/components/AppRoutes.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/AppRouter/components/AppRoutes.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/AppRouter/constants/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/AppRouter/constants/routes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/LoginPage/LoginPage.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/LoginPage/api/fetchLoginForm.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Timeline/Connector/Connector.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Timeline/Connector/Connector.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Timeline/Item/Item.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Timeline/Item/Item.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Timeline/Timeline.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Timeline/Timeline.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Timeline/Timeline.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Timeline/Timeline.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/head.stl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modules/EntryList/components/EntryListContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/EntryList/components/EntryListContainer.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/CustomerPage/components/CustomerPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/CustomerPage/components/CustomerPage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/CustomerPage/components/stages.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/CustomerPage/components/stages.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/_mixins.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/_mixins.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/InfoBlock/InfoBlock.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/InfoBlock/InfoBlock.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/TextEditor/TextEditor.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/TextEditor/TextEditor.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,8 +39,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="tsconfig.json" />
-        <option value="JavaScript File" />
         <option value="SCSS File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -72,7 +70,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Programming/react-refactor/src/modules/Authorization/components&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Programming/react-refactor/src/components/Messenger&quot;,
     &quot;list.type.of.created.stylesheet&quot;: &quot;SCSS&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
@@ -87,11 +85,11 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Programming\react-refactor\src\components\Messenger" />
       <recent name="D:\Programming\react-refactor\src\modules\Authorization\components" />
       <recent name="D:\Programming\react-refactor\src\modules\User\store" />
       <recent name="D:\Programming\react-refactor\src\pages\AppRouter\components" />
       <recent name="D:\Programming\react-refactor\public" />
-      <recent name="D:\Programming\react-refactor\public\models" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\Programming\react-refactor\src\pages\CustomerPage\components" />
@@ -152,7 +150,8 @@
       <workItem from="1695819347914" duration="21254000" />
       <workItem from="1695893636697" duration="33744000" />
       <workItem from="1695989429982" duration="30982000" />
-      <workItem from="1696146922899" duration="33651000" />
+      <workItem from="1696146922899" duration="55074000" />
+      <workItem from="1696263595691" duration="30910000" />
     </task>
     <task id="LOCAL-00001" summary="Initial">
       <created>1693824071090</created>
@@ -399,7 +398,14 @@
       <option name="project" value="LOCAL" />
       <updated>1696169678030</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="added customer page and timeline">
+      <created>1696236806979</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1696236806979</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -440,7 +446,8 @@
     <MESSAGE value="fixes" />
     <MESSAGE value="google auth" />
     <MESSAGE value="google auth complete" />
-    <option name="LAST_COMMIT_MESSAGE" value="google auth complete" />
+    <MESSAGE value="added customer page and timeline" />
+    <option name="LAST_COMMIT_MESSAGE" value="added customer page and timeline" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

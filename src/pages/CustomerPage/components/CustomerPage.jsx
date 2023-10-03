@@ -1,16 +1,14 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import Container from "ui/Container/Container";
-import MyTimeline from "components/Timeline/Timeline";
-import {Stages} from "./stages";
+import Timeline from "components/Timeline/Timeline";
+import {prepareColors, Stages} from "./stages";
+import MessengerContainer from "modules/Messenger/MessengerContainer";
 
 const CustomerPage = () => {
-
-    useEffect(() => {
-
-    }, []);
     return (
         <Container>
-            <MyTimeline stages={Stages}></MyTimeline>
+            <Timeline stages={prepareColors(Stages)}></Timeline>
+            <MessengerContainer></MessengerContainer>
         </Container>
     );
 };

@@ -9,7 +9,7 @@ import {ActiveThemes} from "../Themes";
 const InfoBlock = ({data}) => {
     const theme = useContext(ActiveThemes);
     const style = theme.listStyle || {};
-    const formattedDate = dayjs(data.date).format("hh:mm DD.MM.YYYY");
+    const formattedDate = dayjs(data.date).format("HH:mm DD.MM.YYYY");
     return (
         <div className={style.info__block || "info__block"}>
             {!!data.title && <InfoParagraph type={'title'}

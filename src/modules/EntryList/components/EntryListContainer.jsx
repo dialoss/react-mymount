@@ -7,6 +7,8 @@ import {fetchEntrys} from "../api/fetchEntrys";
 import {useAddEvent} from "hooks/useAddEvent";
 import {sendLocalRequest} from "api/requests";
 import ContentTabs from "components/ContentTabs/ContentTabs";
+import LabTabs from "../../../components/ContentTabs/MaterialTabs";
+import {ContentTabsRoutes, EmptyTab} from "../../../components/ContentTabs/routes";
 
 function reducer(state, action) {
     switch (action.type) {
@@ -31,16 +33,41 @@ function reducer(state, action) {
     }
 }
 
+const routes = [
+    {
+        title: "выполненные",
+        path: "done",
+        entrys: [],
+        content: [],
+    },
+    {
+        title: "в работе",
+        path: "progress",
+        entrys: [],
+        content: [],
+    }
+];
+
 const EntryListContainer = () => {
     const [entrys, dispatch] = useReducer(reducer, []);
     const entrysRef = useRef();
     entrysRef.current = entrys;
     const globalDispatch = useDispatch();
+    const [tabs, setTabs] = useState(routes);
 
     function addEntrys(response) {
         let newEntrys = [...entrysRef.current, ...response.entrys_data];
         dispatch({type: 'SET', payload: newEntrys});
         globalDispatch(actions.setElements({entrys: newEntrys}));
+
+        let newTabs = routes;
+        newEntrys.forEach(item => {
+            newTabs[item.tab_id].entrys.push(item);
+        })
+        newTabs.forEach((tab, index) => {
+            newTabs[index].content = React.createElement(EntryList, {entrys: tab.entrys})
+        });
+        setTabs(newTabs);
     }
 
     useEffect(() => {
@@ -75,6 +102,7 @@ const EntryListContainer = () => {
 
     return (
         <>
+            {/*<LabTabs tabs={tabs}></LabTabs>*/}
             <EntryList entrys={entrys}></EntryList>
             {/*<ContentTabs content={entrys}></ContentTabs>*/}
         </>

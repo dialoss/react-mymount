@@ -5,7 +5,7 @@ import ItemFile from "./File/ItemFile";
 import ItemTextfield from "./Textfield/ItemTextfield";
 import ItemVideo from "./Video/ItemVideo";
 import Viewer from "./Model/Viewer";
-import {triggerEvent} from "../../../../../helpers/events";
+import {triggerEvent} from "helpers/events";
 
 const Components = {
     'image': ItemImage,

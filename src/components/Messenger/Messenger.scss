@@ -1,0 +1,22 @@
+.messenger {
+  max-width: 600px;
+  background-color: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 0 auto;
+  position: relative;
+  box-shadow: 0 0 7px 0 grey;
+
+  display: flex;
+
+  .ql-editor {
+    border-radius: 0;
+  }
+
+  &-block {
+    //flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+}

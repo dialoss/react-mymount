@@ -3,14 +3,14 @@ export const ContentTabsRoutes = {
     'orders': {
         0: {
             id: 0,
-            text: "выполненные",
+            title: "выполненные",
             path: "done",
             entrys: [],
             active: true,
         },
         1: {
             id: 1,
-            text: "в работе",
+            title: "в работе",
             path: "progress",
             entrys: [],
             active: false,

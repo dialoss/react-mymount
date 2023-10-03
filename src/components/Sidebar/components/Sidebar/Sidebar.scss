@@ -33,6 +33,9 @@
         transition: transform 0.2s linear, visibility 0.2s linear;
 
         @include custom-scrollbar;
+        &::-webkit-scrollbar {
+            width: 15px;
+        }
     }
     
     &__inner {
@@ -58,7 +61,7 @@
         height: 50px;
         z-index: 1;
     }
-    
+
     &__btn {
         background: none;
         position: absolute;
@@ -112,97 +115,16 @@ $color-sidebar-background: rgb(54, 59, 75, 0.8);
             gap: 20px;
             padding-right: 5px;
         }
-        
+
         &__list {
             display: flex;
             flex-direction: column;
             row-gap: 4px;
             transition: all 0.1s linear;
             overflow: hidden;
-    
+
             &-wrapper {
                 overflow: hidden;
-            }
-        }
-        
-        &__sublist {
-            position: absolute;
-        }
-        
-        &__item {
-            position: relative;
-        }
-        
-        &__link {
-            display: block;
-            background-color: $color-link-background;
-            border-radius: 4px;
-            text-align: center;
-            color: black;
-            text-decoration: none;
-            word-wrap: break-word;
-            padding: 2px;
-            overflow: hidden;
-    
-            &:hover {
-                cursor: pointer;
-            }    
-    
-            .sidebar__sublist & {
-                background-color: $color-sublist-background;
-            }
-    
-            &--current {
-                background-color: $color-current-background;
-                color: $color-current-text;
-    
-                .sidebar__sublist & {
-                    background-color: $color-current-background;
-                }
-            }
-    
-            &-btn {
-                width: 15px;
-                height: 100%;
-                background-color: gray;
-                position: absolute;
-                top: 0;
-                left: 0;
-                border: none;
-    
-                &:hover {
-                    cursor: pointer;
-                }
-            }
-        }   
-        
-        &__header {
-            height: 50px;
-        }
-        
-        &__btn {
-            background: none;
-            position: absolute;
-            left: 5px;
-            top: 5px;
-            border: 0;
-    
-            &:hover {
-                opacity: 0.5;
-                cursor: pointer;
-            }
-    
-            img {
-                width: 50px;
-            }
-        }
-    
-        &__open {
-            left: 10px;
-            top: 10px;
-            
-            img {
-                width: 40px;
             }
         }
     }

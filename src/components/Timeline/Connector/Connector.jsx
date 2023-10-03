@@ -1,10 +1,9 @@
 import React from 'react';
 
-const Connector = ({children, ...props}) => {
+const Connector = ({...props}) => {
     return (
         <div className={"timeline-connector"}>
             <div {...props}></div>
-            {children}
         </div>
     );
 };
