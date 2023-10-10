@@ -1,4 +1,5 @@
 import store from "store";
+import {getElementFromCursor} from "../../../helpers/events";
 
 export let actionElement = null;
 export let actionElements = [];
@@ -19,37 +20,45 @@ function getElementID(element) {
     return element.classList[0].split('-')[1];
 }
 
+function setSelected(element, type) {
+    if (!!actionElements.filter(el => (el[type].id === element[type].id && el.selected === type)).length) {
+        element[type].html.classList.remove('selected');
+        actionElements = actionElements.filter(el => !(el[type].id === element[type].id && el.selected === type));
+    } else {
+        element.selected = type;
+        element[type].html.classList.add('selected');
+        actionElements.push(element);
+    }
+}
+
+
+export function setUnselected() {
+    actionElements.forEach(el => {
+        el[el.selected].html.classList.remove('selected');
+    });
+    actionElements = [];
+}
+
 export function setActionElement(event) {
     actionElement = structuredClone(emptyElement);
-    const intersect = document.elementsFromPoint(event.clientX, event.clientY);
     const elements = store.getState().elements;
     for (const type of Object.keys(actionElement)) {
-        for (const element of intersect) {
-            if (element.classList.contains(`${type}`)) {
-                let id = +getElementID(element);
-                actionElement[type] = {
-                    data: elements[`${type}s`].find(obj => obj.id === id),
-                    id,
-                    type : element.classList[2].split('-')[1],
-                    html: element,
-                }
-                break;
-            }
+        const element = getElementFromCursor(event, String(type));
+        let id = +getElementID(element);
+        actionElement[type] = {
+            data: elements[`${type}s`].find(obj => obj.id === id),
+            id,
+            type : element.classList[2].split('-')[1],
+            html: element,
         }
     }
     actionElement.position = getElementPosition(actionElement);
     console.log(actionElement);
     if (event.ctrlKey) {
-        if (!!actionElements.filter(el => el.entry.id === actionElement.entry.id).length) {
-            actionElement.entry.html.style.border = "none";
-            actionElements = actionElements.map(el => el.entry.id !== actionElement.entry.id);
-        } else {
-            actionElement.entry.html.style.border = "solid 10px blue";
-            actionElements.push(actionElement);
-        }
-
-
+        if (actionElement.item.id !== -1) setSelected(actionElement, 'item');
+        else setSelected(actionElement, 'entry');
     }
+    console.log(actionElements)
     return actionElement;
 }
 

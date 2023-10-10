@@ -4,32 +4,20 @@
 }
 
 .sidebar {
-    font-size: 15px;
     position: fixed;
-    left: 0;
     top: 0;
+    left: 0;
+    padding-top: 50px;
+    width: 150px;
+    font-size: 15px;
     z-index: $zindex-utility;
-
-    .window-button {
-        left: 10px;
-        top: 10px;
-
-        img {
-            width: 40px;
-        }
-    }
 
     &__wrapper {
         overflow-y: auto;
         overflow-x: hidden;
-        position: absolute;
-        top: 50px;
-        left: 0;
 
         width: 150px;
         max-height: 90vh;
-        visibility: visible;
-        display: block;
         transition: transform 0.2s linear, visibility 0.2s linear;
 
         @include custom-scrollbar;
@@ -39,14 +27,9 @@
     }
     
     &__inner {
-        overflow:visible;
         padding: 10px 5px;
         padding-right: 20px;
         width: 150px;
-        transition: all 0.2s linear;
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
     }
     
     &__item {
@@ -79,12 +62,24 @@
         }
     }
 
-    &__open {
-        left: 10px;
-        top: 10px;
-        
-        img {
-            width: 40px;
+    .slider__togglers {
+        position: fixed;
+        top: 0;
+        left: 0;
+
+        .window-button {
+            width: 50px;
+            height: 50px;
+            position: fixed;
+            left: 5px;
+            top: 5px;
+        }
+
+        .window-open {
+            img {
+                width: 40px;
+                height: 40px;
+            }
         }
     }
 }
@@ -94,9 +89,10 @@ $color-sidebar-background: rgb(54, 59, 75, 0.8);
 @media only screen and (max-width: 700px) {
     .sidebar {
         font-size: 20px;
+        width: 200px;
+        top: 0;
 
         &__wrapper {
-            top: 0;
             height: 100vh;
             max-height: 100vh;
             background-color: $color-sidebar-background;
@@ -108,24 +104,9 @@ $color-sidebar-background: rgb(54, 59, 75, 0.8);
         }
         
         &__inner {
-            position: absolute;
-            top: 50px;
-            overflow:visible;
+            margin-top: 50px;
             width: 200px;
-            gap: 20px;
             padding-right: 5px;
-        }
-
-        &__list {
-            display: flex;
-            flex-direction: column;
-            row-gap: 4px;
-            transition: all 0.1s linear;
-            overflow: hidden;
-
-            &-wrapper {
-                overflow: hidden;
-            }
         }
     }
 }

@@ -5,6 +5,7 @@ import {Link} from "react-router-dom";
 import TransformContainer from "ui/ObjectTransform/components/TransformContainer/TransformContainer";
 import TransformItem from "ui/ObjectTransform/components/TransformItem/TransformItem";
 import {ActiveThemes} from "ui/Themes/index";
+import "./Entry.scss";
 
 const Entry = ({entry, ...props}) => {
     const theme = useContext(ActiveThemes);
@@ -13,7 +14,7 @@ const Entry = ({entry, ...props}) => {
     let mediaItems = 0;
     let itemsRow = 1;
     entry.items.forEach(item => {
-        if (item.type === 'video' || item.type === 'image' || item.type === 'model') mediaItems += 1;
+        if (['video', 'image', 'model'].includes(item.type)) mediaItems += 1;
     })
     if (mediaItems >= 3) itemsRow = 3;
     else if (mediaItems >= 2) itemsRow = 2;
@@ -27,7 +28,6 @@ const Entry = ({entry, ...props}) => {
             </TransformItem>
         }));
     }, [entry.items]);
-
     return (
         <div className={Object.values(theme).map(th => th.entry__wrapper).join(' ')} {...props}>
             {style &&

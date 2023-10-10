@@ -60,6 +60,7 @@ async function pickerCallback(data) {
         for (const d of data[google.picker.Response.DOCUMENTS]) {
             let type = getFileType(d.name);
             files.push({
+                id: -1,
                 filename : d.name,
                 url: "https://drive.google.com/uc?id=" + d.id,
                 type,

@@ -21,6 +21,7 @@ function fillUploads(form, uploads) {
     const files = uploads.filter(upload => upload.type === 'file');
     setFormField(form.data, 'media', media.map(f => {
         return {
+            id: f.id,
             type: f.type,
             url: f.url,
             filename: f.filename,
@@ -28,6 +29,7 @@ function fillUploads(form, uploads) {
     }));
     setFormField(form.data, 'files', files.map(f => {
         return {
+            id: f.id,
             type: f.type,
             url: f.url,
             filename: f.filename,

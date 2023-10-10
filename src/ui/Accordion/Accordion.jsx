@@ -2,6 +2,7 @@ import React from 'react';
 import "./Accordion.scss";
 
 import {ReactComponent as IconChevronDown} from "ui/Iconpack/icons/chevron-down.svg";
+import ToggleButton from "ui/Buttons/ToggleButton/ToggleButton";
 
 const Accordion = React.forwardRef(function ({toggle, header, isOpened, height, text, children}, ref) {
     const state = (isOpened ? "opened" : "closed");
@@ -13,7 +14,7 @@ const Accordion = React.forwardRef(function ({toggle, header, isOpened, height, 
                 {header ? header :
                     <div className={"accordion-header__wrapper"}>
                         {text}
-                        <div className={"accordion-toggler " + state}><IconChevronDown/></div>
+                        <ToggleButton isOpened={isOpened}><IconChevronDown/></ToggleButton>
                     </div>
                 }
             </div>

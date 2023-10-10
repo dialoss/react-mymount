@@ -4,17 +4,13 @@
   "private": true,
   "dependencies": {
     "@codexteam/icons": "^0.3.0",
-    "@mui/icons-material": "^5.14.11",
-    "@mui/lab": "^5.0.0-alpha.146",
-    "@mui/material": "^5.14.11",
-    "@react-oauth/google": "^0.11.1",
+    "@giscus/react": "^2.3.0",
     "@react-three/drei": "^9.84.2",
     "@react-three/fiber": "^8.14.2",
     "@reduxjs/toolkit": "^1.9.5",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
-    "buffer-image-size": "^0.6.4",
     "chroma-js": "^2.4.2",
     "dayjs": "^1.11.9",
     "disqus-react": "^1.1.5",
@@ -23,26 +19,24 @@
     "googleapis": "^126.0.1",
     "jszip": "^3.10.1",
     "jwt-decode": "^3.1.2",
-    "list-react-files": "^0.2.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-google-drive-picker": "^1.2.2",
-    "react-google-picker": "^0.1.0",
     "react-quill": "^2.0.0",
     "react-redux": "^8.1.2",
-    "react-responsive-masonry": "^2.1.7",
     "react-router-dom": "^6.15.0",
     "react-scripts": "5.0.1",
     "react-transition-group": "^4.4.5",
     "react-use-keypress": "^1.3.1",
     "redux": "^4.2.1",
     "sass": "^1.66.1",
+    "source-map-explorer": "^2.5.3",
     "styles": "^0.2.1",
     "three": "^0.156.1",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "craco start",
+    "analyze": "source-map-explorer 'build/static/js/*.js'",
+    "start": "set PORT=3001 && craco start",
     "build": "craco build",
     "test": "craco test",
     "eject": "react-scripts eject"
@@ -66,7 +60,6 @@
     ]
   },
   "devDependencies": {
-    "dependency-cruiser": "^13.1.5",
-    "react-xmasonry": "^3.0.6"
+    "dependency-cruiser": "^13.1.5"
   }
 }

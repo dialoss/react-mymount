@@ -1,15 +1,13 @@
 import {triggerEvent} from "helpers/events";
+import {setUnselected} from "modules/ActionManager/components/helpers";
 
-let copiedElements = [];
-let cuttedElements = [];
-
-function handleElements(actionElement, elements) {
+function handleElements(actionElement, elements, event_type, action_type) {
     let sendData = [];
     for (let i = elements.length - 1; i >= 0; i--) {
         let el = elements[i];
         let data = {
-            'event_type': 'ADD',
-            'entry_action_type' : 'paste',
+            'event_type': event_type,
+            'entry_action_type' : action_type,
             'display_pos' : actionElement.position,
             'entry_id': el.entry.id,
             'item_id': el.item.id,
@@ -18,6 +16,9 @@ function handleElements(actionElement, elements) {
     }
     return sendData;
 }
+
+let copiedElements = [];
+let cuttedElements = [];
 
 export const ContextActions = {
     'add-quick': {
@@ -49,39 +50,36 @@ export const ContextActions = {
     },
     'copy':{
         name: 'Копировать',
-        callback: ({actionElement}) => {
-            actionElement.entry.html.style.opacity = "0.7";
-            copiedElements.push(actionElement);
+        callback: ({actionElements}) => {
+            copiedElements = actionElements;
+            copiedElements.forEach(el => el[el.selected].html.classList.add("copied"));
             return [];
         }
     },
     'paste':{
         name: 'Вставить',
         callback: ({actionElement}) => {
-            let copy = handleElements(actionElement, copiedElements);
-            let cut = handleElements(actionElement, cuttedElements);
-
-            return [...copy, ...cut, ...ContextActions['delete'].callback({actionElement:copiedElements})];
+            let copy = handleElements(actionElement, copiedElements, 'ADD', 'paste');
+            let cut = handleElements(actionElement, cuttedElements, 'ADD', 'paste');
+            let del = ContextActions['delete'].callback({actionElements:cuttedElements});
+            setUnselected();
+            copiedElements = [];
+            cuttedElements = [];
+            return [...copy, ...cut, ...del];
         }
     },
     'cut':{
         name: 'Вырезать',
-        callback: ({actionElement}) => {
-            cuttedElements.push(actionElement);
-            actionElement.entry.html.style.backgroundColor = "#747474";
+        callback: ({actionElements}) => {
+            cuttedElements = actionElements;
+            cuttedElements.forEach(el => el[el.selected].html.classList.add("cutted"));
             return [];
         }
     },
     'delete':{
         name: 'Удалить',
-        callback: ({actionElement}) => {
-            let data = {
-                'event_type': 'DELETE',
-                'entry_action_type' : 'delete',
-                'entry_id' : actionElement.entry.id,
-                'item_id' : actionElement.item.id,
-            }
-            return [data];
+        callback: ({actionElements}) => {
+            return handleElements(actionElements[0], actionElements, 'DELETE', 'delete');
         }
     }
 }

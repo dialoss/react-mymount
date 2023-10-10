@@ -20,6 +20,11 @@
             }
         }
         @include custom-scrollbar;
+
+        .window-close {
+            right: 5px;
+            top: 5px;
+        }
     }
 
     &__fields {

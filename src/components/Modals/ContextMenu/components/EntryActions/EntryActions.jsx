@@ -3,12 +3,12 @@ import {ContextMenu} from "components/Modals/ContextMenu/index";
 import {ContextActions} from "./actions";
 import {useAddEvent} from "hooks/useAddEvent";
 import {triggerEvent} from "helpers/events";
-import {actionElement} from "modules/ActionManager/components/helpers";
+import {actionElement, actionElements} from "modules/ActionManager/components/helpers";
 
 const EntryActions = () => {
     function handleContext(event) {
         triggerEvent("context-window:toggle", {isOpened: false});
-        const requestData = ContextActions[event.detail.type].callback({actionElement});
+        const requestData = ContextActions[event.detail.type].callback({actionElement, actionElements});
         for (const data of requestData) {
             triggerEvent("action:callback", data);
         }

@@ -3,7 +3,7 @@ import {createSlice} from "@reduxjs/toolkit";
 export const locationSlice = createSlice({
     name: "location",
     initialState: {
-        baseURL : "http://127.0.0.1:8000",
+        baseURL : 'https://8e92-92-101-120-252.ngrok-free.app',
         pages : {},
         pageID : null,
         fullURL : null,

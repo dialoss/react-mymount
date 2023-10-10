@@ -1,0 +1,8 @@
+.entry {
+  &.selected {
+    outline: 6px solid #ce0a40;
+  }
+  &.cutted {
+    background-color: grey;
+  }
+}

@@ -1,0 +1,32 @@
+.slider {
+  position: relative;
+  transition: all 232ms linear;
+
+
+  &__sidebar {
+    width: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  &__body {
+    height: 100%;
+    display: flex;
+  }
+
+  &.closed {
+    margin-left: -200px;
+  }
+
+  &.opened {
+    margin-left: 0;
+  }
+}

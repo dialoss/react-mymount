@@ -1,8 +1,6 @@
-.messenger-sidebar {
+.messenger__sidebar {
   padding: 10px;
-  padding-top: 70px;
   background-color: wheat;
-  height: 100%;
 
   .sidebar-item {
     display: flex;
@@ -21,9 +19,23 @@
     &.current {
       background-color: #d4d4d4;
     }
-    //margin: 10px;
   }
   .title {
     margin-left: 10px;
+  }
+
+  .sidebar-container {
+    margin-top: 60px;
+  }
+
+  .slider__togglers {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 }

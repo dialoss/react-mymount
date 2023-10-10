@@ -24,7 +24,7 @@ const Item = ({data, type, index, connector}) => {
             <Body>
                 <AccordionContainer title={data.text}>
                     {!!entrys.length &&
-                        <Entry entry={entrys[Math.min(index, entrys.length - 1)]} style={{width: 700}}></Entry>
+                        <Entry entry={entrys[Math.min(index, entrys.length - 1)]} style={{width: "80vw"}}></Entry>
                     }
                 </AccordionContainer>
             </Body>

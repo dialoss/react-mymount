@@ -5,8 +5,8 @@ import {preventOnTransformClick} from "ui/ObjectTransform/helpers";
 
 const ItemImage = ({data, ...props}) => {
     const ref = useRef();
-    const carouselCallback = useCallback(() => {
-        if (preventOnTransformClick(ref)) return;
+    const carouselCallback = useCallback((event) => {
+        if (preventOnTransformClick(ref) || event.ctrlKey) return;
         triggerEvent('carousel:open', data.id);
     }, []);
 

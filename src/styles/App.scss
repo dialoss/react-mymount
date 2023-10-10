@@ -24,3 +24,8 @@ body {
   position: fixed;
   z-index: $zindex-modal;
 }
+
+.comments__wrapper {
+  width: 70%;
+  margin: 0 auto;
+}

@@ -1,34 +1,45 @@
-import React, {useEffect} from 'react';
-import {googleLogout, useGoogleLogin} from '@react-oauth/google';
+import React, {useEffect, useRef} from 'react';
 import "./Auth.scss";
 import AuthButton from "./AuthButton";
 import {sendLocalRequest} from "api/requests";
 import {useDispatch, useSelector} from "react-redux";
 import {actions} from "modules/User/store/reducers";
 import {Link} from "react-router-dom";
+import {useCredentials} from "hooks/useCredentials";
 
 const Auth = () => {
+    const credentials = useCredentials();
+    const credRef = useRef();
+    credRef.current = credentials;
     const user = useSelector(state => {
         if (!state.user.email) return null;
         return state.user;
     });
     const dispatch = useDispatch();
-    const login = useGoogleLogin({
-        onSuccess: async (credentials) => {
-            const token = credentials.access_token;
-            sendLocalRequest('/user/login/', {token}).then(data => {
-                if (data.auth) {
-                    dispatch(actions.setUser(data.user));
-                }
-            });
-        },
-        onError: () => {
-            console.log('error');
-        },
-    });
+    const ref = useRef();
+
+    function init() {
+        const id = credRef.current.CLIENT_ID;
+        if (id === '*') return;
+        console.log(id)
+        window.google.accounts.id.initialize({
+            client_id: '1024510478167-dufqr18l2g3nmt7gkr5rakc9sjk5nf54.apps.googleusercontent.com',
+            callback: (data) => {
+                sendLocalRequest('/user/login/', {token: data.credential}).then(data => {
+                    if (data.auth) {
+                        dispatch(actions.setUser(data.user));
+                    }
+                });
+            }
+        });
+        window.google.accounts.id.renderButton(ref.current, {type:'icon'});
+    }
+
+    function login() {
+        window.google.accounts.id.prompt();
+    }
 
     function logout() {
-        googleLogout();
         dispatch(actions.setUser({}));
         sendLocalRequest('/user/logout/');
     }
@@ -39,13 +50,21 @@ const Auth = () => {
                 dispatch(actions.setUser(data.user));
             }
         });
+        let client = document.createElement("script");
+        client.onload = () => init();
+        client.src = "https://accounts.google.com/gsi/client";
+        client.setAttribute("defer", "defer");
+        document.head.append(client);
     }, []);
-
+    
     return (
         <div className={"auth"}>
             <div className={"user-profile"}>
                 {!user &&
-                    <AuthButton type={'signin'} callback={login}>Вход</AuthButton>
+                    <AuthButton type={'signin'} callback={login}>
+                        <div ref={ref}></div>
+                        Вход
+                    </AuthButton>
                 }
                 {user && <>
                     <Link to={'/customer/'}></Link>
@@ -55,6 +74,7 @@ const Auth = () => {
                 </>
                 }
             </div>
+
         </div>
     );
 };

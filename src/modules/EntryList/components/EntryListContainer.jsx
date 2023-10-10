@@ -1,14 +1,10 @@
 import React, {useEffect, useReducer, useRef, useState} from 'react';
-import ListView from "ui/ListView/ListView";
 import {useDispatch} from "react-redux";
 import EntryList from "components/EntryList/EntryList";
 import {actions} from "../store/reducers";
 import {fetchEntrys} from "../api/fetchEntrys";
 import {useAddEvent} from "hooks/useAddEvent";
 import {sendLocalRequest} from "api/requests";
-import ContentTabs from "components/ContentTabs/ContentTabs";
-import LabTabs from "../../../components/ContentTabs/MaterialTabs";
-import {ContentTabsRoutes, EmptyTab} from "../../../components/ContentTabs/routes";
 
 function reducer(state, action) {
     switch (action.type) {
@@ -83,8 +79,9 @@ const EntryListContainer = () => {
             }
         }
         let requestData = event.detail;
-        if (event.detail.type !== 'add-entry-quick') requestData = { ...actionEntry, ...requestData};
+        if (requestData.type !== 'add-entry-quick') requestData = { ...actionEntry, ...requestData};
         const response = await sendLocalRequest("/entry_action/", requestData);
+        console.log(requestData, response)
         if (requestData.entry_action_type === 'transform') return;
         let payload = requestData;
         if (Object.keys(response).length !== 0) payload = {...payload, ...response.entrys_data[0]};
