@@ -20,6 +20,8 @@ const PageWrapper = ({route}) => {
         triggerEvent("themes:add", {name:'listStyle', path:route.style, clear:true, active:true});
     }, []);
 
+    document.title = "MyMount | " + location.pageTitle;
+
     return (
         <>
             {React.createElement(Components[route.component], {addComments: route.comments, key: location.relativeURL})}

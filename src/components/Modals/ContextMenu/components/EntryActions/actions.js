@@ -90,9 +90,12 @@ export default class Actions {
                 actionData.items = [...actionData.items, el.data];
             }
         });
-        if (items) request.push({...actionData, method:'PATCH', element: {type:'entry', id: actionData.id}});
+        let method = 'PATCH';
+        if (action.type === 'screen') method = 'POST';
+        if (items) request.push({...actionData, method, element: {type:'entry', id: actionData.id}});
 
         if (historyData.type === 'cut') {
+            Actions.elements = historyData.elements;
             request = [...request, ...Actions.delete()];
         }
         function clearSelection(elements, name) {

@@ -3,57 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="9b37537a-6286-4d32-9202-d8554b8ac243" name="Changes" comment="f">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/craco.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/craco.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/requests.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/requests.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/EditorManager/EditorManager.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/EditorManager/EditorManager.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Entry/Entry.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Entry/Entry.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Entry/components/Item/Item.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Entry/components/Item/Item.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Entry/components/Item/Item.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Entry/components/Item/Item.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Entry/components/Item/components/File/ItemFile.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Entry/components/Item/components/File/ItemFile.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Entry/components/Item/components/ItemData.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Entry/components/Item/components/ItemData.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Entry/components/Item/components/Table/ItemTable.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Entry/components/Item/components/Table/ItemTable.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Entry/components/Item/components/Textfield/ItemTextfield.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Entry/components/Item/components/Textfield/ItemTextfield.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/GooglePicker/api/picker.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/GooglePicker/api/picker.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/GooglePicker/helpers/files.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/GooglePicker/helpers/files.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/InlineEditor/InlineEditor.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/InlineEditor/InlineEditor.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Modals/ContextMenu/ContextMenuContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Modals/ContextMenu/ContextMenuContainer.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Modals/ContextMenu/components/EntryActions/EntryActions.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Modals/ContextMenu/components/EntryActions/EntryActions.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Messenger/Message/MessagesField.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Messenger/Message/MessagesField.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Modals/ContextMenu/components/EntryActions/actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Modals/ContextMenu/components/EntryActions/actions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Modals/MyForm/Upload/FormMedia.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Modals/MyForm/Upload/FormMedia.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Sidebar/SidebarContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Sidebar/SidebarContainer.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Sidebar/components/Sidebar/Sidebar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Sidebar/components/Sidebar/Sidebar.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Sidebar/components/Sidebar/Sidebar.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Sidebar/components/Sidebar/Sidebar.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/helpers/events.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/helpers/events.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/helpers/location/reducers.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/AppRouter/store/reducers.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/helpers/toggleThemes.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hooks/useAddEvent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/hooks/useAddEvent.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hooks/useFetching.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modules/ActionForm/api/submitForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/ActionForm/api/submitForm.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modules/ActionForm/helpers/FormData.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/ActionForm/helpers/FormData.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modules/ActionForm/helpers/FormData.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/ActionForm/helpers/FormData.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modules/ActionManager/components/ActionManager.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/ActionManager/components/ActionManager.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modules/ActionManager/components/helpers.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/ActionManager/components/helpers.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modules/Authorization/api/googleapi.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/Authorization/api/googleapi.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modules/Authorization/components/Auth.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/Authorization/components/Auth.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modules/EntryList/api/fetchEntrys.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/EntryList/api/fetchEntrys.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modules/EntryList/components/EntryListContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/EntryList/components/EntryListContainer.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modules/PageComments/Disqus.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/PageComments/Disqus.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modules/PageComments/PageComments.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/PageComments/PageComments.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/AppRouter/components/AppRouter.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/AppRouter/components/AppRouter.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/App.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/App.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/Iconpack/index.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/InfoBlock/InfoBlock.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/InfoBlock/InfoBlock.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/InfoParagraph/InfoParagraph.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/InfoParagraph/InfoParagraph.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/ObjectTransform/ObjectTransform.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/ObjectTransform/ObjectTransform.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/ObjectTransform/components/TransformItem/TransformItem.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/ObjectTransform/components/TransformItem/TransformItem.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/ObjectTransform/helpers.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/ObjectTransform/helpers.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/ObjectTransform/transform.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/ObjectTransform/transform.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/TextEditor/TextEditor.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/TextEditor/TextEditor.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/TextEditor/TextEditor.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/TextEditor/TextEditor.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/AppRouter/components/AppRoutes.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/AppRouter/components/AppRoutes.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/AppRouter/store/reducers.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/AppRouter/store/reducers.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -210,7 +163,7 @@
       <workItem from="1696885310646" duration="6509000" />
       <workItem from="1696939561557" duration="4539000" />
       <workItem from="1697098271484" duration="7294000" />
-      <workItem from="1697284891156" duration="62723000" />
+      <workItem from="1697284891156" duration="64627000" />
     </task>
     <task id="LOCAL-00001" summary="Initial">
       <created>1693824071090</created>
@@ -492,7 +445,14 @@
       <option name="project" value="LOCAL" />
       <updated>1696926628458</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="f">
+      <created>1697450921159</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1697450921159</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

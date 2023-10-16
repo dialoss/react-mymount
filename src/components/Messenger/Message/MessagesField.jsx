@@ -5,7 +5,7 @@ import "./MessagesField.scss";
 const MessagesField = ({messages, users}) => {
     const ref = useRef();
     useEffect(() => {
-        ref.current.scrollTop = 9999;
+        ref.current.scrollIntoView({'behaviour': 'smooth'});
     }, [messages]);
     return (
         <div className={"messages-field"} ref={ref}>

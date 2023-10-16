@@ -9,6 +9,7 @@ export const locationSlice = createSlice({
         fullURL : null,
         relativeURL : null,
         pageSlug : null,
+        pageTitle: null,
         parentURL : null,
         parentSlug : null,
         views: {
@@ -28,6 +29,7 @@ export const locationSlice = createSlice({
             if (state.parentURL === '/') state.parentURL = state.relativeURL;
             state.parentSlug = state.parentURL.replaceAll('/', '');
             state.pageID = state.pages[state.relativeURL];
+            state.pageTitle = state.pageSlug.toUpperCase();
         },
         setPages: (state, {payload: pages}) => {
             let pagesObj = {};
