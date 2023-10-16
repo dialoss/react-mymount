@@ -10,4 +10,18 @@ module.exports = {
             },
         },
     },
+    webpack: {
+        configure: {
+            resolve: {
+                fallback: {
+                    fs: false,
+                    buffer: false,
+                    stream: false,
+                    util: false,
+                    path: false,
+                    crypto: false,
+                }
+            },
+        },
+    },
 };

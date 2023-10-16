@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 
 import {sendLocalRequest} from "api/requests";
 import Sidebar from "./components/Sidebar/Sidebar";
-import {actions} from "helpers/location/reducers";
+import {actions} from "pages/AppRouter/store/reducers";
 import {useDispatch} from "react-redux";
 import {useUserAuth} from "hooks/useUserAuth";
 
@@ -12,7 +12,7 @@ const SidebarContainer = () => {
 
     useEffect(() => {
         (async () => {
-            const response = await sendLocalRequest('/get_static_data/');
+            const response = await sendLocalRequest('/api/static/navigation/');
             setPages(response.pages_tree);
             dispatch(actions.setPages(response.pages_list));
         })();

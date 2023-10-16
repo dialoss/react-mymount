@@ -6,9 +6,6 @@ import {initContainerDimensions} from "./helpers";
 import {useUserAuth} from "../../hooks/useUserAuth";
 
 const ObjectTransform = () => {
-    function transformCallback(data) {
-        triggerEvent("action:callback", data);
-    }
     const userAuth = useUserAuth();
     const ref = useRef();
     ref.current = userAuth;
@@ -19,7 +16,7 @@ const ObjectTransform = () => {
         const item = btn.closest(".transform-item");
         if (!!item.querySelector(".item-model")) return;
 
-        setItemTransform(event.detail.event, event.detail.type, item, btn, transformCallback);
+        setItemTransform(event.detail.event, event.detail.type, item, btn);
         triggerEvent("action:init", event.detail.event);
     }
 

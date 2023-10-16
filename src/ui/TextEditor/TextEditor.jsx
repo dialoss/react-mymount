@@ -9,10 +9,6 @@ const TextEditor = React.forwardRef(function TextEditor({simple, value, callback
         configQuill();
     }, []);
 
-    useEffect(() => {
-        if (ref) ref.current.focus();
-    }, []);
-
     let config = (!simple ? modules : {toolbar:false});
 
     function inputCallback(value) {

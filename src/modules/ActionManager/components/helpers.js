@@ -5,72 +5,104 @@ export let actionElement = null;
 export let actionElements = [];
 
 const emptyElement = {
-    entry: {
-        id: -1,
-        data: {}
-    },
-    item: {
-        id: -1,
-        type: "",
-        data: {}
-    }
+    id: -1,
+    data: {},
+    type: "",
+    html: null,
+    display_pos: -1,
 }
 
 function getElementID(element) {
     return element.classList[0].split('-')[1];
 }
 
-function setSelected(element, type) {
-    if (!!actionElements.filter(el => (el[type].id === element[type].id && el.selected === type)).length) {
-        element[type].html.classList.remove('selected');
-        actionElements = actionElements.filter(el => !(el[type].id === element[type].id && el.selected === type));
+function setElements() {
+    if (actionElements.find(el => el.id === actionElement.id)) {
+        actionElement.html.classList.remove('selected');
+        actionElements = actionElements.filter(el => el.id !== actionElement.id);
     } else {
-        element.selected = type;
-        element[type].html.classList.add('selected');
-        actionElements.push(element);
+        actionElement.html.classList.add('selected');
+        actionElements.push(actionElement);
     }
 }
 
-
 export function setUnselected() {
     actionElements.forEach(el => {
-        el[el.selected].html.classList.remove('selected');
+        el.html.classList.remove('selected');
     });
     actionElements = [];
+}
+
+function getElement(event, type) {
+    const element = getElementFromCursor(event, type);
+    if (!element) return null;
+    let id = +getElementID(element);
+    return {
+        id,
+        type,
+        html: element,
+    }
 }
 
 export function setActionElement(event) {
     actionElement = structuredClone(emptyElement);
     const elements = store.getState().elements;
-    for (const type of Object.keys(actionElement)) {
-        const element = getElementFromCursor(event, String(type));
-        let id = +getElementID(element);
-        actionElement[type] = {
-            data: elements[`${type}s`].find(obj => obj.id === id),
-            id,
-            type : element.classList[2].split('-')[1],
-            html: element,
+    for (const type of ['item', 'entry']) {
+        let el = getElement(event, type);
+        if (el) {
+            let parentID = el.id;
+            if (el.type === 'item') {
+                parentID = getElement(event, 'entry').id;
+            }
+            el.display_pos = getElementPosition(parentID);
+            el.data = elements[`${type}s`].find(obj => obj.id === el.id);
+            actionElement = el;
+            break;
         }
     }
-    actionElement.position = getElementPosition(actionElement);
-    console.log(actionElement);
-    if (event.ctrlKey) {
-        if (actionElement.item.id !== -1) setSelected(actionElement, 'item');
-        else setSelected(actionElement, 'entry');
+    if (actionElement.id === -1) {
+        actionElement = {
+            type: 'screen',
+            data: {
+                display_pos: getClickPosition(event)
+            },
+        }
+    } else {
+        if (event.ctrlKey) setElements();
     }
-    console.log(actionElements)
+
+    console.log(actionElement, actionElements);
     return actionElement;
 }
 
-function getElementPosition(element) {
+function getElementPosition(id) {
     const entrys = store.getState().elements.entrys;
     let pos = -1;
     for (let i = 0; i < entrys.length; i++) {
-        if (entrys[i].id === element.entry.id) {
+        if (entrys[i].id === id) {
             pos = i;
             break;
         }
     }
     if (pos === -1) pos = entrys.length;
+    return pos;
+}
+
+function getClickPosition(event) {
+    let pos = event.pageY;
+    let curPos = 0;
+    for (const entry of document.querySelectorAll(".entry")) {
+        let block = entry.getBoundingClientRect();
+        let b = block.top + block.height + window.scrollY;
+        if (curPos === 0 && pos <= b) {
+            return 0;
+        }
+        curPos += 1;
+        if (pos > b) continue;
+        pos = curPos - 1;
+        return pos;
+    }
+    if (curPos === 0) pos = 0;
+    else pos = curPos + 1;
     return pos;
 }

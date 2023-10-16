@@ -17,8 +17,8 @@ function setFormField(form, field, value) {
 
 function fillUploads(form, uploads) {
     if (!uploads) return;
-    const media = uploads.filter(upload => (upload.type === 'image' || upload.type === 'video'));
-    const files = uploads.filter(upload => upload.type === 'file');
+    const media = uploads.filter(upload => ['image', 'video'].includes(upload.type));
+    const files = uploads.filter(upload => ['file', 'table'].includes(upload.type));
     setFormField(form.data, 'media', media.map(f => {
         return {
             id: f.id,
@@ -60,8 +60,8 @@ export function getFormData(type, element) {
     let properties = formData.properties;
     let formType = formData.fields[type];
     let formFields = {};
-    if (type === 'edit' && element.item.id !== -1) {
-        formFields = formType[element.item.type];
+    if (type === 'edit' && element.type !== 'entry') {
+        formFields = formType[element.data.type];
     }
     else {
         let fieldsPage = {};
@@ -77,10 +77,11 @@ export function getFormData(type, element) {
     }
 
     let form = {
-        type:type,
+        type: type,
+        element: {type: element.type, id: element.id, data: element.data},
         title: formType.title,
         button: formType.button.split('_')[1],
-        meta: {},
+        method: '',
         data: {}
     };
     formFields.forEach((field) => {
@@ -88,29 +89,21 @@ export function getFormData(type, element) {
     });
     if (type === 'buy') return form;
     if (type === 'edit') {
-        if (element.item.id === -1) {
-            fillText(form, element.entry);
-            fillUploads(form, element.entry.data.items);
-        } else {
-            fillText(form, element.item);
-            fillUploads(form, [element.item.data])
-        }
+        fillText(form, element);
+        fillUploads(form, element.data.items || [element.data]);
+
         if (Object.keys(form.data).includes("settings")) {
-            if (element.item.id !== -1) {
-                setSelect(form, 'toggle_shadow', element.item.data.show_shadow);
-                form.data['settings'].attrs['toggle_date'].hidden = 'hidden';
+            if (element.type !== 'entry') {
+                setSelect(form, 'show_shadow', element.data.show_shadow);
+                form.data['settings'].attrs['show_date'].hidden = 'hidden';
             } else {
-                form.data['settings'].attrs['toggle_shadow'].hidden = 'hidden';
+                setSelect(form, 'show_date', element.data.show_date);
+                form.data['settings'].attrs['show_shadow'].hidden = 'hidden';
             }
-            setSelect(form, 'toggle_date', element.entry.data.show_date);
         }
-        form.meta.event_type = 'UPDATE';
+        form.method = 'PATCH';
     } else if (type === 'add') {
-        form.meta.event_type = 'ADD';
+        form.method = 'POST';
     }
-    form.meta.entry_action_type = type;
-    form.meta.entry_id = element.entry.id;
-    form.meta.item_id = element.item.id;
-    form.meta.display_pos = element.position;
     return form;
 }

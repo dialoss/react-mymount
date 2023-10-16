@@ -70,12 +70,12 @@
           "name": "empty",
           "value": "---"
         },
-        "toggle_date": {
-          "name": "toggle_date",
+        "show_date": {
+          "name": "show_date",
           "value": "показывать дату"
         },
-        "toggle_shadow": {
-          "name": "toggle_shadow",
+        "show_shadow": {
+          "name": "show_shadow",
           "value": "показывать тень"
         },
         "clear_position": {

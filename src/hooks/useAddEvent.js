@@ -10,3 +10,9 @@ export function useAddEvent(name, func, condition=true) {
         }
     }, []);
 }
+
+export function addEvent(name, func, condition=true) {
+    if (condition) {
+        window.addEventListener(name, func);
+    }
+}

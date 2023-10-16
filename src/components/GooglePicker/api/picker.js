@@ -68,13 +68,11 @@ async function pickerCallback(data) {
         }
         if (curUploadField == null && data[google.picker.Response.VIEW][0] !== 'upload') {
             files.forEach(file => {
-                let send_data = {
-                    'event_type': 'ADD',
-                    'entry_action_type' : 'add',
-                    'from' : 'drive_select',
-                    'media' : [file],
-                }
-                triggerEvent("action:callback", send_data);
+                triggerEvent("action:callback", () => [{
+                    method: 'POST',
+                    element: {type: 'entry'},
+                    items: [file],
+                }]);
             });
         }
         if (curUploadField != null) {

@@ -1,7 +1,7 @@
 import React from 'react';
 import EntryActions from "components/Modals/ContextMenu/components/EntryActions/EntryActions";
 import {useAddEvent} from "hooks/useAddEvent";
-import {actionElement, setActionElement} from "./helpers";
+import {setActionElement} from "./helpers";
 import EditorManager from "components/EditorManager/EditorManager";
 import ObjectTransform from "ui/ObjectTransform/ObjectTransform";
 import {triggerEvent} from "helpers/events";
@@ -9,23 +9,17 @@ import CarouselContainer from "components/Modals/Carousel/CarouselContainer";
 import {ActionForm} from "modules/ActionForm";
 import {useUserAuth} from "hooks/useUserAuth";
 import MessengerContainer from "../../Messenger/MessengerContainer";
+import Actions from "components/Modals/ContextMenu/components/EntryActions/actions";
 
 const ActionManager = () => {
     function initAction(event) {
         setActionElement(event.detail);
     }
-    useAddEvent('action:init', initAction);
-
     function actionCallback(event) {
-        const data = event.detail;
-        if (!!actionElement) {
-            data.entry_id ||= actionElement.entry.id;
-            data.item_id ||= actionElement.item.id;
-        }
-        triggerEvent('entrylist:handle-changes', data);
+        Actions.action(event.detail);
     }
-
-    useAddEvent('action:callback', actionCallback);
+    useAddEvent('action:init', initAction);
+    useAddEvent('action:callback', actionCallback)
 
     const userAuth = useUserAuth();
 

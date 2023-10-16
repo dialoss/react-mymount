@@ -19,7 +19,7 @@ const Sidebar = ({data, picker}) => {
         setOpened(false);
         setTimeout(() => {
             ref.current.style.display = 'none';
-        }, 200);
+        }, 250);
     }
 
     const togglers = [

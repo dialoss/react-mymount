@@ -13,7 +13,7 @@ const EntryItem = ({item}) => {
         const itemTransform = itemRef.closest(".transform-item");
         const container = itemRef.closest(".transform-container");
         let style = {};
-        if (item.type === 'video' || item.type === 'image' || item.type === 'model') {
+        if (['video', 'image', 'model'].includes(item.type)) {
             const contWidth = container.getBoundingClientRect().width;
             style['aspectRatio'] = item.media_width / item.media_height || '';
 

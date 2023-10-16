@@ -30,7 +30,7 @@ const TransformItem = ({children}) => {
                     const tr = Transforms.child[name];
                     return tr.buttons.map(btn => {
                         return React.createElement(TransformButton, {
-                            className: "transform--" + btn.name + ' ' + btn.style,
+                            className: "transform-resize " + btn.style,
                             key: btn.name,
                             type: btn.name,
                         });

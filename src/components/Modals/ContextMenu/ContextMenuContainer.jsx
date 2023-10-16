@@ -10,17 +10,18 @@ const ContextMenuContainer = ({actions}) => {
     const [position, setPosition] = useState({left: 0, top: 0});
     function contextMenu(event) {
         event.preventDefault();
+        triggerEvent('action:init', event);
         if (getPressDelta() > 100) return;
         if (!event.ctrlKey) {
             setPosition({left: event.clientX, top: event.clientY});
             triggerEvent(name, {isOpened: true});
         }
-        triggerEvent('action:init', event);
     }
     function onScroll() {
         triggerEvent(name, {isOpened: false});
     }
     function onMouseDown(event) {
+        if (event.ctrlKey) triggerEvent('action:init', event);
         if (event.button === 2) registerPress();
     }
     useAddEvent("mousedown", onMouseDown);

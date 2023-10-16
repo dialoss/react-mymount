@@ -5,13 +5,14 @@ export async function fetchEntrys(callback) {
     let cur = 0;
     while (true) {
         if (cur / step === 2) step = 20;
-        let sendData = {
-            data_start: cur,
-            data_end: cur + step,
+        let page = {
+            limit: step,
+            offset: cur,
         };
-        const response = await sendLocalRequest('/fetch_entrys/', sendData)
-        callback(response);
+        const urlParams = new URLSearchParams(page).toString();
+        const response = await sendLocalRequest(`/api/entrys/?${urlParams}`, {method:"GET"})
+        callback(response.results);
         cur += step;
-        if (cur >= response.entrys_amount) break;
+        if (cur >= response.count) break;
     }
 }

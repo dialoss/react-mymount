@@ -4,7 +4,7 @@ import {sendLocalRequest} from "api/requests";
 
 export default class Credentials {
     static fetch() {
-        sendLocalRequest('/get_google_credentials/').then(response => {
+        sendLocalRequest('/api/google/credentials/').then(response => {
             store.dispatch(actions.setCredentials(
                 {
                     ACCESS_TOKEN : response.token,

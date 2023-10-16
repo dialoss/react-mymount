@@ -3,7 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@codexteam/icons": "^0.3.0",
     "@giscus/react": "^2.3.0",
     "@react-three/drei": "^9.84.2",
     "@react-three/fiber": "^8.14.2",
@@ -18,21 +17,20 @@
     "gapi-client": "^0.0.3",
     "googleapis": "^126.0.1",
     "jszip": "^3.10.1",
-    "jwt-decode": "^3.1.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-quill": "^2.0.0",
     "react-redux": "^8.1.2",
     "react-router-dom": "^6.15.0",
-    "react-scripts": "5.0.1",
+    "react-scripts": "^5.0.0",
     "react-transition-group": "^4.4.5",
     "react-use-keypress": "^1.3.1",
     "redux": "^4.2.1",
     "sass": "^1.66.1",
-    "source-map-explorer": "^2.5.3",
     "styles": "^0.2.1",
     "three": "^0.156.1",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^2.1.4",
+    "xlsx": "^0.18.5"
   },
   "scripts": {
     "analyze": "source-map-explorer 'build/static/js/*.js'",

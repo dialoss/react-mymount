@@ -3,7 +3,7 @@ import {createSlice} from "@reduxjs/toolkit";
 export const locationSlice = createSlice({
     name: "location",
     initialState: {
-        baseURL : 'https://8e92-92-101-120-252.ngrok-free.app',
+        baseURL : 'http://localhost:8000',
         pages : {},
         pageID : null,
         fullURL : null,
@@ -18,7 +18,8 @@ export const locationSlice = createSlice({
     },
     reducers: {
         setLocation: (state) => {
-            state.relativeURL = decodeURI(window.location.href.split('/').slice(3).join('/'));
+            const url = decodeURI(window.location.href);
+            state.relativeURL = url.split('/').slice(3).join('/');
             if (state.relativeURL[0] !== '/') state.relativeURL = '/' + state.relativeURL;
             if (state.relativeURL.slice(-1) !== '/') state.relativeURL = state.relativeURL + '/';
             state.fullURL = state.baseURL + state.relativeURL;

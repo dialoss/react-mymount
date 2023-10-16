@@ -25,7 +25,7 @@ const Auth = () => {
         window.google.accounts.id.initialize({
             client_id: '1024510478167-dufqr18l2g3nmt7gkr5rakc9sjk5nf54.apps.googleusercontent.com',
             callback: (data) => {
-                sendLocalRequest('/user/login/', {token: data.credential}).then(data => {
+                sendLocalRequest('/api/user/login/', {data:{token: data.credential}}).then(data => {
                     if (data.auth) {
                         dispatch(actions.setUser(data.user));
                     }
@@ -41,11 +41,11 @@ const Auth = () => {
 
     function logout() {
         dispatch(actions.setUser({}));
-        sendLocalRequest('/user/logout/');
+        sendLocalRequest('/api/user/logout/');
     }
 
     useEffect(() => {
-        sendLocalRequest('/user/auth/').then(data => {
+        sendLocalRequest('/api/user/auth/').then(data => {
             if (data.auth) {
                 dispatch(actions.setUser(data.user));
             }

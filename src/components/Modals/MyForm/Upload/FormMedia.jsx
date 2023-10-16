@@ -4,11 +4,13 @@ import ItemFile from "components/Entry/components/Item/components/File/ItemFile"
 import ItemImage from "components/Entry/components/Item/components/Image/ItemImage";
 import "./FormMedia.scss";
 import Viewer from "components/Entry/components/Item/components/Model/Viewer";
+import ItemTable from "../../../Entry/components/Item/components/Table/ItemTable";
 
 const Components = {
     'video': ItemVideo,
     'file': ItemFile,
     'image': ItemImage,
+    'table': ItemTable,
     'model': Viewer,
 };
 

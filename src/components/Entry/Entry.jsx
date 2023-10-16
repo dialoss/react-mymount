@@ -22,6 +22,7 @@ const Entry = ({entry, ...props}) => {
     const [items, setItems] = useState([]);
     useEffect(() => {
         setItems(entry.items.map((item) => {
+            if (!!item.price) return;
             item = {...item, row:itemsRow};
             return <TransformItem key={item.id}>
                 <EntryItem item={item} key={item.id}></EntryItem>
@@ -33,8 +34,8 @@ const Entry = ({entry, ...props}) => {
             {style &&
                 <div className={`entry-${entry.id} entry ${style.entry}`}>
                     {
-                        entry.page_from.length > 1 &&
-                        <Link className={style.entry__link} to={entry.page_from}></Link>
+                        !!entry.page_from &&
+                        <Link className={style.entry__link} to={'/' + entry.page_from.path}></Link>
                     }
                     <TransformContainer width={entry.container_width}>
                         <div className={style.entry__items} style={{width: "100%"}}>

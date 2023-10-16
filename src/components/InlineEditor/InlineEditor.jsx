@@ -14,10 +14,16 @@ const InlineEditor = ({data, closeCallback, mount}) => {
                 closeCallback(ref.current.value, mount);
             }
         });
+        ref.current.focus();
         if (!data.simple) {
-            triggerEvent("container:init", {container:ref.current.editor.container.closest(".transform-container")});
+            let block = ref.current.editor.container.closest('.quill');
+            block.style.width = Math.max(300, block.clientWidth + 50) + "px";
+            block.closest('.transform-item').style.width = 'auto'
         }
+
+        triggerEvent("container:init", {container:ref.current.editor.container.closest(".transform-container")});
     }, []);
+
     return (
         <TextEditor ref={ref}
                     simple={data.simple}

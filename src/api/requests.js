@@ -9,23 +9,32 @@ export async function fetchRequest(FILE_ID) {
     });
 }
 
-export async function sendRequest(url, data) {
+export async function sendRequest(url, data, method) {
     let response = null;
     let query = {
-        method: "POST",
+        method: method,
         credentials: "include",
         headers: {
             "Content-Type": 'application/json;charset=utf-8',
         },
-        body: JSON.stringify(data),
+        ...(method !== 'GET' ? {body: JSON.stringify(data)} : {})
     }
-    await fetch(url, query).then(res => res.json()).then(data => response = data);
+    try {
+        await fetch(url, query).then(res => res.json()).then(data => response = data);
+    } catch (e) {
+        console.log(e);
+        return {"detail": "failed to fetch"};
+    }
     return response;
 }
 
-export function sendLocalRequest(request, data={}) {
+export function sendLocalRequest(url, data={}, method='GET') {
     const location = store.getState().location;
-    data.page_url = location.relativeURL;
-    data.page_slug = location.pageSlug;
-    return sendRequest(location.baseURL + request, data);
+    url = new URL(location.baseURL + url);
+    if (method === 'GET') url.search += '&' + new URLSearchParams({slug: location.pageID || location.pageSlug}).toString();
+    data.page = {
+        'path': location.relativeURL.slice(1, -1),
+        'slug': location.pageSlug,
+    }
+    return sendRequest(url.toString(), data, method);
 }

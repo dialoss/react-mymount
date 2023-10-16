@@ -10,6 +10,9 @@ const InfoBlock = ({data}) => {
     const theme = useContext(ActiveThemes);
     const style = theme.listStyle || {};
     const formattedDate = dayjs(data.date).format("HH:mm DD.MM.YYYY");
+    for (const item of (data.items || [])) {
+        if (!!item.price) data = {...data, price: item.price};
+    }
     return (
         <div className={style.info__block || "info__block"}>
             {!!data.title && <InfoParagraph type={'title'}

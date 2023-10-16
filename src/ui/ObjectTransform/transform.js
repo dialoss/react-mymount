@@ -1,4 +1,7 @@
 import {initContainerDimensions} from "./helpers";
+import {generateRequest} from "../../components/Modals/ContextMenu/components/EntryActions/actions";
+import {makeRequest} from "../../api/requests";
+import {triggerEvent} from "../../helpers/events";
 
 let item = null;
 let container = null;
@@ -109,10 +112,7 @@ export function setItemTransform(event, type, _item, _btn, callback) {
         if (!item.classList.contains("transformed")) item.classList.add("transformed");
         if (transform.type === "move") {
             item.style.position = 'absolute';
-        } else {
-            // item.style.position = 'auto';
         }
-
         moveAt(event, shiftX, shiftY);
     }
 
@@ -122,17 +122,17 @@ export function setItemTransform(event, type, _item, _btn, callback) {
         window.removeEventListener("mouseup", onMouseUp);
         if (!mouseMoved) return;
 
-        let data = {
-            'event_type': 'UPDATE',
-            'entry_action_type' : 'transform',
-            'position' : item.style.position || '',
-            'max_width' : item.style.width.replace("%", "") || "0",
-            'top' : item.style.top.replace("px", "") || "0",
-            'left' : item.style.left.replace("%", "") || "0",
-            'container_width': container.getBoundingClientRect().width || "0",
-        };
+        let request = [{
+            method: 'PATCH',
+            element: {type: 'item'},
+            position: item.style.position || 'initial',
+            max_width: item.style.width.replace("%", "") || "0",
+            top: item.style.top.replace("px", "") || "0",
+            left: item.style.left.replace("%", "") || "0",
+            container_width: container.getBoundingClientRect().width || "0",
+        }];
 
-        callback(data);
+        triggerEvent('action:callback', () => request);
 
         setTimeout(() => {
             item.classList.remove("transformed");

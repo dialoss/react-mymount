@@ -10,6 +10,9 @@ export function getFileType(fileName) {
     else if (['stl', 'obj', 'model', 'glb'].includes(ext)) {
         type = 'model';
     }
+    else if (['xls', 'xlsx'].includes(ext)) {
+        type = 'table';
+    }
     else {
         type = 'file';
     }

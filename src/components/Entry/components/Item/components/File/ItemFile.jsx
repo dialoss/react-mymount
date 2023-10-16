@@ -12,7 +12,7 @@ const ItemFile = ({data}) => {
                    target="_blank"
                    onClick={(event) => {if (preventOnTransformClick(ref)) event.preventDefault()}}>
                 </a>
-                <span className={`file__download-image fiv-cla fiv-icon-${data.extension}`}></span>
+                <span className={`file__download-image fiv-cla fiv-icon-${data.filename.split('.').slice(-1)[0]}`}></span>
             </div>
             <span className="file__title">{data.filename}</span>
         </div>

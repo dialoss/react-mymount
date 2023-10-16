@@ -41,8 +41,10 @@ export function doubleTap(callback) {
 
 export function getElementFromCursor(event, className) {
     const intersect = document.elementsFromPoint(event.clientX, event.clientY);
-    console.log(intersect)
     for (const element of intersect) {
+        if (element.classList.contains('transform-resize')) {
+            return element.closest('.transform-item').querySelector('.item');
+        }
         if (element.classList.contains(className)) {
             return element;
         }

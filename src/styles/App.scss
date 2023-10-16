@@ -9,6 +9,10 @@ html {
   width: 100%;
 }
 
+button, a {
+  outline: none;
+}
+
 body {
   font-size: 16px;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
@@ -22,10 +26,16 @@ body {
 
 .picker-dialog {
   position: fixed;
+  top: 50%;
+  left: 50%;
+  //transform: translate(-50%, -50%);
   z-index: $zindex-modal;
 }
 
 .comments__wrapper {
   width: 70%;
   margin: 0 auto;
+}
+.avatar .user--refresh {
+  background-color: red;
 }

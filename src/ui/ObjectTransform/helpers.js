@@ -15,10 +15,8 @@ function getMaxBottom(container, resize) {
 
 export function initContainerDimensions({container, item, resize}) {
     if (!container) return;
-    // console.log(container,container.style.height)
     let contHeight = getMaxBottom(container, resize);
     container.style.height = contHeight + "px";
-    // console.log(container.style.height)
 }
 
 export function preventOnTransformClick(ref) {

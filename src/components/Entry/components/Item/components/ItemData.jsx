@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, {useCallback, useEffect} from 'react';
 import ItemImage from "./Image/ItemImage";
 import ItemTable from "./Table/ItemTable";
 import ItemFile from "./File/ItemFile";
@@ -17,9 +17,11 @@ const Components = {
 }
 
 const ItemData = ({data, props}) => {
+    const loadCallback = () =>
+        triggerEvent("container:init", {container: props.container, item: props.itemTransform});
     useEffect(() => {
         if (!!props.itemTransform && props.itemTransform.style.position === "absolute") {
-            triggerEvent("container:init", {container: props.container, item: props.itemTransform});
+            loadCallback();
         }
     }, [props]);
 
@@ -28,6 +30,7 @@ const ItemData = ({data, props}) => {
             {React.createElement(Components[data.type], {
                 style:props.style,
                 data,
+                loadCallback,
                 key: data.id
             })}
         </>

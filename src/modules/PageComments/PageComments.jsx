@@ -13,6 +13,7 @@ const PageComments = () => {
     setTimeout(() => {
         setVisibility("visible");
     }, 500);
+
     return (
         <div className={"comments " + location.pageID} style={{visibility:visibility}}>
             <div className="comments__inner">
