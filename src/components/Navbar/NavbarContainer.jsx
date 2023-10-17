@@ -1,10 +1,10 @@
 import React from 'react';
 import Navbar from "ui/Navbar/Navbar";
 import {NavbarRoutes} from "./routes";
-import {useMyLocation} from "hooks/useMyLocation";
+import {getLocation} from "hooks/getLocation";
 
 const NavbarContainer = () => {
-    const location = useMyLocation();
+    const location = getLocation();
     function isActive(path) {
         return location.relativeURL.split('/')[1] === path;
     }

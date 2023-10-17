@@ -40,14 +40,17 @@ export function doubleTap(callback) {
 }
 
 export function getElementFromCursor(event, className) {
-    const intersect = document.elementsFromPoint(event.clientX, event.clientY);
-    for (const element of intersect) {
-        if (element.classList.contains('transform-resize')) {
-            return element.closest('.transform-item').querySelector('.item');
+    if (!!event.touches) event = event.touches[0];
+    try {
+        const intersect = document.elementsFromPoint(event.clientX, event.clientY);
+        for (const element of intersect) {
+            if (element.classList.contains('transform-resize')) {
+                return element.closest('.transform-item').querySelector('.item');
+            }
+            if (element.classList.contains(className)) {
+                return element;
+            }
         }
-        if (element.classList.contains(className)) {
-            return element;
-        }
-    }
+    } catch (e) {}
     return null;
 }

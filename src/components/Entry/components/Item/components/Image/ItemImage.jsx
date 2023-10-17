@@ -3,7 +3,7 @@ import './ItemImage.scss';
 import {triggerEvent} from "helpers/events";
 import {preventOnTransformClick} from "ui/ObjectTransform/helpers";
 
-const ItemImage = ({data, ...props}) => {
+const ItemImage = ({data, loadCallback, ...props}) => {
     const ref = useRef();
     const carouselCallback = useCallback((event) => {
         if (preventOnTransformClick(ref) || event.ctrlKey) return;

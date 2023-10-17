@@ -3,7 +3,7 @@ import {Navigate, Route, Routes, useNavigate} from "react-router-dom";
 import {routes} from "../constants/routes";
 import {EntrysPage} from "pages/EntrysPage";
 import {Intro} from "pages/MainPage";
-import {useMyLocation} from "hooks/useMyLocation";
+import {getLocation} from "hooks/getLocation";
 import {triggerEvent} from "helpers/events";
 import CustomerPage from "pages/CustomerPage/components/CustomerPage";
 import {useAddEvent} from "../../../hooks/useAddEvent";
@@ -15,7 +15,7 @@ const Components = {
 };
 
 const PageWrapper = ({route}) => {
-    const location = useMyLocation();
+    const location = getLocation();
     useEffect(() => {
         triggerEvent("themes:add", {name:'listStyle', path:route.style, clear:true, active:true});
     }, []);

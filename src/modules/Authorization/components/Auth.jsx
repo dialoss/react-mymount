@@ -21,11 +21,11 @@ const Auth = () => {
     function init() {
         const id = credRef.current.CLIENT_ID;
         if (id === '*') return;
-        console.log(id)
         window.google.accounts.id.initialize({
             client_id: '1024510478167-dufqr18l2g3nmt7gkr5rakc9sjk5nf54.apps.googleusercontent.com',
             callback: (data) => {
-                sendLocalRequest('/api/user/login/', {data:{token: data.credential}}).then(data => {
+                console.log(data)
+                sendLocalRequest('/api/user/login/', {token: data.credential}, 'POST').then(data => {
                     if (data.auth) {
                         dispatch(actions.setUser(data.user));
                     }
@@ -46,6 +46,7 @@ const Auth = () => {
 
     useEffect(() => {
         sendLocalRequest('/api/user/auth/').then(data => {
+            console.log(data)
             if (data.auth) {
                 dispatch(actions.setUser(data.user));
             }
@@ -56,7 +57,12 @@ const Auth = () => {
         client.setAttribute("defer", "defer");
         document.head.append(client);
     }, []);
-    
+
+    useEffect(() => {
+        init();
+    }, [user]);
+
+
     return (
         <div className={"auth"}>
             <div className={"user-profile"}>

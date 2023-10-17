@@ -7,7 +7,7 @@ import ItemVideo from "./Video/ItemVideo";
 import Viewer from "./Model/Viewer";
 import {triggerEvent} from "helpers/events";
 
-const Components = {
+export const Components = {
     'image': ItemImage,
     'table': ItemTable,
     'video': ItemVideo,

@@ -1,7 +1,8 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import "./Header.scss"
 import Avatar from "ui/Avatar/Avatar";
 import WindowButton from "ui/Buttons/WindowButton/WindowButton";
+import {MessengerContext} from "../MessengerContainer";
 
 const MessengerHeader = ({room}) => {
     return (

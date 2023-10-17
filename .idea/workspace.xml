@@ -1,12 +1,84 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9b37537a-6286-4d32-9202-d8554b8ac243" name="Changes" comment="f">
+    <list default="true" id="9b37537a-6286-4d32-9202-d8554b8ac243" name="Changes" comment="v1.0">
+      <change afterPath="$PROJECT_DIR$/src/components/GooglePicker/GooglePicker.module.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Messenger/Input/InputContainer.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Messenger/Input/MessengerInput.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Messenger/Input/MessengerInput.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Messenger/Message/MessagesContainer.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Messenger/Message/assets/attachment.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Messenger/Message/assets/pattern.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Messenger/Message/assets/send.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Messenger/Message/components/Message.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Messenger/Message/components/MessagesField.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Messenger/Message/components/MessagesField.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Messenger/MessengerContainer.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Messenger/Sidebar/SidebarList.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Messenger/api/firebase.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Messenger/variables.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ui/Swipes/Swipes.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ui/Swipes/config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Messenger/Message/MessagesField.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Messenger/Message/MessagesField.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ContentTabs/ContentTabs.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ContentTabs/ContentTabs.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Entry/components/Item/Item.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Entry/components/Item/Item.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Entry/components/Item/components/File/ItemFile.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Entry/components/Item/components/File/ItemFile.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Entry/components/Item/components/Image/ItemImage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Entry/components/Item/components/Image/ItemImage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Entry/components/Item/components/ItemData.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Entry/components/Item/components/ItemData.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Entry/components/Item/components/Table/ItemTable.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Entry/components/Item/components/Table/ItemTable.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/EntryList/EntryList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/EntryList/EntryList.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/GooglePicker/api/picker.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/GooglePicker/api/picker.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/GooglePicker/helpers/files.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/GooglePicker/helpers/files.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Messenger/Header/Header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Messenger/Header/Header.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Messenger/Header/Header.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Messenger/Header/Header.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Messenger/Message/Message.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Messenger/Message/components/Message.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Messenger/Message/Message.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Messenger/Message/MessageBlock.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Messenger/Message/components/MessageBlock.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Messenger/Message/MessageBlock.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Messenger/Message/components/MessageBlock.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Messenger/Message/MessagesField.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Messenger/Message/MessagesField.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Messenger/Messenger.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Messenger/Messenger.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Messenger/Messenger.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Messenger/Messenger.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Messenger/Sidebar/MessengerSidebar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Messenger/Sidebar/MessengerSidebar.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Messenger/Sidebar/MessengerSidebar.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Messenger/Sidebar/MessengerSidebar.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ModalManager/components/ModalManager.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ModalManager/components/ModalManager.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Modals/ContextMenu/components/Button/Button.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Modals/ContextMenu/components/Button/Button.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Modals/ContextMenu/components/Button/Button.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Modals/ContextMenu/components/Button/Button.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Modals/ContextMenu/components/EntryActions/EntryActions.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Modals/ContextMenu/components/EntryActions/EntryActions.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Modals/ContextMenu/components/EntryActions/actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Modals/ContextMenu/components/EntryActions/actions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Modals/MyForm/Input/FormInput.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Modals/MyForm/Input/FormInput.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Modals/MyForm/Upload/FormMedia.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Modals/MyForm/Upload/FormMedia.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Navbar/NavbarContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navbar/NavbarContainer.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Sidebar/components/Item/SidebarItem.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Sidebar/components/Item/SidebarItem.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Sidebar/components/Link/SidebarLink.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Sidebar/components/Link/SidebarLink.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Sidebar/components/Sidebar/Sidebar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Sidebar/components/Sidebar/Sidebar.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Sidebar/components/Sidebar/Sidebar.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Sidebar/components/Sidebar/Sidebar.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/helpers/events.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/helpers/events.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hooks/useMyLocation.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/hooks/getLocation.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modules/ActionForm/api/submitForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/ActionForm/api/submitForm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modules/ActionManager/components/ActionManager.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/ActionManager/components/ActionManager.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modules/Authorization/components/Auth.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/Authorization/components/Auth.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modules/Footer/components/FooterContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/Footer/components/FooterContainer.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modules/Messenger/MessengerContainer.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modules/Messenger/api/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Messenger/api/config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modules/Messenger/api/firebase.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modules/PageComments/PageComments.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/PageComments/PageComments.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modules/User/store/reducers.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/User/store/reducers.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/AppRouter/components/AppRoutes.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/AppRouter/components/AppRoutes.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/AppRouter/store/reducers.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/AppRouter/store/reducers.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/App.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/App.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/_mixins.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/_mixins.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/_variables.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/_variables.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/InfoParagraph/InfoParagraph.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/InfoParagraph/InfoParagraph.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/Masonry/MyMasonry.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/Masonry/MyMasonry.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/Navbar/Button/NavButton.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/Navbar/Button/NavButton.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/Navbar/Navbar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/Navbar/Navbar.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/Slider/Slider.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/Slider/Slider.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/Slider/Slider.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/Slider/Slider.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/TextEditor/TextEditor.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/TextEditor/TextEditor.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,7 +120,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "D:/Telegram-clone-main",
+    "last_opened_file_path": "D:/Programming/notes.web-main",
     "list.type.of.created.stylesheet": "SCSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.standard": "true",
@@ -63,18 +135,18 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Programming\react-refactor\src\components\Messenger\Message\assets" />
+      <recent name="D:\Programming\react-refactor\src\components\Messenger" />
       <recent name="D:\Programming\react-refactor\src\ui\Buttons\ToggleButton" />
       <recent name="D:\Programming\react-refactor\src\components\Entry" />
       <recent name="D:\Programming\react-refactor" />
-      <recent name="D:\Programming\react-refactor\src\ui\Iconpack\icons" />
-      <recent name="D:\Programming\react-refactor\src\ui\Iconpack" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Programming\react-refactor\src\components\Messenger\api" />
+      <recent name="D:\Programming\react-refactor\src\components\Messenger" />
+      <recent name="D:\Programming\react-refactor\src\components\Messenger\Input" />
+      <recent name="D:\Programming\react-refactor\src\components\Messenger\Message\components" />
       <recent name="D:\Programming\react-refactor\src\pages\AppRouter\store" />
-      <recent name="D:\Programming\react-refactor\src\pages\CustomerPage\components" />
-      <recent name="D:\Programming\react-refactor\src\components\Timeline" />
-      <recent name="D:\Programming\react-refactor\src\modules\Authorization\api" />
-      <recent name="D:\Programming\react-refactor\src\modules\User\components" />
     </key>
   </component>
   <component name="RunManager" selected="JavaScript Debug.Debug Application">
@@ -163,7 +235,8 @@
       <workItem from="1696885310646" duration="6509000" />
       <workItem from="1696939561557" duration="4539000" />
       <workItem from="1697098271484" duration="7294000" />
-      <workItem from="1697284891156" duration="64627000" />
+      <workItem from="1697284891156" duration="88867000" />
+      <workItem from="1697529270352" duration="37589000" />
     </task>
     <task id="LOCAL-00001" summary="Initial">
       <created>1693824071090</created>
@@ -452,7 +525,14 @@
       <option name="project" value="LOCAL" />
       <updated>1697450921159</updated>
     </task>
-    <option name="localTasksCounter" value="42" />
+    <task id="LOCAL-00042" summary="v1.0">
+      <created>1697452877593</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1697452877593</updated>
+    </task>
+    <option name="localTasksCounter" value="43" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -470,7 +550,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Added context menu" />
     <MESSAGE value="Fixes" />
     <MESSAGE value="Added modals" />
     <MESSAGE value="General modal fixes" />
@@ -495,7 +574,8 @@
     <MESSAGE value="created accordion" />
     <MESSAGE value="elements selection" />
     <MESSAGE value="f" />
-    <option name="LAST_COMMIT_MESSAGE" value="f" />
+    <MESSAGE value="v1.0" />
+    <option name="LAST_COMMIT_MESSAGE" value="v1.0" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

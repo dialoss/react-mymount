@@ -1,9 +1,0 @@
-export const firebaseConfig = {
-    serviceAccountId: 'firebase-adminsdk-8e42m@mymount-d1cad.iam.gserviceaccount.com',
-    apiKey: "AIzaSyBIRILz5CGXc_VnbnTXsS1ctwGAUQISN9k",
-    authDomain: "mymount-d1cad.firebaseapp.com",
-    projectId: "mymount-d1cad",
-    storageBucket: "mymount-d1cad.appspot.com",
-    messagingSenderId: "552748272683",
-    appId: "1:552748272683:web:00316f5db5feb7a29e6e6e"
-}

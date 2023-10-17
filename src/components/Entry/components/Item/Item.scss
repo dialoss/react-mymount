@@ -3,7 +3,7 @@
   border-radius: 8px;
   transition: all 0.2s linear;
   box-shadow: 0 0 5px gray;
-  overflow: hidden;
+  overflow: auto;
   z-index: $zindex-item;
 
   &.selected {

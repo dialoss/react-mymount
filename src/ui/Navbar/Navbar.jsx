@@ -6,7 +6,7 @@ const Navbar = ({routes, ...props}) => {
     return (
         <div className={"navbar"} {...props}>
             {routes.map((navData, index) => {
-                return <NavButton active={navData.active} navData={navData} key={index}/>
+                return <NavButton active={navData.active} data={navData} key={index}/>
             })}
         </div>
     );

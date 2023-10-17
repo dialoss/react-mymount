@@ -1,7 +1,7 @@
 import React, {useEffect, useReducer, useState} from 'react';
 import ContentTab from "./ContentTab";
 import Navbar from "ui/Navbar/Navbar";
-import {useMyLocation} from "../../hooks/useMyLocation";
+import {getLocation} from "../../hooks/getLocation";
 import {ContentTabsRoutes, EmptyTab} from "./routes";
 
 function reducer(state, action) {
@@ -27,7 +27,7 @@ function reducer(state, action) {
 }
 
 const ContentTabs = ({content}) => {
-    const location = useMyLocation();
+    const location = getLocation();
     const [tabs, dispatch] = useReducer(reducer, ContentTabsRoutes[location.pageSlug] || EmptyTab);
 
     useEffect(() => {

@@ -114,20 +114,17 @@ export default class Actions {
 }
 
 export const ContextActions = {
-    'add-quick': {
-        name: 'Quick New',
-        callback: Actions.addQuick,
-    },
     'add':{
         name: 'Добавить',
         callback: Actions.add,
         actions: {
+            'add-quick': {
+                name: 'Quick New',
+                callback: Actions.addQuick,
+            },
             'entry': {
                 name: 'Запись',
                 callback: Actions.add,
-                actions: {
-
-                }
             },
             'items': {
                 name: 'Предметы',
@@ -142,6 +139,12 @@ export const ContextActions = {
                     'video': {
                         name: 'Видео'
                     },
+                    'model': {
+                        name: 'Модель'
+                    },
+                    'file': {
+                        name: 'Файл'
+                    },
                 }
             }
         }
@@ -149,6 +152,33 @@ export const ContextActions = {
     'edit':{
         name: 'Редактировать',
         callback: Actions.edit,
+        actions: {
+            'entry': {
+                name: 'Запись',
+                callback: Actions.edit,
+            },
+            'items': {
+                name: 'Предметы',
+                callback: Actions.edit,
+                // actions: {
+                //     'textfield': {
+                //         name: 'Текст'
+                //     },
+                //     'image': {
+                //         name: 'Картинка'
+                //     },
+                //     'video': {
+                //         name: 'Видео'
+                //     },
+                //     'model': {
+                //         name: 'Модель'
+                //     },
+                //     'file': {
+                //         name: 'Файл'
+                //     },
+                // }
+            }
+        }
     },
     'copy':{
         name: 'Копировать',

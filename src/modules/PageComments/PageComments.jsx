@@ -3,10 +3,10 @@ import Container from "ui/Container/Container";
 import "./Disqus.scss";
 
 import { DiscussionEmbed } from 'disqus-react';
-import {useMyLocation} from "hooks/useMyLocation";
+import {getLocation} from "hooks/getLocation";
 
 const PageComments = () => {
-    const location = useMyLocation();
+    const location = getLocation();
     const url = location.baseURL + "/#!" + location.relativeURL;
     const id = '9812370896'; //String(location.pageID)
     const [visibility, setVisibility] = useState("hidden");

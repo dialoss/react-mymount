@@ -1,27 +1,49 @@
+@import "../variables";
 .messenger__sidebar {
-  padding: 10px;
-  background-color: wheat;
+  padding: 10px 0;
+  background-color: $color-main;
+  overflow-y: auto;
+  overflow-x: hidden;
+  @include custom-scrollbar;
+  &::-webkit-scrollbar {
+    width: 14px;
+  }
+  height: 100%;
+  //transform: translate(-50%, 0);
+  border-right: $style-border;
 
   .sidebar-item {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    //justify-content: space-between;
     margin-bottom: 10px;
-    background-color: white;
-    padding: 6px;
-    border-radius: 8px;
-    box-shadow: 0 0 4px 0 grey;
+    background-color: $color-main;
+    padding: 6px 10px;
+    //
+    //@include mobile {
+    //  .title {
+    //    display: none;
+    //  }
+    //}
+
     transition: all 0.2s linear;
     &:hover {
       cursor: pointer;
       opacity: 0.8;
     }
     &.current {
-      background-color: #d4d4d4;
+      background-color: #419ed8;
+      * {
+        color: white;
+      }
     }
   }
   .title {
+    font-size: 18px;
     margin-left: 10px;
+    //text-align: center;
+    text-align: left;
+    white-space: nowrap;
   }
 
   .sidebar-container {
@@ -37,5 +59,16 @@
     display: flex;
     align-items: center;
     justify-content: center;
+  }
+
+  .sidebar__search {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .sidebar__users {
+    border-bottom: $style-border;
   }
 }

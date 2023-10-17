@@ -8,8 +8,9 @@ import {triggerEvent} from "helpers/events";
 import CarouselContainer from "components/Modals/Carousel/CarouselContainer";
 import {ActionForm} from "modules/ActionForm";
 import {useUserAuth} from "hooks/useUserAuth";
-import MessengerContainer from "../../Messenger/MessengerContainer";
+import MessengerContainer from "../../../components/Messenger/MessengerContainer";
 import Actions from "components/Modals/ContextMenu/components/EntryActions/actions";
+import {useSelector} from "react-redux";
 
 const ActionManager = () => {
     function initAction(event) {
@@ -21,15 +22,11 @@ const ActionManager = () => {
     useAddEvent('action:init', initAction);
     useAddEvent('action:callback', actionCallback)
 
-    const userAuth = useUserAuth();
-
-    function openMessenger() {
-        triggerEvent('messenger-window:toggle', {toggle: true});
-    }
+    const user = useSelector(state => state.user);
 
     return (
         <>
-            {userAuth &&
+            {user.isAdmin &&
                 <>
                     <EntryActions></EntryActions>
                     <EditorManager></EditorManager>
@@ -38,14 +35,7 @@ const ActionManager = () => {
             <ActionForm></ActionForm>
             <ObjectTransform></ObjectTransform>
             <CarouselContainer></CarouselContainer>
-            <MessengerContainer></MessengerContainer>
-            <div onClick={openMessenger}
-                    style={{position:"fixed",right:40,
-                        bottom:20, zIndex:10,
-                        width: 100, textAlign: "center",
-                        fontSize: "14px", padding: "8px",
-                        backgroundColor: "#fefefe", color:"#222", border:"2px solid grey"}}
-            >Связаться со мной</div>
+            {user.authenticated && <MessengerContainer user={user}></MessengerContainer>}
         </>
     );
 };

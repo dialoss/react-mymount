@@ -1,18 +1,6 @@
-import React, {Fragment} from 'react';
-import ItemVideo from "components/Entry/components/Item/components/Video/ItemVideo";
-import ItemFile from "components/Entry/components/Item/components/File/ItemFile";
-import ItemImage from "components/Entry/components/Item/components/Image/ItemImage";
+import React from 'react';
 import "./FormMedia.scss";
-import Viewer from "components/Entry/components/Item/components/Model/Viewer";
-import ItemTable from "../../../Entry/components/Item/components/Table/ItemTable";
-
-const Components = {
-    'video': ItemVideo,
-    'file': ItemFile,
-    'image': ItemImage,
-    'table': ItemTable,
-    'model': Viewer,
-};
+import {Components} from "components/Entry/components/Item/components/ItemData";
 
 const FormMedia = ({files}) => {
     return (

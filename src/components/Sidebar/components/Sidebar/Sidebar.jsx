@@ -8,6 +8,8 @@ import AuthContainer from "modules/Authorization/AuthContainer";
 import Slider from "ui/Slider/Slider";
 import {useAddEvent} from "hooks/useAddEvent";
 import {getElementFromCursor} from "../../../../helpers/events";
+import {useSwipeable} from "react-swipeable";
+import {config} from "../../../../ui/Swipes/config";
 
 const Sidebar = ({data, picker}) => {
     const [isOpened, setOpened] = useState(true);
@@ -27,8 +29,8 @@ const Sidebar = ({data, picker}) => {
             element: <WindowButton type={'open'} style={{visibility: isOpened ? "hidden": "visible"}}/>,
             action: 'open',
             callback: () => {
-                setOpened(!isOpened);
                 ref.current.style.display = 'block';
+                setOpened(true);
             },
         },
         {
@@ -38,17 +40,34 @@ const Sidebar = ({data, picker}) => {
         },
     ];
 
+    const swipeClose = useSwipeable({
+        onSwiped: (eventData) => {
+            console.log(eventData)
+            if (eventData.dir === 'Left' && opRef.current) setOpened(false);
+        },
+        ...config,
+    });
+
+    const swipeOpen = useSwipeable({
+        onSwiped: (eventData) => {
+            if (eventData.dir === 'Right' && !opRef.current) setOpened(true);
+        },
+        ...config,
+    });
+
     function toggleSidebar(event) {
-        // const el = getElementFromCursor(event, 'sidebar');
-        // console.log(el)
-        // if (el === null && opRef.current) close();
+        const el = getElementFromCursor(event, 'sidebar');
+        if (!el && opRef.current)
+            close();
     }
 
-    useAddEvent("click", toggleSidebar);
+    useAddEvent("sidebar:toggle", toggleSidebar);
+    useAddEvent("mousedown", toggleSidebar);
+    useAddEvent("touchstart", toggleSidebar);
 
     return (
-        <div className="sidebar">
-            <Slider togglers={togglers}>
+        <div className="sidebar" {...swipeClose}>
+            <Slider togglers={togglers} opened={150} closed={0} defaultOpened={isOpened}>
                 <div className="sidebar__wrapper" ref={ref}>
                     <div className="sidebar__inner">
                         <AuthContainer></AuthContainer>

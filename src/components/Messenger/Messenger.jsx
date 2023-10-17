@@ -1,20 +1,26 @@
-import React from 'react';
+import React, {useContext} from 'react';
 
 import "./Messenger.scss";
 
-import TextEditor from "ui/TextEditor/TextEditor";
-import MessagesField from "./Message/MessagesField";
+import MessagesField from "./Message/components/MessagesField";
 import MessengerHeader from "./Header/Header";
 import MessengerSidebar from "./Sidebar/MessengerSidebar";
+import MessengerInput from "./Input/MessengerInput";
+import InputContainer from "./Input/InputContainer";
+import MessagesContainer from "./Message/MessagesContainer";
+import {MessengerContext} from "./MessengerContainer";
 
-const Messenger = ({messenger, position}) => {
+const Messenger = ({position}) => {
+    const {room} = useContext(MessengerContext);
     return (
         <div className={"messenger"}>
-            <MessengerSidebar currentRoom={messenger.room.current} rooms={messenger.rooms.current}></MessengerSidebar>
-            <div className={"messenger-block"}>
-                <MessengerHeader room={messenger.room.current}></MessengerHeader>
-                <MessagesField messages={messenger.messages} users={messenger.users.current}></MessagesField>
-                <TextEditor value={messenger.message.value} callback={messenger.message.callback} simple={true}></TextEditor>
+            <MessengerSidebar></MessengerSidebar>
+            <div className="wrapper">
+                {!!room && <div className={"messenger-block"}>
+                    <MessengerHeader room={room}></MessengerHeader>
+                    <MessagesContainer room={room}></MessagesContainer>
+                    <InputContainer room={room}></InputContainer>
+                </div>}
             </div>
         </div>
     );

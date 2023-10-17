@@ -10,3 +10,12 @@ $color-current-text: white;
 $color-current-background: blue;
 
 $border-radius-global: 8px;
+
+$style-border: 2px solid grey;
+$color-main: #fdfdfd;
+
+@mixin mobile {
+  @media screen and (max-width: 500px) {
+	@content;
+  }
+}

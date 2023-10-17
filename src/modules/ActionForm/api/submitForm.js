@@ -1,4 +1,5 @@
-import Actions from "../../../components/Modals/ContextMenu/components/EntryActions/actions";
+import {getLocation} from "hooks/getLocation";
+import {triggerEvent} from "helpers/events";
 
 export function submitForm(form) {
     let sendForm = {};
@@ -19,9 +20,16 @@ export function submitForm(form) {
     }
     sendForm.method = form.method;
     sendForm.element = form.element;
-    // for (const setting of (sendForm.settings || [])) {
-    //     sendForm[setting] = !form.element.data[setting];
-    // }
+
+    sendForm.display_pos = sendForm.element.display_pos;
+    if (sendForm.element.type === 'screen') sendForm.element = {type: 'entry'};
+    if (sendForm.new_page_slug) {
+        sendForm.page_from = {
+            slug: sendForm.new_page_slug,
+            path: getLocation().relativeURL.slice(1) + sendForm.new_page_slug,
+        }
+    }
+
     switch (sendForm.settings) {
         case 'show_date': case 'show_shadow':
             sendForm[sendForm.settings] = !form.element.data[sendForm.settings];
@@ -40,6 +48,6 @@ export function submitForm(form) {
         delete sendForm[field];
     }
     if (form.type !== 'buy') {
-        Actions.action(() => [sendForm]);
+        triggerEvent("action:callback", () => [sendForm]);
     }
 }

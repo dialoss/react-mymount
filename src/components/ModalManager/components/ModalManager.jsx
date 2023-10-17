@@ -3,8 +3,8 @@ import useKeypress from "react-use-keypress";
 import Modal from "ui/Modal/Modal";
 import {useAddEvent} from "hooks/useAddEvent";
 
-const ModalManager = ({name, children}) => {
-    const [isOpened, setOpened] = useState(false);
+const ModalManager = ({name, children, callback=null, defaultOpened=false}) => {
+    const [isOpened, setOpened] = useState(defaultOpened);
     useKeypress('Escape', (event) => {
         if (event.target.classList.contains("picker")) return;
         setOpened(false);
@@ -23,6 +23,10 @@ const ModalManager = ({name, children}) => {
             button.addEventListener("click", () => setOpened(false));
         });
     }, [children]);
+
+    useEffect(() => {
+        if (callback) callback(isOpened);
+    }, [isOpened]);
 
     return (
         <div className={"modal-manager"} ref={ref}>

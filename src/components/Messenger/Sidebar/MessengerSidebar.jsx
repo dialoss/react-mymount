@@ -1,12 +1,17 @@
-import React, {useState} from 'react';
+import React, {useContext, useEffect, useLayoutEffect, useState} from 'react';
 import Avatar from "ui/Avatar/Avatar";
 import "./MessengerSidebar.scss";
 import {triggerEvent} from "helpers/events";
 import ToggleButton from "ui/Buttons/ToggleButton/ToggleButton";
 import {ReactComponent as IconChevronRight} from "ui/Iconpack/icons/chevron-right.svg";
 import Slider from "ui/Slider/Slider";
+import {MessengerContext} from "components/Messenger/MessengerContainer";
+import SidebarList from "./SidebarList";
+import FormInput from "../../Modals/MyForm/Input/FormInput";
 
-const MessengerSidebar = ({rooms, currentRoom}) => {
+const MessengerSidebar = () => {
+    const {rooms, room, users} = useContext(MessengerContext);
+
     function setRoom(id) {
         triggerEvent("messenger:set-room", id);
     }
@@ -23,20 +28,49 @@ const MessengerSidebar = ({rooms, currentRoom}) => {
         }
     ];
 
+    function createRoom(item) {
+        console.log(item)
+        console.log(users[item])
+    }
+
+    const [userList, setUserList] = useState([]);
+    useLayoutEffect(() => {
+        setUserList(users);
+    }, [users]);
+    const [search, setSearch] = useState('');
+    function handleSearch(event) {
+        const value = event.target.value
+        setSearch(value);
+        let newUsers = {};
+        Object.values(users).forEach(user => {
+            if (user.name.toLowerCase().includes(value)) {
+                newUsers[user.id] = user;
+            }
+        })
+        setUserList(newUsers);
+    }
+
     return (
         <div className={"messenger__sidebar"}>
-            <Slider togglers={togglers}><div className={"sidebar-container"}>
-                {
-                    Object.values(rooms).map((room, index) =>
-                        <div className={"sidebar-item " + (room.id === currentRoom.id ? "current" : '')}
-                             onClick={() => setRoom(room.id)} key={index}>
-                            <Avatar src={room.picture}
-                                    style={{width:50, height:50, }}
-                                    key={index}></Avatar>
-                            <h3 className={"title"}>{room.title}</h3>
-                        </div>)
-                }
-            </div>
+            <Slider togglers={togglers} opened={300} closed={70}>
+                <div className={"sidebar-container"}>
+                    <div className="sidebar__search">
+                        Поиск пользователей
+                        <FormInput data={{name:'search', value:search, callback:handleSearch}}></FormInput>
+                    </div>
+                    <SidebarList className={'sidebar__users'}
+                                 list={userList}
+                                 currentItem={() => false}
+                                 textSelector={'name'}
+                                 clickCallback={createRoom}>
+                    </SidebarList>
+                    <SidebarList className={'sidebar__rooms'}
+                                 list={rooms}
+                                 currentItem={(id) => id === room.id}
+                                 textSelector={'title'}
+                                 clickCallback={setRoom}>
+                    </SidebarList>
+                </div>
             </Slider>
         </div>
 

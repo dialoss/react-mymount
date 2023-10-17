@@ -7,13 +7,22 @@ import {triggerEvent} from "helpers/events";
 const EntryActions = () => {
     function handleContext(event) {
         triggerEvent("context-window:toggle", {isOpened: false});
-        Actions.action(ContextActions[event.detail.type].callback);
+        Actions.action(event.detail);
     }
     useAddEvent('context-window:button', handleContext);
 
-    const actions = Object.keys(ContextActions).map(action => {
-        return {type: action, name: ContextActions[action].name};
-    });
+    const serializeActions = (actions) => {
+        return Object.keys(actions).map(action => {
+            let subActions = actions[action].actions || [];
+            return {
+                type: action,
+                name: actions[action].name,
+                actions: serializeActions(subActions),
+                callback: actions[action].callback,
+            };
+        });
+    }
+    const actions = serializeActions(ContextActions);
     return (
         <ContextMenu actions={actions}></ContextMenu>
     );

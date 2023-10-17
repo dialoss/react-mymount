@@ -10,17 +10,19 @@ const TextEditor = React.forwardRef(function TextEditor({simple, value, callback
     }, []);
 
     let config = (!simple ? modules : {toolbar:false});
+    const msgRef = useRef();
 
     function inputCallback(value) {
         if (simple) value = value.replace(/<\/?[^>]+(>|$)/g, "");
-        callback(value);
+        if (!value) msgRef.current.editor.root.innerHTML = '';
+        else callback(value);
     }
     
     return (
         <ReactQuill className={simple?"ql-simple":""}
-                    ref={ref}
+                    ref={ref || msgRef}
                     theme="snow"
-                    value={value}
+                    value={`<p>${value}</p>`}
                     onChange={inputCallback}
                     modules={config}
         />

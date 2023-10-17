@@ -4,7 +4,7 @@ import {CSSTransition, TransitionGroup} from "react-transition-group";
 import {getViewportSize} from "ui/helpers/viewport";
 import {useAddEvent} from "../../hooks/useAddEvent";
 
-const MyMasonry = ({maxColumns=1, widthPoints=[400,600,800], children}) => {
+const MyMasonry = ({maxColumns=1, widthPoints=[400,600,800], forceColumns=0, children}) => {
     const [layout, setLayout] = useState([]);
     const [count, setCount] = useState(maxColumns);
 
@@ -23,6 +23,14 @@ const MyMasonry = ({maxColumns=1, widthPoints=[400,600,800], children}) => {
 
     useLayoutEffect(() => {
         setColumns();
+    }, []);
+
+    useLayoutEffect(() => {
+        if (forceColumns !== 0) setCount(forceColumns);
+        else setColumns();
+    }, [forceColumns]);
+
+    useLayoutEffect(() => {
         let newLayout = [];
         for (let i = 0; i < count; i++) {
             newLayout.push([]);

@@ -1,7 +1,7 @@
 .slider {
   position: relative;
-  transition: all 232ms linear;
-
+  transition: all 200ms linear;
+  //width: 100%;
 
   &__sidebar {
     width: 30px;
@@ -19,14 +19,17 @@
 
   &__body {
     height: 100%;
+    width: 100%;
     display: flex;
   }
 
   &.closed {
-    margin-left: -200px;
+    //margin-left: -100%;
+    //max-width: 70px;
   }
 
   &.opened {
-    margin-left: 0;
+    //margin-left: 0;
+    //max-width: 300px;
   }
 }

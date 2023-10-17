@@ -1,5 +1,5 @@
 import store from "store";
 
-export function useMyLocation() {
+export function getLocation() {
     return store.getState().location;
 }

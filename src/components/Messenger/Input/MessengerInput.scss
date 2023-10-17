@@ -1,0 +1,32 @@
+@import "components/Messenger/variables";
+
+.messenger-input {
+    position: relative;
+    .ql-editor {
+        border-radius: 0;
+        background-color: $color-main;
+    }
+    .ql-simple .ql-container {
+        padding: 0 50px;
+        border-top: $style-border;
+    }
+    .icon {
+        position: absolute;
+        top: 50%;
+        width: 25px;
+        height: 25px;
+        transform: translate(0, -50%);
+        z-index: 1;
+        &:hover {
+            cursor: pointer;
+        }
+        &-attachment {
+            left: 10px;
+            opacity: 0.7;
+        }
+        &-send {
+            filter: invert(72%) sepia(44%) saturate(4344%) hue-rotate(175deg) brightness(89%) contrast(90%);
+            right: 10px;
+        }
+    }
+}

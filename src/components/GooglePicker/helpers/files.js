@@ -4,7 +4,7 @@ export function getFileType(fileName) {
     if (['png', 'jpg', 'webp'].includes(ext)){
         type = 'image';
     }
-    else if (['mp4', 'webm', 'avi'].includes(ext)) {
+    else if (['mp4', 'webm', 'avi', 'mkv'].includes(ext)) {
         type = 'video';
     }
     else if (['stl', 'obj', 'model', 'glb'].includes(ext)) {

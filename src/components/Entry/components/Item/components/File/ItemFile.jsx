@@ -4,6 +4,7 @@ import {preventOnTransformClick} from "ui/ObjectTransform/helpers";
 
 const ItemFile = ({data}) => {
     const ref = useRef();
+    const hasFilename = data.filename;
     return (
         <div className="item__file">
             <div className="file__download">
@@ -12,9 +13,11 @@ const ItemFile = ({data}) => {
                    target="_blank"
                    onClick={(event) => {if (preventOnTransformClick(ref)) event.preventDefault()}}>
                 </a>
-                <span className={`file__download-image fiv-cla fiv-icon-${data.filename.split('.').slice(-1)[0]}`}></span>
+                <span className={`file__download-image fiv-cla fiv-icon-${
+                    !!hasFilename ? data.filename.split('.').slice(-1)[0] : 'blank'}
+                    `}></span>
             </div>
-            <span className="file__title">{data.filename}</span>
+            {!!hasFilename && <span className="file__title">{data.filename}</span>}
         </div>
     );
 };

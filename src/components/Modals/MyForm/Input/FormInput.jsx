@@ -3,7 +3,7 @@ import './FormInput.scss';
 
 const FormInput = ({data}) => {
     let attrs = {};
-    data.attrs.forEach(attr => {
+    data.attrs && data.attrs.forEach(attr => {
         attrs[attr] = attr;
     });
     return (

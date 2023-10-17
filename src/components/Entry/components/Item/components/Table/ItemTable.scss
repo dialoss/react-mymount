@@ -5,6 +5,7 @@
 .item__table {
   border-spacing: 0;
   width: 100%;
+  overflow-x: auto;
 
   tr {
     &:first-child {

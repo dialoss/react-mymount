@@ -1,6 +1,7 @@
 import {getFileType} from "../helpers/files";
 import {triggerEvent} from "helpers/events";
 import Credentials from "modules/Authorization/api/googleapi";
+import styles from "../GooglePicker.module.scss";
 
 let pickerCreated = false;
 let pickerInited = false;
@@ -26,8 +27,32 @@ function gisLoaded() {
 export function showPicker(uploadField) {
     curUploadField = uploadField;
     picker.setVisible(true);
-    picker.W.style.position = "fixed";
-    picker['Xa'].style.position = "fixed";
+    // picker.W.classList.add(styles['picker-dialog']);
+    // picker.Xa.classList.add(styles['picker-dialog-bg']);
+    let pickerStyle = {
+        position: 'fixed',
+        top: '0',
+        right: '0',
+        left: 'auto',
+        // transform: 'translate(-50%, -50%)',
+        border: 'none',
+    };
+    let bgStyle = {
+        opacity: '0',
+        position: 'fixed',
+    };
+    setTimeout(() => {
+        try {
+            picker.Ue.style.maxWidth = "400px";
+        } catch (e){}
+    }, 1000);
+    picker.Xa.addEventListener("click", () => picker.setVisible(false));
+    for (const s of Object.keys(pickerStyle)) {
+        picker.W.style[s] = pickerStyle[s];
+    }
+    for (const s of Object.keys(bgStyle)) {
+        picker.Xa.style[s] = bgStyle[s];
+    }
 }
 
 async function setAll() {
