@@ -5,10 +5,12 @@ import {Components} from "../../../Entry/components/Item/components/ItemData";
 
 const Message = ({data}) => {
     const formattedDate = (data.time_sent ? dayjs(data.time_sent.toDate()).format("HH:mm DD.MM") : "");
+    let upload = data.value.upload;
+    let text = data.value.text;
     return (
         <div className={"message"}>
-            {!!data.url && !!data.type && React.createElement(Components[data.type], {data:data})}
-            <p className={"message-text"}>{data.value}</p>
+            {!!upload.url && !!upload.type && React.createElement(Components[upload.type], {data:upload})}
+            <p className={"message-text"}>{text}</p>
             {!!formattedDate && <p className={"message-date"}>{formattedDate}</p>}
         </div>
     );

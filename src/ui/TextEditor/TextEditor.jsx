@@ -14,10 +14,14 @@ const TextEditor = React.forwardRef(function TextEditor({simple, value, callback
 
     function inputCallback(value) {
         if (simple) value = value.replace(/<\/?[^>]+(>|$)/g, "");
-        if (!value) msgRef.current.editor.root.innerHTML = '';
-        else callback(value);
+        if (!value.length){
+            msgRef.current.editor.root.innerHTML = '';
+        }
+        else {
+            callback(value);
+        }
     }
-    
+
     return (
         <ReactQuill className={simple?"ql-simple":""}
                     ref={ref || msgRef}

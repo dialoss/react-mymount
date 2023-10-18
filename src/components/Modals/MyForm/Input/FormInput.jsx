@@ -8,6 +8,7 @@ const FormInput = ({data}) => {
     });
     return (
         <input {...attrs}
+                placeholder={data.placeholder || ''}
                name={data.name}
                value={data.value}
                onChange={data.callback}

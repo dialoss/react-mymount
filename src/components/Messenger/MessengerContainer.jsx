@@ -1,6 +1,7 @@
-import React, {createContext, useEffect, useRef, useState} from 'react';
+import React, {createContext, useEffect, useLayoutEffect, useRef, useState} from 'react';
 import Messenger from "components/Messenger/Messenger";
 import {
+    createUser, getOrCreateUser,
     useGetRoom,
     useGetRooms,
     useGetUsers,
@@ -14,11 +15,11 @@ import {login} from "./api/config";
 export const MessengerContext = createContext({});
 
 const MessengerContainer = ({user}) => {
-    const token = user.firebase;
-    useEffect(() => {
+    useLayoutEffect(() => {
+        let token = user.firebase;
         if (!token) return;
         login(token);
-    }, [token]);
+    }, []);
 
     const windowName = "messenger-window:toggle";
     function openMessenger() {

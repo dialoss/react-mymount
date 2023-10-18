@@ -11,6 +11,8 @@ import {useUserAuth} from "hooks/useUserAuth";
 import MessengerContainer from "../../../components/Messenger/MessengerContainer";
 import Actions from "components/Modals/ContextMenu/components/EntryActions/actions";
 import {useSelector} from "react-redux";
+import {getOrCreateUser} from "../../../components/Messenger/api/firebase";
+import {actions} from "../../User/store/reducers";
 
 const ActionManager = () => {
     function initAction(event) {

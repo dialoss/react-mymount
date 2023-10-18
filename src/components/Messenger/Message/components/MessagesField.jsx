@@ -3,12 +3,12 @@ import MessageBlock from "./MessageBlock";
 import "./MessagesField.scss";
 import {MessengerContext} from "../../MessengerContainer";
 
-const MessagesField = ({messages}) => {
+const MessagesField = ({messages, empty}) => {
     const {user} = useContext(MessengerContext);
 
     const ref = useRef();
     useEffect(() => {
-        ref.current.scroll(0, ref.current.scrollHeight);
+        if (ref.current) ref.current.scrollIntoView({behaviour: 'smooth'});
     }, [messages]);
 
     return (
@@ -16,8 +16,9 @@ const MessagesField = ({messages}) => {
             <div className={"background"}>
                 <div className="pattern"></div>
             </div>
-            <div className="messages-inner">
-                <div className={"messages-field"} ref={ref}>
+            {!empty ?
+                <div className="messages-inner">
+                <div className={"messages-field"}>
                     {
                         messages.map(message => {
                             let side = 'left';
@@ -27,8 +28,12 @@ const MessagesField = ({messages}) => {
                             return <MessageBlock message={message} side={side} key={message.id}></MessageBlock>
                         })
                     }
+                    <div className={'anchor'} ref={ref}></div>
                 </div>
-            </div>
+                </div> :
+                <div className={"chat-empty"}>
+                    выберите чат
+                </div>}
         </div>
     );
 };

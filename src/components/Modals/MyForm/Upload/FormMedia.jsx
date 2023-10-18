@@ -5,7 +5,7 @@ import {Components} from "components/Entry/components/Item/components/ItemData";
 const FormMedia = ({files}) => {
     return (
         <div className={"upload__preview"}
-                                 style={{display:"flex", flexWrap:"wrap", justifyContent:"center", width:400}}>
+                                 style={{display:"flex", flexWrap:"wrap", justifyContent:"center", maxWidth:400}}>
             {
                 Object.values(files).map((file,index) =>
                     <div className={"media-item"} key={index}>

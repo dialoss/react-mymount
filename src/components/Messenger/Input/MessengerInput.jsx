@@ -13,7 +13,7 @@ const MessengerInput = ({message, sendCallback, uploadCallback, textCallback}) =
                 <input type="file" hidden ref={ref} onChange={uploadCallback}/>
                 <Attachment></Attachment>
             </div>
-            {/*<FormMedia files={message.upload}></FormMedia>*/}
+            <FormMedia files={message.upload}></FormMedia>
             <TextEditor value={message.text} callback={textCallback} simple={true}></TextEditor>
             <div className="icon icon-send" onClick={sendCallback}>
                 <Send></Send>

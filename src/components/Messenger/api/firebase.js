@@ -1,13 +1,14 @@
 import { ref, uploadBytes } from "firebase/storage";
 import {
+    doc,
     addDoc,
     collection,
-    getDocs,
+    updateDoc,
     onSnapshot,
     query,
-    serverTimestamp, where
+    serverTimestamp, where, getDocs
 } from "firebase/firestore";
-import {useLayoutEffect, useState} from "react";
+import {useLayoutEffect, useRef, useState} from "react";
 import {useAddEvent} from "hooks/useAddEvent";
 import {db, storage} from "./config";
 import {getFileType} from "components/GooglePicker/helpers/files";
@@ -18,6 +19,7 @@ export async function sendMessage(data) {
         value: data.message,
         time_sent: await serverTimestamp(),
     });
+    updateDoc(doc(db, 'rooms', data.room_id), {lastMessage: data.message.text});
 }
 
 export async function uploadMedia(upload) {
@@ -41,8 +43,8 @@ export function useGetUsers() {
             let newUsers = {};
             q.docs.forEach(doc => {
                 let user = doc.data();
-                if (!user || !user.id) return;
-                newUsers[user.id] = user;
+                if (!user) return;
+                newUsers[user.id] = {...user, id: doc.id};
             });
             setUsers(newUsers);
         });
@@ -59,75 +61,54 @@ export function useGetRooms(user, users) {
             q.docs.forEach(doc => {
                 let room = doc.data();
                 let id = doc.id;
-                if (!room.picture || !room.title) {
-                    let email = Object.values(room.users).filter(e => e !== user.email)[0];
-                    let companion = Object.values(users).find(e => e.email === email);
-                    if (!email) companion = user.current;
-                    if (!companion) return;
-                    room.picture = companion.picture;
-                    room.title = companion.name;
-                }
                 newRooms[id] = {...room, id};
             });
             setRooms(newRooms);
             console.log(newRooms)
         });
         return () => unsubscribe;
-    }, [users]);
-    // useLayoutEffect(() => {
-    //     let newRooms = {};
-    //     Object.values(rooms).forEach(room => {
-    //         if (!room) return;
-    //         if (!room.picture || !room.title) {
-    //             let email = Object.values(room.users).filter(e => e !== user.email)[0];
-    //             let companion = Object.values(users).find(e => e.email === email);
-    //             if (!email) companion = user.current;
-    //             if (!companion) return;
-    //             newRooms[room.id] = {...room, picture: companion.picture, title: companion.name};
-    //         } else {
-    //             newRooms[room.id] = room;
-    //         }
-    //     });
-    //     setRooms(newRooms);
-    // }, []);
+    }, []);
+    useLayoutEffect(() => {
+        let newRooms = {};
+        Object.values(rooms).forEach(room => {
+            if (!room) return;
+            if (!room.picture || !room.title) {
+                let email = Object.values(room.users).filter(e => e !== user.email)[0];
+                let companion = Object.values(users).find(e => e.email === email);
+                if (!email) companion = user;
+                if (!companion) return;
+                newRooms[room.id] = {...room, picture: companion.picture, title: companion.name};
+            } else {
+                newRooms[room.id] = room;
+            }
+        });
+        setRooms(newRooms);
+    }, [Object.keys(rooms).length]);
     return rooms;
 }
 
-async function createUser(user) {
-    addDoc(collection(db, "users"), {
-        id: user.id,
-        email: user.email,
-        name: user.name,
-        picture: user.picture,
-        rooms: [],
-    });
-}
-
-async function createRoom(usersInRoom) {
+export async function createRoom(usersInRoom) {
     await addDoc(collection(db, "rooms"), {
-        users: usersInRoom,
+        users: usersInRoom.map(u => u.email),
         picture: '',
         title: '',
+        lastMessage: '',
+    }).then(room => {
+        usersInRoom.forEach(user => {
+            let userDoc = doc(db, 'users', user.id);
+            updateDoc(userDoc, {'rooms': [...userDoc.rooms, room.id]});
+        })
     });
 }
 
 export function useGetRoom(user, rooms) {
-    const [room, setRoom] = useState({picture: '', title: '', id: 'IpCTTKV8vdsFWsvl077W', });
-
-    useLayoutEffect(() => {
-        getDocs(query(collection(db, "users"), where('email', '==', user.email))).then(async (q) => {
-            if (q.empty) {
-                await createUser(user);
-            } else {
-                // let id = q.docs[0].data().rooms[0];
-                // setRoom(id);
-            }
-        });
-    }, [user]);
+    const [room, setRoom] = useState({picture: '', title: '', id: '', lastMessage: ''});
+    const ref = useRef();
+    ref.current = rooms;
 
     function handleRoom(event) {
-        if (rooms) setRoom(rooms[event.detail]);
-        console.log(event.detail)
+        if (!!Object.values(ref.current).length)
+            setRoom(ref.current[event.detail]);
     }
     useAddEvent("messenger:set-room", handleRoom);
 

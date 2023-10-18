@@ -8,14 +8,13 @@
   &::-webkit-scrollbar {
     width: 14px;
   }
+
   height: 100%;
-  //transform: translate(-50%, 0);
   border-right: $style-border;
 
   .sidebar-item {
     display: flex;
     flex-direction: row;
-    //justify-content: space-between;
     margin-bottom: 10px;
     background-color: $color-main;
     padding: 6px 10px;
@@ -38,12 +37,19 @@
       }
     }
   }
-  .title {
-    font-size: 18px;
-    margin-left: 10px;
-    //text-align: center;
+  .text-wrapper{
+    display: flex;
+    flex-direction: column;
+    row-gap: 5px;
     text-align: left;
     white-space: nowrap;
+    margin-left: 10px;
+  }
+  .text {
+    font-size: 18px;
+  }
+  .subtext {
+    font-size: 14px;
   }
 
   .sidebar-container {
@@ -67,6 +73,10 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    input {
+      width: 80%;
+    }
   }
   .sidebar__users {
     border-bottom: $style-border;

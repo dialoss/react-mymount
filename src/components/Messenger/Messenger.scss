@@ -1,7 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&family=Source+Sans+3:wght@500&display=swap');
 @import "variables";
 .messenger {
-  font-family: 'Roboto', sans-serif;
+  * {
+    font-family: 'Roboto', sans-serif;
+  }
   position: absolute;
   transform: translate(-50%, -50%);
   width: 600px;

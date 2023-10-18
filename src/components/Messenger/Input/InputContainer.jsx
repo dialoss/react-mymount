@@ -1,4 +1,4 @@
-import React, {useContext, useState} from 'react';
+import React, {useContext, useRef, useState} from 'react';
 import {useAddEvent} from "../../../hooks/useAddEvent";
 import {sendMessage, uploadMedia} from "../api/firebase";
 import MessengerInput from "./MessengerInput";
@@ -8,11 +8,14 @@ const InputContainer = ({room}) => {
     const {user} = useContext(MessengerContext);
     const [text, setText] = useState('');
     const [upload, setUpload] = useState([]);
+    const ref = useRef();
+    ref.current = {text, upload};
 
     async function handleMessage() {
-        if (!text.trim() && !upload) return;
+        let {text, upload} = ref.current;
+        if (!text.trim() && !upload.length) return;
         let uploadData = {};
-        if (upload) {
+        if (upload.length) {
             uploadData = await uploadMedia(upload.target.files);
         }
         sendMessage({
@@ -21,7 +24,7 @@ const InputContainer = ({room}) => {
                 upload: uploadData,
             },
             user_id: user.id,
-            room_id: room,
+            room_id: room.id,
         });
         setText('');
         setUpload([]);
@@ -32,7 +35,6 @@ const InputContainer = ({room}) => {
             handleMessage();
         }
     }
-
     useAddEvent("keydown", handleKeydown);
 
     return (

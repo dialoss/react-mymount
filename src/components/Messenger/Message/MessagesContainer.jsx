@@ -7,6 +7,7 @@ import {MessengerContext} from "../MessengerContainer";
 const MessagesContainer = ({room}) => {
     const [messages, setMessages] = useState([]);
     useLayoutEffect(() => {
+        if (!room.id) return;
         const unsubscribe = onSnapshot(query(collection(db, "rooms", room.id, "messages"), orderBy('time_sent')), query => {
             let newMessages = [];
             query.forEach((doc) => {
@@ -19,12 +20,13 @@ const MessagesContainer = ({room}) => {
                 newMessages.push({...msg, id: doc.id});
             });
             setMessages(newMessages);
+            console.log(newMessages)
         });
         return () => unsubscribe;
     }, [room]);
 
     return (
-        <MessagesField messages={messages}></MessagesField>
+        <MessagesField messages={messages} empty={!room.id}></MessagesField>
     );
 };
 

@@ -16,11 +16,11 @@ const Messenger = ({position}) => {
         <div className={"messenger"}>
             <MessengerSidebar></MessengerSidebar>
             <div className="wrapper">
-                {!!room && <div className={"messenger-block"}>
+                <div className={"messenger-block"}>
                     <MessengerHeader room={room}></MessengerHeader>
                     <MessagesContainer room={room}></MessagesContainer>
-                    <InputContainer room={room}></InputContainer>
-                </div>}
+                    {!!room.id && <InputContainer room={room}></InputContainer>}
+                </div>
             </div>
         </div>
     );
