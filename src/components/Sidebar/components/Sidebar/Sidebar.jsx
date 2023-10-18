@@ -4,12 +4,13 @@ import WindowButton from "ui/Buttons/WindowButton/WindowButton";
 import SidebarList from "../List/SidebarList";
 import "./Sidebar.scss";
 import "../Link/SidebarLink.scss";
-import AuthContainer from "modules/Authorization/AuthContainer";
 import Slider from "ui/Slider/Slider";
 import {useAddEvent} from "hooks/useAddEvent";
 import {getElementFromCursor} from "../../../../helpers/events";
 import {useSwipeable} from "react-swipeable";
 import {config} from "../../../../ui/Swipes/config";
+import {Auth} from "modules/Authorization";
+import {Link} from "react-router-dom";
 
 const Sidebar = ({data, picker}) => {
     const [isOpened, setOpened] = useState(true);
@@ -67,10 +68,10 @@ const Sidebar = ({data, picker}) => {
 
     return (
         <div className="sidebar" {...swipeClose}>
-            <Slider togglers={togglers} opened={150} closed={0} defaultOpened={isOpened}>
+            <Slider togglers={togglers} defaultOpened={isOpened}>
                 <div className="sidebar__wrapper" ref={ref}>
                     <div className="sidebar__inner">
-                        <AuthContainer></AuthContainer>
+                        <Auth><Link to={'/customer/'}></Link></Auth>
                         {picker && <GooglePicker className={"sidebar__link"} style={{marginTop: 5}}>Хранилище</GooglePicker>}
                         <SidebarList list={data}></SidebarList>
                     </div>

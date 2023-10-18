@@ -8,7 +8,7 @@ const MessagesField = ({messages, empty}) => {
 
     const ref = useRef();
     useEffect(() => {
-        if (ref.current) ref.current.scrollIntoView({behaviour: 'smooth'});
+        if (ref.current) ref.current.scrollIntoView({behavior: 'smooth'});
     }, [messages]);
 
     return (
@@ -28,7 +28,7 @@ const MessagesField = ({messages, empty}) => {
                             return <MessageBlock message={message} side={side} key={message.id}></MessageBlock>
                         })
                     }
-                    <div className={'anchor'} ref={ref}></div>
+                    <div className={'anchor'} style={{height:1}} ref={ref}></div>
                 </div>
                 </div> :
                 <div className={"chat-empty"}>

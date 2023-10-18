@@ -11,17 +11,18 @@ const Modal = ({content, isOpened, closeCallback}) => {
             ref.current.style.top = py + "px";
         }
     }, [content]);
-
+    const opened = (isOpened ? "opened" : "");
     return (
         <div className={"modal"}>
-            <div className={"modal__wrapper " + (isOpened ? "opened" : "")}>
-                <div className={"modal__background"} style={!!content?content.props.style:{}}
+            <div className={"modal__wrapper"}>
+                <div className={`modal__background ${opened} ${(content?content.props.style:'')}`}
                      onClick={(event) => {
                          event.stopPropagation();
                          closeCallback();
                      }}>
                 </div>
-                <div className="modal__window" style={content.props.position||{}} ref={ref}>
+                <div className={"modal__window " + opened}
+                     style={content.props.position||{}} ref={ref}>
                     <div className="modal__content">
                         {content}
                     </div>

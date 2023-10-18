@@ -30,7 +30,7 @@ const ContextMenuContainer = ({actions}) => {
 
     return (
         <ModalManager name={name} key={name}>
-            <ContextMenu style={{opacity: "0"}} actions={actions} position={position}></ContextMenu>
+            <ContextMenu style='without-bg' actions={actions} position={position}></ContextMenu>
         </ModalManager>
     );
 };

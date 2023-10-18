@@ -5,10 +5,27 @@
     .ql-editor {
         border-radius: 0;
         background-color: $color-main;
+        padding: 5px 0;
+        text-align: left;
+    }
+    .editor-wrapper {
+        border-top: $style-border;
+    }
+    .ql-editor.ql-blank::before {
+        width: 100%;
+        left: 0;
+        font-size: 14px;
+        top: 50%;
+        opacity: 0.9;
+        transform: translate(0, -50%);
+    }
+    .ql-simple {
+        padding: 0 50px;
     }
     .ql-simple .ql-container {
-        padding: 0 50px;
-        border-top: $style-border;
+        min-height: 50px;
+        display: flex;
+        align-items: center;
     }
     .icon {
         position: absolute;
@@ -28,5 +45,14 @@
             filter: invert(72%) sepia(44%) saturate(4344%) hue-rotate(175deg) brightness(89%) contrast(90%);
             right: 10px;
         }
+    }
+    .uploads {
+        position: absolute;
+        top: -30px;
+        background-color: $color-main;
+        border-radius: 8px;
+        box-shadow: 0 0 2px 0 grey;
+        padding: 4px;
+        margin-left: 5px;
     }
 }

@@ -4,15 +4,13 @@ import {useAddEvent} from "hooks/useAddEvent";
 import {setActionElement} from "./helpers";
 import EditorManager from "components/EditorManager/EditorManager";
 import ObjectTransform from "ui/ObjectTransform/ObjectTransform";
-import {triggerEvent} from "helpers/events";
 import CarouselContainer from "components/Modals/Carousel/CarouselContainer";
 import {ActionForm} from "modules/ActionForm";
-import {useUserAuth} from "hooks/useUserAuth";
 import MessengerContainer from "../../../components/Messenger/MessengerContainer";
 import Actions from "components/Modals/ContextMenu/components/EntryActions/actions";
 import {useSelector} from "react-redux";
-import {getOrCreateUser} from "../../../components/Messenger/api/firebase";
-import {actions} from "../../User/store/reducers";
+import ActionButton from "../../../ui/Buttons/ActionButton/ActionButton";
+import {triggerEvent} from "../../../helpers/events";
 
 const ActionManager = () => {
     function initAction(event) {
@@ -37,7 +35,11 @@ const ActionManager = () => {
             <ActionForm></ActionForm>
             <ObjectTransform></ObjectTransform>
             <CarouselContainer></CarouselContainer>
-            {user.authenticated && <MessengerContainer user={user}></MessengerContainer>}
+            {user.authenticated && <MessengerContainer user={user} appName={'mymount'}></MessengerContainer>}
+            {<ActionButton onClick={() =>
+                triggerEvent('messenger-window:toggle', {toggle: true})
+            } style={{position:"fixed",right:40, bottom:20, backgroundColor:'#c73737', zIndex: 10}}>
+                Связаться со мной</ActionButton>}
         </>
     );
 };

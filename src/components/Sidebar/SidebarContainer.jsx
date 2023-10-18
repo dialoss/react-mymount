@@ -22,8 +22,7 @@ const SidebarContainer = () => {
 
     return (
         <Sidebar picker={userAuth}
-                 data={{sublist:pages, depth:-1}}
-                 key={pages.length}/>
+                 data={{sublist:pages, depth:-1}}/>
     );
 };
 

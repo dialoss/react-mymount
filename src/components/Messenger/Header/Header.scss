@@ -4,6 +4,7 @@
   height: 70px;
   position: relative;
   padding: 10px 0;
+  padding-right: 60px;
 
   background-color: $color-main;
   border-bottom: $style-border;
@@ -12,10 +13,17 @@
   align-items: center;
 
   .avatar {
-    margin-left: 20px;
+    width: 40px;
+    margin-left: 10px;
   }
   .title {
-    margin-left: 10px;
+    font-weight: 600;
+    padding-left: 10px;
+    overflow: hidden;
+    word-break: break-word;
+    //height: 20px;
+    //white-space: nowrap;
+    //word-break: keep-all;
   }
 
   .window-button {

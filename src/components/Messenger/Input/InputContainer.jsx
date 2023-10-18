@@ -9,14 +9,14 @@ const InputContainer = ({room}) => {
     const [text, setText] = useState('');
     const [upload, setUpload] = useState([]);
     const ref = useRef();
-    ref.current = {text, upload};
+    ref.current = {text, upload, room};
 
     async function handleMessage() {
-        let {text, upload} = ref.current;
+        let {text, upload, room} = ref.current;
         if (!text.trim() && !upload.length) return;
         let uploadData = {};
-        if (upload.length) {
-            uploadData = await uploadMedia(upload.target.files);
+        if (!!upload.length) {
+            uploadData = await uploadMedia(upload);
         }
         sendMessage({
             message: {
@@ -31,17 +31,17 @@ const InputContainer = ({room}) => {
     }
 
     function handleKeydown(event) {
-        if (event.keyCode === 13) {
+        if (event.detail.keyCode === 13) {
             handleMessage();
         }
     }
-    useAddEvent("keydown", handleKeydown);
+    useAddEvent("messenger:keydown", handleKeydown);
 
     return (
         <MessengerInput message={{text, upload}}
                         sendCallback={handleMessage}
                         textCallback={setText}
-                        uploadCallback={setUpload}
+                        uploadCallback={(v) => setUpload(Object.values(v.target.files))}
         ></MessengerInput>
     );
 };

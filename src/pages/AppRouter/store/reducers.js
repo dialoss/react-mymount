@@ -3,15 +3,15 @@ import {createSlice} from "@reduxjs/toolkit";
 export const locationSlice = createSlice({
     name: "location",
     initialState: {
-        baseURL : 'http://localhost:8000',
+        baseURL : 'https://e3f50bccca998ff23db2fafb4567b35d.serveo.net',
         pages : {},
-        pageID : null,
-        fullURL : null,
-        relativeURL : null,
-        pageSlug : null,
-        pageTitle: null,
-        parentURL : null,
-        parentSlug : null,
+        pageID : '',
+        fullURL : '',
+        relativeURL : '',
+        pageSlug : '',
+        pageTitle: '',
+        parentURL : '',
+        parentSlug : '',
         views: {
             curViews: 0,
             totalViews: 0,

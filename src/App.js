@@ -1,29 +1,18 @@
 import React from "react";
 import 'styles/App.scss';
-import {TemplatePage} from "pages/TemplatePage";
-import Giscus from '@giscus/react';
+import {Messenger} from "./components/Messenger";
+import {useSelector} from "react-redux";
+import Sidebar from "./components/Sidebar/components/Sidebar/Sidebar";
 
 function App() {
+    const user = useSelector(state => state.user);
     return (
         <div className="App">
-            {/*<div className="comments__wrapper">*/}
-            {/*    <Giscus*/}
-            {/*        id="comments"*/}
-            {/*        repo="dialoss/react-mymount"*/}
-            {/*        repoId="R_kgDOKRa10g"*/}
-            {/*        category="Announcements"*/}
-            {/*        categoryId="DIC_kwDOKRa10s4CZ9FH"*/}
-            {/*        mapping="title"*/}
-            {/*        term="Привет!"*/}
-            {/*        reactionsEnabled="1"*/}
-            {/*        emitMetadata="1"*/}
-            {/*        input-position="top"*/}
-            {/*        theme="light_high_contrast"*/}
-            {/*        lang="ru"*/}
-            {/*        loading="lazy"*/}
-            {/*    />*/}
-            {/*</div>*/}
-            <TemplatePage/>
+            {/*<p className={'chat'}>ЧАТ</p>*/}
+            <Sidebar picker={false}
+                     data={{sublist:[], depth:-1}}/>
+            {!!user.email && <Messenger appName={'test'} user={user}></Messenger>}
+            {/*<TemplatePage/>*/}
         </div>
     );
 }

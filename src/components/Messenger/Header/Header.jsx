@@ -7,8 +7,8 @@ import {MessengerContext} from "../MessengerContainer";
 const MessengerHeader = ({room}) => {
     return (
         <div className={"messenger-header"}>
-            <Avatar src={room.picture} style={{width:50, height:50}}></Avatar>
-            <h3 className={"title"}>{room.title}</h3>
+            {!!room.picture && <Avatar src={room.picture} style={{width:50, height:50}}></Avatar>}
+            <p className={"title"}>{room.title}</p>
             <WindowButton type={'close'}></WindowButton>
         </div>
     );

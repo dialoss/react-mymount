@@ -1,7 +1,9 @@
 import {initializeApp} from "firebase/app";
 import {getAuth, signInWithCustomToken} from "firebase/auth";
-import {getFirestore} from "firebase/firestore";
+import {doc, getFirestore} from "firebase/firestore";
 import {getStorage} from "firebase/storage";
+import store from "store";
+import {actions} from "../store/reducers";
 
 export const firebaseConfig = {
     serviceAccountId: 'firebase-adminsdk-8e42m@mymount-d1cad.iam.gserviceaccount.com',
@@ -13,14 +15,20 @@ export const firebaseConfig = {
     appId: "1:552748272683:web:00316f5db5feb7a29e6e6e",
 }
 
-const adminEmail = 'matthewwimsten@gmail.com';
-
+export const adminEmail = "redshock75@gmail.com";
 const app = initializeApp(firebaseConfig);
 
 export const auth = getAuth();
 export const db = getFirestore(app);
 export const storage = getStorage(app);
 
+export let base = doc(db, 'apps', 'test');
+
 export function login(token) {
     signInWithCustomToken(auth, token);
+}
+
+export function setAppName(name) {
+    // base = doc(db, 'apps', name);
+    store.dispatch(actions.setName(name));
 }

@@ -1,6 +1,6 @@
 @import "../variables";
 .messenger__sidebar {
-  padding: 10px 0;
+  padding-bottom: 10px;
   background-color: $color-main;
   overflow-y: auto;
   overflow-x: hidden;
@@ -8,23 +8,17 @@
   &::-webkit-scrollbar {
     width: 14px;
   }
-
+  transition: all 0.2s linear;
+  //width: 150px;
   height: 100%;
   border-right: $style-border;
 
   .sidebar-item {
-    display: flex;
-    flex-direction: row;
-    margin-bottom: 10px;
+    height: 60px;
     background-color: $color-main;
-    padding: 6px 10px;
-    //
-    //@include mobile {
-    //  .title {
-    //    display: none;
-    //  }
-    //}
-
+    padding: 8px 10px;
+    display: flex;
+    align-items: center;
     transition: all 0.2s linear;
     &:hover {
       cursor: pointer;
@@ -36,6 +30,9 @@
         color: white;
       }
     }
+    &.new {
+      background-color: rgba(138, 138, 138, 0.53);
+    }
   }
   .text-wrapper{
     display: flex;
@@ -43,17 +40,60 @@
     row-gap: 5px;
     text-align: left;
     white-space: nowrap;
-    margin-left: 10px;
+    padding-left: 10px;
+    width: 100%;
   }
   .text {
     font-size: 18px;
   }
   .subtext {
     font-size: 14px;
+    max-width: 15ch;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+  .text-block {
+    //width: 100%;
+    //overflow: hidden;
+    //display: flex;
+    //justify-content: space-between;
   }
 
   .sidebar-container {
-    margin-top: 60px;
+    padding-top: 30px;
+  }
+
+  .slider {
+    &.opened {
+      width: 200px;
+      @include mobile {
+        & {
+          width: 180px;
+        }
+      }
+    }
+    &.closed {
+      width: 70px;
+    }
+  }
+
+  &.opened {
+    .sidebar__search{
+      opacity: 1;
+    }
+    .avatar img {
+      width: 30px;
+    }
+  }
+  &.closed {
+    .sidebar__search{
+      opacity: 0;
+    }
+    @include mobile {
+      .avatar img {
+        width: 50px;
+      }
+    }
   }
 
   .slider__togglers {
@@ -73,9 +113,15 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
+    margin-bottom: 8px;
+    text-align: center;
+    transition: all 0.2s linear;
     input {
+      height: 30px;
       width: 80%;
+    }
+    p {
+      margin-top: 4px;
     }
   }
   .sidebar__users {

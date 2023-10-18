@@ -1,5 +1,5 @@
 import store from "store";
-import {actions} from "../store/reducers";
+import {actions} from "../store/credentials/reducers";
 import {sendLocalRequest} from "api/requests";
 
 export default class Credentials {

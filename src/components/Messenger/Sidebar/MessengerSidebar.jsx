@@ -9,11 +9,14 @@ import {MessengerContext} from "components/Messenger/MessengerContainer";
 import SidebarList from "./SidebarList";
 import FormInput from "../../Modals/MyForm/Input/FormInput";
 import {createRoom} from "../api/firebase";
+import {useSwipeable} from "react-swipeable";
+import {config} from "../../../ui/Swipes/config";
 
 const MessengerSidebar = () => {
     const {rooms, room, users, user} = useContext(MessengerContext);
 
     function setRoom(id) {
+        triggerEvent("messenger:update-room", id);
         triggerEvent("messenger:set-room", id);
     }
 
@@ -29,15 +32,28 @@ const MessengerSidebar = () => {
         }
     ];
 
+    const swipeClose = useSwipeable({
+        onSwiped: (eventData) => {
+            console.log(eventData)
+            if (eventData.dir === 'Left' && isOpened) setOpened(false);
+        },
+        ...config,
+    });
+
     async function getOrCreateRoom(item) {
         let room = null;
-        Object.values(rooms).forEach(r => {
-           if (r.users.includes(users[item].email) &&
-               r.users.includes(user.email)) room = rooms[r.id];
-        });
-        if (!room) {
-            await createRoom([users[item], user]);
+        let check = [users[item].email, user.email].sort();
+        const equal = (a, b) => a.every((el, i) => el === b[i]);
+        for (const r of Object.values(rooms)) {
+            if (equal(r.users.sort(),check)) {
+                room = rooms[r.id];
+                break;
+            }
         }
+        if (!room) {
+            room = await createRoom([users[item], user]);
+        }
+        setRoom(room.id);
     }
 
     const [userList, setUserList] = useState([]);
@@ -51,18 +67,17 @@ const MessengerSidebar = () => {
         }
         let newUsers = {};
         Object.values(users).forEach(user => {
-            if (user.name.toLowerCase().includes(value)) {
+            if (user.name.toLowerCase().includes(value.toLowerCase())) {
                 newUsers[user.id] = user;
             }
         })
         setUserList(newUsers);
     }
-
     return (
-        <div className={"messenger__sidebar"}>
-            <Slider togglers={togglers} opened={300} closed={70}>
+        <div className={"messenger__sidebar " + (isOpened ? 'opened' : 'closed')} {...swipeClose}>
+            <Slider togglers={togglers} callback={(v) => setOpened(v)} defaultOpened={isOpened}>
                 <div className={"sidebar-container"}>
-                    <div className="sidebar__search">
+                    <div className={"sidebar__search"}>
                         <FormInput data={{
                             name: 'search',
                             value: search,
@@ -75,14 +90,14 @@ const MessengerSidebar = () => {
                                  list={userList}
                                  currentItem={() => false}
                                  text={'name'}
-                                 selectCallback={getOrCreateRoom}>
+                                 selectCallback={getOrCreateRoom} user={user}>
                     </SidebarList>
                     <SidebarList className={'sidebar__rooms'}
                                  list={rooms}
                                  currentItem={(id) => id === room.id}
                                  text={'title'}
-                                 subtext={'lastMessage'}
-                                 selectCallback={setRoom}>
+                                 subtext={true}
+                                 selectCallback={setRoom} user={user}>
                     </SidebarList>
                 </div>
             </Slider>
