@@ -70,9 +70,7 @@ export function setActionElement(event) {
     } else {
         if (event.ctrlKey) setElements();
     }
-
     console.log(actionElement, actionElements);
-    return actionElement;
 }
 
 function getElementPosition(id) {

@@ -7,7 +7,7 @@ const Avatar = ({style, hover, ...props}) => {
         <div className={"avatar " + styles.avatar + ' ' + (hover ? styles.hover : "")}>
             {!!src ?
                 <img src={src} alt=""/> :
-                <div className={styles.placeholder}></div>
+                <span className={styles.placeholder}></span>
             }
         </div>
     );

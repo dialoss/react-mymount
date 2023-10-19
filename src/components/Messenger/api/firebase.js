@@ -7,11 +7,11 @@ import {
     updateDoc,
     onSnapshot,
     query,
-    serverTimestamp, where, getDocs, orderBy
+    serverTimestamp, where
 } from "firebase/firestore";
 import {useLayoutEffect, useRef, useState} from "react";
 import {useAddEvent} from "hooks/useAddEvent";
-import {adminEmail, base, storage} from "./config";
+import {adminEmail, appName, base, storage} from "./config";
 import {getFileType} from "components/GooglePicker/helpers/files";
 import store from "../../../store";
 
@@ -31,7 +31,7 @@ export async function uploadMedia(uploads) {
         filename: upload.name,
     };
     const time = new Date().getTime()
-    const uploadRef = ref(storage, store.getState().messenger + '/messages/' + data.filename + time + '.' + data.type);
+    const uploadRef = ref(storage, appName + '/messages/' + data.filename + time + '.' + data.type);
     await uploadBytes(uploadRef, upload).then((snapshot) => {
         data.url = snapshot.metadata.fullPath;
     });
@@ -125,8 +125,10 @@ export async function createRoom(usersInRoom) {
     return room;
 }
 
+const emptyRoom = {picture: '', title: '', id: '', lastMessage: ''};
+
 export function useGetRoom(user, rooms, setRooms) {
-    const [room, setRoom] = useState({picture: '', title: '', id: '', lastMessage: ''});
+    const [room, setRoom] = useState(emptyRoom);
     const ref = useRef();
     ref.current = rooms;
 
@@ -137,13 +139,16 @@ export function useGetRoom(user, rooms, setRooms) {
     }, [rooms]);
 
     function setCurrentRoom(event) {
-        if (!!Object.values(ref.current).length) {
-            setRoom(ref.current[event.detail]);
+        let id = event.detail;
+        if (!id) setRoom(emptyRoom);
+        else if (!!Object.values(ref.current).length) {
+            setRoom(ref.current[id]);
         }
     }
 
     function updateRoom(event) {
         let id = event.detail;
+        if (!id) return;
         let room = ref.current[id];
         if (room.lastMessage.user === user.id) return;
         setRooms(rooms => {

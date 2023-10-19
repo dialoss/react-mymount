@@ -1,8 +1,7 @@
-import React, {useContext, useLayoutEffect, useRef, useState} from 'react';
+import React, {useLayoutEffect, useState} from 'react';
 import {collection, onSnapshot, orderBy, query} from "firebase/firestore";
-import {base} from "../api/config";
+import {appName, base} from "../api/config";
 import MessagesField from "./components/MessagesField";
-import store from "store";
 
 function getMessages(room, setMessages) {
     if (!room.id) return () => {};
@@ -14,7 +13,7 @@ function getMessages(room, setMessages) {
             if (!!url) {
                 let name = url.split('/').slice(-1)[0];
                 msg.value.upload.url =
-                    `https://firebasestorage.googleapis.com/v0/b/mymount-d1cad.appspot.com/o/${store.getState().messenger}%2Fmessages%2F${name}?alt=media`
+                    `https://firebasestorage.googleapis.com/v0/b/mymount-d1cad.appspot.com/o/${appName}%2Fmessages%2F${name}?alt=media`
             }
             newMessages.push({...msg, id: doc.id});
         });

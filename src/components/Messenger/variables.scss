@@ -6,3 +6,9 @@ $color-main: #fdfdfd;
 	@content;
   }
 }
+
+@mixin center-absolute {
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+}

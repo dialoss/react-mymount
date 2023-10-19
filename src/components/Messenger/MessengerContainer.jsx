@@ -12,11 +12,11 @@ import {login, setAppName} from "./api/config";
 export const MessengerContext = createContext({});
 
 const MessengerContainer = ({appName, user}) => {
+    setAppName(appName);
     useLayoutEffect(() => {
         let token = user.firebase;
         if (!token) return;
         login(token);
-        setAppName(appName);
     }, []);
 
     const windowName = "messenger-window:toggle";
@@ -29,7 +29,7 @@ const MessengerContainer = ({appName, user}) => {
         <MessengerContext.Provider value={{user, rooms, room, users}}>
             {!!Object.values(users).length &&
             <ModalManager name={windowName} defaultOpened={true} closeConditions={['btn']}>
-                <Messenger style='without-bg'></Messenger>
+                <Messenger style={{bg:'without-bg', win: 'centered'}}></Messenger>
             </ModalManager>}
         </MessengerContext.Provider>
     );

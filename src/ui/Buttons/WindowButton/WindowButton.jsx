@@ -10,7 +10,7 @@ const ComponentSVG = {
 
 const WindowButton = ({type, ...props}) => {
     return (
-        <button {...props} className={`window-button window-${type}`}>
+        <button {...props} className={`window-button window-${type} ${props.className}`}>
             <img src={ComponentSVG[type]} alt={""}/>
         </button>
     );

@@ -16,6 +16,7 @@ const MessengerSidebar = () => {
     const {rooms, room, users, user} = useContext(MessengerContext);
 
     function setRoom(id) {
+        if (room.id === id) id = '';
         triggerEvent("messenger:update-room", id);
         triggerEvent("messenger:set-room", id);
     }
@@ -32,10 +33,11 @@ const MessengerSidebar = () => {
         }
     ];
 
-    const swipeClose = useSwipeable({
+    const swipes = useSwipeable({
         onSwiped: (eventData) => {
             console.log(eventData)
             if (eventData.dir === 'Left' && isOpened) setOpened(false);
+            if (eventData.dir === 'Right' && !isOpened) setOpened(true);
         },
         ...config,
     });
@@ -74,7 +76,7 @@ const MessengerSidebar = () => {
         setUserList(newUsers);
     }
     return (
-        <div className={"messenger__sidebar " + (isOpened ? 'opened' : 'closed')} {...swipeClose}>
+        <div className={"messenger__sidebar " + (isOpened ? 'opened' : 'closed')} {...swipes}>
             <Slider togglers={togglers} callback={(v) => setOpened(v)} defaultOpened={isOpened}>
                 <div className={"sidebar-container"}>
                     <div className={"sidebar__search"}>

@@ -71,7 +71,9 @@ const Sidebar = ({data, picker}) => {
             <Slider togglers={togglers} defaultOpened={isOpened}>
                 <div className="sidebar__wrapper" ref={ref}>
                     <div className="sidebar__inner">
-                        <Auth><Link to={'/customer/'}></Link></Auth>
+                        <Auth>
+                            {/*<Link to={'/customer/'}></Link>*/}
+                        </Auth>
                         {picker && <GooglePicker className={"sidebar__link"} style={{marginTop: 5}}>Хранилище</GooglePicker>}
                         <SidebarList list={data}></SidebarList>
                     </div>

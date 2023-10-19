@@ -2,47 +2,47 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9b37537a-6286-4d32-9202-d8554b8ac243" name="Changes" comment="messenger">
-      <change afterPath="$PROJECT_DIR$/src/components/Messenger/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Messenger/store/reducers.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/modules/Authorization/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Modals/Carousel/components/Carousel/CarouselButton.module.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Messenger/Header/Header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Messenger/Header/Header.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Entry/components/Item/components/Image/ItemImage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Entry/components/Item/components/Image/ItemImage.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Messenger/Header/Header.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Messenger/Header/Header.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Messenger/Input/InputContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Messenger/Input/InputContainer.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Messenger/Input/MessengerInput.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Messenger/Input/MessengerInput.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Messenger/Input/MessengerInput.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Messenger/Input/MessengerInput.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Messenger/Message/MessagesContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Messenger/Message/MessagesContainer.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Messenger/Message/components/Message.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Messenger/Message/components/Message.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Messenger/Message/components/MessageBlock.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Messenger/Message/components/MessageBlock.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Messenger/Message/components/MessagesField.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Messenger/Message/components/MessagesField.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Messenger/Message/components/MessagesField.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Messenger/Message/components/MessagesField.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Messenger/Messenger.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Messenger/Messenger.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Messenger/MessengerContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Messenger/MessengerContainer.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Messenger/Sidebar/MessengerSidebar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Messenger/Sidebar/MessengerSidebar.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Messenger/Sidebar/MessengerSidebar.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Messenger/Sidebar/MessengerSidebar.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Messenger/Sidebar/SidebarList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Messenger/Sidebar/SidebarList.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Messenger/api/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Messenger/api/config.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Messenger/api/firebase.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Messenger/api/firebase.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Messenger/variables.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Messenger/variables.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/ModalManager/components/ModalManager.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ModalManager/components/ModalManager.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Modals/Carousel/CarouselContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Modals/Carousel/CarouselContainer.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Modals/Carousel/components/Carousel/Carousel.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Modals/Carousel/components/Carousel/Carousel.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Modals/Carousel/components/Carousel/Carousel.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Modals/Carousel/components/Carousel/Carousel.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Modals/ContextMenu/ContextMenuContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Modals/ContextMenu/ContextMenuContainer.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Sidebar/SidebarContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Sidebar/SidebarContainer.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Sidebar/components/Sidebar/Sidebar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Sidebar/components/Sidebar/Sidebar.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Sidebar/components/Sidebar/Sidebar.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Sidebar/components/Sidebar/Sidebar.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modules/ActionManager/components/ActionManager.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/ActionManager/components/ActionManager.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modules/ActionManager/components/helpers.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/ActionManager/components/helpers.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/modules/Authorization/AuthContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/Authorization/AuthContainer.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modules/Authorization/api/googleapi.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/Authorization/api/googleapi.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/modules/Authorization/components/Auth.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/Authorization/components/Auth.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modules/Authorization/store/reducers.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/Authorization/store/credentials/reducers.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modules/EntryList/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/EntryList/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modules/User/store/reducers.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/Authorization/store/user/reducers.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/AppRouter/store/reducers.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/AppRouter/store/reducers.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/styles/App.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/App.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/_constants.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/_constants.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ui/Avatar/Avatar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/Avatar/Avatar.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ui/Avatar/Avatar.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/Avatar/Avatar.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/Buttons/WindowButton/WindowButton.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/Buttons/WindowButton/WindowButton.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ui/Modal/Modal.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/Modal/Modal.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ui/Modal/Modal.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/Modal/Modal.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/Slider/Slider.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/Slider/Slider.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/Slider/Slider.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/Slider/Slider.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ui/TextEditor/TextEditor.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/TextEditor/TextEditor.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/helpers/viewport.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/helpers/viewport.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,8 +53,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="tsconfig.json" />
-        <option value="SCSS File" />
         <option value="JavaScript File" />
+        <option value="SCSS File" />
       </list>
     </option>
   </component>
@@ -201,7 +201,7 @@
       <workItem from="1697098271484" duration="7294000" />
       <workItem from="1697284891156" duration="88867000" />
       <workItem from="1697529270352" duration="79513000" />
-      <workItem from="1697659855412" duration="8038000" />
+      <workItem from="1697659855412" duration="40859000" />
     </task>
     <task id="LOCAL-00001" summary="Initial">
       <created>1693824071090</created>
@@ -511,7 +511,14 @@
       <option name="project" value="LOCAL" />
       <updated>1697622902697</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="messenger">
+      <created>1697669279951</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1697669279951</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

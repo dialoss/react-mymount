@@ -22,13 +22,14 @@ export const auth = getAuth();
 export const db = getFirestore(app);
 export const storage = getStorage(app);
 
-export let base = doc(db, 'apps', 'test');
+export let base = null;
+export let appName = null;
 
 export function login(token) {
     signInWithCustomToken(auth, token);
 }
 
 export function setAppName(name) {
-    // base = doc(db, 'apps', name);
-    store.dispatch(actions.setName(name));
+    base = doc(db, 'apps', name);
+    appName = name;
 }

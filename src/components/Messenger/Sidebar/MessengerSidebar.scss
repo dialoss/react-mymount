@@ -9,16 +9,23 @@
     width: 14px;
   }
   transition: all 0.2s linear;
-  //width: 150px;
   height: 100%;
   border-right: $style-border;
 
   .sidebar-item {
+    height: 44px;
+    display: flex;
+    margin: 8px 6px;
+  }
+  span .wrapper {
+    overflow-x: hidden;
+    display: inline-block;
+    width: 100%;
+  }
+  .sidebar-item__wrapper {
     height: 60px;
     background-color: $color-main;
-    padding: 8px 10px;
-    display: flex;
-    align-items: center;
+    overflow: hidden;
     transition: all 0.2s linear;
     &:hover {
       cursor: pointer;
@@ -35,32 +42,44 @@
     }
   }
   .text-wrapper{
+    flex-grow: 1;
+    padding-left: 5px;
+    transition: all 0.2s linear;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     row-gap: 5px;
+    height: 100%;
+    width: 70%;
     text-align: left;
     white-space: nowrap;
-    padding-left: 10px;
-    width: 100%;
   }
   .text {
+    display: inline-block;
     font-size: 18px;
+    width: 90%;
   }
   .subtext {
     font-size: 14px;
-    max-width: 15ch;
     white-space: nowrap;
-    overflow: hidden;
+    &-message {
+      display: inline-block;
+      width: 70%;
+    }
+  }
+  .text-inner {
+    position: absolute;
+    display: inline-block;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
   }
   .text-block {
-    //width: 100%;
-    //overflow: hidden;
-    //display: flex;
-    //justify-content: space-between;
-  }
-
-  .sidebar-container {
-    padding-top: 30px;
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
   }
 
   .slider {
@@ -73,26 +92,35 @@
       }
     }
     &.closed {
-      width: 70px;
+      width: 60px;
     }
   }
-
+  .avatar__wrapper {
+    display: flex;
+    align-items: center;
+  }
   &.opened {
     .sidebar__search{
       opacity: 1;
     }
-    .avatar img {
+    .text-wrapper {
+      display: flex;
+    }
+    .avatar {
       width: 30px;
+      height: 30px;
     }
   }
   &.closed {
     .sidebar__search{
       opacity: 0;
     }
-    @include mobile {
-      .avatar img {
-        width: 50px;
-      }
+    .text-wrapper {
+      display: none;
+    }
+    .avatar  {
+     width: 50px;
+     height: 50px;
     }
   }
 
@@ -107,13 +135,18 @@
     justify-content: center;
   }
 
+  .sidebar__rooms {
+    margin-top: 4px;
+  }
+
   .sidebar__search {
     width: 100%;
+    padding: 0 5px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-bottom: 8px;
+    margin: 8px 0;
     text-align: center;
     transition: all 0.2s linear;
     input {

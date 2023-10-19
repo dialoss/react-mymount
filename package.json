@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@giscus/react": "^2.3.0",
+    "@react-oauth/google": "^0.11.1",
     "@react-three/drei": "^9.84.2",
     "@react-three/fiber": "^8.14.2",
     "@reduxjs/toolkit": "^1.9.5",

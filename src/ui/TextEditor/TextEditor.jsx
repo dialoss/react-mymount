@@ -8,6 +8,7 @@ import {triggerEvent} from "../../helpers/events";
 const TextEditor = React.forwardRef(function TextEditor({simple, value, callback}, ref) {
     useLayoutEffect(() => {
         configQuill();
+        let editor = msgRef.current.getEditor().container;
         let field = msgRef.current.getEditor().root;
         field.dataset.placeholder = 'Сообщение';
         field.focus();
@@ -30,15 +31,19 @@ const TextEditor = React.forwardRef(function TextEditor({simple, value, callback
     }
 
     function inputCallback(value) {
+        let enter = (simple && value.includes('<br>'));
         if (simple) value = clearText(value);
         let field = msgRef.current.getEditor();
-        field.focus();
         if (!value.length && !clearText(field.getText())){
-            field.innerHTML = '';
+            field.setContents([]);
         }
         else {
+            if (enter) field.setContents([]);
             callback(value);
         }
+        field.focus();
+        let inputHeight = field.root.querySelector('p').getBoundingClientRect().height;
+        field.container.style.height = Math.max(Math.min(300, inputHeight), 50) + 'px';
     }
 
     return (

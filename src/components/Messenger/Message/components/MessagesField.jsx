@@ -8,7 +8,7 @@ const MessagesField = ({messages, empty}) => {
 
     const ref = useRef();
     useEffect(() => {
-        if (ref.current) ref.current.scrollIntoView({behavior: 'smooth'});
+        if (ref.current) ref.current.scrollIntoView({behavior: 'smooth', block:'nearest', inline:'start'});
     }, [messages]);
 
     return (

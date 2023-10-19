@@ -39,6 +39,9 @@ const CarouselContainer = () => {
                 return;
             }
         }
+        dispatch([event.detail]);
+        setCurrent(0);
+        triggerEvent(windowName, {isOpened: true});
     }, []);
 
     useAddEvent("carousel:open", openCarousel);
@@ -66,7 +69,7 @@ const CarouselContainer = () => {
 
     useLayoutEffect(() => {
         if (!!currentItem) {
-            new Image().src = items[currentItem].image
+            new Image().src = items[currentItem].url
         }
     }, [currentItem]);
 
@@ -76,7 +79,7 @@ const CarouselContainer = () => {
         <>
             {!!items.length && currentItem < items.length &&
                 <ModalManager name={windowName} key={windowName}>
-                    <Carousel item={items[currentItem]}/>
+                    <Carousel style={{win: 'centered'}} item={items[currentItem]}/>
                 </ModalManager>
             }
         </>

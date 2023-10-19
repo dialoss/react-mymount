@@ -3,10 +3,9 @@ export function getViewportSize() {
         Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0)];
 }
 
-export function getCorrectedPosition(element) {
+export function getCorrectedPosition(element, pos) {
     let block = element.getBoundingClientRect();
-    let posX = block.left;
-    let posY = block.top;
+    let [posX, posY] = pos;
 
     let bRight = posX + block.width;
     let bBottom = posY + block.height;

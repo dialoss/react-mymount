@@ -3,7 +3,7 @@ import {createSlice} from "@reduxjs/toolkit";
 export const locationSlice = createSlice({
     name: "location",
     initialState: {
-        baseURL : 'https://e3f50bccca998ff23db2fafb4567b35d.serveo.net',
+        baseURL : 'https://mymountmt.ru',
         pages : {},
         pageID : '',
         fullURL : '',

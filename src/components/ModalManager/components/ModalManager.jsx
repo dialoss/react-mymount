@@ -37,7 +37,7 @@ const ModalManager = ({name, children, callback=null, defaultOpened=false, close
             <Modal content={children}
                    isOpened={isOpened}
                    closeCallback={backgroundClick}
-                   key={children.name}>
+                   key={name}>
             </Modal>
         </div>
     );
